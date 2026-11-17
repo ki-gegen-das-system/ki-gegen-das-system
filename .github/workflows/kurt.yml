@@ -1,0 +1,38 @@
+name: Kicker-Kurt
+
+on:
+  schedule:
+    # Jeden Tag um 09:00 UTC (10:00 Uhr deutsche Winterzeit):
+    # Kurt wertet alte Tipps aus und tippt die Spiele der nächsten 3 Tage.
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}   # erlaubt "Run workflow" per Hand
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daten-speichern
+  cancel-in-progress: false
+
+jobs:
+  tippen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Kurt tippt
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python3 kurt.py
+
+      - name: Daten speichern
+        if: always()
+        run: |
+          git config user.name "kicker-kurt"
+          git config user.email "kicker-kurt@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "Nichts Neues."; exit 0; fi
+          git commit -m "Kurt: Update $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase
+          git push
