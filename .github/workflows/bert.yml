@@ -3,8 +3,9 @@ name: Börsen-Bert
 on:
   schedule:
     # Mo–Fr alle 15 Minuten zwischen 13:00 und 21:59 UTC (deckt US-Börsenzeiten ab).
+    # Krumme Minuten, weil GitHub Läufe zur vollen Stunde oft stark verzögert.
     # Bert prüft selbst, ob die Börse offen ist.
-    - cron: "*/15 13-21 * * 1-5"
+    - cron: "7,22,37,52 13-21 * * 1-5"
   workflow_dispatch: {}   # erlaubt "Run workflow" per Hand
 
 permissions:

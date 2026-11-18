@@ -39,8 +39,9 @@ MAX_POSITIONS = 4                # höchstens 4 Aktien gleichzeitig
 POSITION_SIZE = 2_500.0          # so viel Dollar pro Kauf
 STOP_LOSS = -0.015               # -1,5 % -> verkaufen
 TAKE_PROFIT = 0.03               # +3 %  -> verkaufen
-NO_NEW_BUYS_MIN = 60             # keine neuen Käufe in der letzten Stunde
+NO_NEW_BUYS_MIN = 90             # keine neuen Käufe in den letzten 90 Minuten
 CLOSE_ALL_MIN = 30               # 30 Min vor Schluss alles verkaufen
+MOC_CUTOFF_MIN = 12              # Schlusskurs-Orders gehen nur bis 15:50 Uhr New York
 
 API = "https://paper-api.alpaca.markets"
 DATA_API = "https://data.alpaca.markets"
@@ -218,14 +219,28 @@ def log_fills(state, now):
         if len(batch) < 100:
             break
         token = batch[-1]["id"]
+    seen_list = list(state.get("seen_fill_ids", []))
+    groups = []  # Teil-Ausführungen derselben Order zusammenfassen
     for f in fills:
         if f["id"] in seen:
             continue
         seen.add(f["id"])
-        sym, qty, price = f["symbol"], float(f["qty"]), float(f["price"])
-        t = parse_ts(f["transaction_time"])
+        seen_list.append(f["id"])
+        key = (f.get("order_id") or f["id"], f["side"], f["symbol"])
+        if groups and groups[-1]["key"] == key:
+            g = groups[-1]
+        else:
+            g = {"key": key, "qty": 0.0, "cost": 0.0, "t": f["transaction_time"]}
+            groups.append(g)
+        g["qty"] += float(f["qty"])
+        g["cost"] += float(f["qty"]) * float(f["price"])
+        state["last_fill_time"] = f["transaction_time"]
+    for g in groups:
+        _, side, sym = g["key"]
+        qty, price = g["qty"], g["cost"] / g["qty"]
+        t = parse_ts(g["t"])
         lot = lots.get(sym, {"qty": 0.0, "avg": 0.0})
-        if f["side"] == "buy":
+        if side == "buy":
             total = lot["qty"] + qty
             lot["avg"] = (lot["qty"] * lot["avg"] + qty * price) / total
             lot["qty"] = total
@@ -243,8 +258,7 @@ def log_fills(state, now):
                 lots[sym] = lot
             append_csv(TRADES_FILE, TRADES_HEADER,
                        [local(t), sym, "Verkauf", f"{qty:g}", f"{price:.2f}", f"{pnl:.2f}", f"{pct:.2f}"])
-        state["last_fill_time"] = f["transaction_time"]
-    state["seen_fill_ids"] = list(seen)[-300:]
+    state["seen_fill_ids"] = seen_list[-300:]
 
 
 # ---------------------------------------------------------------- Aktionen
@@ -258,14 +272,33 @@ def cancel_open_orders(symbol=None):
 
 
 def sell(symbol, now, reason, price):
+    cancel_open_orders(symbol)  # z.B. die Schlusskurs-Order
+    for attempt in range(2):
+        try:
+            time.sleep(2)
+            call("DELETE", API, f"/v2/positions/{urllib.parse.quote(symbol)}")
+            log(now, symbol, "VERKAUF", reason, price)
+            return True
+        except urllib.error.HTTPError:
+            time.sleep(3)
+    log(now, symbol, "FEHLER", "Verkauf hat nicht geklappt", price)
+    return False
+
+
+def ensure_close_order(symbol, qty, now, open_orders, state):
+    """Sicherheitsnetz: Verkaufsorder zum Schlusskurs (Market-on-Close).
+    So wird die Aktie auf jeden Fall zum Börsenschluss verkauft – auch wenn Bert zu spät aufwacht."""
+    if any(o["symbol"] == symbol and o["side"] == "sell" for o in open_orders):
+        return
+    if state.get("moc_fehler_tag") == us_day(now):
+        return  # heute schon fehlgeschlagen -> nicht bei jedem Lauf erneut versuchen
     try:
-        cancel_open_orders(symbol)
-        call("DELETE", API, f"/v2/positions/{urllib.parse.quote(symbol)}")
-        log(now, symbol, "VERKAUF", reason, price)
-        return True
+        call("POST", API, "/v2/orders", body={"symbol": symbol, "qty": str(int(qty)), "side": "sell",
+                                               "type": "market", "time_in_force": "cls"})
+        log(now, symbol, "SICHERUNG", f"Verkaufsorder zum Börsenschluss für {int(qty)} Stück gesetzt")
     except urllib.error.HTTPError:
-        log(now, symbol, "FEHLER", "Verkauf hat nicht geklappt", price)
-        return False
+        state["moc_fehler_tag"] = us_day(now)
+        log(now, symbol, "FEHLER", "Schlusskurs-Order hat nicht geklappt")
 
 
 def buy(symbol, qty, now, reason, price):
@@ -348,9 +381,16 @@ def main():
         if reason and sell(sym, now, reason, price):
             sold_now.add(sym)
 
+    # 2b) Sicherheitsnetz für alle offenen Positionen
+    if minutes_left > MOC_CUTOFF_MIN:
+        open_orders = call("GET", API, "/v2/orders", {"status": "open", "limit": 500}) or []
+        for sym, p in positions.items():
+            if sym not in sold_now and float(p["qty"]) >= 1:
+                ensure_close_order(sym, float(p["qty"]), now, open_orders, state)
+
     # 3) Neue Käufe suchen
     if minutes_left <= NO_NEW_BUYS_MIN:
-        print("Letzte Stunde – keine neuen Käufe mehr.")
+        print("Letzte 90 Minuten – keine neuen Käufe mehr.")
         save_state(state)
         return
 
