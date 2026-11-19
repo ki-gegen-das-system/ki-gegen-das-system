@@ -42,6 +42,7 @@ TAKE_PROFIT = 0.03               # +3 %  -> verkaufen
 NO_NEW_BUYS_MIN = 90             # keine neuen Käufe in den letzten 90 Minuten
 CLOSE_ALL_MIN = 30               # 30 Min vor Schluss alles verkaufen
 MOC_CUTOFF_MIN = 12              # Schlusskurs-Orders gehen nur bis 15:50 Uhr New York
+CHECK_EVERY_MIN = 5              # im Dauerlauf alle 5 Minuten prüfen
 
 API = "https://paper-api.alpaca.markets"
 DATA_API = "https://data.alpaca.markets"
@@ -344,7 +345,7 @@ def main():
     if not market_open:
         print("Börse ist geschlossen – Bert macht Pause.")
         save_state(state)
-        return
+        return False
 
     minutes_left = (parse_ts(clock["next_close"]) - parse_ts(clock["timestamp"])).total_seconds() / 60
     print(f"Noch {minutes_left:.0f} Minuten bis Börsenschluss.")
@@ -358,7 +359,7 @@ def main():
                 log(now, sym, "VERKAUF", "Börsenschluss naht – Daytrading heißt: alles raus",
                     float(p["current_price"]))
         save_state(state)
-        return
+        return True
 
     opened = state.setdefault("opened", {})
     today = us_day(now)
@@ -392,7 +393,7 @@ def main():
     if minutes_left <= NO_NEW_BUYS_MIN:
         print("Letzte 90 Minuten – keine neuen Käufe mehr.")
         save_state(state)
-        return
+        return True
 
     pending = {o["symbol"] for o in call("GET", API, "/v2/orders", {"status": "open", "limit": 500}) or []}
     held = set(positions) - sold_now
@@ -419,7 +420,27 @@ def main():
             opened[sym] = today
 
     save_state(state)
+    return True
+
+
+def dauerlauf(minuten, pause=CHECK_EVERY_MIN):
+    """Bleibt wach und prüft alle paar Minuten – bis die Zeit um ist oder die Börse schließt."""
+    ende = time.time() + minuten * 60
+    while True:
+        try:
+            offen = main()
+        except Exception as e:  # ein einzelner Fehler soll nicht den ganzen Lauf stoppen
+            print(f"Fehler in diesem Durchgang: {e}")
+            offen = True
+        if not offen or time.time() + pause * 60 > ende:
+            break
+        print(f"--- nächster Check in {pause} Minuten ---", flush=True)
+        time.sleep(pause * 60)
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 2 and sys.argv[1] == "--minuten":
+        dauerlauf(float(sys.argv[2]))
+    else:
+        main()

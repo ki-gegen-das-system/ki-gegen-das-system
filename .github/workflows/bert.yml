@@ -2,10 +2,10 @@ name: Börsen-Bert
 
 on:
   schedule:
-    # Mo–Fr alle 15 Minuten zwischen 13:00 und 21:59 UTC (deckt US-Börsenzeiten ab).
-    # Krumme Minuten, weil GitHub Läufe zur vollen Stunde oft stark verzögert.
-    # Bert prüft selbst, ob die Börse offen ist.
-    - cron: "7,22,37,52 13-21 * * 1-5"
+    # Mo–Fr zwischen 13:00 und 21:59 UTC (deckt US-Börsenzeiten ab).
+    # Jeder Lauf bleibt bis zu 58 Minuten wach und prüft alle 5 Minuten.
+    # Ein neuer Lauf wartet, bis der alte fertig ist (concurrency).
+    - cron: "7,37 13-21 * * 1-5"
   workflow_dispatch: {}   # erlaubt "Run workflow" per Hand
 
 permissions:
@@ -18,7 +18,7 @@ concurrency:
 jobs:
   handeln:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
 
@@ -26,7 +26,7 @@ jobs:
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python3 bert.py
+        run: python3 -u bert.py --minuten 58
 
       - name: Daten speichern
         if: always()
