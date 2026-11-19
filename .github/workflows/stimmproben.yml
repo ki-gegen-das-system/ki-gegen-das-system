@@ -1,0 +1,37 @@
+name: Stimmproben
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stimme
+  cancel-in-progress: false
+
+jobs:
+  proben:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet piper-tts
+      - name: Stimmen laden
+        run: |
+          mkdir -p ~/stimmen; hf=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE
+          get() { curl -sSfL -o ~/stimmen/$1.onnx "$hf/$1/$2/de_DE-$1-$2.onnx" && curl -sSfL -o ~/stimmen/$1.onnx.json "$hf/$1/$2/de_DE-$1-$2.onnx.json"; }
+          get thorsten_emotional medium
+          get thorsten high
+          get kerstin low
+          get ramona low
+      - run: python stimme/proben.py ~/stimmen
+      - name: Speichern
+        run: |
+          git config user.name "stimme-bot"; git config user.email "stimme-bot@users.noreply.github.com"
+          git add stimme/proben
+          git commit -m "Stimme: Hörproben" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
