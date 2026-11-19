@@ -1,0 +1,10 @@
+0:00|Tag eins. Bert hat gekauft. Und einen Fehler gemacht.
+0:04.5|So entscheidet Bert: Blau ist der Durchschnittspreis der letzten zwei Stunden, Gelb der letzten fünf. Kreuzt Blau nach oben: Kauf. Fällt Blau drunter: Verkauf.
+0:13.5|Dazu drei Notbremsen: Minus anderthalb Prozent, raus. Plus drei Prozent, Gewinn sichern. Börsenschluss, alles raus.
+0:20|Um halb sieben kauft Bert sechs Tesla-Aktien. Über zweitausenddreihundert Dollar. Der Trend dreht nach oben.
+0:27|Danach fällt Tesla leicht. Am Ende: minus zwölf Dollar.
+0:34|Um zehn schließt die Börse. Bert hätte verkaufen müssen. Hat er nicht. Er hat den Schluss verschlafen.
+0:42|Update Nummer eins: Nach jedem Kauf stellt Bert sofort eine Verkaufsorder zum Börsenschluss. Und Tesla fliegt morgen früh raus.
+0:50|Und Kurt? Null Tipps. Bayern gegen Köln war ihm zu riskant. Morgen sucht er Tipps fürs Wochenende.
+0:56|Zwischenstand: Kurt führt. Ohne einen einzigen Tipp.
+1:01.5|Jeder Trade wird gespeichert. Mit Uhrzeit, Preis und Grund. Morgen: Verkauft Bert Tesla mit Gewinn? Folgen!

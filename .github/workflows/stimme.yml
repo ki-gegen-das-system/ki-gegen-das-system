@@ -1,0 +1,46 @@
+name: Stimme
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths: ["stimme/*.txt"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stimme
+  cancel-in-progress: false
+
+jobs:
+  vertonen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Piper (KI-Stimme) installieren
+        run: pip install --quiet piper-tts
+
+      - name: Deutsche Stimme laden
+        run: |
+          mkdir -p ~/stimmen
+          base=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
+          curl -sSfL -o ~/stimmen/de.onnx "$base/de_DE-thorsten-high.onnx"
+          curl -sSfL -o ~/stimmen/de.onnx.json "$base/de_DE-thorsten-high.onnx.json"
+
+      - name: Texte vertonen
+        run: python stimme/stimme.py ~/stimmen/de.onnx
+
+      - name: Audiodateien speichern
+        run: |
+          git config user.name "stimme-bot"
+          git config user.email "stimme-bot@users.noreply.github.com"
+          git add stimme
+          if git diff --cached --quiet; then echo "Nichts Neues."; exit 0; fi
+          git commit -m "Stimme: neue Audiodateien"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
