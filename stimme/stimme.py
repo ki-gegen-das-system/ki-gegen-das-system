@@ -7,7 +7,9 @@ Läuft über GitHub Actions (.github/workflows/stimme.yml).
 """
 import glob, hashlib, os, sys, wave
 
-LENGTH_SCALE = 0.9   # < 1 = schneller sprechen (passt besser zu TikTok)
+LENGTH_SCALE = 0.85  # < 1 = schneller sprechen (passt besser zu TikTok)
+NOISE_SCALE = 0.85   # mehr Ausdruck in der Stimme (Standard 0.667)
+NOISE_W = 0.9        # lebendigeres Sprechtempo (Standard 0.8)
 
 from piper import PiperVoice
 voice = PiperVoice.load(sys.argv[1])
@@ -18,11 +20,12 @@ def synth(text, path):
         if hasattr(voice, "synthesize_wav"):          # piper-tts ab 1.3
             try:
                 from piper import SynthesisConfig
-                voice.synthesize_wav(text, wf, syn_config=SynthesisConfig(length_scale=LENGTH_SCALE))
+                voice.synthesize_wav(text, wf, syn_config=SynthesisConfig(
+                    length_scale=LENGTH_SCALE, noise_scale=NOISE_SCALE, noise_w_scale=NOISE_W))
             except ImportError:
                 voice.synthesize_wav(text, wf)
         else:                                          # ältere Versionen
-            voice.synthesize(text, wf, length_scale=LENGTH_SCALE)
+            voice.synthesize(text, wf, length_scale=LENGTH_SCALE, noise_scale=NOISE_SCALE, noise_w=NOISE_W)
 
 
 def seconds(ts):
