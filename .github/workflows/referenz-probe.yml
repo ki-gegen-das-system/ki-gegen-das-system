@@ -1,0 +1,52 @@
+name: Stimmproben Referenz
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stimme
+  cancel-in-progress: false
+
+jobs:
+  proben:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+            ~/stimmen
+          key: stimme-chatterbox-v1
+      - name: Installieren
+        run: |
+          pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet chatterbox-tts soundfile numpy faster-whisper num2words piper-tts
+          mkdir -p ~/stimmen
+          if [ ! -f ~/stimmen/de.onnx ]; then
+            base=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
+            curl -sSfL -o ~/stimmen/de.onnx "$base/de_DE-thorsten-high.onnx"
+            curl -sSfL -o ~/stimmen/de.onnx.json "$base/de_DE-thorsten-high.onnx.json"
+          fi
+      - name: Thorsten-Voice Datensatz laden (CC0)
+        run: |
+          curl -sSfL -o /tmp/emo.tgz https://www.openslr.org/resources/110/thorsten-emotional_v02.tgz \
+          || curl -sSfL -o /tmp/emo.tgz https://us.openslr.org/resources/110/thorsten-emotional_v02.tgz \
+          || curl -sSfL -o /tmp/emo.tgz https://openslr.elda.org/resources/110/thorsten-emotional_v02.tgz
+          ls -la /tmp/emo.tgz
+      - name: Proben erzeugen
+        run: python -u stimme/werkzeug/referenz_probe.py /tmp/emo.tgz
+      - name: Speichern
+        run: |
+          git config user.name "stimme-bot"; git config user.email "stimme-bot@users.noreply.github.com"
+          git add stimme/proben3 stimme/referenz
+          git commit -m "Stimme: Proben mit deutscher Referenzstimme" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
