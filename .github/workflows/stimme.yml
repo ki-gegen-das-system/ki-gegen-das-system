@@ -15,7 +15,7 @@ concurrency:
 jobs:
   vertonen:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -23,18 +23,32 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Piper (KI-Stimme) installieren
-        run: pip install --quiet piper-tts
+      - name: Zwischenspeicher (Modelle und Pakete)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+            ~/stimmen
+          key: stimme-chatterbox-v1
 
-      - name: Deutsche Stimme laden
+      - name: KI-Stimme installieren (Chatterbox, CPU)
+        run: |
+          pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet chatterbox-tts soundfile numpy
+          pip install --quiet piper-tts
+
+      - name: Notfall-Stimme laden (Piper Thorsten)
         run: |
           mkdir -p ~/stimmen
-          base=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
-          curl -sSfL -o ~/stimmen/de.onnx "$base/de_DE-thorsten-high.onnx"
-          curl -sSfL -o ~/stimmen/de.onnx.json "$base/de_DE-thorsten-high.onnx.json"
+          if [ ! -f ~/stimmen/de.onnx ]; then
+            base=https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high
+            curl -sSfL -o ~/stimmen/de.onnx "$base/de_DE-thorsten-high.onnx"
+            curl -sSfL -o ~/stimmen/de.onnx.json "$base/de_DE-thorsten-high.onnx.json"
+          fi
 
       - name: Texte vertonen
-        run: python stimme/stimme.py ~/stimmen/de.onnx
+        run: python -u stimme/stimme.py
 
       - name: Audiodateien speichern
         run: |
