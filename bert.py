@@ -344,6 +344,11 @@ def main():
 
     if not market_open:
         print("Börse ist geschlossen – Bert macht Pause.")
+        try:  # echte Kursdaten des Tages für die Videos sichern
+            import charts
+            charts.save_missing(now)
+        except Exception as e:
+            print(f"Chartdaten konnten nicht gespeichert werden: {e}")
         save_state(state)
         return False
 

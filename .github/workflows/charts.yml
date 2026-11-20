@@ -1,0 +1,31 @@
+name: Chartdaten
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: charts
+  cancel-in-progress: false
+
+jobs:
+  laden:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Echte Kursdaten laden
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python3 charts.py
+      - name: Speichern
+        run: |
+          git config user.name "boersen-bert"
+          git config user.email "boersen-bert@users.noreply.github.com"
+          git add data/charts
+          if git diff --cached --quiet; then echo "Nichts Neues."; exit 0; fi
+          git commit -m "Chartdaten: $(date -u +'%Y-%m-%d')"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
