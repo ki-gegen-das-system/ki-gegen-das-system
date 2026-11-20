@@ -6,112 +6,1120 @@
    "datei": "01.wav",
    "dauer": 5.8,
    "text": "Tag zwei. Bert hätte heute Gewinn machen können.",
-   "hash": "ffe06a75964a27b0decc593b1c3d88762e556673"
+   "hash": "81b248ee151ded458970f92e88c3d4613c5f565c",
+   "pruefung": 0.9,
+   "woerter": [
+    [
+     "Krag",
+     0.0,
+     0.26
+    ],
+    [
+     "2.",
+     0.26,
+     0.6
+    ],
+    [
+     "Baird",
+     0.96,
+     1.38
+    ],
+    [
+     "hätte",
+     1.38,
+     1.46
+    ],
+    [
+     "heute",
+     1.46,
+     1.68
+    ],
+    [
+     "Gewinn",
+     1.68,
+     2.06
+    ],
+    [
+     "machen",
+     2.06,
+     2.26
+    ],
+    [
+     "können.",
+     2.26,
+     2.62
+    ]
+   ]
   },
   {
    "szene": "s1",
    "datei": "02.wav",
    "dauer": 4.0,
    "text": "Stattdessen: minus einunddreißig Dollar.",
-   "hash": "a30e0e12cdb03999f4535d313f5668f7e15216a9"
+   "hash": "9e7a48e827902c843160a5cbfeeee78e9472ad78",
+   "pruefung": 0.97,
+   "woerter": [
+    [
+     "Stattdessen",
+     0.0,
+     0.46
+    ],
+    [
+     "minus",
+     0.46,
+     0.78
+    ],
+    [
+     "31",
+     0.78,
+     1.36
+    ],
+    [
+     "Dollar.",
+     1.36,
+     1.66
+    ]
+   ]
   },
   {
    "szene": "s2",
    "datei": "03.wav",
    "dauer": 3.774,
    "text": "Das ist der echte Tesla-Kurs von gestern, in Fünfzehn-Minuten-Kerzen.",
-   "hash": "8327195a06d29913ec54c4894bb712b49c3efb1d"
+   "hash": "7070535bf6214af5ef86dd47a4e0fcb1c4f669fc",
+   "pruefung": 0.98,
+   "woerter": [
+    [
+     "Das",
+     0.0,
+     0.14
+    ],
+    [
+     "ist",
+     0.14,
+     0.28
+    ],
+    [
+     "der",
+     0.28,
+     0.42
+    ],
+    [
+     "echte",
+     0.42,
+     0.7
+    ],
+    [
+     "Pesla",
+     0.7,
+     1.12
+    ],
+    [
+     "-Kurs",
+     1.12,
+     1.34
+    ],
+    [
+     "von",
+     1.34,
+     1.54
+    ],
+    [
+     "gestern",
+     1.54,
+     2.08
+    ],
+    [
+     "in",
+     2.08,
+     2.26
+    ],
+    [
+     "15",
+     2.26,
+     2.54
+    ],
+    [
+     "Minuten",
+     2.54,
+     3.0
+    ],
+    [
+     "Kerzen.",
+     3.0,
+     3.58
+    ]
+   ]
   },
   {
    "szene": "s2",
    "datei": "04.wav",
    "dauer": 7.003,
    "text": "Zum Börsenstart stand Tesla bei über dreihundertneunzig Dollar. Bert hatte für dreihundertvierundachtzig gekauft. Er war also im Plus.",
-   "hash": "787b941f56117feaabb3e84dc2edad0d03c10a3d"
+   "hash": "ed05c1023289fa52a995d6b580fc34f95cd869aa",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "Zum",
+     0.0,
+     0.2
+    ],
+    [
+     "Bersen",
+     0.2,
+     0.64
+    ],
+    [
+     "-Start",
+     0.64,
+     0.9
+    ],
+    [
+     "stand",
+     0.9,
+     1.18
+    ],
+    [
+     "Tesla",
+     1.18,
+     1.6
+    ],
+    [
+     "bei",
+     1.6,
+     1.88
+    ],
+    [
+     "über",
+     1.88,
+     2.06
+    ],
+    [
+     "390",
+     2.06,
+     2.88
+    ],
+    [
+     "Dollar.",
+     2.88,
+     3.3
+    ],
+    [
+     "Bert",
+     3.62,
+     3.8
+    ],
+    [
+     "hatte",
+     3.8,
+     4.06
+    ],
+    [
+     "für",
+     4.06,
+     4.24
+    ],
+    [
+     "384",
+     4.24,
+     5.4
+    ],
+    [
+     "gekauft.",
+     5.4,
+     5.86
+    ],
+    [
+     "Er",
+     6.02,
+     6.1
+    ],
+    [
+     "war",
+     6.1,
+     6.26
+    ],
+    [
+     "also",
+     6.26,
+     6.42
+    ],
+    [
+     "im",
+     6.42,
+     6.54
+    ],
+    [
+     "Plus.",
+     6.54,
+     6.72
+    ]
+   ]
   },
   {
    "szene": "s2",
    "datei": "05.wav",
    "dauer": 6.602,
    "text": "Aber Bert wachte erst um sechzehn Uhr fünfunddreißig auf. Da war Tesla schon gefallen. Verkauf bei dreihundertneunundsiebzig.",
-   "hash": "ff08d0704f8c63b0300fc02083f407ef0ecb2ddc"
+   "hash": "d7b04777e14dce8eee9814c5e2840d5e89c50bc8",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "Aber",
+     0.0,
+     0.2
+    ],
+    [
+     "Bert",
+     0.2,
+     0.44
+    ],
+    [
+     "wachte",
+     0.44,
+     0.78
+    ],
+    [
+     "erst",
+     0.78,
+     0.98
+    ],
+    [
+     "um",
+     0.98,
+     1.16
+    ],
+    [
+     "16",
+     1.16,
+     1.5
+    ],
+    [
+     "Uhr,",
+     1.5,
+     1.76
+    ],
+    [
+     "5",
+     1.86,
+     1.96
+    ],
+    [
+     ".30",
+     1.96,
+     2.34
+    ],
+    [
+     "Uhr",
+     2.34,
+     2.48
+    ],
+    [
+     "auf.",
+     2.48,
+     2.66
+    ],
+    [
+     "Da",
+     2.86,
+     2.96
+    ],
+    [
+     "war",
+     2.96,
+     3.04
+    ],
+    [
+     "Tesla",
+     3.04,
+     3.32
+    ],
+    [
+     "schon",
+     3.32,
+     3.5
+    ],
+    [
+     "gefallen.",
+     3.5,
+     3.84
+    ],
+    [
+     "Verkauf",
+     4.08,
+     4.42
+    ],
+    [
+     "bei",
+     4.42,
+     4.6
+    ],
+    [
+     "379.",
+     4.6,
+     5.58
+    ]
+   ]
   },
   {
    "szene": "s3",
    "datei": "06.wav",
-   "dauer": 5.034,
+   "dauer": 4.32,
    "text": "Berts Logbuch zeigt den Grund: Daytrading heißt, nichts über Nacht halten. Also musste Tesla raus.",
-   "hash": "6011d8bf85a755e454a842bf820b3bced8f77a52"
+   "hash": "93d9bf612b01dd4976bf0e05cd067c8ffd08cf0c",
+   "pruefung": 0.91,
+   "woerter": [
+    [
+     "Erzlachbuch",
+     0.0,
+     0.56
+    ],
+    [
+     "zeigt",
+     0.56,
+     0.8
+    ],
+    [
+     "den",
+     0.8,
+     0.98
+    ],
+    [
+     "Grund,",
+     0.98,
+     1.16
+    ],
+    [
+     "Day",
+     1.44,
+     1.58
+    ],
+    [
+     "Trading",
+     1.58,
+     1.82
+    ],
+    [
+     "heißt",
+     1.82,
+     2.06
+    ],
+    [
+     "nichts",
+     2.06,
+     2.42
+    ],
+    [
+     "über",
+     2.42,
+     2.6
+    ],
+    [
+     "Nathalten,",
+     2.6,
+     3.06
+    ],
+    [
+     "also",
+     3.24,
+     3.36
+    ],
+    [
+     "muss",
+     3.36,
+     3.52
+    ],
+    [
+     "der",
+     3.52,
+     3.64
+    ],
+    [
+     "Tesla",
+     3.64,
+     3.84
+    ],
+    [
+     "raus.",
+     3.84,
+     4.14
+    ]
+   ]
   },
   {
    "szene": "s4",
    "datei": "07.wav",
-   "dauer": 5.994,
+   "dauer": 6.65,
    "text": "Berts Konto steht jetzt bei neuntausendneunhundertachtundsechzig Dollar. Minus null Komma drei Prozent seit dem Start.",
-   "hash": "e501e2d462ce1dffb5749e2f97caa32481171ab6"
+   "hash": "d3c2237911b8d1e1355a774c0fbc0fca6ca91bbd",
+   "pruefung": 0.88,
+   "woerter": [
+    [
+     "Berzkonto",
+     0.0,
+     0.56
+    ],
+    [
+     "steht",
+     0.56,
+     0.76
+    ],
+    [
+     "jetzt",
+     0.76,
+     1.04
+    ],
+    [
+     "bei",
+     1.04,
+     1.22
+    ],
+    [
+     "$9968,",
+     1.22,
+     2.84
+    ],
+    [
+     "minus",
+     3.42,
+     3.86
+    ],
+    [
+     "0",
+     3.86,
+     4.22
+    ],
+    [
+     ",3",
+     4.22,
+     4.72
+    ],
+    [
+     "%",
+     4.72,
+     5.04
+    ],
+    [
+     "seit",
+     5.04,
+     5.3
+    ],
+    [
+     "den",
+     5.3,
+     5.46
+    ],
+    [
+     "Start.",
+     5.46,
+     5.7
+    ]
+   ]
   },
   {
    "szene": "s5",
    "datei": "08.wav",
    "dauer": 4.515,
    "text": "Update Nummer zwei: Bert prüft jetzt alle fünf Minuten statt einmal pro Stunde.",
-   "hash": "b782b77097acc06d0946a047bc7988e1a12b2e60"
+   "hash": "128550689b7f064b2a600f2682649cff48b30400",
+   "pruefung": 0.98,
+   "woerter": [
+    [
+     "Update",
+     0.0,
+     0.24
+    ],
+    [
+     "Nummer",
+     0.24,
+     0.46
+    ],
+    [
+     "zwei,",
+     0.46,
+     0.86
+    ],
+    [
+     "wer",
+     1.04,
+     1.14
+    ],
+    [
+     "prüft",
+     1.14,
+     1.46
+    ],
+    [
+     "jetzt",
+     1.46,
+     1.6
+    ],
+    [
+     "alle",
+     1.6,
+     1.8
+    ],
+    [
+     "fünf",
+     1.8,
+     2.0
+    ],
+    [
+     "Minuten",
+     2.0,
+     2.26
+    ],
+    [
+     "statt",
+     2.26,
+     2.54
+    ],
+    [
+     "einmal",
+     2.54,
+     2.76
+    ],
+    [
+     "pro",
+     2.76,
+     3.0
+    ],
+    [
+     "Stunde?",
+     3.0,
+     3.3
+    ]
+   ]
   },
   {
    "szene": "s5",
    "datei": "09.wav",
    "dauer": 7.184,
    "text": "Und alle Trades sind öffentlich. Jeder kann sie nachprüfen.",
-   "hash": "e44613e19f696fca9b472b0e76e6638c75c60af3"
+   "hash": "4145c26dc27cf58ba81d87fbc9fa1fa89fa6f83f",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "Und",
+     0.0,
+     0.18
+    ],
+    [
+     "alle",
+     0.18,
+     0.46
+    ],
+    [
+     "TARDIS",
+     0.46,
+     0.96
+    ],
+    [
+     "sind",
+     0.96,
+     1.28
+    ],
+    [
+     "öffentlich.",
+     1.28,
+     1.76
+    ],
+    [
+     "Jeder",
+     2.16,
+     2.36
+    ],
+    [
+     "kann",
+     2.36,
+     2.66
+    ],
+    [
+     "sie",
+     2.66,
+     2.78
+    ],
+    [
+     "nachprüfen.",
+     2.78,
+     3.4
+    ]
+   ]
   },
   {
    "szene": "s6",
    "datei": "10.wav",
    "dauer": 11.268,
    "text": "Und Kurt? Er prüft jetzt fünf Ligen.",
-   "hash": "694c30df36557ce4098b1ac624700176db8b47c2"
+   "hash": "b60856bb1252cb768c206fcb79669ffb6e88bb49",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "Und",
+     0.0,
+     0.16
+    ],
+    [
+     "Kurt,",
+     0.16,
+     0.52
+    ],
+    [
+     "er",
+     0.7,
+     0.88
+    ],
+    [
+     "prügt",
+     0.88,
+     1.14
+    ],
+    [
+     "jetzt",
+     1.14,
+     1.28
+    ],
+    [
+     "fünf",
+     1.28,
+     1.46
+    ],
+    [
+     "Ligen.",
+     1.46,
+     1.84
+    ]
+   ]
   },
   {
    "szene": "s6",
    "datei": "11.wav",
-   "dauer": 7.6,
+   "dauer": 6.861,
    "text": "Sechsunddreißig Spiele, ein Tipp: Manchester United bei Liverpool. Faire Chance dreiundzwanzig Prozent, Quote vier Komma sieben. Das sind über sechs Prozent Value.",
-   "hash": "a03cc344cc40a0e57c3b1d4ab290206ab4647863"
+   "hash": "4a9c8688afbcb610d63bad3a24e7873ac3fbd4e3",
+   "pruefung": 0.88,
+   "woerter": [
+    [
+     "36",
+     0.0,
+     0.34
+    ],
+    [
+     "Spiele,",
+     0.34,
+     1.0
+    ],
+    [
+     "ein",
+     1.14,
+     1.24
+    ],
+    [
+     "Tipp",
+     1.24,
+     1.4
+    ],
+    [
+     "Manchester",
+     1.4,
+     1.66
+    ],
+    [
+     "United",
+     1.66,
+     2.0
+    ],
+    [
+     "by",
+     2.0,
+     2.18
+    ],
+    [
+     "Liverpool,",
+     2.18,
+     2.5
+    ],
+    [
+     "Verschance",
+     2.72,
+     3.0
+    ],
+    [
+     "23%,",
+     3.0,
+     3.94
+    ],
+    [
+     "Quote",
+     3.94,
+     4.22
+    ],
+    [
+     "4",
+     4.22,
+     4.48
+    ],
+    [
+     ",7,",
+     4.48,
+     4.96
+    ],
+    [
+     "das",
+     5.14,
+     5.22
+    ],
+    [
+     "sind",
+     5.22,
+     5.38
+    ],
+    [
+     "über",
+     5.38,
+     5.58
+    ],
+    [
+     "6",
+     5.58,
+     5.86
+    ],
+    [
+     "%",
+     5.86,
+     6.14
+    ],
+    [
+     "Value.",
+     6.14,
+     6.46
+    ]
+   ]
   },
   {
    "szene": "s7",
    "datei": "12.wav",
    "dauer": 5.449,
    "text": "Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist fünfzig Prozent, also wäre zwei Komma null die faire Quote.",
-   "hash": "0beef3a53f3234a58d458a7b4629eed6dff00052"
+   "hash": "376d0abd1a6436905cd8604b8a093f2611232c05",
+   "pruefung": 0.86,
+   "woerter": [
+    [
+     "Was",
+     0.0,
+     0.1
+    ],
+    [
+     "heißt",
+     0.1,
+     0.2
+    ],
+    [
+     "Value?",
+     0.2,
+     0.56
+    ],
+    [
+     "Stell",
+     0.8,
+     0.9
+    ],
+    [
+     "dir",
+     0.9,
+     1.02
+    ],
+    [
+     "einen",
+     1.02,
+     1.12
+    ],
+    [
+     "Minstwarf",
+     1.12,
+     1.6
+    ],
+    [
+     "vor.",
+     1.6,
+     1.74
+    ],
+    [
+     "Die",
+     2.08,
+     2.22
+    ],
+    [
+     "Chance",
+     2.22,
+     2.38
+    ],
+    [
+     "ist",
+     2.38,
+     2.58
+    ],
+    [
+     "50%,",
+     2.58,
+     3.32
+    ],
+    [
+     "also",
+     3.32,
+     3.52
+    ],
+    [
+     "wäre",
+     3.52,
+     3.68
+    ],
+    [
+     "da",
+     3.68,
+     3.8
+    ],
+    [
+     "2",
+     3.8,
+     4.02
+    ],
+    [
+     ",0",
+     4.02,
+     4.44
+    ],
+    [
+     "die",
+     4.44,
+     4.72
+    ],
+    [
+     "Pferdequote.",
+     4.72,
+     5.18
+    ]
+   ]
   },
   {
    "szene": "s7",
    "datei": "13.wav",
    "dauer": 4.834,
    "text": "Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.",
-   "hash": "e870872be3ffa44dba8dfc448c3a3ff5972e2f25"
+   "hash": "d4d80ad956ed8ed317419ba0997297de88612d3b",
+   "pruefung": 0.9,
+   "woerter": [
+    [
+     "Bietet",
+     0.0,
+     0.2
+    ],
+    [
+     "ihr",
+     0.2,
+     0.34
+    ],
+    [
+     "jemand",
+     0.34,
+     0.54
+    ],
+    [
+     "2",
+     0.54,
+     0.88
+    ],
+    [
+     ",04,",
+     0.88,
+     1.46
+    ],
+    [
+     "bekommst",
+     1.74,
+     2.06
+    ],
+    [
+     "du",
+     2.06,
+     2.14
+    ],
+    [
+     "im",
+     2.14,
+     2.22
+    ],
+    [
+     "Schnitt",
+     2.22,
+     2.42
+    ],
+    [
+     "102",
+     2.42,
+     2.62
+    ],
+    [
+     "Euro",
+     2.62,
+     3.08
+    ],
+    [
+     "pro",
+     3.08,
+     3.24
+    ],
+    [
+     "100",
+     3.24,
+     3.42
+    ],
+    [
+     "Euro",
+     3.42,
+     3.7
+    ],
+    [
+     "Einsatz.",
+     3.7,
+     4.0
+    ]
+   ]
   },
   {
    "szene": "s7",
    "datei": "14.wav",
-   "dauer": 2.128,
+   "dauer": 5.24,
    "text": "Das sind zwei Prozent Value. Ab da tippt Kurt.",
-   "hash": "1eb445b060fb19988ad98d532727e4a1c7fa3109"
+   "hash": "e90eb02447b99e8dca48146e85183c6dc7a1b594",
+   "pruefung": 0.72,
+   "woerter": [
+    [
+     "Das",
+     0.0,
+     0.14
+    ],
+    [
+     "sind",
+     0.14,
+     0.3
+    ],
+    [
+     "2",
+     0.3,
+     0.52
+    ],
+    [
+     "%",
+     0.52,
+     0.86
+    ],
+    [
+     "-Value.",
+     0.86,
+     1.36
+    ],
+    [
+     "Appetit",
+     1.52,
+     1.9
+    ],
+    [
+     "court.",
+     1.9,
+     2.12
+    ]
+   ]
   },
   {
    "szene": "s8",
    "datei": "15.wav",
-   "dauer": 2.4,
+   "dauer": 2.14,
    "text": "Zwischenstand: Kurt führt. Noch.",
-   "hash": "aa911d6aa957a2846605d551d4c2250bf75c96e3"
+   "hash": "7e1d478ad23ca1cda7947b85995bf43612c79862",
+   "pruefung": 0.91,
+   "woerter": [
+    [
+     "Zwischenstand,",
+     0.0,
+     0.64
+    ],
+    [
+     "Court",
+     0.88,
+     1.08
+    ],
+    [
+     "führt,",
+     1.08,
+     1.38
+    ],
+    [
+     "nach,",
+     1.62,
+     1.96
+    ]
+   ]
   },
   {
    "szene": "s9",
    "datei": "16.wav",
-   "dauer": 12.075,
+   "dauer": 4.36,
    "text": "Sonntag, Liverpool gegen Manchester United. Gewinnt Kurt seinen ersten Tipp?",
-   "hash": "7e56c7ce85f9d345eae34dca217ee0877f6af4d0"
+   "hash": "f29629a385fa29c6d90fe5f8a11e49da3b0757e6",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "Sonntag,",
+     0.0,
+     0.54
+    ],
+    [
+     "Liverpool",
+     0.72,
+     1.06
+    ],
+    [
+     "gegen",
+     1.06,
+     1.36
+    ],
+    [
+     "Manchester",
+     1.36,
+     1.84
+    ],
+    [
+     "United.",
+     1.84,
+     2.38
+    ],
+    [
+     "Gewinnt",
+     2.62,
+     2.92
+    ],
+    [
+     "Court",
+     2.92,
+     3.14
+    ],
+    [
+     "signen",
+     3.14,
+     3.52
+    ],
+    [
+     "Ersten",
+     3.52,
+     3.82
+    ],
+    [
+     "Tipp?",
+     3.82,
+     4.18
+    ]
+   ]
   }
  ]
 }
