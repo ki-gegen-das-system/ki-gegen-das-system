@@ -35,7 +35,7 @@ jobs:
       - name: KI-Stimme installieren (Chatterbox, CPU)
         run: |
           pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-          pip install --quiet chatterbox-tts soundfile numpy
+          pip install --quiet chatterbox-tts soundfile numpy faster-whisper num2words
           pip install --quiet piper-tts
 
       - name: Notfall-Stimme laden (Piper Thorsten)

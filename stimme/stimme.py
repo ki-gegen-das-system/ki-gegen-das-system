@@ -47,9 +47,29 @@ def engine():
             model = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
 
             def synth(text, path):
-                torch.manual_seed(SEED)
-                wav = model.generate(text, language_id="de", exaggeration=EXAGGERATION, cfg_weight=CFG_WEIGHT)
-                ta.save(path, wav, model.sr)
+                """Erzeugt bis zu 3 Versuche, prüft sie mit Whisper und behält den besten."""
+                best = None
+                for attempt in range(3):
+                    torch.manual_seed(SEED + attempt)
+                    wav = model.generate(text, language_id="de", exaggeration=EXAGGERATION, cfg_weight=CFG_WEIGHT)
+                    tmp = path + f".try{attempt}.wav"
+                    ta.save(tmp, wav, model.sr)
+                    trim_silence(tmp)
+                    score, cut, words = check(tmp, text)
+                    print(f"   Versuch {attempt + 1}: Übereinstimmung {score:.2f}")
+                    if best is None or score > best[0]:
+                        if best:
+                            os.remove(best[1])
+                        best = (score, tmp, cut, words)
+                    else:
+                        os.remove(tmp)
+                    if score >= 0.85:
+                        break
+                score, tmp, cut, words = best
+                os.replace(tmp, path)
+                if cut:
+                    cut_audio(path, cut)
+                return {"pruefung": round(score, 2), "woerter": words}
             _engine = ("chatterbox", synth)
             return _engine
         except Exception as e:
@@ -67,6 +87,68 @@ def engine():
                 voice.synthesize(text, wf, length_scale=0.85, noise_scale=0.85, noise_w=0.9)
     _engine = ("piper", synth)
     return _engine
+
+
+_whisper = None
+
+
+def norm(s):
+    """Text vergleichbar machen: klein, Zahlen als Wörter, nur Buchstaben."""
+    s = s.lower().replace("ß", "ss")
+    try:
+        from num2words import num2words
+        s = re.sub(r"(\d+),(\d+)", lambda m: num2words(int(m.group(1)), lang="de") + "komma"
+                   + "".join(num2words(int(d), lang="de") for d in m.group(2)), s)
+        s = re.sub(r"\d+", lambda m: num2words(int(m.group()), lang="de"), s.replace(".", ""))
+    except Exception:
+        pass
+    return re.sub(r"[^a-zäöü]", "", s)
+
+
+def check(path, text):
+    """Hört den Clip mit Whisper ab. Gibt (Übereinstimmung 0..1, Schnittpunkt in s, Wörter) zurück.
+    Findet auch, wo der richtige Satz endet – danach erfundene Silben werden abgeschnitten."""
+    global _whisper
+    try:
+        import difflib
+        if _whisper is None:
+            from faster_whisper import WhisperModel
+            _whisper = WhisperModel("small", device="cpu", compute_type="int8")
+        segs, _ = _whisper.transcribe(path, language="de", word_timestamps=True, beam_size=5,
+                                      condition_on_previous_text=False)
+        words = [(w.word.strip(), w.start, w.end) for sg in segs for w in (sg.words or [])]
+    except Exception as e:
+        print(f"   (Prüfung nicht möglich: {e})")
+        return 0.5, None, []
+    target = norm(text)
+    if not words or not target:
+        return 0.0, None, []
+    best = (0.0, len(words))
+    acc = ""
+    for i, (wd, st, en) in enumerate(words, 1):
+        acc += norm(wd)
+        r = difflib.SequenceMatcher(None, acc, target).ratio()
+        if r > best[0] + 0.005:
+            best = (r, i)
+    score, upto = best
+    cut = words[upto - 1][2] + 0.18 if upto < len(words) else None
+    kept = [[w, round(a, 2), round(b, 2)] for w, a, b in words[:upto]]
+    return score, cut, kept
+
+
+def cut_audio(path, end_s):
+    import soundfile as sf
+    data, sr = sf.read(path)
+    n = int(end_s * sr)
+    if 0 < n < len(data):
+        fade = min(int(0.04 * sr), n)
+        data = data[:n].copy()
+        ramp = __import__("numpy").linspace(1.0, 0.0, fade)
+        if data.ndim == 1:
+            data[-fade:] *= ramp
+        else:
+            data[-fade:] *= ramp[:, None]
+        sf.write(path, data, sr)
 
 
 def trim_silence(path, threshold=0.012, pad_s=0.06):
@@ -97,7 +179,7 @@ def process(txt):
     if not lines:
         return
     neu = re.match(r"^[A-Za-z]\w*\|", lines[0]) is not None
-    digest = hashlib.sha1((raw + "v2").encode()).hexdigest()
+    digest = hashlib.sha1((raw + "v3").encode()).hexdigest()
     legacy = hashlib.sha1(raw.encode()).hexdigest()   # Hash der alten Version (Folge 1–3)
     hash_file = os.path.join(out, ".hash")
     if os.path.exists(hash_file) and open(hash_file).read().strip() in (digest, legacy):
@@ -119,7 +201,7 @@ def process(txt):
     for i, line in enumerate(lines, 1):
         tag, text = line.split("|", 1)
         text = text.strip()
-        h = hashlib.sha1(f"{eng}|{text}".encode()).hexdigest()
+        h = hashlib.sha1(f"{eng}|qa1|{text}".encode()).hexdigest()
         fname = f"{i:02d}.wav"
         path = os.path.join(out, fname)
         prev = old.get(h)
@@ -127,12 +209,15 @@ def process(txt):
             shutil.copyfile(os.path.join(alt, prev["datei"]), path)
             dur = prev["dauer"]
             print(f"{name} {i:02d}: unverändert")
+            extra = {k: prev[k] for k in ("pruefung", "woerter") if k in prev}
         else:
-            synth(text, path)
-            dur = trim_silence(path) if eng == "chatterbox" else wav_len(path)
-            print(f"{name} {i:02d} ({dur:.1f}s): {text[:70]}")
+            print(f"{name} {i:02d}: {text[:70]}")
+            extra = synth(text, path) or {}
+            dur = wav_len(path)
+            print(f"   -> {dur:.1f}s")
         keep.add(fname)
-        clips.append({"szene": tag.strip(), "datei": fname, "dauer": round(dur, 3), "text": text, "hash": h})
+        clips.append({"szene": tag.strip(), "datei": fname, "dauer": round(dur, 3), "text": text, "hash": h,
+                      **extra})
         if not neu:
             times.append(f"{seconds(tag):.2f}|{fname}")
     shutil.rmtree(alt, ignore_errors=True)
@@ -144,8 +229,12 @@ def process(txt):
 
 
 def wav_len(path):
-    with wave.open(path) as w:
-        return w.getnframes() / w.getframerate()
+    try:
+        import soundfile as sf
+        return sf.info(path).duration
+    except Exception:
+        with wave.open(path) as w:
+            return w.getnframes() / w.getframerate()
 
 
 if __name__ == "__main__":
