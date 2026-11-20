@@ -8,3 +8,39 @@ zeit,liga,spiel,anstoss,entscheidung,grund
 2026-11-19 10:58,Bundesliga,FC Schalke 04 – VfB Stuttgart,2026-11-21 18:30,kein Tipp,kein Value (bester Tipp FC Schalke 04 nur -0.5 %)
 2026-11-20 10:22,Bundesliga,Augsburg – FSV Mainz 05,2026-11-22 15:30,kein Tipp,kein Value (bester Tipp Unentschieden nur -0.7 %)
 2026-11-20 10:22,Bundesliga,Werder Bremen – Hamburger SV,2026-11-22 17:30,kein Tipp,kein Value (bester Tipp Unentschieden nur +0.6 %)
+2026-11-20 10:23,Premier League,Manchester City – Fulham,2026-11-21 13:30,kein Tipp,"Value bei Fulham, aber Quote 8.00 zu riskant"
+2026-11-20 10:23,Premier League,Aston Villa – Sunderland,2026-11-21 16:00,kein Tipp,kein Value (bester Tipp Unentschieden nur +1.2 %)
+2026-11-20 10:23,Premier League,Bournemouth – Nottingham Forest,2026-11-21 16:00,kein Tipp,kein Value (bester Tipp Unentschieden nur -0.6 %)
+2026-11-20 10:23,Premier League,Chelsea – Leeds United,2026-11-21 16:00,kein Tipp,kein Value (bester Tipp Leeds United nur -0.2 %)
+2026-11-20 10:23,Premier League,Coventry City – Crystal Palace,2026-11-21 16:00,kein Tipp,kein Value (bester Tipp Crystal Palace nur +1.1 %)
+2026-11-20 10:23,Premier League,Tottenham Hotspur – Ipswich Town,2026-11-21 16:00,kein Tipp,"Value bei Ipswich Town, aber Quote 6.10 zu riskant"
+2026-11-20 10:23,Premier League,Newcastle United – Arsenal,2026-11-21 18:30,kein Tipp,"Value bei Newcastle United, aber Quote 6.10 zu riskant"
+2026-11-20 10:23,Premier League,Hull City – Brighton and Hove Albion,2026-11-22 15:00,kein Tipp,"Value bei Hull City, aber Quote 6.75 zu riskant"
+2026-11-20 10:23,Premier League,Liverpool – Manchester United,2026-11-22 17:30,TIPP: Manchester United,"Quote 4.70, faire Chance 23 %, Value +6.2 %"
+2026-11-20 10:23,La Liga,Athletic Bilbao – Espanyol,2026-11-20 21:00,kein Tipp,"Value bei Espanyol, aber Quote 7.50 zu riskant"
+2026-11-20 10:23,La Liga,Alavés – Deportivo La Coruña,2026-11-21 14:00,kein Tipp,kein Value (bester Tipp Deportivo La Coruña nur +0.0 %)
+2026-11-20 10:23,La Liga,Rayo Vallecano – Valencia,2026-11-21 16:15,kein Tipp,kein Value (bester Tipp Valencia nur -0.9 %)
+2026-11-20 10:23,La Liga,Sevilla – Real Betis,2026-11-21 18:30,kein Tipp,kein Value (bester Tipp Unentschieden nur +1.8 %)
+2026-11-20 10:23,La Liga,Real Madrid – Celta Vigo,2026-11-21 21:00,kein Tipp,"Value bei Celta Vigo, aber Quote 18.00 zu riskant"
+2026-11-20 10:23,La Liga,Barcelona – Villarreal,2026-11-22 14:00,kein Tipp,"Value bei Villarreal, aber Quote 13.40 zu riskant"
+2026-11-20 10:23,La Liga,Real Racing Club de Santander – Real Sociedad,2026-11-22 16:15,kein Tipp,kein Value (bester Tipp Real Racing Club de Santander nur -1.3 %)
+2026-11-20 10:23,La Liga,CA Osasuna – Málaga,2026-11-22 18:30,kein Tipp,kein Value (bester Tipp Málaga nur +1.3 %)
+2026-11-20 10:23,La Liga,Getafe – Atlético Madrid,2026-11-22 21:00,kein Tipp,kein Value (bester Tipp Unentschieden nur -0.7 %)
+2026-11-20 10:23,Serie A,Como – Cagliari,2026-11-21 15:00,kein Tipp,kein Value (bester Tipp Unentschieden nur +1.0 %)
+2026-11-20 10:23,Serie A,Lazio – Lecce,2026-11-21 15:00,kein Tipp,kein Value (bester Tipp Unentschieden nur -0.7 %)
+2026-11-20 10:23,Serie A,Parma – AS Roma,2026-11-21 18:00,kein Tipp,"Value bei Parma, aber Quote 11.00 zu riskant"
+2026-11-20 10:23,Serie A,Napoli – Torino,2026-11-21 20:45,kein Tipp,kein Value (bester Tipp Unentschieden nur -1.0 %)
+2026-11-20 10:23,Serie A,Juventus – Venezia,2026-11-22 12:30,kein Tipp,"Value bei Venezia, aber Quote 9.00 zu riskant"
+2026-11-20 10:23,Serie A,Bologna – Udinese,2026-11-22 15:00,kein Tipp,kein Value (bester Tipp Udinese nur -0.9 %)
+2026-11-20 10:23,Serie A,Sassuolo – Genoa,2026-11-22 15:00,kein Tipp,kein Value (bester Tipp Genoa nur -1.6 %)
+2026-11-20 10:23,Serie A,AC Milan – Frosinone,2026-11-22 18:00,kein Tipp,kein Value (bester Tipp Frosinone nur +0.9 %)
+2026-11-20 10:23,Serie A,Atalanta BC – Inter Milan,2026-11-22 20:45,kein Tipp,kein Value (bester Tipp Atalanta BC nur -0.8 %)
+2026-11-20 10:23,Ligue 1,Troyes – Le Havre,2026-11-20 20:45,kein Tipp,kein Value (bester Tipp Unentschieden nur +0.9 %)
+2026-11-20 10:23,Ligue 1,Nice – Paris Saint Germain,2026-11-21 17:15,kein Tipp,"Value bei Nice, aber Quote 6.75 zu riskant"
+2026-11-20 10:23,Ligue 1,AS Monaco – Auxerre,2026-11-21 20:45,kein Tipp,kein Value (bester Tipp Unentschieden nur -0.3 %)
+2026-11-20 10:23,Ligue 1,Strasbourg – Brest,2026-11-21 20:45,kein Tipp,kein Value (bester Tipp Brest nur -1.3 %)
+2026-11-20 10:23,Ligue 1,Lille – Lyon,2026-11-21 20:45,kein Tipp,kein Value (bester Tipp Lyon nur -0.4 %)
+2026-11-20 10:23,Ligue 1,RC Lens – Toulouse,2026-11-21 20:45,kein Tipp,kein Value (bester Tipp Toulouse nur +0.6 %)
+2026-11-20 10:23,Ligue 1,Paris FC – Angers,2026-11-22 15:00,kein Tipp,"Value bei Angers, aber Quote 9.67 zu riskant"
+2026-11-20 10:23,Ligue 1,Lorient – Rennes,2026-11-22 17:15,kein Tipp,kein Value (bester Tipp Lorient nur +0.3 %)
+2026-11-20 10:23,Ligue 1,Marseille – Le Mans FC,2026-11-22 20:45,kein Tipp,"Value bei Le Mans FC, aber Quote 6.75 zu riskant"
