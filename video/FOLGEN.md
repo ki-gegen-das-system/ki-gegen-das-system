@@ -7,5 +7,6 @@
 | 3 | 19.11. | 15:24 Konto +41,81 $, aber Bert schläft. 16:35 Verkauf 6 Tesla à 379,52 $ (gekauft 384,71 $) → −31,14 $ (−1,35 %). Danach kein Kaufsignal. Problem: wacht nur ~1×/Std. **Update #2**: Projekt öffentlich → alles live nachprüfbar, Bert prüft ab 20.11. alle 5 Min. Kurt: 6 Samstagsspiele geprüft, 0 Tipps (5× Value unter 3 %, Paderborn Quote 10,50 zu riskant). Neue Stimme C. | Bert 9.968,85 $ (−0,31 %) · Kurt 10.000 € | Bert zum ersten Mal den ganzen Tag wach – holt er die 31 $ zurück? |
 
 ## Für die nächsten Folgen merken
+- Ab Folge 4: kein „FOLGEN →"-Button und kein „Folgen!" im Sprechertext mehr.
 - Folge 4 (Daten 20.11.): erster Tag mit Dauerlauf (alle 5 Min.) – zeigen, ob es was ändert.
 - Kurt ist evtl. zu wählerisch (bisher 7 Spiele geprüft, 0 Tipps) → Thema für die Wochenanalyse am Samstag.

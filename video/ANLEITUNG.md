@@ -22,7 +22,8 @@ programmieren, nutzt nur iPhone/iPad, zeigt sich nicht im Video). Sprache: Deuts
 4. Keine Werbung für Glücksspiel: keine Wettanbieter, keine Links, kein „wett mit", Wort „Tipp" statt „Wette".
 5. „Mit KI gebaut" sagen, nicht „KI-Bots" (es sind Regel-Bots).
 6. Repo ist öffentlich: „Alle Trades live nachprüfbar" ist ein Beweis-Argument.
-7. Länge 50–70 Sek., Hook in den ersten 2 Sek., Cliffhanger + „FOLGEN →" am Ende.
+7. Länge 50–70 Sek., Hook in den ersten 2 Sek., Cliffhanger-Frage am Ende.
+8. **Kein „Folgen"-Aufruf** – weder als Button/Text im Bild noch als „Folgen!" im Sprechertext (Mikas Wunsch).
 
 ## Technik
 - Bausteine: `video/folge1.py` (Hintergrund, Text-Pop, Roboter, Render), Beispiel-Folge: `video/folge2.py`.

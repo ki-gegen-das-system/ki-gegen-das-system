@@ -231,15 +231,6 @@ def s9(t):  # Cliffhanger + CTA
     pop(b, "Bert zum ersten Mal", 76, WHITE, 960, t, 0.8, BOLD)
     pop(b, "den ganzen Tag wach.", 76, BLUE, 1055, t, 1.0)
     pop(b, "Holt er die 31 $ zurück?", 66, YELLOW, 1200, t, 2.4)
-    q = prog(t, 3.6, 0.4)
-    if q > 0:
-        pulse = 1 + 0.04 * math.sin((t - 3.6) * 6)
-        btn = text_img("FOLGEN  →", BLACK, 80, (10, 14, 26))
-        w, h = btn.width + 120, btn.height + 70
-        bx = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-        ImageDraw.Draw(bx).rounded_rectangle((0, 0, w - 1, h - 1), h // 2, fill=YELLOW + (255,))
-        bx.alpha_composite(btn, ((w - btn.width) // 2, (h - btn.height) // 2))
-        place(b, bx, W / 2, 1420, alpha=ease_out(q), scale=pulse * (0.6 + 0.4 * ease_back(q)))
     return b
 
 
