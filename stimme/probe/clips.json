@@ -1,0 +1,117 @@
+{
+ "stimme": "chatterbox",
+ "clips": [
+  {
+   "szene": "s1",
+   "datei": "01.wav",
+   "dauer": 5.8,
+   "text": "Tag zwei. Bert hätte heute Gewinn machen können.",
+   "hash": "ffe06a75964a27b0decc593b1c3d88762e556673"
+  },
+  {
+   "szene": "s1",
+   "datei": "02.wav",
+   "dauer": 4.0,
+   "text": "Stattdessen: minus einunddreißig Dollar.",
+   "hash": "a30e0e12cdb03999f4535d313f5668f7e15216a9"
+  },
+  {
+   "szene": "s2",
+   "datei": "03.wav",
+   "dauer": 3.774,
+   "text": "Das ist der echte Tesla-Kurs von gestern, in Fünfzehn-Minuten-Kerzen.",
+   "hash": "8327195a06d29913ec54c4894bb712b49c3efb1d"
+  },
+  {
+   "szene": "s2",
+   "datei": "04.wav",
+   "dauer": 7.003,
+   "text": "Zum Börsenstart stand Tesla bei über dreihundertneunzig Dollar. Bert hatte für dreihundertvierundachtzig gekauft. Er war also im Plus.",
+   "hash": "787b941f56117feaabb3e84dc2edad0d03c10a3d"
+  },
+  {
+   "szene": "s2",
+   "datei": "05.wav",
+   "dauer": 6.602,
+   "text": "Aber Bert wachte erst um sechzehn Uhr fünfunddreißig auf. Da war Tesla schon gefallen. Verkauf bei dreihundertneunundsiebzig.",
+   "hash": "ff08d0704f8c63b0300fc02083f407ef0ecb2ddc"
+  },
+  {
+   "szene": "s3",
+   "datei": "06.wav",
+   "dauer": 5.034,
+   "text": "Berts Logbuch zeigt den Grund: Daytrading heißt, nichts über Nacht halten. Also musste Tesla raus.",
+   "hash": "6011d8bf85a755e454a842bf820b3bced8f77a52"
+  },
+  {
+   "szene": "s4",
+   "datei": "07.wav",
+   "dauer": 5.994,
+   "text": "Berts Konto steht jetzt bei neuntausendneunhundertachtundsechzig Dollar. Minus null Komma drei Prozent seit dem Start.",
+   "hash": "e501e2d462ce1dffb5749e2f97caa32481171ab6"
+  },
+  {
+   "szene": "s5",
+   "datei": "08.wav",
+   "dauer": 4.515,
+   "text": "Update Nummer zwei: Bert prüft jetzt alle fünf Minuten statt einmal pro Stunde.",
+   "hash": "b782b77097acc06d0946a047bc7988e1a12b2e60"
+  },
+  {
+   "szene": "s5",
+   "datei": "09.wav",
+   "dauer": 7.184,
+   "text": "Und alle Trades sind öffentlich. Jeder kann sie nachprüfen.",
+   "hash": "e44613e19f696fca9b472b0e76e6638c75c60af3"
+  },
+  {
+   "szene": "s6",
+   "datei": "10.wav",
+   "dauer": 11.268,
+   "text": "Und Kurt? Er prüft jetzt fünf Ligen.",
+   "hash": "694c30df36557ce4098b1ac624700176db8b47c2"
+  },
+  {
+   "szene": "s6",
+   "datei": "11.wav",
+   "dauer": 7.6,
+   "text": "Sechsunddreißig Spiele, ein Tipp: Manchester United bei Liverpool. Faire Chance dreiundzwanzig Prozent, Quote vier Komma sieben. Das sind über sechs Prozent Value.",
+   "hash": "a03cc344cc40a0e57c3b1d4ab290206ab4647863"
+  },
+  {
+   "szene": "s7",
+   "datei": "12.wav",
+   "dauer": 5.449,
+   "text": "Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist fünfzig Prozent, also wäre zwei Komma null die faire Quote.",
+   "hash": "0beef3a53f3234a58d458a7b4629eed6dff00052"
+  },
+  {
+   "szene": "s7",
+   "datei": "13.wav",
+   "dauer": 4.834,
+   "text": "Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.",
+   "hash": "e870872be3ffa44dba8dfc448c3a3ff5972e2f25"
+  },
+  {
+   "szene": "s7",
+   "datei": "14.wav",
+   "dauer": 2.128,
+   "text": "Das sind zwei Prozent Value. Ab da tippt Kurt.",
+   "hash": "1eb445b060fb19988ad98d532727e4a1c7fa3109"
+  },
+  {
+   "szene": "s8",
+   "datei": "15.wav",
+   "dauer": 2.4,
+   "text": "Zwischenstand: Kurt führt. Noch.",
+   "hash": "aa911d6aa957a2846605d551d4c2250bf75c96e3"
+  },
+  {
+   "szene": "s9",
+   "datei": "16.wav",
+   "dauer": 12.075,
+   "text": "Sonntag, Liverpool gegen Manchester United. Gewinnt Kurt seinen ersten Tipp?",
+   "hash": "7e56c7ce85f9d345eae34dca217ee0877f6af4d0"
+  }
+ ]
+}
