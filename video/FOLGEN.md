@@ -13,7 +13,7 @@
   wenn er bis Freitag fürs Wochenende nichts findet. Mit Mika abgesprochen – in der Wochenanalyse am 21.11.
   nicht erneut vorschlagen, erst nach einer Woche Daten bewerten.
 - **Neues Video-Format** (ab Folge 4, mit Mika abgesprochen): echte Charts, Untertitel, Terminal-Look,
-  Transparenz-Zeile, neue Stimme X1 (Chatterbox). Kein Alpaca-Screenshot.
+  Transparenz-Zeile, neue Stimme N1 (Chatterbox mit echter deutscher Stimme von Thorsten Müller als Vorlage, CC0 – von Mika am 20.11. ausgewählt; X1 klang zu englisch). Kein Alpaca-Screenshot.
 
 ## Für die nächsten Folgen merken
 - Ab Folge 4: kein „FOLGEN →"-Button und kein „Folgen!" im Sprechertext mehr.
