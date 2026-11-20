@@ -4,230 +4,10 @@
   {
    "szene": "s1",
    "datei": "01.wav",
-   "dauer": 4.231,
-   "text": "Minus zwölf Prozent. Nvidia stürzt heute richtig ab.",
-   "hash": "72cafb4e1284334f977e5bd29b487917113505b9",
+   "dauer": 3.579,
+   "text": "Minus zwölf Prozent. Nvidia stürzt richtig ab.",
+   "hash": "47a473a1b1e6de03534cacd91da8d07e37e50216",
    "pruefung": 0.99,
-   "woerter": [
-    [
-     "Minus",
-     0.0,
-     0.44
-    ],
-    [
-     "12%.",
-     0.44,
-     1.58
-    ],
-    [
-     "Nividia",
-     1.58,
-     2.62
-    ],
-    [
-     "stürzt",
-     2.62,
-     3.16
-    ],
-    [
-     "heute",
-     3.16,
-     3.4
-    ],
-    [
-     "richtig",
-     3.4,
-     3.78
-    ],
-    [
-     "ab.",
-     3.78,
-     4.14
-    ]
-   ]
-  },
-  {
-   "szene": "s1",
-   "datei": "02.wav",
-   "dauer": 2.549,
-   "text": "Und Bert? Minus sechs Cent. Mehr nicht.",
-   "hash": "aa9ac244e0bd5d80a02ba4927bc0e547eae17087",
-   "pruefung": 0.87,
-   "woerter": [
-    [
-     "und",
-     0.0,
-     0.18
-    ],
-    [
-     "Bärt",
-     0.18,
-     0.68
-    ],
-    [
-     "–",
-     0.68,
-     1.0
-    ],
-    [
-     "6",
-     1.0,
-     1.52
-    ],
-    [
-     "Cent",
-     1.52,
-     1.76
-    ],
-    [
-     "mehr",
-     1.76,
-     2.12
-    ],
-    [
-     "nicht.",
-     2.12,
-     2.34
-    ]
-   ]
-  },
-  {
-   "szene": "s2",
-   "datei": "03.wav",
-   "dauer": 4.258,
-   "text": "Neu ab heute: neuer Look, neue Stimme und echte Charts.",
-   "hash": "dd16dae78dc561cc55b4fe8ba3c00834f05e1bc0",
-   "pruefung": 0.94,
-   "woerter": [
-    [
-     "Neu",
-     0.0,
-     0.3
-    ],
-    [
-     "ab",
-     0.3,
-     0.5
-    ],
-    [
-     "heute,",
-     0.5,
-     0.86
-    ],
-    [
-     "neue",
-     1.36,
-     1.56
-    ],
-    [
-     "Look,",
-     1.56,
-     1.92
-    ],
-    [
-     "neue",
-     2.34,
-     2.5
-    ],
-    [
-     "Stimme",
-     2.5,
-     2.98
-    ],
-    [
-     "und",
-     2.98,
-     3.34
-    ],
-    [
-     "echte",
-     3.34,
-     3.64
-    ],
-    [
-     "Schatz.",
-     3.64,
-     4.06
-    ]
-   ]
-  },
-  {
-   "szene": "s2",
-   "datei": "04.wav",
-   "dauer": 4.249,
-   "text": "Das ist der ganze US-Markt von heute, in Fünfzehn-Minuten-Kerzen.",
-   "hash": "b7c648153b12d759079bb9055abe6e1d50cf94b4",
-   "pruefung": 1.0,
-   "woerter": [
-    [
-     "Das",
-     0.0,
-     0.18
-    ],
-    [
-     "ist",
-     0.18,
-     0.36
-    ],
-    [
-     "der",
-     0.36,
-     0.56
-    ],
-    [
-     "ganze",
-     0.56,
-     0.88
-    ],
-    [
-     "US",
-     0.88,
-     1.14
-    ],
-    [
-     "-Markt",
-     1.14,
-     1.66
-    ],
-    [
-     "von",
-     1.66,
-     1.74
-    ],
-    [
-     "heute",
-     1.74,
-     2.14
-    ],
-    [
-     "in",
-     2.14,
-     2.62
-    ],
-    [
-     "15",
-     2.62,
-     3.02
-    ],
-    [
-     "Minuten",
-     3.02,
-     3.58
-    ],
-    [
-     "Kerzen.",
-     3.58,
-     4.1
-    ]
-   ]
-  },
-  {
-   "szene": "s2",
-   "datei": "05.wav",
-   "dauer": 5.36,
-   "text": "Minus drei Prozent. Die blaue Linie lag den ganzen Tag unter der gelben.",
-   "hash": "0505a832c3d2acf8cd4840722521bb7a0723a7df",
-   "pruefung": 1.0,
    "woerter": [
     [
      "minus",
@@ -235,65 +15,195 @@
      0.28
     ],
     [
-     "3%.",
+     "12%.",
      0.28,
-     1.3
+     1.58
     ],
     [
-     "Die",
-     1.3,
-     2.06
+     "Nividia",
+     1.58,
+     2.54
     ],
     [
-     "blaue",
-     2.06,
-     2.48
+     "stürzt",
+     2.54,
+     2.96
     ],
     [
-     "Linie",
-     2.48,
-     3.02
+     "richtig",
+     2.96,
+     3.22
     ],
     [
-     "lag",
-     3.02,
-     3.28
+     "ab.",
+     3.22,
+     3.5
+    ]
+   ]
+  },
+  {
+   "szene": "s1",
+   "datei": "02.wav",
+   "dauer": 1.79,
+   "text": "Und Bert? Minus sechs Cent.",
+   "hash": "51212dfbb9a01aa781f670ef682fab17ab5ccc4f",
+   "pruefung": 0.84,
+   "woerter": [
+    [
+     "Art",
+     0.0,
+     0.28
     ],
     [
-     "den",
-     3.28,
-     3.48
+     "minus",
+     0.28,
+     0.64
     ],
     [
-     "ganzen",
-     3.48,
-     3.74
+     "6",
+     0.64,
+     1.24
     ],
     [
-     "Tag",
-     3.74,
-     4.16
-    ],
-    [
-     "unter",
-     4.16,
-     4.56
-    ],
-    [
-     "der",
-     4.56,
-     4.76
-    ],
-    [
-     "gelben.",
-     4.76,
-     5.14
+     "Cent.",
+     1.24,
+     1.56
     ]
    ]
   },
   {
    "szene": "s2",
-   "datei": "06.wav",
+   "datei": "03.wav",
+   "dauer": 3.6,
+   "text": "Neu ab heute: echte Charts und eine neue Stimme.",
+   "hash": "81777f5e9a02c55602b3b9f0a1fe887ce357b7bf",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "Neu",
+     0.0,
+     0.38
+    ],
+    [
+     "ab",
+     0.38,
+     0.5
+    ],
+    [
+     "heute",
+     0.5,
+     0.88
+    ],
+    [
+     "–",
+     0.88,
+     1.22
+    ],
+    [
+     "echte",
+     1.22,
+     1.48
+    ],
+    [
+     "Schatz",
+     1.48,
+     2.02
+    ],
+    [
+     "und",
+     2.02,
+     2.36
+    ],
+    [
+     "eine",
+     2.36,
+     2.78
+    ],
+    [
+     "neue",
+     2.78,
+     3.0
+    ],
+    [
+     "Stimme.",
+     3.0,
+     3.38
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "04.wav",
+   "dauer": 5.378,
+   "text": "Der US-Markt: minus drei Prozent. Blau lag den ganzen Tag unter Gelb.",
+   "hash": "0b8af3f4b6395ad15ea7edd17bc1c34f71ce2bae",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Der",
+     0.0,
+     0.16
+    ],
+    [
+     "US",
+     0.16,
+     0.44
+    ],
+    [
+     "-Markt",
+     0.44,
+     1.14
+    ],
+    [
+     "minus",
+     1.14,
+     1.44
+    ],
+    [
+     "3%,",
+     1.44,
+     2.34
+    ],
+    [
+     "blau",
+     2.34,
+     3.24
+    ],
+    [
+     "lag",
+     3.24,
+     3.78
+    ],
+    [
+     "den",
+     3.78,
+     3.98
+    ],
+    [
+     "ganzen",
+     3.98,
+     4.24
+    ],
+    [
+     "Tag",
+     4.24,
+     4.62
+    ],
+    [
+     "unter",
+     4.62,
+     4.94
+    ],
+    [
+     "gelb.",
+     4.94,
+     5.34
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "05.wav",
    "dauer": 4.936,
    "text": "Für Bert heißt das: nicht kaufen. Und zwar bei allen acht Aktien.",
    "hash": "4a8fb66f1bfbb2807cb9a6928dfa5a0c165153c6",
@@ -363,239 +273,139 @@
   },
   {
    "szene": "s3",
-   "datei": "07.wav",
-   "dauer": 5.532,
-   "text": "Sein Logbuch: keine einzige Aktion. Nichts tun war heute genau richtig.",
-   "hash": "aa3b439186700f46a0a441bf5e005bfe153576f8",
-   "pruefung": 0.94,
+   "datei": "06.wav",
+   "dauer": 2.701,
+   "text": "Sein Logbuch: keine einzige Aktion.",
+   "hash": "8f6981ce09a156a262d15de1e8dd5a856d6a83b4",
+   "pruefung": 0.97,
    "woerter": [
     [
      "Sein",
      0.0,
-     0.28
+     0.3
     ],
     [
-     "Juckbuch",
-     0.28,
-     0.84
+     "Lobbuch",
+     0.3,
+     0.9
     ],
     [
      "keine",
-     0.84,
-     1.42
+     0.9,
+     1.48
     ],
     [
      "einzige",
-     1.42,
-     1.96
+     1.48,
+     1.98
     ],
     [
-     "Aktion,",
-     1.96,
-     2.52
-    ],
-    [
-     "nichts",
-     3.06,
-     3.38
-    ],
-    [
-     "tun",
-     3.38,
-     3.82
-    ],
-    [
-     "war",
-     3.82,
-     4.26
-    ],
-    [
-     "heute",
-     4.26,
-     4.6
-    ],
-    [
-     "genau",
-     4.6,
-     4.9
-    ],
-    [
-     "richtig.",
-     4.9,
-     5.32
+     "Aktion.",
+     1.98,
+     2.48
     ]
    ]
   },
   {
    "szene": "s4",
-   "datei": "08.wav",
-   "dauer": 5.59,
-   "text": "Aber ehrlich: Die erste Stunde hat Bert verpasst. GitHub hat ihn zu spät geweckt.",
-   "hash": "c40adc66b8b23e5ebf918bff131c66d09f08128c",
-   "pruefung": 1.0,
+   "datei": "07.wav",
+   "dauer": 5.871,
+   "text": "Aber ehrlich: Die erste Stunde hat Bert verpasst. Und die letzte halbe Stunde fehlt im Log.",
+   "hash": "065015211a5f98d737c05890776e8e779eeb5b38",
+   "pruefung": 0.99,
    "woerter": [
     [
      "Aber",
      0.0,
-     0.26
+     0.22
     ],
     [
      "ehrlich,",
-     0.26,
-     0.74
+     0.22,
+     0.68
     ],
     [
      "die",
-     1.2,
-     1.26
+     1.12,
+     1.18
     ],
     [
      "erste",
-     1.26,
-     1.56
+     1.18,
+     1.54
     ],
     [
      "Stunde",
-     1.56,
-     1.96
+     1.54,
+     1.98
     ],
     [
      "hat",
-     1.96,
-     2.26
+     1.98,
+     2.24
     ],
     [
-     "Bert",
-     2.26,
-     2.48
+     "Wert",
+     2.24,
+     2.46
     ],
     [
-     "verpasst,",
-     2.48,
-     3.18
+     "verpasst",
+     2.46,
+     3.14
     ],
-    [
-     "Github",
-     3.46,
-     4.08
-    ],
-    [
-     "hat",
-     4.08,
-     4.3
-    ],
-    [
-     "ihn",
-     4.3,
-     4.56
-    ],
-    [
-     "zu",
-     4.56,
-     4.76
-    ],
-    [
-     "spät",
-     4.76,
-     5.12
-    ],
-    [
-     "geweckt.",
-     5.12,
-     5.48
-    ]
-   ]
-  },
-  {
-   "szene": "s4",
-   "datei": "09.wav",
-   "dauer": 4.92,
-   "text": "Und die letzte halbe Stunde wurde nicht gespeichert. Gekauft hat er da aber nichts.",
-   "hash": "091297632e8a0a9ed52ca60364c6fcc87a671260",
-   "pruefung": 1.0,
-   "woerter": [
     [
      "und",
-     0.0,
-     0.12
+     3.14,
+     3.62
     ],
     [
      "die",
-     0.12,
-     0.3
+     3.62,
+     3.82
     ],
     [
      "letzte",
-     0.3,
-     0.54
-    ],
-    [
-     "halbe",
-     0.54,
-     1.0
-    ],
-    [
-     "Stunde",
-     1.0,
-     1.3
-    ],
-    [
-     "wurde",
-     1.3,
-     1.76
-    ],
-    [
-     "nicht",
-     1.76,
-     2.0
-    ],
-    [
-     "gespeichert.",
-     2.0,
-     2.7
-    ],
-    [
-     "Gekauft",
-     3.12,
-     3.66
-    ],
-    [
-     "hat",
-     3.66,
-     3.92
-    ],
-    [
-     "er",
-     3.92,
+     3.82,
      4.06
     ],
     [
-     "da",
+     "halbe",
      4.06,
-     4.22
+     4.54
     ],
     [
-     "aber",
-     4.22,
-     4.42
+     "Stunde",
+     4.54,
+     4.78
     ],
     [
-     "nichts.",
-     4.42,
-     4.7
+     "fehlt",
+     4.78,
+     5.22
+    ],
+    [
+     "im",
+     5.22,
+     5.48
+    ],
+    [
+     "Log.",
+     5.48,
+     5.7
     ]
    ]
   },
   {
    "szene": "s5",
-   "datei": "10.wav",
-   "dauer": 5.221,
-   "text": "Berts Konto heute: minus sechs Cent. Und die waren schon vor Börsenstart weg.",
-   "hash": "d5fb7688fc02c3ccd48559ab78abc530b987ac7e",
-   "pruefung": 0.94,
+   "datei": "08.wav",
+   "dauer": 2.62,
+   "text": "Berts Konto heute: minus sechs Cent.",
+   "hash": "5048a3f9abcc95e0a82336a32589b7e7fa8ee6a3",
+   "pruefung": 0.97,
    "woerter": [
     [
-     "Wärtskonto",
+     "Wertskonto",
      0.0,
      0.72
     ],
@@ -607,477 +417,322 @@
     [
      "minus",
      1.04,
-     1.66
+     1.62
     ],
     [
      "6",
-     1.66,
-     2.12
-    ],
-    [
-     "Cent",
-     2.12,
-     2.36
-    ],
-    [
-     "und",
-     2.36,
-     3.06
-    ],
-    [
-     "die",
-     3.06,
-     3.3
-    ],
-    [
-     "waren",
-     3.3,
-     3.6
-    ],
-    [
-     "schon",
-     3.6,
-     3.88
-    ],
-    [
-     "vor",
-     3.88,
-     4.18
-    ],
-    [
-     "Börsenschart",
-     4.18,
-     4.86
-    ],
-    [
-     "weg.",
-     4.86,
-     5.08
-    ]
-   ]
-  },
-  {
-   "szene": "s6",
-   "datei": "11.wav",
-   "dauer": 5.4,
-   "text": "Und Kurt? Sechsunddreißig Spiele, ein Tipp: Manchester United gewinnt in Liverpool.",
-   "hash": "460ea0b9c243ba30cb8be5955b7e573b5dfceac2",
-   "pruefung": 0.97,
-   "woerter": [
-    [
-     "und",
-     0.0,
-     0.18
-    ],
-    [
-     "Kurt,",
-     0.18,
-     0.52
-    ],
-    [
-     "36",
-     1.04,
-     1.76
-    ],
-    [
-     "Spiele,",
-     1.76,
-     2.48
-    ],
-    [
-     "ein",
-     2.7,
-     2.82
-    ],
-    [
-     "Tipp,",
-     2.82,
-     3.04
-    ],
-    [
-     "manches",
-     3.4,
-     3.72
-    ],
-    [
-     "der",
-     3.72,
-     3.92
-    ],
-    [
-     "United",
-     3.92,
-     4.24
-    ],
-    [
-     "gewinnt",
-     4.24,
-     4.74
-    ],
-    [
-     "in",
-     4.74,
-     4.88
-    ],
-    [
-     "Liverpool",
-     4.88,
-     5.18
-    ]
-   ]
-  },
-  {
-   "szene": "s6",
-   "datei": "12.wav",
-   "dauer": 6.861,
-   "text": "Quote vier Komma sieben, faire Chance dreiundzwanzig Prozent. Das sind über sechs Prozent Value.",
-   "hash": "8266dc5302aceb3a07943a9d8cbf79c34ae6e433",
-   "pruefung": 0.92,
-   "woerter": [
-    [
-     "Bote",
-     0.0,
-     0.3
-    ],
-    [
-     "4",
-     0.3,
-     0.66
-    ],
-    [
-     ",7,",
-     0.66,
-     1.42
-    ],
-    [
-     "faire",
-     1.82,
+     1.62,
      2.16
     ],
     [
-     "Chance",
+     "Cent.",
      2.16,
-     2.7
-    ],
-    [
-     "der",
-     2.7,
-     3.06
-    ],
-    [
-     "EINU",
-     3.06,
-     3.34
-    ],
-    [
-     "20%,",
-     3.34,
-     4.4
-    ],
-    [
-     "das",
-     4.4,
-     4.88
-    ],
-    [
-     "sind",
-     4.88,
-     5.18
-    ],
-    [
-     "über",
-     5.18,
-     5.5
-    ],
-    [
-     "6",
-     5.5,
-     5.84
-    ],
-    [
-     "%",
-     5.84,
-     6.24
-    ],
-    [
-     "Value.",
-     6.24,
-     6.64
+     2.4
     ]
    ]
   },
   {
-   "szene": "s7",
-   "datei": "13.wav",
-   "dauer": 7.667,
-   "text": "Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist fünfzig Prozent, also wäre zwei Komma null die faire Quote.",
-   "hash": "f9a4debcd4a6f440d34b0ca476ae14a57c3b85c0",
-   "pruefung": 0.95,
+   "szene": "s6",
+   "datei": "09.wav",
+   "dauer": 6.06,
+   "text": "Und Kurt hat seinen ersten Tipp: Manchester United gewinnt in Liverpool. Über sechs Prozent Value.",
+   "hash": "1714c194e81db63f84a82aa363d68e135290f2a9",
+   "pruefung": 0.93,
    "woerter": [
     [
-     "Was",
+     "Old",
      0.0,
      0.16
     ],
     [
-     "heißt",
+     "Crude",
      0.16,
-     0.46
+     0.6
     ],
     [
-     "Value?",
-     0.46,
-     0.88
+     "hat",
+     0.6,
+     0.82
     ],
     [
-     "Schnell",
-     1.28,
-     1.5
+     "seinen",
+     0.82,
+     1.12
     ],
     [
-     "dir",
-     1.5,
-     1.68
+     "ersten",
+     1.12,
+     1.52
     ],
     [
-     "einen",
-     1.68,
-     1.96
+     "Tipp",
+     1.52,
+     1.94
     ],
     [
-     "Münzwurf",
-     1.96,
-     2.46
+     "Manchester",
+     1.94,
+     2.56
     ],
     [
-     "vor.",
-     2.46,
-     2.76
+     "United",
+     2.56,
+     3.14
     ],
     [
-     "Die",
+     "gewinnt",
      3.14,
-     3.36
+     3.68
     ],
     [
-     "Chance",
-     3.36,
-     3.66
+     "in",
+     3.68,
+     3.84
     ],
     [
-     "ist",
-     3.66,
-     3.94
+     "Liverpool,",
+     3.84,
+     4.22
     ],
     [
-     "50%,",
-     3.94,
+     "über",
+     4.68,
      4.86
     ],
     [
-     "also",
+     "6",
      4.86,
-     5.46
+     5.18
     ],
     [
-     "wäre",
-     5.46,
-     5.66
+     "%",
+     5.18,
+     5.54
     ],
     [
-     "2",
-     5.66,
-     6.06
-    ],
-    [
-     ",0",
-     6.06,
-     6.58
-    ],
-    [
-     "die",
-     6.58,
-     6.86
-    ],
-    [
-     "faire",
-     6.86,
-     7.12
-    ],
-    [
-     "Quote.",
-     7.12,
-     7.56
+     "Value.",
+     5.54,
+     5.98
     ]
    ]
   },
   {
    "szene": "s7",
-   "datei": "14.wav",
-   "dauer": 7.14,
-   "text": "Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.",
-   "hash": "3fe9582049fd098c5a6d34fbd28025e6ae4a51e8",
-   "pruefung": 0.91,
+   "datei": "10.wav",
+   "dauer": 5.823,
+   "text": "Was heißt Value? Münzwurf: fünfzig Prozent Chance, also faire Quote zwei Komma null.",
+   "hash": "577d6a715586a8143ca052cdc5d4e5ec10eebeca",
+   "pruefung": 0.93,
    "woerter": [
     [
-     "bietet",
-     0.0,
-     0.32
-    ],
-    [
-     "dir",
-     0.32,
-     0.54
-    ],
-    [
-     "jemand",
-     0.54,
-     0.88
-    ],
-    [
-     "2",
-     0.88,
-     1.48
-    ],
-    [
-     ",04.",
-     1.48,
-     2.32
-    ],
-    [
-     "Bekommst",
-     2.9,
-     3.4
-    ],
-    [
-     "du",
-     3.4,
-     3.52
-    ],
-    [
-     "im",
-     3.52,
-     3.66
-    ],
-    [
-     "Schnitt",
-     3.66,
-     4.0
-    ],
-    [
-     "102",
-     4.0,
-     4.7
-    ],
-    [
-     "Euro",
-     4.7,
-     5.4
-    ],
-    [
-     "pro",
-     5.4,
-     5.78
-    ],
-    [
-     "100",
-     5.78,
-     6.12
-    ],
-    [
-     "Euro",
-     6.12,
-     6.54
-    ],
-    [
-     "Einsatz.",
-     6.54,
-     6.9
-    ]
-   ]
-  },
-  {
-   "szene": "s7",
-   "datei": "15.wav",
-   "dauer": 4.975,
-   "text": "Das sind zwei Prozent Value. Aber nur im Schnitt. Einzelne Tipps können verlieren.",
-   "hash": "cd7c3808183f2ade7c54b295728bafc15decaa80",
-   "pruefung": 0.96,
-   "woerter": [
-    [
-     "Das",
+     "Was",
      0.0,
      0.18
     ],
     [
-     "sind",
+     "heißt",
      0.18,
-     0.46
+     0.5
     ],
     [
-     "2",
-     0.46,
-     0.8
+     "Value?",
+     0.5,
+     0.92
+    ],
+    [
+     "Münzwurf",
+     1.32,
+     1.96
+    ],
+    [
+     "50",
+     1.96,
+     2.48
     ],
     [
      "%",
-     0.8,
-     1.28
+     2.48,
+     2.98
     ],
     [
-     "Fallü,",
-     1.28,
-     1.8
+     "Chance,",
+     2.98,
+     3.42
     ],
     [
-     "aber",
-     2.1,
-     2.3
+     "also",
+     3.86,
+     3.9
     ],
     [
-     "nur",
-     2.3,
+     "Ferse",
+     3.9,
+     4.42
+    ],
+    [
+     "Quote",
+     4.42,
+     4.86
+    ],
+    [
+     "2",
+     4.86,
+     5.18
+    ],
+    [
+     ",0",
+     5.18,
+     5.64
+    ]
+   ]
+  },
+  {
+   "szene": "s7",
+   "datei": "11.wav",
+   "dauer": 5.641,
+   "text": "Bekommst du zwei Komma null vier, sind das im Schnitt hundertzwei Euro pro hundert Euro.",
+   "hash": "db546775cb7c052214a89c14a79a78f9921a71a7",
+   "pruefung": 0.89,
+   "woerter": [
+    [
+     "Bekommst",
+     0.0,
+     0.48
+    ],
+    [
+     "du",
+     0.48,
+     0.58
+    ],
+    [
+     "2",
+     0.58,
+     1.04
+    ],
+    [
+     ",04,",
+     1.04,
+     1.84
+    ],
+    [
+     "sind",
+     2.32,
      2.52
     ],
     [
-     "im",
+     "das",
      2.52,
-     2.72
+     2.8
+    ],
+    [
+     "im",
+     2.8,
+     3.02
     ],
     [
      "Schnitt",
-     2.72,
-     3.04
+     3.02,
+     3.34
+    ],
+    [
+     "102",
+     3.34,
+     3.94
+    ],
+    [
+     "Euro",
+     3.94,
+     4.42
+    ],
+    [
+     "pro",
+     4.42,
+     4.7
+    ],
+    [
+     "100",
+     4.7,
+     5.08
+    ],
+    [
+     "Euro.",
+     5.08,
+     5.5
+    ]
+   ]
+  },
+  {
+   "szene": "s7",
+   "datei": "12.wav",
+   "dauer": 5.12,
+   "text": "Also zwei Prozent Value. Nur im Schnitt, einzelne Tipps können verlieren.",
+   "hash": "fc7d3f69e917ebd8c671f3d8e269945ac9fb2acd",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "also",
+     0.0,
+     0.28
+    ],
+    [
+     "2",
+     0.28,
+     0.7
+    ],
+    [
+     "%",
+     0.7,
+     1.2
+    ],
+    [
+     "Verlü,",
+     1.2,
+     1.7
+    ],
+    [
+     "nur",
+     2.02,
+     2.22
+    ],
+    [
+     "im",
+     2.22,
+     2.48
+    ],
+    [
+     "Schnitt",
+     2.48,
+     2.88
     ],
     [
      "einzelne",
-     3.04,
-     3.72
+     2.88,
+     3.74
     ],
     [
      "Tipps",
-     3.72,
+     3.74,
      4.14
     ],
     [
      "können",
      4.14,
-     4.28
+     4.32
     ],
     [
      "verlieren.",
-     4.28,
+     4.32,
      4.9
     ]
    ]
   },
   {
    "szene": "s8",
-   "datei": "16.wav",
-   "dauer": 6.84,
-   "text": "Update Nummer drei: Kurt prüft jetzt fünf Ligen und tippt schon ab zwei Prozent Value.",
-   "hash": "e236ab48cff099c11ae7a404ca7e608f78fdae82",
-   "pruefung": 0.96,
+   "datei": "13.wav",
+   "dauer": 5.38,
+   "text": "Update Nummer drei: Kurt prüft fünf Ligen und tippt schon ab zwei Prozent.",
+   "hash": "15e9bc74a8cbe165fa7b35a16d0234f8b196f6bd",
+   "pruefung": 1.0,
    "woerter": [
     [
      "Update",
@@ -1085,145 +740,95 @@
      0.44
     ],
     [
-     "3.",
+     "Nummer",
      0.44,
-     1.06
+     0.76
+    ],
+    [
+     "3,",
+     0.76,
+     1.22
     ],
     [
      "Kurt",
-     1.7,
-     2.08
+     1.74,
+     1.94
     ],
     [
      "prüft",
-     2.08,
-     2.64
-    ],
-    [
-     "jetzt",
-     2.64,
-     2.82
+     1.94,
+     2.48
     ],
     [
      "5",
-     2.82,
-     3.18
+     2.48,
+     2.78
     ],
     [
      "Ligen",
-     3.18,
-     3.74
+     2.78,
+     3.3
     ],
     [
      "und",
-     3.74,
-     4.3
+     3.3,
+     3.78
     ],
     [
      "tippt",
-     4.3,
-     4.8
+     3.78,
+     4.24
     ],
     [
      "schon",
-     4.8,
-     4.94
+     4.24,
+     4.36
     ],
     [
      "ab",
-     4.94,
-     5.24
+     4.36,
+     4.62
     ],
     [
-     "2",
-     5.24,
-     5.66
-    ],
-    [
-     "%",
-     5.66,
-     6.08
-    ],
-    [
-     "Value.",
-     6.08,
-     6.62
+     "2%.",
+     4.62,
+     5.16
     ]
    ]
   },
   {
    "szene": "s9",
-   "datei": "17.wav",
-   "dauer": 6.06,
-   "text": "Zwischenstand: Kurt bei null, Bert bei minus null Komma drei Prozent. Kurt führt.",
-   "hash": "967d5d23d1c50c20d06b7e56ecd1ff992b44b5ac",
-   "pruefung": 0.95,
+   "datei": "14.wav",
+   "dauer": 1.914,
+   "text": "Zwischenstand: Kurt führt knapp.",
+   "hash": "42373fcf67c31325f19792a67b11c19a3cfa1373",
+   "pruefung": 1.0,
    "woerter": [
     [
      "Zwischenstand",
      0.0,
-     0.68
+     0.66
     ],
     [
      "Kurt",
-     0.68,
-     1.38
+     0.66,
+     1.14
     ],
     [
-     "bei",
-     1.38,
-     1.66
+     "führt",
+     1.14,
+     1.46
     ],
     [
-     "0,",
-     1.66,
-     1.92
-    ],
-    [
-     "Berth",
-     2.34,
-     2.78
-    ],
-    [
-     "bei",
-     2.78,
-     2.98
-    ],
-    [
-     "minus",
-     2.98,
-     3.22
-    ],
-    [
-     "0",
-     3.22,
-     3.66
-    ],
-    [
-     ",3",
-     3.66,
-     4.54
-    ],
-    [
-     "%",
-     4.54,
-     5.0
-    ],
-    [
-     "Kurt",
-     5.0,
-     5.58
-    ],
-    [
-     "führt.",
-     5.58,
-     5.86
+     "knapp.",
+     1.46,
+     1.78
     ]
    ]
   },
   {
    "szene": "s10",
-   "datei": "18.wav",
+   "datei": "15.wav",
    "dauer": 4.06,
    "text": "Sonntag, siebzehn Uhr dreißig. Trifft Kurts erster Tipp?",
    "hash": "d161694d9202de34a2bb06f09aedcda65ffe4c9c",
