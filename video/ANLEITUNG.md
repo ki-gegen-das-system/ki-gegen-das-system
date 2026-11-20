@@ -10,6 +10,7 @@ Mika will ehrliches, kritisches Feedback.
   Regeln: Kauf, wenn die schnelle Linie (EMA 9, Ø ~2 Std.) die langsame (EMA 21, Ø ~5 Std.) nach oben kreuzt
   und RSI < 70. Verkauf bei Gegen-Kreuzung, −1,5 % (Stop-Loss), +3 % (Gewinnmitnahme), vor Börsenschluss alles.
   Prüft seit 20.11. alle 5 Minuten. US-Börse: 15:30–22:00 Uhr deutsche Zeit.
+  Seit Update #4 (ab 23.11.): wartet vor Börsenbeginn auf den Start, jeder Lauf bis zu 70 Min., sicheres Speichern.
 - **Kicker-Kurt** (grün, `kurt.py`): Tippt mit 10.000 € Spielgeld in 5 Ligen (Bundesliga, Premier League,
   La Liga, Serie A, Ligue 1). 100 € pro Tipp ab **+2 % Value**, Quoten über 6,00 sind ihm zu riskant.
   **Notfall-Tipp**: Hat er bis Freitag fürs ganze Wochenende keinen Tipp, tippt er sein bestes Spiel mit 50 €.
@@ -77,5 +78,7 @@ Mika will ehrliches, kritisches Feedback.
 
 ## Technik-Hinweise
 - GitHub nur über REST (`gh api …`), nicht GraphQL.
+- Fehlgeschlagene Läufe = `conclusion: failure`. Ein „cancelled“ Börsen-Bert-Lauf ist normal (GitHub ersetzt einen
+  wartenden Lauf durch einen neueren) und kein Fehler. Lücken prüfen: Zeiten in `bert_kontostand.csv` (alle ~5 Min.).
 - Format 1080×1920, 30 fps. Inhalt zwischen y=390 und y=1215, Untertitel bei y≈1330, darunter TikTok-Beschreibung.
 - Alte Werkzeuge (Folge 1–3): `video/folge1.py` bis `folge3.py`, `video/mix.py` – nur noch als Bausteine.
