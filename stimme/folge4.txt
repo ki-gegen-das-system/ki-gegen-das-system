@@ -1,19 +1,16 @@
 # folge4 – automatisch aus video/folgen/folge4.json erzeugt
-s1|Minus zwölf Prozent. Nvidia stürzt heute richtig ab.
-s1|Und Bert? Minus sechs Cent. Mehr nicht.
-s2|Neu ab heute: neuer Look, neue Stimme und echte Charts.
-s2|Das ist der ganze US-Markt von heute, in Fünfzehn-Minuten-Kerzen.
-s2|Minus drei Prozent. Die blaue Linie lag den ganzen Tag unter der gelben.
+s1|Minus zwölf Prozent. Nvidia stürzt richtig ab.
+s1|Und Bert? Minus sechs Cent.
+s2|Neu ab heute: echte Charts und eine neue Stimme.
+s2|Der US-Markt: minus drei Prozent. Blau lag den ganzen Tag unter Gelb.
 s2|Für Bert heißt das: nicht kaufen. Und zwar bei allen acht Aktien.
-s3|Sein Logbuch: keine einzige Aktion. Nichts tun war heute genau richtig.
-s4|Aber ehrlich: Die erste Stunde hat Bert verpasst. GitHub hat ihn zu spät geweckt.
-s4|Und die letzte halbe Stunde wurde nicht gespeichert. Gekauft hat er da aber nichts.
-s5|Berts Konto heute: minus sechs Cent. Und die waren schon vor Börsenstart weg.
-s6|Und Kurt? Sechsunddreißig Spiele, ein Tipp: Manchester United gewinnt in Liverpool.
-s6|Quote vier Komma sieben, faire Chance dreiundzwanzig Prozent. Das sind über sechs Prozent Value.
-s7|Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist fünfzig Prozent, also wäre zwei Komma null die faire Quote.
-s7|Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.
-s7|Das sind zwei Prozent Value. Aber nur im Schnitt. Einzelne Tipps können verlieren.
-s8|Update Nummer drei: Kurt prüft jetzt fünf Ligen und tippt schon ab zwei Prozent Value.
-s9|Zwischenstand: Kurt bei null, Bert bei minus null Komma drei Prozent. Kurt führt.
+s3|Sein Logbuch: keine einzige Aktion.
+s4|Aber ehrlich: Die erste Stunde hat Bert verpasst. Und die letzte halbe Stunde fehlt im Log.
+s5|Berts Konto heute: minus sechs Cent.
+s6|Und Kurt hat seinen ersten Tipp: Manchester United gewinnt in Liverpool. Über sechs Prozent Value.
+s7|Was heißt Value? Münzwurf: fünfzig Prozent Chance, also faire Quote zwei Komma null.
+s7|Bekommst du zwei Komma null vier, sind das im Schnitt hundertzwei Euro pro hundert Euro.
+s7|Also zwei Prozent Value. Nur im Schnitt, einzelne Tipps können verlieren.
+s8|Update Nummer drei: Kurt prüft fünf Ligen und tippt schon ab zwei Prozent.
+s9|Zwischenstand: Kurt führt knapp.
 s10|Sonntag, siebzehn Uhr dreißig. Trifft Kurts erster Tipp?

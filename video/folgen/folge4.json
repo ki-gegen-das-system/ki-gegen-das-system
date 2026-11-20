@@ -14,12 +14,12 @@
    ],
    "sprecher": [
     {
-     "sag": "Minus zwölf Prozent. Nvidia stürzt heute richtig ab.",
-     "zeig": "−12 %. Nvidia stürzt heute richtig ab."
+     "sag": "Minus zwölf Prozent. Nvidia stürzt richtig ab.",
+     "zeig": "−12 %. Nvidia stürzt richtig ab."
     },
     {
-     "sag": "Und Bert? Minus sechs Cent. Mehr nicht.",
-     "zeig": "Und Bert? −6 Cent. Mehr nicht."
+     "sag": "Und Bert? Minus sechs Cent.",
+     "zeig": "Und Bert? −6 Cent."
     }
    ]
   },
@@ -33,14 +33,10 @@
     }
    ],
    "sprecher": [
-    "Neu ab heute: neuer Look, neue Stimme und echte Charts.",
+    "Neu ab heute: echte Charts und eine neue Stimme.",
     {
-     "sag": "Das ist der ganze US-Markt von heute, in Fünfzehn-Minuten-Kerzen.",
-     "zeig": "Das ist der ganze US-Markt von heute, in 15-Minuten-Kerzen."
-    },
-    {
-     "sag": "Minus drei Prozent. Die blaue Linie lag den ganzen Tag unter der gelben.",
-     "zeig": "−3 %. Die blaue Linie lag den ganzen Tag unter der gelben."
+     "sag": "Der US-Markt: minus drei Prozent. Blau lag den ganzen Tag unter Gelb.",
+     "zeig": "Der US-Markt: −3 %. Blau lag den ganzen Tag unter Gelb."
     },
     {
      "sag": "Für Bert heißt das: nicht kaufen. Und zwar bei allen acht Aktien.",
@@ -51,7 +47,7 @@
   {
    "typ": "trades",
    "sprecher": [
-    "Sein Logbuch: keine einzige Aktion. Nichts tun war heute genau richtig."
+    "Sein Logbuch: keine einzige Aktion."
    ]
   },
   {
@@ -64,16 +60,15 @@
     "zwei Läufe kamen sich in die Quere"
    ],
    "sprecher": [
-    "Aber ehrlich: Die erste Stunde hat Bert verpasst. GitHub hat ihn zu spät geweckt.",
-    "Und die letzte halbe Stunde wurde nicht gespeichert. Gekauft hat er da aber nichts."
+    "Aber ehrlich: Die erste Stunde hat Bert verpasst. Und die letzte halbe Stunde fehlt im Log."
    ]
   },
   {
    "typ": "konto",
    "sprecher": [
     {
-     "sag": "Berts Konto heute: minus sechs Cent. Und die waren schon vor Börsenstart weg.",
-     "zeig": "Berts Konto heute: −6 Cent. Und die waren schon vor Börsenstart weg."
+     "sag": "Berts Konto heute: minus sechs Cent.",
+     "zeig": "Berts Konto heute: −6 Cent."
     }
    ]
   },
@@ -82,12 +77,8 @@
    "datum": "2026-11-20",
    "sprecher": [
     {
-     "sag": "Und Kurt? Sechsunddreißig Spiele, ein Tipp: Manchester United gewinnt in Liverpool.",
-     "zeig": "Und Kurt? 36 Spiele, 1 Tipp: Manchester United gewinnt in Liverpool."
-    },
-    {
-     "sag": "Quote vier Komma sieben, faire Chance dreiundzwanzig Prozent. Das sind über sechs Prozent Value.",
-     "zeig": "Quote 4,70, faire Chance 23 %. Das sind über 6 % Value."
+     "sag": "Und Kurt hat seinen ersten Tipp: Manchester United gewinnt in Liverpool. Über sechs Prozent Value.",
+     "zeig": "Und Kurt hat seinen ersten Tipp: Manchester United gewinnt in Liverpool. Über 6 % Value."
     }
    ]
   },
@@ -95,16 +86,16 @@
    "typ": "value",
    "sprecher": [
     {
-     "sag": "Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist fünfzig Prozent, also wäre zwei Komma null die faire Quote.",
-     "zeig": "Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist 50 %, also wäre 2,00 die faire Quote."
+     "sag": "Was heißt Value? Münzwurf: fünfzig Prozent Chance, also faire Quote zwei Komma null.",
+     "zeig": "Was heißt Value? Münzwurf: 50 % Chance, also faire Quote 2,00."
     },
     {
-     "sag": "Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.",
-     "zeig": "Bietet dir jemand 2,04, bekommst du im Schnitt 102 € pro 100 € Einsatz."
+     "sag": "Bekommst du zwei Komma null vier, sind das im Schnitt hundertzwei Euro pro hundert Euro.",
+     "zeig": "Bekommst du 2,04, sind das im Schnitt 102 € pro 100 €."
     },
     {
-     "sag": "Das sind zwei Prozent Value. Aber nur im Schnitt. Einzelne Tipps können verlieren.",
-     "zeig": "Das sind 2 % Value. Aber nur im Schnitt. Einzelne Tipps können verlieren."
+     "sag": "Also zwei Prozent Value. Nur im Schnitt, einzelne Tipps können verlieren.",
+     "zeig": "Also 2 % Value. Nur im Schnitt, einzelne Tipps können verlieren."
     }
    ]
   },
@@ -119,18 +110,15 @@
    ],
    "sprecher": [
     {
-     "sag": "Update Nummer drei: Kurt prüft jetzt fünf Ligen und tippt schon ab zwei Prozent Value.",
-     "zeig": "Update #3: Kurt prüft jetzt 5 Ligen und tippt schon ab 2 % Value."
+     "sag": "Update Nummer drei: Kurt prüft fünf Ligen und tippt schon ab zwei Prozent.",
+     "zeig": "Update #3: Kurt prüft 5 Ligen und tippt schon ab 2 %."
     }
    ]
   },
   {
    "typ": "stand",
    "sprecher": [
-    {
-     "sag": "Zwischenstand: Kurt bei null, Bert bei minus null Komma drei Prozent. Kurt führt.",
-     "zeig": "Zwischenstand: Kurt bei 0, Bert bei −0,3 %. Kurt führt."
-    }
+    "Zwischenstand: Kurt führt knapp."
    ]
   },
   {
