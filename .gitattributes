@@ -1,0 +1,5 @@
+# Berts Logbücher bekommen nur neue Zeilen dazu. Speichern zwei Läufe gleichzeitig,
+# behält Git einfach beide Zeilen, statt mit einem Konflikt abzubrechen (Update #4).
+data/bert_kontostand.csv merge=union
+data/bert_entscheidungen.csv merge=union
+data/bert_trades.csv merge=union

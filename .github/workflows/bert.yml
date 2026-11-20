@@ -3,8 +3,11 @@ name: Börsen-Bert
 on:
   schedule:
     # Mo–Fr zwischen 13:00 und 21:59 UTC (deckt US-Börsenzeiten ab).
-    # Jeder Lauf bleibt bis zu 58 Minuten wach und prüft alle 5 Minuten.
-    # Ein neuer Lauf wartet, bis der alte fertig ist (concurrency).
+    # GitHub startet die Läufe nur ungefähr stündlich und oft verspätet.
+    # Darum bleibt jeder Lauf bis zu 70 Minuten wach (prüft alle 5 Minuten) und wartet vor
+    # Börsenbeginn auf den Start (Update #4). Der nächste Lauf wartet, bis der alte fertig ist.
+    # Kommen zwei neue Läufe, während einer noch läuft, bricht GitHub den älteren wartenden
+    # ab („cancelled“) – das ist normal und kein Fehler.
     - cron: "7,37 13-21 * * 1-5"
   workflow_dispatch: {}   # erlaubt "Run workflow" per Hand
 
@@ -12,21 +15,24 @@ permissions:
   contents: write
 
 concurrency:
-  group: daten-speichern
+  group: boersen-bert     # eigene Gruppe: Berts Läufe kommen Kurt nicht in die Quere
   cancel-in-progress: false
 
 jobs:
   handeln:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # immer den neuesten Stand holen (nicht den vom Zeitpunkt, als der Lauf geplant wurde)
 
       - name: Bert handelt
+        timeout-minutes: 80
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python3 -u bert.py --minuten 58
+        run: python3 -u bert.py --minuten 70
 
       - name: Daten speichern
         if: always()
@@ -36,5 +42,13 @@ jobs:
           git add data
           if git diff --cached --quiet; then echo "Nichts Neues."; exit 0; fi
           git commit -m "Bert: Update $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull --rebase
-          git push
+          # Bis zu 5 Versuche. Berts Logbücher (CSV) werden zusammengeführt (.gitattributes),
+          # bei allem anderen gilt Berts neuester Stand.
+          for i in 1 2 3 4 5; do
+            if git pull --rebase -X theirs && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            echo "Speichern hat nicht geklappt – neuer Versuch in $((i * 10)) Sekunden."
+            sleep $((i * 10))
+          done
+          echo "Speichern endgültig fehlgeschlagen."
+          exit 1

@@ -428,8 +428,22 @@ def main():
     return True
 
 
+def minuten_bis_boersenstart():
+    """Minuten bis zur nächsten Börsenöffnung (0 = schon offen, None = Börsenuhr nicht erreichbar)."""
+    try:
+        clock = call("GET", API, "/v2/clock")
+    except Exception as e:
+        print(f"Börsenuhr nicht erreichbar: {e}")
+        return None
+    if clock.get("is_open"):
+        return 0.0
+    return max(0.0, (parse_ts(clock["next_open"]) - parse_ts(clock["timestamp"])).total_seconds() / 60)
+
+
 def dauerlauf(minuten, pause=CHECK_EVERY_MIN):
-    """Bleibt wach und prüft alle paar Minuten – bis die Zeit um ist oder die Börse schließt."""
+    """Bleibt wach und prüft alle paar Minuten – bis die Zeit um ist oder die Börse schließt.
+    Update #4: Startet der Lauf kurz vor Börsenbeginn, wartet Bert auf den Start, statt sofort
+    Pause zu machen (vorher hat er so am 20.11. die erste Stunde verpasst)."""
     ende = time.time() + minuten * 60
     while True:
         try:
@@ -437,7 +451,14 @@ def dauerlauf(minuten, pause=CHECK_EVERY_MIN):
         except Exception as e:  # ein einzelner Fehler soll nicht den ganzen Lauf stoppen
             print(f"Fehler in diesem Durchgang: {e}")
             offen = True
-        if not offen or time.time() + pause * 60 > ende:
+        if not offen:
+            warten = minuten_bis_boersenstart()
+            if warten is None or time.time() + (warten + pause) * 60 > ende:
+                break  # Börse öffnet nicht mehr während dieses Laufs -> Pause
+            print(f"Börse öffnet in {warten:.0f} Minuten – Bert wartet auf den Start.", flush=True)
+            time.sleep(warten * 60 + 60)  # 1 Minute nach Börsenstart loslegen
+            continue
+        if time.time() + pause * 60 > ende:
             break
         print(f"--- nächster Check in {pause} Minuten ---", flush=True)
         time.sleep(pause * 60)
