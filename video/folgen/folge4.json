@@ -1,0 +1,151 @@
+{
+ "folge": 4,
+ "titel": "TAG 3 · 20.11.",
+ "datum": "2026-11-20",
+ "szenen": [
+  {
+   "typ": "hook",
+   "gross": "−12 %",
+   "farbe": "rot",
+   "symbol": "NVDA",
+   "zeilen": [
+    "Nvidia stürzt ab.",
+    "Und Bert? −6 Cent."
+   ],
+   "sprecher": [
+    {
+     "sag": "Minus zwölf Prozent. Nvidia stürzt heute richtig ab.",
+     "zeig": "−12 %. Nvidia stürzt heute richtig ab."
+    },
+    {
+     "sag": "Und Bert? Minus sechs Cent. Mehr nicht.",
+     "zeig": "Und Bert? −6 Cent. Mehr nicht."
+    }
+   ]
+  },
+  {
+   "typ": "chart",
+   "symbol": "SPY",
+   "markierungen": [
+    {
+     "zeit": "16:29",
+     "text": "Bert wacht auf"
+    }
+   ],
+   "sprecher": [
+    "Neu ab heute: neuer Look, neue Stimme und echte Charts.",
+    {
+     "sag": "Das ist der ganze US-Markt von heute, in Fünfzehn-Minuten-Kerzen.",
+     "zeig": "Das ist der ganze US-Markt von heute, in 15-Minuten-Kerzen."
+    },
+    {
+     "sag": "Minus drei Prozent. Die blaue Linie lag den ganzen Tag unter der gelben.",
+     "zeig": "−3 %. Die blaue Linie lag den ganzen Tag unter der gelben."
+    },
+    {
+     "sag": "Für Bert heißt das: nicht kaufen. Und zwar bei allen acht Aktien.",
+     "zeig": "Für Bert heißt das: nicht kaufen. Und zwar bei allen 8 Aktien."
+    }
+   ]
+  },
+  {
+   "typ": "trades",
+   "sprecher": [
+    "Sein Logbuch: keine einzige Aktion. Nichts tun war heute genau richtig."
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Zwei Fehler heute",
+   "zeilen": [
+    "15:30–16:29: Bert schläft noch",
+    "GitHub hat ihn zu spät geweckt",
+    "21:36–22:00: Log nicht gespeichert",
+    "zwei Läufe kamen sich in die Quere"
+   ],
+   "sprecher": [
+    "Aber ehrlich: Die erste Stunde hat Bert verpasst. GitHub hat ihn zu spät geweckt.",
+    "Und die letzte halbe Stunde wurde nicht gespeichert. Gekauft hat er da aber nichts."
+   ]
+  },
+  {
+   "typ": "konto",
+   "sprecher": [
+    {
+     "sag": "Berts Konto heute: minus sechs Cent. Und die waren schon vor Börsenstart weg.",
+     "zeig": "Berts Konto heute: −6 Cent. Und die waren schon vor Börsenstart weg."
+    }
+   ]
+  },
+  {
+   "typ": "kurt",
+   "datum": "2026-11-20",
+   "sprecher": [
+    {
+     "sag": "Und Kurt? Sechsunddreißig Spiele, ein Tipp: Manchester United gewinnt in Liverpool.",
+     "zeig": "Und Kurt? 36 Spiele, 1 Tipp: Manchester United gewinnt in Liverpool."
+    },
+    {
+     "sag": "Quote vier Komma sieben, faire Chance dreiundzwanzig Prozent. Das sind über sechs Prozent Value.",
+     "zeig": "Quote 4,70, faire Chance 23 %. Das sind über 6 % Value."
+    }
+   ]
+  },
+  {
+   "typ": "value",
+   "sprecher": [
+    {
+     "sag": "Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist fünfzig Prozent, also wäre zwei Komma null die faire Quote.",
+     "zeig": "Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist 50 %, also wäre 2,00 die faire Quote."
+    },
+    {
+     "sag": "Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.",
+     "zeig": "Bietet dir jemand 2,04, bekommst du im Schnitt 102 € pro 100 € Einsatz."
+    },
+    {
+     "sag": "Das sind zwei Prozent Value. Aber nur im Schnitt. Einzelne Tipps können verlieren.",
+     "zeig": "Das sind 2 % Value. Aber nur im Schnitt. Einzelne Tipps können verlieren."
+    }
+   ]
+  },
+  {
+   "typ": "update",
+   "nummer": 3,
+   "titel": "Kurt schaut sich mehr an",
+   "punkte": [
+    "5 Ligen statt nur Bundesliga",
+    "Tipp schon ab +2 % Value",
+    "Notfall-Tipp (50 €), wenn bis Freitag nichts kommt"
+   ],
+   "sprecher": [
+    {
+     "sag": "Update Nummer drei: Kurt prüft jetzt fünf Ligen und tippt schon ab zwei Prozent Value.",
+     "zeig": "Update #3: Kurt prüft jetzt 5 Ligen und tippt schon ab 2 % Value."
+    }
+   ]
+  },
+  {
+   "typ": "stand",
+   "sprecher": [
+    {
+     "sag": "Zwischenstand: Kurt bei null, Bert bei minus null Komma drei Prozent. Kurt führt.",
+     "zeig": "Zwischenstand: Kurt bei 0, Bert bei −0,3 %. Kurt führt."
+    }
+   ]
+  },
+  {
+   "typ": "frage",
+   "zeilen": [
+    "Sonntag, 17:30 Uhr:",
+    "Liverpool – Man United.",
+    "Trifft Kurts erster Tipp?"
+   ],
+   "sprecher": [
+    {
+     "sag": "Sonntag, siebzehn Uhr dreißig. Trifft Kurts erster Tipp?",
+     "zeig": "Sonntag, 17:30 Uhr. Trifft Kurts erster Tipp?"
+    }
+   ]
+  }
+ ]
+}
