@@ -17,12 +17,14 @@ Szenen-Typen (Feld "typ"):
   trades  – Berts Entscheidungen (Log): optional "datum" (liest data/bert_entscheidungen.csv)
   konto   – Berts Kontoverlauf am Tag:  optional "datum"
   kurt    – Kurts Rechnung (Tabelle):   optional "datum", "max" (Standard 5)
+  tipps   – Kurts Tipps mit Ergebnis:   optional "von", "bis" (Anstoß-Datum JJJJ-MM-TT), "titel"
   value   – Erklärung „Was heißt Value?" (Münzwurf)
   update  – Update-Hinweis:             "nummer", "titel", "punkte": [..]
   stand   – Zwischenstand Bert vs. Kurt in Prozent
   frage   – Cliffhanger-Frage:          "zeilen": [..]
   text    – freie Textfolie:            "titel", "zeilen": [..]
-Jede Szene hat "sprecher": [Satz, Satz, ...]  (Zahlen als Wörter ausschreiben!)
+Jede Szene hat "sprecher": [Satz, ...]. Ein Satz ist entweder Text (Zahlen als Wörter!) oder
+{"sag": "gesprochen, Zahlen als Wörter", "zeig": "Untertitel, Zahlen als Ziffern"}.
 """
 import csv
 import json
@@ -512,6 +514,56 @@ class Kurt(Scene):
             y += 120
 
 
+class Tipps(Scene):
+    """Kurts Tipps mit Ergebnis (z. B. montags fürs Wochenende). Optional "von"/"bis" (Anstoß-Datum)."""
+
+    def prepare(self, dur):
+        super().prepare(dur)
+        rows = read_csv("kurt_tipps.csv")
+        von, bis = self.s.get("von"), self.s.get("bis", self.day)
+        def kick(r):
+            from datetime import datetime, timezone
+            from zoneinfo import ZoneInfo
+            return datetime.fromisoformat(r["anstoss"].replace("Z", "+00:00")).astimezone(
+                ZoneInfo("Europe/Berlin")).strftime("%Y-%m-%d")
+        if von:
+            rows = [r for r in rows if von <= kick(r) <= bis]
+        self.rows = rows[-5:]
+        self.kick = {id(r): kick(r) for r in self.rows}
+
+    def draw(self, img, f, t):
+        appear(img, self.s.get("titel", "Kurts Tipps"), 64, GREEN, 440, f, 0.0)
+        if not self.rows:
+            appear(img, "Noch keine Tipps.", 44, GREY, 700, f, 0.1, BOLD)
+            return
+        y = 560
+        total = 0.0
+        for i, r in enumerate(self.rows):
+            a = ease_out(prog(f, 0.08 + i * 0.12, 0.08))
+            st = r["status"]
+            col = GREEN if st == "gewonnen" else RED if st == "verloren" else YELLOW
+            if a > 0:
+                panel(img, (60, y - 52, 1020, y + 60), outline=col, alpha=a, r=20)
+                match = f"{team(r['heim'])} – {team(r['gast'])}"
+                T(img, match, fit(match, BLACK, 38, 600), WHITE, 90, y - 18, BLACK, a, anchor="l")
+                tip = r["tipp"] if r["tipp"] == "Unentschieden" else team(r["tipp"])
+                art = " · Notfall" if r.get("art") == "Notfall" else ""
+                info = f"Tipp {tip} · Quote {num(float(r['quote']))} · {num(float(r['einsatz_eur']), 0)} €{art}"
+                T(img, info, fit(info, MONO_REG, 26, 640), GREY, 90, y + 26, MONO_REG, a, anchor="l")
+                if st == "offen":
+                    T(img, "offen", 38, YELLOW, 990, y - 14, BLACK, a, anchor="r")
+                    T(img, de_date(self.kick[id(r)])[:6], 26, GREY, 990, y + 26, MONO_REG, a, anchor="r")
+                else:
+                    g = float(r["gewinn_eur"] or 0)
+                    T(img, signed(g, 2, " €"), 38, col, 990, y - 14, BLACK, a, anchor="r")
+                    T(img, f"{st} {r['ergebnis']}", 26, col, 990, y + 26, BOLD, a, anchor="r")
+            if st != "offen":
+                total += float(r["gewinn_eur"] or 0)
+            y += 128
+        if any(r["status"] != "offen" for r in self.rows):
+            appear(img, f"Summe: {signed(total, 2, ' €')}", 56, GREEN if total >= 0 else RED, 1170, f, 0.6)
+
+
 class Value(Scene):
     def draw(self, img, f, t):
         appear(img, "Was heißt „Value“?", 70, YELLOW, 450, f, 0.0)
@@ -606,7 +658,8 @@ class Text(Scene):
             appear(img, z, fit(z, BOLD, 56, 920), WHITE, 660 + i * 95, f, 0.1 + i * 0.12, BOLD)
 
 
-TYPES = {"hook": Hook, "chart": Chart, "trades": Trades, "konto": Konto, "kurt": Kurt, "value": Value,
+TYPES = {"hook": Hook, "chart": Chart, "trades": Trades, "konto": Konto, "kurt": Kurt, "tipps": Tipps,
+         "value": Value,
          "update": Update, "stand": Stand, "frage": Frage, "text": Text}
 
 
