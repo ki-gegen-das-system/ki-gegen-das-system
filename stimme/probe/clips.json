@@ -4,7 +4,7 @@
   {
    "szene": "s1",
    "datei": "01.wav",
-   "dauer": 5.8,
+   "dauer": 2.84,
    "text": "Tag zwei. Bert hätte heute Gewinn machen können.",
    "hash": "81b248ee151ded458970f92e88c3d4613c5f565c",
    "pruefung": 0.9,
@@ -54,7 +54,7 @@
   {
    "szene": "s1",
    "datei": "02.wav",
-   "dauer": 4.0,
+   "dauer": 1.88,
    "text": "Stattdessen: minus einunddreißig Dollar.",
    "hash": "9e7a48e827902c843160a5cbfeeee78e9472ad78",
    "pruefung": 0.97,
@@ -154,7 +154,7 @@
   {
    "szene": "s2",
    "datei": "04.wav",
-   "dauer": 7.003,
+   "dauer": 6.94,
    "text": "Zum Börsenstart stand Tesla bei über dreihundertneunzig Dollar. Bert hatte für dreihundertvierundachtzig gekauft. Er war also im Plus.",
    "hash": "ed05c1023289fa52a995d6b580fc34f95cd869aa",
    "pruefung": 0.99,
@@ -259,7 +259,7 @@
   {
    "szene": "s2",
    "datei": "05.wav",
-   "dauer": 6.602,
+   "dauer": 5.8,
    "text": "Aber Bert wachte erst um sechzehn Uhr fünfunddreißig auf. Da war Tesla schon gefallen. Verkauf bei dreihundertneunundsiebzig.",
    "hash": "d7b04777e14dce8eee9814c5e2840d5e89c50bc8",
    "pruefung": 0.96,
@@ -449,7 +449,7 @@
   {
    "szene": "s4",
    "datei": "07.wav",
-   "dauer": 6.65,
+   "dauer": 5.92,
    "text": "Berts Konto steht jetzt bei neuntausendneunhundertachtundsechzig Dollar. Minus null Komma drei Prozent seit dem Start.",
    "hash": "d3c2237911b8d1e1355a774c0fbc0fca6ca91bbd",
    "pruefung": 0.88,
@@ -519,7 +519,7 @@
   {
    "szene": "s5",
    "datei": "08.wav",
-   "dauer": 4.515,
+   "dauer": 3.52,
    "text": "Update Nummer zwei: Bert prüft jetzt alle fünf Minuten statt einmal pro Stunde.",
    "hash": "128550689b7f064b2a600f2682649cff48b30400",
    "pruefung": 0.98,
@@ -594,7 +594,7 @@
   {
    "szene": "s5",
    "datei": "09.wav",
-   "dauer": 7.184,
+   "dauer": 3.62,
    "text": "Und alle Trades sind öffentlich. Jeder kann sie nachprüfen.",
    "hash": "4145c26dc27cf58ba81d87fbc9fa1fa89fa6f83f",
    "pruefung": 0.96,
@@ -649,7 +649,7 @@
   {
    "szene": "s6",
    "datei": "10.wav",
-   "dauer": 11.268,
+   "dauer": 2.06,
    "text": "Und Kurt? Er prüft jetzt fünf Ligen.",
    "hash": "b60856bb1252cb768c206fcb79669ffb6e88bb49",
    "pruefung": 0.96,
@@ -694,7 +694,7 @@
   {
    "szene": "s6",
    "datei": "11.wav",
-   "dauer": 6.861,
+   "dauer": 6.68,
    "text": "Sechsunddreißig Spiele, ein Tipp: Manchester United bei Liverpool. Faire Chance dreiundzwanzig Prozent, Quote vier Komma sieben. Das sind über sechs Prozent Value.",
    "hash": "4a9c8688afbcb610d63bad3a24e7873ac3fbd4e3",
    "pruefung": 0.88,
@@ -904,7 +904,7 @@
   {
    "szene": "s7",
    "datei": "13.wav",
-   "dauer": 4.834,
+   "dauer": 4.22,
    "text": "Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.",
    "hash": "d4d80ad956ed8ed317419ba0997297de88612d3b",
    "pruefung": 0.9,
@@ -989,7 +989,7 @@
   {
    "szene": "s7",
    "datei": "14.wav",
-   "dauer": 5.24,
+   "dauer": 2.34,
    "text": "Das sind zwei Prozent Value. Ab da tippt Kurt.",
    "hash": "e90eb02447b99e8dca48146e85183c6dc7a1b594",
    "pruefung": 0.72,

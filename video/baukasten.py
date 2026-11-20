@@ -484,11 +484,14 @@ class Kurt(Scene):
             return (0 if r["entscheidung"].startswith(("TIPP", "NOTFALL")) else 1, -float(r["value_prozent"]))
         rows.sort(key=key)
         self.rows = rows[: int(self.s.get("max", 5))]
-        self.total = len([r for r in read_csv("kurt_analyse.csv") if r["zeit"].startswith(self.day)])
+        alle = [r for r in read_csv("kurt_analyse.csv") if r["zeit"].startswith(self.day)]
+        self.total = len(alle)
+        self.ligen = len({r["liga"] for r in alle})
 
     def draw(self, img, f, t):
         appear(img, self.s.get("titel", "Kurts Rechnung"), 64, GREEN, 440, f, 0.0)
-        appear(img, f"{self.total} Spiele geprüft · 5 Ligen · {de_date(self.day)}", 30, GREY, 500, f, 0.03, SEMI)
+        ligen = f"{self.ligen} Liga" if self.ligen == 1 else f"{self.ligen} Ligen"
+        appear(img, f"{self.total} Spiele geprüft · {ligen} · {de_date(self.day)}", 30, GREY, 500, f, 0.03, SEMI)
         y = 580
         for i, r in enumerate(self.rows):
             a = ease_out(prog(f, 0.08 + i * 0.1, 0.08))

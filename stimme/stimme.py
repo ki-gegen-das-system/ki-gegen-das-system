@@ -94,7 +94,7 @@ _whisper = None
 
 def norm(s):
     """Text vergleichbar machen: klein, Zahlen als Wörter, nur Buchstaben."""
-    s = s.lower().replace("ß", "ss")
+    s = s.lower().replace("ß", "ss").replace("%", " prozent ").replace("€", " euro ").replace("$", " dollar ")
     try:
         from num2words import num2words
         s = re.sub(r"(\d+),(\d+)", lambda m: num2words(int(m.group(1)), lang="de") + "komma"
@@ -131,7 +131,9 @@ def check(path, text):
         if r > best[0] + 0.005:
             best = (r, i)
     score, upto = best
-    cut = words[upto - 1][2] + 0.18 if upto < len(words) else None
+    # Immer kurz nach dem letzten erkannten Wort abschneiden: Chatterbox hängt manchmal
+    # Gemurmel oder Rauschen an, das Whisper gar nicht als Wort erkennt.
+    cut = words[upto - 1][2] + 0.22
     kept = [[w, round(a, 2), round(b, 2)] for w, a, b in words[:upto]]
     return score, cut, kept
 
@@ -140,6 +142,8 @@ def cut_audio(path, end_s):
     import soundfile as sf
     data, sr = sf.read(path)
     n = int(end_s * sr)
+    if n >= len(data) - int(0.05 * sr):
+        return
     if 0 < n < len(data):
         fade = min(int(0.04 * sr), n)
         data = data[:n].copy()
