@@ -2,8 +2,8 @@
 """
 Vertont die Sprechertexte in stimme/*.txt – läuft über GitHub Actions (.github/workflows/stimme.yml).
 
-Stimme: Chatterbox Multilingual (Resemble AI, MIT-Lizenz), Standardstimme, ruhig-natürlich
-("X1": exaggeration 0.5, cfg 0.5). Fällt Chatterbox aus, springt Piper (Thorsten) ein.
+Stimme: wird in stimme/einstellungen.json gewählt – Chatterbox Multilingual (Resemble AI, MIT-Lizenz),
+optional mit einer Referenzstimme als Vorlage, oder Piper (Thorsten). Fällt Chatterbox aus, springt Piper ein.
 
 Zwei Formate werden erkannt:
   Neu (Baukasten v2):  s1|Text   – Szenen-Name, dann ein bis zwei Sätze. Mehrere Zeilen pro Szene erlaubt.
@@ -21,10 +21,18 @@ import sys
 import wave
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-EXAGGERATION = 0.5   # Stimme X1
-CFG_WEIGHT = 0.5
+REPO = os.path.dirname(HERE)
 SEED = 7
 PIPER_MODEL = os.path.expanduser("~/stimmen/de.onnx")
+# Welche Stimme? -> stimme/einstellungen.json (motor: "chatterbox" oder "piper", referenz: WAV-Vorlage oder null)
+SETTINGS = {"motor": "chatterbox", "referenz": None, "exaggeration": 0.5, "cfg_weight": 0.5}
+_sp = os.path.join(HERE, "einstellungen.json")
+if os.path.exists(_sp):
+    SETTINGS.update({k: v for k, v in json.load(open(_sp, encoding="utf-8")).items() if not k.startswith("_")})
+EXAGGERATION = float(SETTINGS["exaggeration"])
+CFG_WEIGHT = float(SETTINGS["cfg_weight"])
+REFERENZ = os.path.join(REPO, SETTINGS["referenz"]) if SETTINGS.get("referenz") else None
+VOICE_ID = f"{SETTINGS['motor']}|{SETTINGS.get('referenz')}|{EXAGGERATION}|{CFG_WEIGHT}"
 
 _engine = None
 
@@ -34,7 +42,7 @@ def engine():
     global _engine
     if _engine:
         return _engine
-    if os.environ.get("STIMME") != "piper":
+    if os.environ.get("STIMME", SETTINGS["motor"]) != "piper":
         try:
             import torch
             _orig = torch.load
@@ -51,7 +59,8 @@ def engine():
                 best = None
                 for attempt in range(3):
                     torch.manual_seed(SEED + attempt)
-                    wav = model.generate(text, language_id="de", exaggeration=EXAGGERATION, cfg_weight=CFG_WEIGHT)
+                    kw = {"audio_prompt_path": REFERENZ} if REFERENZ else {}
+                    wav = model.generate(text, language_id="de", exaggeration=EXAGGERATION, cfg_weight=CFG_WEIGHT, **kw)
                     tmp = path + f".try{attempt}.wav"
                     ta.save(tmp, wav, model.sr)
                     trim_silence(tmp)
@@ -183,7 +192,7 @@ def process(txt):
     if not lines:
         return
     neu = re.match(r"^[A-Za-z]\w*\|", lines[0]) is not None
-    digest = hashlib.sha1((raw + "v3").encode()).hexdigest()
+    digest = hashlib.sha1((raw + "v3").encode()).hexdigest()   # fertige Folgen bei Stimmwechsel nicht neu vertonen
     legacy = hashlib.sha1(raw.encode()).hexdigest()   # Hash der alten Version (Folge 1–3)
     hash_file = os.path.join(out, ".hash")
     if os.path.exists(hash_file) and open(hash_file).read().strip() in (digest, legacy):
@@ -205,7 +214,7 @@ def process(txt):
     for i, line in enumerate(lines, 1):
         tag, text = line.split("|", 1)
         text = text.strip()
-        h = hashlib.sha1(f"{eng}|qa1|{text}".encode()).hexdigest()
+        h = hashlib.sha1(f"{eng}|qa1|{VOICE_ID}|{text}".encode()).hexdigest()
         fname = f"{i:02d}.wav"
         path = os.path.join(out, fname)
         prev = old.get(h)

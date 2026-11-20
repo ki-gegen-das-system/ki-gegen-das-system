@@ -20,3 +20,7 @@ Reiter **Actions** → links Bot auswählen → **Run workflow**.
 
 ## Benötigte Secrets
 `ALPACA_API_KEY`, `ALPACA_SECRET_KEY`, `ODDS_API_KEY`
+
+## Stimme
+KI-Stimme: Chatterbox Multilingual (Resemble AI, MIT-Lizenz) mit der Stimme von Thorsten Müller als Vorlage
+(Thorsten-Voice-Datensatz, CC0 – danke!). Einstellung in `stimme/einstellungen.json`.

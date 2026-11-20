@@ -1,0 +1,7 @@
+{
+  "_hinweis": "Welche Stimme die Automatik nimmt. motor: chatterbox oder piper. referenz: WAV-Vorlage (null = Chatterbox-Standardstimme mit englischem Akzent). Vorlagen: stimme/referenz/thorsten_neutral.wav (N1, ruhig) und thorsten_amused.wav (N2, gut gelaunt) – echte Stimme von Thorsten Müller, Thorsten-Voice-Datensatz, CC0.",
+  "motor": "chatterbox",
+  "referenz": "stimme/referenz/thorsten_neutral.wav",
+  "exaggeration": 0.5,
+  "cfg_weight": 0.5
+}
