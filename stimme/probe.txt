@@ -1,0 +1,17 @@
+# probe – automatisch aus video/folgen/probe.json erzeugt
+s1|Tag zwei. Bert hätte heute Gewinn machen können.
+s1|Stattdessen: minus einunddreißig Dollar.
+s2|Das ist der echte Tesla-Kurs von gestern, in Fünfzehn-Minuten-Kerzen.
+s2|Zum Börsenstart stand Tesla bei über dreihundertneunzig Dollar. Bert hatte für dreihundertvierundachtzig gekauft. Er war also im Plus.
+s2|Aber Bert wachte erst um sechzehn Uhr fünfunddreißig auf. Da war Tesla schon gefallen. Verkauf bei dreihundertneunundsiebzig.
+s3|Berts Logbuch zeigt den Grund: Daytrading heißt, nichts über Nacht halten. Also musste Tesla raus.
+s4|Berts Konto steht jetzt bei neuntausendneunhundertachtundsechzig Dollar. Minus null Komma drei Prozent seit dem Start.
+s5|Update Nummer zwei: Bert prüft jetzt alle fünf Minuten statt einmal pro Stunde.
+s5|Und alle Trades sind öffentlich. Jeder kann sie nachprüfen.
+s6|Und Kurt? Er prüft jetzt fünf Ligen.
+s6|Sechsunddreißig Spiele, ein Tipp: Manchester United bei Liverpool. Faire Chance dreiundzwanzig Prozent, Quote vier Komma sieben. Das sind über sechs Prozent Value.
+s7|Was heißt Value? Stell dir einen Münzwurf vor. Die Chance ist fünfzig Prozent, also wäre zwei Komma null die faire Quote.
+s7|Bietet dir jemand zwei Komma null vier, bekommst du im Schnitt hundertzwei Euro pro hundert Euro Einsatz.
+s7|Das sind zwei Prozent Value. Ab da tippt Kurt.
+s8|Zwischenstand: Kurt führt. Noch.
+s9|Sonntag, Liverpool gegen Manchester United. Gewinnt Kurt seinen ersten Tipp?
