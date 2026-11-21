@@ -1,0 +1,840 @@
+{
+ "stimme": "chatterbox",
+ "clips": [
+  {
+   "szene": "s1",
+   "datei": "01.wav",
+   "dauer": 4.241,
+   "text": "Minus einunddreißig Dollar. Das ist Berts erste Woche.",
+   "hash": "26746b6ae71a17a1b63d94024ba770a4bef6ee9f",
+   "pruefung": 0.94,
+   "woerter": [
+    [
+     "minus",
+     0.0,
+     0.4
+    ],
+    [
+     "31",
+     0.4,
+     1.46
+    ],
+    [
+     "$.",
+     1.46,
+     1.9
+    ],
+    [
+     "Das",
+     2.46,
+     2.76
+    ],
+    [
+     "ist",
+     2.76,
+     2.98
+    ],
+    [
+     "Berz",
+     2.98,
+     3.44
+    ],
+    [
+     "erste",
+     3.44,
+     3.7
+    ],
+    [
+     "Woche.",
+     3.7,
+     4.04
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "02.wav",
+   "dauer": 4.411,
+   "text": "Mittwoch kauft er sechs Tesla. Dann verschläft er den Börsenschluss.",
+   "hash": "20729bb9feec5bdcf2e76b677e80836dc3032eb8",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Mittwoch",
+     0.0,
+     0.62
+    ],
+    [
+     "kauft",
+     0.62,
+     1.02
+    ],
+    [
+     "er",
+     1.02,
+     1.18
+    ],
+    [
+     "6",
+     1.18,
+     1.44
+    ],
+    [
+     "Tesla,",
+     1.44,
+     1.9
+    ],
+    [
+     "dann",
+     2.34,
+     2.58
+    ],
+    [
+     "verschläft",
+     2.58,
+     3.34
+    ],
+    [
+     "er",
+     3.34,
+     3.52
+    ],
+    [
+     "den",
+     3.52,
+     3.66
+    ],
+    [
+     "Börsenschluss.",
+     3.66,
+     4.24
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "03.wav",
+   "dauer": 3.117,
+   "text": "Verkauft wird erst am Donnerstag. Mit Verlust.",
+   "hash": "17ca1d2958136b91335d05a6e5eecb9a9dc42dee",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "Erkauft",
+     0.0,
+     0.56
+    ],
+    [
+     "wird",
+     0.56,
+     0.82
+    ],
+    [
+     "erst",
+     0.82,
+     1.14
+    ],
+    [
+     "am",
+     1.14,
+     1.46
+    ],
+    [
+     "Donnerstag",
+     1.46,
+     2.0
+    ],
+    [
+     "mit",
+     2.0,
+     2.48
+    ],
+    [
+     "Verlust.",
+     2.48,
+     2.96
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "04.wav",
+   "dauer": 4.231,
+   "text": "Was, wenn Bert nie geschlafen hätte? Ich hab nachgerechnet.",
+   "hash": "3a9d4649f40eb6fde940f62f03092b3518561fb7",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "Was,",
+     0.0,
+     0.24
+    ],
+    [
+     "wenn",
+     0.58,
+     0.68
+    ],
+    [
+     "Bert",
+     0.68,
+     1.0
+    ],
+    [
+     "nie",
+     1.0,
+     1.42
+    ],
+    [
+     "geschlafen",
+     1.42,
+     2.04
+    ],
+    [
+     "hätte,",
+     2.04,
+     2.3
+    ],
+    [
+     "ich",
+     2.84,
+     2.98
+    ],
+    [
+     "habe",
+     2.98,
+     3.22
+    ],
+    [
+     "nachgerechnet",
+     3.22,
+     4.08
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "05.wav",
+   "dauer": 4.621,
+   "text": "Er hätte viermal gekauft. Alle vier Trades wären im Minus.",
+   "hash": "3fb80537e84013bc7d51b591c87bda36bc3900ad",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Er",
+     0.0,
+     0.16
+    ],
+    [
+     "hätte",
+     0.16,
+     0.42
+    ],
+    [
+     "viermal",
+     0.42,
+     1.16
+    ],
+    [
+     "gekauft,",
+     1.16,
+     1.78
+    ],
+    [
+     "alle",
+     2.14,
+     2.34
+    ],
+    [
+     "vier",
+     2.34,
+     2.64
+    ],
+    [
+     "Trades",
+     2.64,
+     3.24
+    ],
+    [
+     "wären",
+     3.24,
+     3.64
+    ],
+    [
+     "im",
+     3.64,
+     3.98
+    ],
+    [
+     "Minus.",
+     3.98,
+     4.48
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "06.wav",
+   "dauer": 4.443,
+   "text": "Denn der ganze Markt ist diese Woche um fast acht Prozent gefallen.",
+   "hash": "42a6a454647dc99b42237fdd78f024486032b33c",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Denn",
+     0.0,
+     0.16
+    ],
+    [
+     "der",
+     0.16,
+     0.32
+    ],
+    [
+     "ganze",
+     0.32,
+     0.64
+    ],
+    [
+     "Markt",
+     0.64,
+     1.18
+    ],
+    [
+     "ist",
+     1.18,
+     1.5
+    ],
+    [
+     "diese",
+     1.5,
+     1.92
+    ],
+    [
+     "Woche",
+     1.92,
+     2.28
+    ],
+    [
+     "um",
+     2.28,
+     2.6
+    ],
+    [
+     "fast",
+     2.6,
+     2.88
+    ],
+    [
+     "8",
+     2.88,
+     3.28
+    ],
+    [
+     "%",
+     3.28,
+     3.72
+    ],
+    [
+     "gefallen.",
+     3.72,
+     4.24
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "07.wav",
+   "dauer": 3.02,
+   "text": "Und Bert verdient nur, wenn Kurse steigen.",
+   "hash": "77156ac5376bc389aa898bc02d91579b1ffa88ec",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "und",
+     0.0,
+     0.14
+    ],
+    [
+     "Bert",
+     0.14,
+     0.48
+    ],
+    [
+     "verdient",
+     0.48,
+     1.1
+    ],
+    [
+     "nur,",
+     1.1,
+     1.42
+    ],
+    [
+     "wenn",
+     1.78,
+     1.98
+    ],
+    [
+     "Kurse",
+     1.98,
+     2.42
+    ],
+    [
+     "steigen.",
+     2.42,
+     2.88
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "08.wav",
+   "dauer": 4.12,
+   "text": "Regeln ändern? Nein. Nach einer Woche wäre das Raten.",
+   "hash": "d0b386dbceff5e756915ef743bbdfca19c3e3379",
+   "pruefung": 0.92,
+   "woerter": [
+    [
+     "reading",
+     0.0,
+     0.36
+    ],
+    [
+     "ändern?",
+     0.36,
+     0.76
+    ],
+    [
+     "Nein.",
+     1.42,
+     1.42
+    ],
+    [
+     "Nach",
+     1.98,
+     2.2
+    ],
+    [
+     "einer",
+     2.2,
+     2.5
+    ],
+    [
+     "Woche",
+     2.5,
+     2.84
+    ],
+    [
+     "wäre",
+     2.84,
+     3.22
+    ],
+    [
+     "das",
+     3.22,
+     3.48
+    ],
+    [
+     "raten.",
+     3.48,
+     3.9
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "09.wav",
+   "dauer": 4.097,
+   "text": "Aber ab Montag soll Bert endlich den ganzen Tag wach sein.",
+   "hash": "a220f66a05c2513c64ae8b58f39709e5287a13a1",
+   "pruefung": 0.97,
+   "woerter": [
+    [
+     "Aber",
+     0.0,
+     0.28
+    ],
+    [
+     "ab",
+     0.28,
+     0.52
+    ],
+    [
+     "Montag",
+     0.52,
+     1.18
+    ],
+    [
+     "soll",
+     1.18,
+     1.48
+    ],
+    [
+     "Bert",
+     1.48,
+     1.8
+    ],
+    [
+     "endlich",
+     1.8,
+     2.36
+    ],
+    [
+     "den",
+     2.36,
+     2.58
+    ],
+    [
+     "ganzen",
+     2.58,
+     2.86
+    ],
+    [
+     "Tag",
+     2.86,
+     3.28
+    ],
+    [
+     "was",
+     3.28,
+     3.58
+    ],
+    [
+     "sein.",
+     3.58,
+     3.94
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "10.wav",
+   "dauer": 6.812,
+   "text": "Und Kurt? Achtundvierzig Spiele geprüft. Fünfzehnmal Value, aber jedes Mal beim Außenseiter.",
+   "hash": "1fe6dd3f1853aa198b4198b56d320ad15cd00113",
+   "pruefung": 0.97,
+   "woerter": [
+    [
+     "Goldkurt,",
+     0.0,
+     0.66
+    ],
+    [
+     "8",
+     0.98,
+     1.32
+    ],
+    [
+     "und",
+     1.32,
+     1.54
+    ],
+    [
+     "40",
+     1.54,
+     1.92
+    ],
+    [
+     "Spiele",
+     1.92,
+     2.38
+    ],
+    [
+     "geprüft,",
+     2.38,
+     2.9
+    ],
+    [
+     "15",
+     3.28,
+     3.52
+    ],
+    [
+     "Mal",
+     3.52,
+     4.1
+    ],
+    [
+     "Value,",
+     4.1,
+     4.6
+    ],
+    [
+     "aber",
+     4.9,
+     5.02
+    ],
+    [
+     "jedes",
+     5.02,
+     5.3
+    ],
+    [
+     "Mal",
+     5.3,
+     5.7
+    ],
+    [
+     "beim",
+     5.7,
+     6.0
+    ],
+    [
+     "Außenseiter.",
+     6.0,
+     6.68
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "11.wav",
+   "dauer": 4.571,
+   "text": "Ehrlich: Bei Außenseitern ist so eine Rechnung am unsichersten.",
+   "hash": "cccd20812468f89ee01b2452d5939dc4dd1893e3",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "ehrlich,",
+     0.0,
+     0.36
+    ],
+    [
+     "bei",
+     0.84,
+     0.96
+    ],
+    [
+     "Außenseiten",
+     0.96,
+     1.88
+    ],
+    [
+     "ist",
+     1.88,
+     2.4
+    ],
+    [
+     "so",
+     2.4,
+     2.7
+    ],
+    [
+     "eine",
+     2.7,
+     2.96
+    ],
+    [
+     "Rechnung",
+     2.96,
+     3.52
+    ],
+    [
+     "am",
+     3.52,
+     3.7
+    ],
+    [
+     "unsichersten.",
+     3.7,
+     4.4
+    ]
+   ]
+  },
+  {
+   "szene": "s7",
+   "datei": "12.wav",
+   "dauer": 6.22,
+   "text": "Getippt hat er nur einmal: Manchester United in Liverpool. Quote vier Komma sieben.",
+   "hash": "7bcf9ca379063a68dd18f4fe4d79207d4e7a9e5b",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "Getippt",
+     0.0,
+     0.52
+    ],
+    [
+     "hat",
+     0.52,
+     0.68
+    ],
+    [
+     "er",
+     0.68,
+     0.84
+    ],
+    [
+     "nur",
+     0.84,
+     1.04
+    ],
+    [
+     "einmal",
+     1.04,
+     1.54
+    ],
+    [
+     "Manchester",
+     1.54,
+     2.36
+    ],
+    [
+     "United",
+     2.36,
+     3.08
+    ],
+    [
+     "in",
+     3.08,
+     3.38
+    ],
+    [
+     "Liverpool.",
+     3.38,
+     3.76
+    ],
+    [
+     "Quote",
+     4.46,
+     4.92
+    ],
+    [
+     "4",
+     4.92,
+     5.34
+    ],
+    [
+     ",7.",
+     5.34,
+     6.0
+    ]
+   ]
+  },
+  {
+   "szene": "s8",
+   "datei": "13.wav",
+   "dauer": 3.34,
+   "text": "Zwischenstand nach Woche eins: Kurt führt knapp.",
+   "hash": "dab6bf95cf65f3c9e6ada9d934e7d80af7ebe45e",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Zwischenstand",
+     0.0,
+     0.6
+    ],
+    [
+     "nach",
+     0.6,
+     1.06
+    ],
+    [
+     "Woche",
+     1.06,
+     1.42
+    ],
+    [
+     "1,",
+     1.42,
+     1.9
+    ],
+    [
+     "Kurt",
+     2.18,
+     2.42
+    ],
+    [
+     "führt",
+     2.42,
+     2.78
+    ],
+    [
+     "knapp.",
+     2.78,
+     3.12
+    ]
+   ]
+  },
+  {
+   "szene": "s9",
+   "datei": "14.wav",
+   "dauer": 6.763,
+   "text": "Sonntag spielt Kurts Außenseiter. Montag soll Bert endlich wach sein. Wer gewinnt Woche zwei?",
+   "hash": "1bd7779f6fc37f9106dc42406292028c7f587620",
+   "pruefung": 0.98,
+   "woerter": [
+    [
+     "Sonntag",
+     0.0,
+     0.62
+    ],
+    [
+     "spielt",
+     0.62,
+     1.0
+    ],
+    [
+     "kurz",
+     1.0,
+     1.36
+    ],
+    [
+     "Außenseiter,",
+     1.36,
+     2.3
+    ],
+    [
+     "Montag",
+     2.56,
+     3.2
+    ],
+    [
+     "soll",
+     3.2,
+     3.46
+    ],
+    [
+     "Bert",
+     3.46,
+     3.66
+    ],
+    [
+     "endlich",
+     3.66,
+     4.16
+    ],
+    [
+     "wach",
+     4.16,
+     4.46
+    ],
+    [
+     "sein.",
+     4.46,
+     4.8
+    ],
+    [
+     "Wer",
+     5.32,
+     5.46
+    ],
+    [
+     "gewinnt",
+     5.46,
+     5.96
+    ],
+    [
+     "Woche",
+     5.96,
+     6.2
+    ],
+    [
+     "2",
+     6.2,
+     6.54
+    ]
+   ]
+  }
+ ]
+}
