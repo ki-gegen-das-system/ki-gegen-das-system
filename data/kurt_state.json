@@ -45,7 +45,10 @@
     "13ac2151b9f6893cedb7f509e64eb070",
     "9e5d4a91e379ddffa179b02bf9e09530",
     "8e6ee05b6ac28dc2357f72b9f5a0643e",
-    "98fae24771271c96d5dd364e535405d2"
+    "98fae24771271c96d5dd364e535405d2",
+    "aa77e2a08a1a003b0bbb62a5f8e8ae42",
+    "afae1c9d986e4ab2200dc9bd44b6b6c4",
+    "99776445d5a5f4ed008f9a6d6a1495b7"
   ],
   "kandidaten": {
     "6ef39b0fd8839f6e93a3de32523e9807": {
@@ -432,6 +435,39 @@
       "quote": 5.0,
       "fair": 0.19692705746581202,
       "value": 0.98463528732906
+    },
+    "aa77e2a08a1a003b0bbb62a5f8e8ae42": {
+      "liga": "Premier League",
+      "liga_key": "soccer_epl",
+      "heim": "Brentford",
+      "gast": "Everton",
+      "anstoss": "2026-11-23T20:00:00Z",
+      "tipp": "Draw",
+      "quote": 3.7,
+      "fair": 0.26963635306843803,
+      "value": 0.9976545063532207
+    },
+    "afae1c9d986e4ab2200dc9bd44b6b6c4": {
+      "liga": "La Liga",
+      "liga_key": "soccer_spain_la_liga",
+      "heim": "Levante",
+      "gast": "Elche CF",
+      "anstoss": "2026-11-23T20:00:00Z",
+      "tipp": "Elche CF",
+      "quote": 3.35,
+      "fair": 0.2962684194280946,
+      "value": 0.992499205084117
+    },
+    "99776445d5a5f4ed008f9a6d6a1495b7": {
+      "liga": "Serie A",
+      "liga_key": "soccer_italy_serie_a",
+      "heim": "Monza",
+      "gast": "Fiorentina",
+      "anstoss": "2026-11-23T19:45:00Z",
+      "tipp": "Monza",
+      "quote": 3.81,
+      "fair": 0.2592957997503424,
+      "value": 0.9879169970488045
     }
   },
   "notfall_wochenenden": [
