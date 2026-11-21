@@ -1,0 +1,149 @@
+{
+ "folge": 5,
+ "titel": "WOCHE 1 · BILANZ",
+ "datum": "2026-11-21",
+ "szenen": [
+  {
+   "typ": "hook",
+   "gross": "−31 $",
+   "farbe": "rot",
+   "datum": "2026-11-19",
+   "symbol": "TSLA",
+   "zeilen": [
+    "Berts erste Woche.",
+    "Nur ein einziger Trade."
+   ],
+   "sprecher": [
+    {
+     "sag": "Minus einunddreißig Dollar. Das ist Berts erste Woche.",
+     "zeig": "−31 $. Das ist Berts erste Woche."
+    }
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Berts einziger Trade",
+   "titel_farbe": "blau",
+   "zeilen": [
+    "Mi 18:28 · Kauf 6 Tesla à 384,71 $",
+    {
+     "text": "Börsenschluss verschlafen",
+     "farbe": "gelb"
+    },
+    "Do 16:35 · Verkauf à 379,52 $",
+    {
+     "text": "= −31,14 $ (−1,35 %)",
+     "farbe": "rot"
+    }
+   ],
+   "sprecher": [
+    {
+     "sag": "Mittwoch kauft er sechs Tesla. Dann verschläft er den Börsenschluss.",
+     "zeig": "Mittwoch kauft er 6 Tesla. Dann verschläft er den Börsenschluss."
+    },
+    "Verkauft wird erst am Donnerstag. Mit Verlust."
+   ]
+  },
+  {
+   "typ": "nachrechnung",
+   "titel": "Was, wenn Bert nie schläft?",
+   "von": "2026-11-18",
+   "bis": "2026-11-20",
+   "sprecher": [
+    "Was, wenn Bert nie geschlafen hätte? Ich hab nachgerechnet.",
+    {
+     "sag": "Er hätte viermal gekauft. Alle vier Trades wären im Minus.",
+     "zeig": "Er hätte 4 Mal gekauft. Alle 4 Trades wären im Minus."
+    }
+   ]
+  },
+  {
+   "typ": "woche",
+   "symbol": "SPY",
+   "von": "2026-11-16",
+   "bis": "2026-11-20",
+   "sprecher": [
+    {
+     "sag": "Denn der ganze Markt ist diese Woche um fast acht Prozent gefallen.",
+     "zeig": "Denn der ganze Markt ist diese Woche um fast 8 % gefallen."
+    },
+    "Und Bert verdient nur, wenn Kurse steigen."
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Regeln ändern?",
+   "zeilen": [
+    "Nein – nach 1 Woche wäre das Raten",
+    {
+     "text": "Ab Montag: Update #4",
+     "farbe": "gelb"
+    },
+    "Bert soll den ganzen Tag wach sein"
+   ],
+   "sprecher": [
+    "Regeln ändern? Nein. Nach einer Woche wäre das Raten.",
+    "Aber ab Montag soll Bert endlich den ganzen Tag wach sein."
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Kurts Woche",
+   "titel_farbe": "gruen",
+   "zeilen": [
+    "48 Spiele in 5 Ligen geprüft",
+    {
+     "text": "15× Value gefunden",
+     "farbe": "gruen"
+    },
+    {
+     "text": "jedes Mal beim Außenseiter",
+     "farbe": "orange"
+    },
+    {
+     "text": "getippt: nur 1×",
+     "farbe": "grau"
+    }
+   ],
+   "sprecher": [
+    {
+     "sag": "Und Kurt? Achtundvierzig Spiele geprüft. Fünfzehnmal Value, aber jedes Mal beim Außenseiter.",
+     "zeig": "Und Kurt? 48 Spiele geprüft. 15 Mal Value, aber jedes Mal beim Außenseiter."
+    },
+    "Ehrlich: Bei Außenseitern ist so eine Rechnung am unsichersten."
+   ]
+  },
+  {
+   "typ": "tipps",
+   "titel": "Kurts einziger Tipp",
+   "von": "2026-11-20",
+   "bis": "2026-11-23",
+   "sprecher": [
+    {
+     "sag": "Getippt hat er nur einmal: Manchester United in Liverpool. Quote vier Komma sieben.",
+     "zeig": "Getippt hat er nur 1 Mal: Manchester United in Liverpool. Quote 4,70."
+    }
+   ]
+  },
+  {
+   "typ": "stand",
+   "sprecher": [
+    "Zwischenstand nach Woche eins: Kurt führt knapp."
+   ]
+  },
+  {
+   "typ": "frage",
+   "zeilen": [
+    "So 17:30: Trifft Kurt?",
+    "Mo: Bert endlich wach?",
+    "Wer gewinnt Woche 2?"
+   ],
+   "sprecher": [
+    {
+     "sag": "Sonntag spielt Kurts Außenseiter. Montag soll Bert endlich wach sein. Wer gewinnt Woche zwei?",
+     "zeig": "Sonntag spielt Kurts Außenseiter. Montag soll Bert endlich wach sein. Wer gewinnt Woche 2?"
+    }
+   ]
+  }
+ ]
+}

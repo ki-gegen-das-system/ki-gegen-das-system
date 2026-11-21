@@ -1,0 +1,15 @@
+# folge5 – automatisch aus video/folgen/folge5.json erzeugt
+s1|Minus einunddreißig Dollar. Das ist Berts erste Woche.
+s2|Mittwoch kauft er sechs Tesla. Dann verschläft er den Börsenschluss.
+s2|Verkauft wird erst am Donnerstag. Mit Verlust.
+s3|Was, wenn Bert nie geschlafen hätte? Ich hab nachgerechnet.
+s3|Er hätte viermal gekauft. Alle vier Trades wären im Minus.
+s4|Denn der ganze Markt ist diese Woche um fast acht Prozent gefallen.
+s4|Und Bert verdient nur, wenn Kurse steigen.
+s5|Regeln ändern? Nein. Nach einer Woche wäre das Raten.
+s5|Aber ab Montag soll Bert endlich den ganzen Tag wach sein.
+s6|Und Kurt? Achtundvierzig Spiele geprüft. Fünfzehnmal Value, aber jedes Mal beim Außenseiter.
+s6|Ehrlich: Bei Außenseitern ist so eine Rechnung am unsichersten.
+s7|Getippt hat er nur einmal: Manchester United in Liverpool. Quote vier Komma sieben.
+s8|Zwischenstand nach Woche eins: Kurt führt knapp.
+s9|Sonntag spielt Kurts Außenseiter. Montag soll Bert endlich wach sein. Wer gewinnt Woche zwei?

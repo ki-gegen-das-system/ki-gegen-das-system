@@ -22,7 +22,11 @@ Szenen-Typen (Feld "typ"):
   update  – Update-Hinweis:             "nummer", "titel", "punkte": [..]
   stand   – Zwischenstand Bert vs. Kurt in Prozent
   frage   – Cliffhanger-Frage:          "zeilen": [..]
-  text    – freie Textfolie:            "titel", "zeilen": [..]
+  text    – freie Textfolie:            "titel", "zeilen": [..], optional "titel_farbe";
+            eine Zeile darf auch {"text": "..", "farbe": "rot|gruen|blau|gelb|orange|grau"} sein
+  woche   – Chart über mehrere Tage:    "symbol", "von", "bis" (JJJJ-MM-TT), z. B. Wochenrückblick
+  nachrechnung – „Was wäre, wenn …?":   "von", "bis", optional "titel"
+            (liest data/nachrechnung/bert_<von>_bis_<bis>.csv aus nachrechnung.py – KEINE echten Trades)
 Jede Szene hat "sprecher": [Satz, ...]. Ein Satz ist entweder Text (Zahlen als Wörter!) oder
 {"sag": "gesprochen, Zahlen als Wörter", "zeig": "Untertitel, Zahlen als Ziffern"}.
 """
@@ -96,6 +100,20 @@ def pct(v, d=2):
 
 def signed(v, d=2, unit=""):
     return ("+" if v > 0 else "−" if v < 0 else "±") + num(abs(v), d) + unit
+
+
+COLORS = {"rot": RED, "gruen": GREEN, "blau": BLUE, "gelb": YELLOW, "orange": ORANGE, "grau": GREY,
+          "weiss": WHITE}
+WEEKDAYS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
+
+
+def color(name, default):
+    return COLORS.get(name, default) if name else default
+
+
+def weekday(iso):
+    import datetime as _dt
+    return WEEKDAYS[_dt.date.fromisoformat(iso).weekday()]
 
 
 def clamp(x, a=0.0, b=1.0):
@@ -656,14 +674,114 @@ class Frage(Scene):
 
 class Text(Scene):
     def draw(self, img, f, t):
-        appear(img, self.s.get("titel", ""), fit(self.s.get("titel", ""), BLACK, 80, 940), YELLOW, 500, f, 0.0)
+        appear(img, self.s.get("titel", ""), fit(self.s.get("titel", ""), BLACK, 80, 940),
+               color(self.s.get("titel_farbe"), YELLOW), 500, f, 0.0)
         for i, z in enumerate(self.s.get("zeilen", [])):
-            appear(img, z, fit(z, BOLD, 56, 920), WHITE, 660 + i * 95, f, 0.1 + i * 0.12, BOLD)
+            txt, col = (z["text"], color(z.get("farbe"), WHITE)) if isinstance(z, dict) else (z, WHITE)
+            appear(img, txt, fit(txt, BOLD, 56, 920), col, 660 + i * 95, f, 0.1 + i * 0.12, BOLD)
+
+
+class Woche(Chart):
+    """Echter Chart über mehrere Handelstage (z. B. Montag bis Freitag), mit Berts Linien."""
+
+    def prepare(self, dur):
+        Scene.prepare(self, dur)
+        self.sym = self.s.get("symbol", "SPY")
+        von, bis = self.s["von"], self.s["bis"]
+        days = sorted(fn[:-5] for fn in os.listdir(os.path.join(DATA, "charts"))
+                      if fn.endswith(".json") and von <= fn[:-5] <= bis)
+        if not days:
+            raise SystemExit(f"Keine Chartdaten zwischen {von} und {bis}.")
+        self.k, self.e9, self.e21, self.starts = [], [], [], []
+        for day in days:
+            d = chart_day(day)["symbole"].get(self.sym)
+            if not d:
+                continue
+            self.starts.append((len(self.k), day))
+            self.k += d["kerzen"]
+            self.e9 += d["ema9"]
+            self.e21 += d["ema21"]
+        self.trades = []
+        lo = min([x[3] for x in self.k] + self.e9 + self.e21)
+        hi = max([x[2] for x in self.k] + self.e9 + self.e21)
+        pad = (hi - lo) * 0.08
+        self.lo, self.hi = lo - pad, hi + pad
+        self.box = (90, 565, 900, 1095)
+        st = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        panel(st, (60, 410, 1020, 1200))
+        x0, y0, x1, y1 = self.box
+        dr = ImageDraw.Draw(st)
+        for i in range(5):
+            v = self.lo + (self.hi - self.lo) * i / 4
+            y = self.y(v)
+            dr.line([(x0, y), (x1, y)], fill=LINE + (255,), width=1)
+            T(st, num(v), 26, DIM, x1 + 14, y, MONO_REG, anchor="l")
+        n = len(self.k)
+        slot = (x1 - x0) / n
+        for j, (idx, day) in enumerate(self.starts):
+            end = self.starts[j + 1][0] if j + 1 < len(self.starts) else n
+            if j:
+                xs = x0 + slot * idx
+                for yy in range(y0, y1, 18):
+                    dr.line([(xs, yy), (xs, yy + 9)], fill=DIM + (255,), width=2)
+            T(st, f"{weekday(day)} {day[8:10]}.", 26, DIM, x0 + slot * (idx + end) / 2, y1 + 30, MONO_REG)
+        first, last = self.k[0][1], self.k[-1][4]
+        ch = (last / first - 1) * 100
+        T(st, self.sym, 56, WHITE, 90, 465, BLACK, anchor="l")
+        T(st, NAMES.get(self.sym, ""), 34, GREY, 90 + font(BLACK, 56).getlength(self.sym) + 20, 470, SEMI, anchor="l")
+        T(st, pct(ch), 40, GREEN if ch >= 0 else RED, 990, 465, BLACK, anchor="r")
+        T(st, f"{de_date(days[0])[:6]}–{de_date(days[-1])} · Schluss {num(last)} $", 28, GREY, 90, 515, SEMI,
+          anchor="l")
+        T(st, "Quelle: Alpaca (IEX)", 24, DIM, 990, 515, SEMI, anchor="r")
+        T(st, "—— schnelle Linie (Ø ~2 Std.)", 26, BLUE, 90, 1170, SEMI, anchor="l")
+        T(st, "—— langsame Linie (Ø ~5 Std.)", 26, YELLOW, 990, 1170, SEMI, anchor="r")
+        self.static = st
+
+
+class Nachrechnung(Scene):
+    """„Was wäre, wenn …?" – nachgerechnete Trades aus nachrechnung.py (keine echten Trades!)."""
+    GRUND = {"blau unter gelb": "Blau unter Gelb", "Börsenschluss naht": "Börsenschluss",
+             "Stop-Loss": "Stop-Loss", "Gewinnmitnahme": "Gewinnmitnahme"}
+
+    def prepare(self, dur):
+        super().prepare(dur)
+        self.von, self.bis = self.s["von"], self.s["bis"]
+        name = f"bert_{self.von}_bis_{self.bis}.csv"
+        if not os.path.exists(os.path.join(DATA, "nachrechnung", name)):
+            raise SystemExit(f"Nachrechnung fehlt: python3 nachrechnung.py {self.von} {self.bis}")
+        self.rows = sorted(read_csv(os.path.join("nachrechnung", name)), key=lambda r: (r["tag"], r["kauf_zeit"]))
+
+    def draw(self, img, f, t):
+        titel = self.s.get("titel", "Was wäre, wenn …?")
+        appear(img, titel, fit(titel, BLACK, 64, 940), WHITE, 440, f, 0.0)
+        sub = f"Nachrechnung mit echten Kursen · {de_date(self.von)[:6]}–{de_date(self.bis)}"
+        appear(img, sub, fit(sub, SEMI, 30, 940), GREY, 500, f, 0.03, SEMI)
+        y, shown = 600, self.rows[:5]
+        for i, r in enumerate(shown):
+            a = ease_out(prog(f, 0.10 + i * 0.10, 0.08))
+            g = float(r["gewinn_usd"])
+            col = GREEN if g > 0 else RED
+            if a > 0:
+                panel(img, (60, y - 50, 1020, y + 52), outline=col, alpha=a, r=20)
+                T(img, f"{weekday(r['tag'])} {r['kauf_zeit']}  {r['symbol']}", 38, WHITE, 90, y - 14, BLACK, a,
+                  anchor="l")
+                info = (f"{num(float(r['kauf_preis_usd']))} → {num(float(r['verkauf_preis_usd']))} $ · "
+                        f"{self.GRUND.get(r['verkaufsgrund'], r['verkaufsgrund'])}")
+                T(img, info, fit(info, MONO_REG, 26, 640), GREY, 90, y + 26, MONO_REG, a, anchor="l")
+                T(img, signed(g, 2, " $"), 38, col, 990, y - 14, BLACK, a, anchor="r")
+                T(img, pct(float(r["gewinn_prozent"])), 26, col, 990, y + 26, BOLD, a, anchor="r")
+            y += 118
+        total = sum(float(r["gewinn_usd"]) for r in self.rows)
+        plus = sum(float(r["gewinn_usd"]) > 0 for r in self.rows)
+        summe = f"{len(self.rows)} Trades · {plus} im Plus · {signed(total, 2, ' $')}"
+        appear(img, summe, fit(summe, BLACK, 52, 940), GREEN if total >= 0 else RED, max(y + 20, 1100), f, 0.6)
+        appear(img, "keine echten Trades · grob nachgerechnet · nachrechnung.py", 26, DIM, 1180, f, 0.65, SEMI)
 
 
 TYPES = {"hook": Hook, "chart": Chart, "trades": Trades, "konto": Konto, "kurt": Kurt, "tipps": Tipps,
          "value": Value,
-         "update": Update, "stand": Stand, "frage": Frage, "text": Text}
+         "update": Update, "stand": Stand, "frage": Frage, "text": Text, "woche": Woche,
+         "nachrechnung": Nachrechnung}
 
 
 # ------------------------------------------------------------------ Untertitel

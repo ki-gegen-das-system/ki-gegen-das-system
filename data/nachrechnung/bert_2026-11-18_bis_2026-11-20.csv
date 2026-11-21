@@ -1,0 +1,5 @@
+tag,symbol,kauf_zeit,kauf_preis_usd,stueck,verkauf_zeit,verkauf_preis_usd,gewinn_usd,gewinn_prozent,verkaufsgrund
+2026-11-18,QQQ,18:30,661.53,3,21:30,657.94,-10.77,-0.54,Börsenschluss naht
+2026-11-18,TSLA,18:30,385.33,6,21:30,382.65,-16.08,-0.70,Börsenschluss naht
+2026-11-18,MSFT,19:30,506.86,4,21:30,506.67,-0.76,-0.04,Börsenschluss naht
+2026-11-18,SPY,19:45,733.64,3,20:45,730.34,-9.90,-0.45,blau unter gelb

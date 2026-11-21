@@ -51,6 +51,12 @@ Mika will ehrliches, kritisches Feedback.
 8. `stand` – Zwischenstand in Prozent
 9. `frage` – Cliffhanger
 
+**Samstags: Wochenrückblick** (seit Folge 5) – echte Bilanz der Woche + `woche` (Chart Mo–Fr) +
+optional `nachrechnung` („Was wäre, wenn Bert nie geschlafen hätte?“). Die Nachrechnung vorher mit
+`python3 nachrechnung.py <von> <bis>` erzeugen und mitpushen (`data/nachrechnung/`), damit sie öffentlich
+nachprüfbar ist. Im Video immer klar sagen/zeigen: **Nachrechnung, keine echten Trades, grob**
+(Kreuzungen über Nacht zählen nicht, weil die vorbörslichen Kerzen fehlen).
+
 ## Ablauf Schritt für Schritt
 1. Repo klonen, diese Anleitung und `video/FOLGEN.md` lesen, Daten des Tages auswerten.
 2. Prüfen, ob `data/charts/<Datum>.json` existiert. Wenn nicht: Workflow „Chartdaten" starten
