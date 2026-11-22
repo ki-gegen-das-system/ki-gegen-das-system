@@ -139,17 +139,6 @@
       "fair": 0.2112198918025792,
       "value": 0.9800602979639674
     },
-    "dcee36f9b8a9989972b6d4ddde76c4c7": {
-      "liga": "La Liga",
-      "liga_key": "soccer_spain_la_liga",
-      "heim": "Athletic Bilbao",
-      "gast": "Espanyol",
-      "anstoss": "2026-11-20T20:00:00Z",
-      "tipp": "Draw",
-      "quote": 4.7,
-      "fair": 0.21039949312609374,
-      "value": 0.9888776176926406
-    },
     "9881e56a732493272e688663b26cd37f": {
       "liga": "La Liga",
       "liga_key": "soccer_spain_la_liga",
@@ -336,17 +325,6 @@
       "quote": 5.1,
       "fair": 0.19448565041254295,
       "value": 0.991876817103969
-    },
-    "5dcc9d2b0da87770a4f49e924275be39": {
-      "liga": "Ligue 1",
-      "liga_key": "soccer_france_ligue_one",
-      "heim": "Troyes",
-      "gast": "Le Havre",
-      "anstoss": "2026-11-20T19:45:00Z",
-      "tipp": "Draw",
-      "quote": 3.62,
-      "fair": 0.27870662417550457,
-      "value": 1.0089179795153265
     },
     "651c1847b5cdcc85e60a140edd2282c4": {
       "liga": "Ligue 1",
