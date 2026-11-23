@@ -1,0 +1,1140 @@
+{
+ "stimme": "chatterbox",
+ "clips": [
+  {
+   "szene": "s1",
+   "datei": "01.wav",
+   "dauer": 2.791,
+   "text": "Plus zwanzig Dollar. Berts erster Gewinn.",
+   "hash": "b066c7b20f09854ca800de48d95dd0f5058a685c",
+   "pruefung": 0.92,
+   "woerter": [
+    [
+     "Plus",
+     0.0,
+     0.2
+    ],
+    [
+     "20",
+     0.2,
+     0.8
+    ],
+    [
+     "Dollar,",
+     0.8,
+     1.22
+    ],
+    [
+     "wer",
+     1.58,
+     1.72
+    ],
+    [
+     "hat's",
+     1.72,
+     2.02
+    ],
+    [
+     "erster",
+     2.02,
+     2.3
+    ],
+    [
+     "gewinnen?",
+     2.3,
+     2.68
+    ]
+   ]
+  },
+  {
+   "szene": "s1",
+   "datei": "02.wav",
+   "dauer": 3.16,
+   "text": "Und Kurts erster Tipp? Minus hundert Euro.",
+   "hash": "c3b1d2e4cc55308b15a0a67e39b9bca04406463e",
+   "pruefung": 0.91,
+   "woerter": [
+    [
+     "und",
+     0.0,
+     0.2
+    ],
+    [
+     "kurz",
+     0.2,
+     0.48
+    ],
+    [
+     "erster",
+     0.48,
+     1.04
+    ],
+    [
+     "Tipp,",
+     1.04,
+     1.38
+    ],
+    [
+     "minus",
+     1.84,
+     2.16
+    ],
+    [
+     "100",
+     2.16,
+     2.62
+    ],
+    [
+     "Euro.",
+     2.62,
+     2.94
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "03.wav",
+   "dauer": 5.43,
+   "text": "Das ist Apple heute, echte Kurse. Gleich zum Börsenstart kreuzt Blau über Gelb.",
+   "hash": "8ca1c0b3dc7740d41a8f48cc740811d9d7c112ac",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Das",
+     0.0,
+     0.16
+    ],
+    [
+     "ist",
+     0.16,
+     0.38
+    ],
+    [
+     "Apple",
+     0.38,
+     0.78
+    ],
+    [
+     "heute.",
+     0.78,
+     1.14
+    ],
+    [
+     "Echte",
+     1.58,
+     1.86
+    ],
+    [
+     "Kurse.",
+     1.86,
+     2.34
+    ],
+    [
+     "Gleich",
+     2.66,
+     2.92
+    ],
+    [
+     "zum",
+     2.92,
+     3.22
+    ],
+    [
+     "Börsenstart",
+     3.22,
+     3.86
+    ],
+    [
+     "kreuzt",
+     3.86,
+     4.38
+    ],
+    [
+     "Blau",
+     4.38,
+     4.82
+    ],
+    [
+     "über",
+     4.82,
+     5.0
+    ],
+    [
+     "Gelb.",
+     5.0,
+     5.4
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "04.wav",
+   "dauer": 4.72,
+   "text": "Bert kauft sieben Apple-Aktien, für rund dreihundertachtundvierzig Dollar.",
+   "hash": "6d140585348e783cdb27d2dfd34bad234ae4a86c",
+   "pruefung": 0.91,
+   "woerter": [
+    [
+     "Bert",
+     0.0,
+     0.26
+    ],
+    [
+     "kauft",
+     0.26,
+     0.78
+    ],
+    [
+     "7",
+     0.78,
+     1.1
+    ],
+    [
+     "Apple",
+     1.1,
+     1.54
+    ],
+    [
+     "Aktien",
+     1.54,
+     2.1
+    ],
+    [
+     "für",
+     2.1,
+     2.58
+    ],
+    [
+     "rund",
+     2.58,
+     2.86
+    ],
+    [
+     "$348.",
+     2.86,
+     4.5
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "05.wav",
+   "dauer": 7.74,
+   "text": "Bei den anderen sieben Aktien lag Blau schon vor dem Start über Gelb. Bert kauft nur frische Kreuzungen.",
+   "hash": "5914bdf3529165d01e67b750efa2035c4b077442",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Bei",
+     0.0,
+     0.12
+    ],
+    [
+     "den",
+     0.12,
+     0.3
+    ],
+    [
+     "anderen",
+     0.3,
+     0.66
+    ],
+    [
+     "7",
+     0.66,
+     1.26
+    ],
+    [
+     "Aktien",
+     1.26,
+     1.98
+    ],
+    [
+     "lag",
+     1.98,
+     2.4
+    ],
+    [
+     "Blau",
+     2.4,
+     2.98
+    ],
+    [
+     "schon",
+     2.98,
+     3.2
+    ],
+    [
+     "vor",
+     3.2,
+     3.54
+    ],
+    [
+     "dem",
+     3.54,
+     3.74
+    ],
+    [
+     "Start",
+     3.74,
+     4.14
+    ],
+    [
+     "über",
+     4.14,
+     4.56
+    ],
+    [
+     "Gelb.",
+     4.56,
+     5.04
+    ],
+    [
+     "Bert",
+     5.46,
+     5.78
+    ],
+    [
+     "kauft",
+     5.78,
+     6.3
+    ],
+    [
+     "nur",
+     6.3,
+     6.58
+    ],
+    [
+     "frische",
+     6.58,
+     7.0
+    ],
+    [
+     "Kreuzungen.",
+     7.0,
+     7.52
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "06.wav",
+   "dauer": 5.24,
+   "text": "Blau bleibt den ganzen Tag oben. Bert hält. Kurz vor Schluss verkauft er.",
+   "hash": "4ec00eb40a0d1cb63312dc4e041cfafdcd991c0f",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Blau",
+     0.0,
+     0.34
+    ],
+    [
+     "bleibt",
+     0.34,
+     0.7
+    ],
+    [
+     "den",
+     0.7,
+     0.94
+    ],
+    [
+     "ganzen",
+     0.94,
+     1.26
+    ],
+    [
+     "Tag",
+     1.26,
+     1.62
+    ],
+    [
+     "oben.",
+     1.62,
+     1.98
+    ],
+    [
+     "Bert",
+     2.48,
+     2.62
+    ],
+    [
+     "hält.",
+     2.62,
+     2.9
+    ],
+    [
+     "Kurz",
+     3.4,
+     3.64
+    ],
+    [
+     "vor",
+     3.64,
+     3.9
+    ],
+    [
+     "Schluss",
+     3.9,
+     4.18
+    ],
+    [
+     "verkauft",
+     4.18,
+     4.8
+    ],
+    [
+     "er.",
+     4.8,
+     5.02
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "07.wav",
+   "dauer": 5.462,
+   "text": "Im Logbuch steht aber auch ein Fehler. Die Sicherung zum Börsenschluss wurde abgelehnt.",
+   "hash": "23080dadd1a1c3d0133012b2ebed56b0f7b04efc",
+   "pruefung": 0.98,
+   "woerter": [
+    [
+     "Im",
+     0.0,
+     0.14
+    ],
+    [
+     "Lookbuch",
+     0.14,
+     0.82
+    ],
+    [
+     "steht",
+     0.82,
+     1.26
+    ],
+    [
+     "aber",
+     1.26,
+     1.62
+    ],
+    [
+     "auch",
+     1.62,
+     1.92
+    ],
+    [
+     "ein",
+     1.92,
+     2.14
+    ],
+    [
+     "Fehler.",
+     2.14,
+     2.48
+    ],
+    [
+     "Die",
+     2.86,
+     3.0
+    ],
+    [
+     "Sicherung",
+     3.0,
+     3.52
+    ],
+    [
+     "zum",
+     3.52,
+     3.7
+    ],
+    [
+     "Börsen",
+     3.7,
+     4.08
+    ],
+    [
+     "-Schluss",
+     4.08,
+     4.34
+    ],
+    [
+     "wurde",
+     4.34,
+     4.74
+    ],
+    [
+     "abgelehnt.",
+     4.74,
+     5.38
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "08.wav",
+   "dauer": 4.94,
+   "text": "Der Kauf war noch nicht ganz fertig. Bert hat dann eben selbst verkauft.",
+   "hash": "a7c1605c407ae446195bd1c5d56c76b17dbaa400",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "Der",
+     0.0,
+     0.14
+    ],
+    [
+     "Kauf",
+     0.14,
+     0.52
+    ],
+    [
+     "war",
+     0.52,
+     0.98
+    ],
+    [
+     "noch",
+     0.98,
+     1.16
+    ],
+    [
+     "nicht",
+     1.16,
+     1.38
+    ],
+    [
+     "ganz",
+     1.38,
+     1.66
+    ],
+    [
+     "fertig,",
+     1.66,
+     2.2
+    ],
+    [
+     "Wert",
+     2.72,
+     2.96
+    ],
+    [
+     "hat",
+     2.96,
+     3.28
+    ],
+    [
+     "dann",
+     3.28,
+     3.46
+    ],
+    [
+     "ebenselt",
+     3.46,
+     4.18
+    ],
+    [
+     "verkauft.",
+     4.18,
+     4.72
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "09.wav",
+   "dauer": 4.582,
+   "text": "Um sechzehn Uhr vierzig war Bert sogar kurz über zehntausend Dollar.",
+   "hash": "ed4447aeddfe7a0d816b1a95b90894fa915f5ae2",
+   "pruefung": 0.92,
+   "woerter": [
+    [
+     "Um",
+     0.0,
+     0.1
+    ],
+    [
+     "16",
+     0.1,
+     0.68
+    ],
+    [
+     "Uhr",
+     0.68,
+     0.98
+    ],
+    [
+     "40",
+     0.98,
+     1.48
+    ],
+    [
+     "war",
+     1.48,
+     2.02
+    ],
+    [
+     "Bert",
+     2.02,
+     2.28
+    ],
+    [
+     "sogar",
+     2.28,
+     2.66
+    ],
+    [
+     "kurz",
+     2.66,
+     3.02
+    ],
+    [
+     "über",
+     3.02,
+     3.36
+    ],
+    [
+     "10",
+     3.36,
+     3.68
+    ],
+    [
+     ".000",
+     3.68,
+     4.08
+    ],
+    [
+     "Dollar.",
+     4.08,
+     4.4
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "10.wav",
+   "dauer": 6.36,
+   "text": "Am Ende: plus zwanzig Dollar heute. Seit dem Start nur noch minus null Komma eins Prozent.",
+   "hash": "fc72451b8ffd461091c5c68ed0b02a3bfa1ddad7",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "am",
+     0.0,
+     0.14
+    ],
+    [
+     "Ende",
+     0.14,
+     0.6
+    ],
+    [
+     "plus",
+     0.6,
+     1.06
+    ],
+    [
+     "20",
+     1.06,
+     1.78
+    ],
+    [
+     "Dollar",
+     1.78,
+     2.08
+    ],
+    [
+     "heute.",
+     2.08,
+     2.5
+    ],
+    [
+     "Seit",
+     2.96,
+     3.22
+    ],
+    [
+     "dem",
+     3.22,
+     3.54
+    ],
+    [
+     "Start",
+     3.54,
+     3.9
+    ],
+    [
+     "nur",
+     3.9,
+     4.3
+    ],
+    [
+     "noch",
+     4.3,
+     4.52
+    ],
+    [
+     "minus",
+     4.52,
+     4.8
+    ],
+    [
+     "0",
+     4.8,
+     5.22
+    ],
+    [
+     ",1%.",
+     5.22,
+     6.14
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "11.wav",
+   "dauer": 5.864,
+   "text": "Und Update Nummer vier? Bert war pünktlich zum Start wach. Und kein Eintrag ging verloren.",
+   "hash": "ed175999ff468921efa31dd194091ee996591402",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "und",
+     0.0,
+     0.14
+    ],
+    [
+     "Update",
+     0.14,
+     0.64
+    ],
+    [
+     "Nummer",
+     0.64,
+     1.06
+    ],
+    [
+     "4,",
+     1.06,
+     1.46
+    ],
+    [
+     "Bert",
+     1.94,
+     2.2
+    ],
+    [
+     "war",
+     2.2,
+     2.48
+    ],
+    [
+     "pünktlich",
+     2.48,
+     3.0
+    ],
+    [
+     "zum",
+     3.0,
+     3.2
+    ],
+    [
+     "Start",
+     3.2,
+     3.44
+    ],
+    [
+     "wach",
+     3.44,
+     3.88
+    ],
+    [
+     "und",
+     3.88,
+     4.12
+    ],
+    [
+     "kein",
+     4.12,
+     4.4
+    ],
+    [
+     "Eintrag",
+     4.4,
+     4.96
+    ],
+    [
+     "ging",
+     4.96,
+     5.18
+    ],
+    [
+     "verloren.",
+     5.18,
+     5.6
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "12.wav",
+   "dauer": 6.076,
+   "text": "Aber einmal hat GitHub ihn achtzehn Minuten zu spät geweckt. Verpasst hat er dabei nichts.",
+   "hash": "1d23982f56a66a7cae62768bc403f03e7de6dad4",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Aber",
+     0.0,
+     0.22
+    ],
+    [
+     "einmal",
+     0.22,
+     0.64
+    ],
+    [
+     "hat",
+     0.64,
+     1.2
+    ],
+    [
+     "Github",
+     1.2,
+     1.82
+    ],
+    [
+     "ihn",
+     1.82,
+     2.1
+    ],
+    [
+     "18",
+     2.1,
+     2.6
+    ],
+    [
+     "Minuten",
+     2.6,
+     3.06
+    ],
+    [
+     "zu",
+     3.06,
+     3.38
+    ],
+    [
+     "spät",
+     3.38,
+     3.68
+    ],
+    [
+     "geweckt,",
+     3.68,
+     4.12
+    ],
+    [
+     "verpasst",
+     4.46,
+     5.04
+    ],
+    [
+     "hat",
+     5.04,
+     5.16
+    ],
+    [
+     "er",
+     5.16,
+     5.34
+    ],
+    [
+     "dabei",
+     5.34,
+     5.6
+    ],
+    [
+     "nichts.",
+     5.6,
+     5.9
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "13.wav",
+   "dauer": 6.738,
+   "text": "Kurts Außenseiter Manchester United verliert in Liverpool null zu vier. Minus hundert Euro.",
+   "hash": "d9a20248cf384c5db5d53008e9517a1a74ff2535",
+   "pruefung": 0.94,
+   "woerter": [
+    [
+     "Kurz",
+     0.0,
+     0.26
+    ],
+    [
+     "Außenseiter",
+     0.26,
+     1.28
+    ],
+    [
+     "Manchester",
+     1.28,
+     1.78
+    ],
+    [
+     "United",
+     1.78,
+     2.42
+    ],
+    [
+     "verliert",
+     2.42,
+     3.34
+    ],
+    [
+     "in",
+     3.34,
+     3.44
+    ],
+    [
+     "Liverpool",
+     3.44,
+     3.78
+    ],
+    [
+     "0",
+     3.78,
+     4.36
+    ],
+    [
+     "-4",
+     4.36,
+     4.96
+    ],
+    [
+     "–",
+     4.96,
+     5.54
+    ],
+    [
+     "100",
+     5.54,
+     6.18
+    ],
+    [
+     "Euro.",
+     6.18,
+     6.52
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "14.wav",
+   "dauer": 7.346,
+   "text": "Kurt hat ihm selbst nur dreiundzwanzig Prozent Chance gegeben. Value lohnt sich nur im Schnitt, nicht bei jedem Tipp.",
+   "hash": "f6078805cec1ada99c46e87410fc406bcc454b17",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "Kurt",
+     0.0,
+     0.32
+    ],
+    [
+     "hat",
+     0.32,
+     0.66
+    ],
+    [
+     "ihm",
+     0.66,
+     0.92
+    ],
+    [
+     "selbst",
+     0.92,
+     1.24
+    ],
+    [
+     "nur",
+     1.24,
+     1.66
+    ],
+    [
+     "23",
+     1.66,
+     2.28
+    ],
+    [
+     "%",
+     2.28,
+     2.78
+    ],
+    [
+     "Chance",
+     2.78,
+     3.2
+    ],
+    [
+     "gegeben.",
+     3.2,
+     3.76
+    ],
+    [
+     "Valou",
+     4.3,
+     4.94
+    ],
+    [
+     "lohnt",
+     4.94,
+     5.36
+    ],
+    [
+     "sich",
+     5.36,
+     5.52
+    ],
+    [
+     "nur",
+     5.52,
+     5.74
+    ],
+    [
+     "im",
+     5.74,
+     5.92
+    ],
+    [
+     "Schnitt",
+     5.92,
+     6.26
+    ],
+    [
+     "nicht",
+     6.26,
+     6.58
+    ],
+    [
+     "bei",
+     6.58,
+     6.84
+    ],
+    [
+     "jedem",
+     6.84,
+     7.02
+    ],
+    [
+     "Tipp.",
+     7.02,
+     7.26
+    ]
+   ]
+  },
+  {
+   "szene": "s7",
+   "datei": "15.wav",
+   "dauer": 2.451,
+   "text": "Zwischenstand: Bert überholt Kurt.",
+   "hash": "b494903d0e323a71c85c54f9bf782b63bc92c8a3",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Zwischenstand",
+     0.0,
+     0.64
+    ],
+    [
+     "Bert",
+     0.64,
+     1.24
+    ],
+    [
+     "überholt",
+     1.24,
+     1.98
+    ],
+    [
+     "Kurt",
+     1.98,
+     2.24
+    ]
+   ]
+  },
+  {
+   "szene": "s8",
+   "datei": "16.wav",
+   "dauer": 3.96,
+   "text": "Bert fehlen noch zehn Dollar bis zur Null. Schafft er das morgen?",
+   "hash": "e98a83c1a609f8139d3cd00e6c0de31d06e3199c",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "Bert",
+     0.0,
+     0.28
+    ],
+    [
+     "fehlen",
+     0.28,
+     0.78
+    ],
+    [
+     "noch",
+     0.78,
+     1.0
+    ],
+    [
+     "10",
+     1.0,
+     1.34
+    ],
+    [
+     "$",
+     1.34,
+     1.7
+    ],
+    [
+     "bis",
+     1.7,
+     1.98
+    ],
+    [
+     "zu",
+     1.98,
+     2.24
+    ],
+    [
+     "0,",
+     2.24,
+     2.46
+    ],
+    [
+     "schafft",
+     2.7,
+     3.06
+    ],
+    [
+     "er",
+     3.06,
+     3.26
+    ],
+    [
+     "das",
+     3.26,
+     3.44
+    ],
+    [
+     "morgen?",
+     3.44,
+     3.74
+    ]
+   ]
+  }
+ ]
+}
