@@ -51,83 +51,6 @@
     "99776445d5a5f4ed008f9a6d6a1495b7"
   ],
   "kandidaten": {
-    "6ef39b0fd8839f6e93a3de32523e9807": {
-      "liga": "Premier League",
-      "liga_key": "soccer_epl",
-      "heim": "Manchester City",
-      "gast": "Fulham",
-      "anstoss": "2026-11-21T12:30:00Z",
-      "tipp": "Draw",
-      "quote": 5.6,
-      "fair": 0.17904540577078512,
-      "value": 1.0026542723163967
-    },
-    "b8d6ab6ecc8bb356c6335d3f417d0ecf": {
-      "liga": "Premier League",
-      "liga_key": "soccer_epl",
-      "heim": "Aston Villa",
-      "gast": "Sunderland",
-      "anstoss": "2026-11-21T15:00:00Z",
-      "tipp": "Draw",
-      "quote": 4.1,
-      "fair": 0.24691348158106752,
-      "value": 1.0123452744823767
-    },
-    "cf68da11fa604c13fc9ef3219fad0314": {
-      "liga": "Premier League",
-      "liga_key": "soccer_epl",
-      "heim": "Bournemouth",
-      "gast": "Nottingham Forest",
-      "anstoss": "2026-11-21T15:00:00Z",
-      "tipp": "Draw",
-      "quote": 3.75,
-      "fair": 0.2649348093753602,
-      "value": 0.9935055351576006
-    },
-    "ac6cf70520a83c0949b4003bde53c709": {
-      "liga": "Premier League",
-      "liga_key": "soccer_epl",
-      "heim": "Chelsea",
-      "gast": "Leeds United",
-      "anstoss": "2026-11-21T15:00:00Z",
-      "tipp": "Leeds United",
-      "quote": 4.2,
-      "fair": 0.23757314040813893,
-      "value": 0.9978071897141836
-    },
-    "9f38413bdad666e2d2dfcc574dd12e66": {
-      "liga": "Premier League",
-      "liga_key": "soccer_epl",
-      "heim": "Coventry City",
-      "gast": "Crystal Palace",
-      "anstoss": "2026-11-21T15:00:00Z",
-      "tipp": "Crystal Palace",
-      "quote": 2.95,
-      "fair": 0.3427743656279024,
-      "value": 1.0111843786023123
-    },
-    "e67ee3a6f93bb90b8aefcf3dd204477c": {
-      "liga": "Premier League",
-      "liga_key": "soccer_epl",
-      "heim": "Tottenham Hotspur",
-      "gast": "Ipswich Town",
-      "anstoss": "2026-11-21T15:00:00Z",
-      "tipp": "Draw",
-      "quote": 4.7,
-      "fair": 0.2142157086775511,
-      "value": 1.0068138307844903
-    },
-    "71bf9fe98c3e3be39cd1d059f8d71ae8": {
-      "liga": "Premier League",
-      "liga_key": "soccer_epl",
-      "heim": "Newcastle United",
-      "gast": "Arsenal",
-      "anstoss": "2026-11-21T17:30:00Z",
-      "tipp": "Draw",
-      "quote": 4.4,
-      "fair": 0.22465939664865944,
-      "value": 0.9885013452541016
-    },
     "230a356290e1a358e9dd2f7fa23de3b9": {
       "liga": "Premier League",
       "liga_key": "soccer_epl",
@@ -138,50 +61,6 @@
       "quote": 4.64,
       "fair": 0.2112198918025792,
       "value": 0.9800602979639674
-    },
-    "9881e56a732493272e688663b26cd37f": {
-      "liga": "La Liga",
-      "liga_key": "soccer_spain_la_liga",
-      "heim": "Alavés",
-      "gast": "Deportivo La Coruña",
-      "anstoss": "2026-11-21T13:00:00Z",
-      "tipp": "Deportivo La Coruña",
-      "quote": 3.6,
-      "fair": 0.2779152258114272,
-      "value": 1.000494812921138
-    },
-    "ebe638278f4d70eaf211ad5be9795fa0": {
-      "liga": "La Liga",
-      "liga_key": "soccer_spain_la_liga",
-      "heim": "Rayo Vallecano",
-      "gast": "Valencia",
-      "anstoss": "2026-11-21T15:15:00Z",
-      "tipp": "Valencia",
-      "quote": 4.21,
-      "fair": 0.23533176508603373,
-      "value": 0.990746731012202
-    },
-    "1bb4951d418dcb641c608e085b87a1c3": {
-      "liga": "La Liga",
-      "liga_key": "soccer_spain_la_liga",
-      "heim": "Sevilla",
-      "gast": "Real Betis",
-      "anstoss": "2026-11-21T17:30:00Z",
-      "tipp": "Draw",
-      "quote": 3.7,
-      "fair": 0.27513217856531236,
-      "value": 1.0179890606916557
-    },
-    "90af957b2f622a5cf805e60b151c54b9": {
-      "liga": "La Liga",
-      "liga_key": "soccer_spain_la_liga",
-      "heim": "Real Madrid",
-      "gast": "Celta Vigo",
-      "anstoss": "2026-11-21T20:00:00Z",
-      "tipp": "Real Madrid",
-      "quote": 1.19,
-      "fair": 0.8162557243063228,
-      "value": 0.9713443119245241
     },
     "214a79b6e08dbe3f508844936158c038": {
       "liga": "La Liga",
@@ -226,50 +105,6 @@
       "quote": 4.13,
       "fair": 0.240548308783639,
       "value": 0.9934645152764291
-    },
-    "9e8d72c6c27c1667be7b88416a36ca80": {
-      "liga": "Serie A",
-      "liga_key": "soccer_italy_serie_a",
-      "heim": "Como",
-      "gast": "Cagliari",
-      "anstoss": "2026-11-21T14:00:00Z",
-      "tipp": "Draw",
-      "quote": 5.95,
-      "fair": 0.16968749994140628,
-      "value": 1.0096406246513674
-    },
-    "bf921a2780e2a25201da8a3bfece84c4": {
-      "liga": "Serie A",
-      "liga_key": "soccer_italy_serie_a",
-      "heim": "Lazio",
-      "gast": "Lecce",
-      "anstoss": "2026-11-21T14:00:00Z",
-      "tipp": "Draw",
-      "quote": 5.3,
-      "fair": 0.18741280290770573,
-      "value": 0.9932878554108403
-    },
-    "cb513fd9869c9aa6ce506bb499bcd48b": {
-      "liga": "Serie A",
-      "liga_key": "soccer_italy_serie_a",
-      "heim": "Parma",
-      "gast": "AS Roma",
-      "anstoss": "2026-11-21T17:00:00Z",
-      "tipp": "Draw",
-      "quote": 5.98,
-      "fair": 0.16921912293919564,
-      "value": 1.01193035517639
-    },
-    "e59809eb38340e3bca323cef070dfd34": {
-      "liga": "Serie A",
-      "liga_key": "soccer_italy_serie_a",
-      "heim": "Napoli",
-      "gast": "Torino",
-      "anstoss": "2026-11-21T19:45:00Z",
-      "tipp": "Draw",
-      "quote": 4.72,
-      "fair": 0.20978634343564637,
-      "value": 0.9901915410162508
     },
     "be2fcabc408be29ca01ce92ab266f8b7": {
       "liga": "Serie A",
@@ -325,61 +160,6 @@
       "quote": 5.1,
       "fair": 0.19448565041254295,
       "value": 0.991876817103969
-    },
-    "651c1847b5cdcc85e60a140edd2282c4": {
-      "liga": "Ligue 1",
-      "liga_key": "soccer_france_ligue_one",
-      "heim": "Nice",
-      "gast": "Paris Saint Germain",
-      "anstoss": "2026-11-21T16:15:00Z",
-      "tipp": "Draw",
-      "quote": 5.23,
-      "fair": 0.18807230194718905,
-      "value": 0.9836181391837988
-    },
-    "9130b46991ab991f808daf307f004469": {
-      "liga": "Ligue 1",
-      "liga_key": "soccer_france_ligue_one",
-      "heim": "AS Monaco",
-      "gast": "Auxerre",
-      "anstoss": "2026-11-21T19:45:00Z",
-      "tipp": "Draw",
-      "quote": 5.23,
-      "fair": 0.1905394490508276,
-      "value": 0.9965213185358284
-    },
-    "4d6dd3defbbe20fa24b719f9fcdbf280": {
-      "liga": "Ligue 1",
-      "liga_key": "soccer_france_ligue_one",
-      "heim": "Strasbourg",
-      "gast": "Brest",
-      "anstoss": "2026-11-21T19:45:00Z",
-      "tipp": "Brest",
-      "quote": 3.12,
-      "fair": 0.316326910593179,
-      "value": 0.9869399610507186
-    },
-    "d2113ca19873218496f8b2fe6c7e7c41": {
-      "liga": "Ligue 1",
-      "liga_key": "soccer_france_ligue_one",
-      "heim": "Lille",
-      "gast": "Lyon",
-      "anstoss": "2026-11-21T19:45:00Z",
-      "tipp": "Lyon",
-      "quote": 3.33,
-      "fair": 0.2991702264860776,
-      "value": 0.9962368541986385
-    },
-    "13ac2151b9f6893cedb7f509e64eb070": {
-      "liga": "Ligue 1",
-      "liga_key": "soccer_france_ligue_one",
-      "heim": "RC Lens",
-      "gast": "Toulouse",
-      "anstoss": "2026-11-21T19:45:00Z",
-      "tipp": "Toulouse",
-      "quote": 4.1,
-      "fair": 0.24542341190236114,
-      "value": 1.0062359887996806
     },
     "9e5d4a91e379ddffa179b02bf9e09530": {
       "liga": "Ligue 1",
