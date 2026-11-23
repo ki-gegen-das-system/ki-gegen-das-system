@@ -1,17 +1,16 @@
 # folge6 – automatisch aus video/folgen/folge6.json erzeugt
 s1|Plus zwanzig Dollar. Berts erster Gewinn.
 s1|Und Kurts erster Tipp? Minus hundert Euro.
-s2|Das ist Apple heute, echte Kurse. Gleich zum Börsenstart kreuzt Blau über Gelb.
-s2|Bert kauft sieben Apple-Aktien, für rund dreihundertachtundvierzig Dollar.
-s2|Bei den anderen sieben Aktien lag Blau schon vor dem Start über Gelb. Bert kauft nur frische Kreuzungen.
+s2|Apple heute, echte Kurse. Zum Börsenstart kreuzt Blau über Gelb.
+s2|Bert kauft sieben Aktien, für rund dreihundertachtundvierzig Dollar.
+s2|Bei den anderen Aktien lag Blau schon vor dem Start oben. Zu spät für Bert.
 s2|Blau bleibt den ganzen Tag oben. Bert hält. Kurz vor Schluss verkauft er.
 s3|Im Logbuch steht aber auch ein Fehler. Die Sicherung zum Börsenschluss wurde abgelehnt.
-s3|Der Kauf war noch nicht ganz fertig. Bert hat dann eben selbst verkauft.
-s4|Um sechzehn Uhr vierzig war Bert sogar kurz über zehntausend Dollar.
-s4|Am Ende: plus zwanzig Dollar heute. Seit dem Start nur noch minus null Komma eins Prozent.
-s5|Und Update Nummer vier? Bert war pünktlich zum Start wach. Und kein Eintrag ging verloren.
+s3|Der Kauf war noch nicht ganz fertig. Bert hat dann selbst verkauft.
+s4|Heute plus zwanzig Dollar. Seit dem Start nur noch minus null Komma eins Prozent.
+s5|Und Update Nummer vier? Bert war pünktlich wach. Nichts ging verloren.
 s5|Aber einmal hat GitHub ihn achtzehn Minuten zu spät geweckt. Verpasst hat er dabei nichts.
-s6|Kurts Außenseiter Manchester United verliert in Liverpool null zu vier. Minus hundert Euro.
-s6|Kurt hat ihm selbst nur dreiundzwanzig Prozent Chance gegeben. Value lohnt sich nur im Schnitt, nicht bei jedem Tipp.
+s6|Kurts Tipp: Manchester United verliert null zu vier in Liverpool. Minus hundert Euro.
+s6|Kurt gab ihnen nur dreiundzwanzig Prozent Chance. Value zählt erst im Schnitt.
 s7|Zwischenstand: Bert überholt Kurt.
 s8|Bert fehlen noch zehn Dollar bis zur Null. Schafft er das morgen?
