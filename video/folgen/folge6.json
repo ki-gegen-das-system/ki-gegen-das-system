@@ -1,0 +1,119 @@
+{
+ "folge": 6,
+ "titel": "TAG 4 · 23.11.",
+ "datum": "2026-11-23",
+ "szenen": [
+  {
+   "typ": "hook",
+   "gross": "+20,53 $",
+   "farbe": "gruen",
+   "symbol": "AAPL",
+   "zeilen": [
+    "Berts erster Gewinn.",
+    "Kurts erster Tipp: −100 €."
+   ],
+   "sprecher": [
+    {
+     "sag": "Plus zwanzig Dollar. Berts erster Gewinn.",
+     "zeig": "+20 Dollar. Berts erster Gewinn."
+    },
+    {
+     "sag": "Und Kurts erster Tipp? Minus hundert Euro.",
+     "zeig": "Und Kurts erster Tipp? −100 Euro."
+    }
+   ]
+  },
+  {
+   "typ": "chart",
+   "symbol": "AAPL",
+   "sprecher": [
+    "Das ist Apple heute, echte Kurse. Gleich zum Börsenstart kreuzt Blau über Gelb.",
+    {
+     "sag": "Bert kauft sieben Apple-Aktien, für rund dreihundertachtundvierzig Dollar.",
+     "zeig": "Bert kauft 7 Apple-Aktien, für rund 348 Dollar."
+    },
+    {
+     "sag": "Bei den anderen sieben Aktien lag Blau schon vor dem Start über Gelb. Bert kauft nur frische Kreuzungen.",
+     "zeig": "Bei den anderen 7 Aktien lag Blau schon vor dem Start über Gelb. Bert kauft nur frische Kreuzungen."
+    },
+    "Blau bleibt den ganzen Tag oben. Bert hält. Kurz vor Schluss verkauft er."
+   ]
+  },
+  {
+   "typ": "trades",
+   "sprecher": [
+    "Im Logbuch steht aber auch ein Fehler. Die Sicherung zum Börsenschluss wurde abgelehnt.",
+    "Der Kauf war noch nicht ganz fertig. Bert hat dann eben selbst verkauft."
+   ]
+  },
+  {
+   "typ": "konto",
+   "sprecher": [
+    {
+     "sag": "Um sechzehn Uhr vierzig war Bert sogar kurz über zehntausend Dollar.",
+     "zeig": "Um 16:40 Uhr war Bert sogar kurz über 10.000 Dollar."
+    },
+    {
+     "sag": "Am Ende: plus zwanzig Dollar heute. Seit dem Start nur noch minus null Komma eins Prozent.",
+     "zeig": "Am Ende: +20 Dollar heute. Seit dem Start nur noch −0,1 %."
+    }
+   ]
+  },
+  {
+   "typ": "update",
+   "nummer": 4,
+   "titel": "Bert bleibt wach – geklappt?",
+   "punkte": [
+    "Pünktlich zum Börsenstart: 15:31 wach",
+    "Nichts verloren: Logbuch komplett",
+    "1 Lücke: 17:45–18:03 (18 Min.)"
+   ],
+   "sprecher": [
+    {
+     "sag": "Und Update Nummer vier? Bert war pünktlich zum Start wach. Und kein Eintrag ging verloren.",
+     "zeig": "Und Update #4? Bert war pünktlich zum Start wach. Und kein Eintrag ging verloren."
+    },
+    {
+     "sag": "Aber einmal hat GitHub ihn achtzehn Minuten zu spät geweckt. Verpasst hat er dabei nichts.",
+     "zeig": "Aber einmal hat GitHub ihn 18 Minuten zu spät geweckt. Verpasst hat er dabei nichts."
+    }
+   ]
+  },
+  {
+   "typ": "tipps",
+   "titel": "Kurts erster Tipp",
+   "von": "2026-11-22",
+   "bis": "2026-11-22",
+   "sprecher": [
+    {
+     "sag": "Kurts Außenseiter Manchester United verliert in Liverpool null zu vier. Minus hundert Euro.",
+     "zeig": "Kurts Außenseiter Manchester United verliert in Liverpool 0:4. −100 Euro."
+    },
+    {
+     "sag": "Kurt hat ihm selbst nur dreiundzwanzig Prozent Chance gegeben. Value lohnt sich nur im Schnitt, nicht bei jedem Tipp.",
+     "zeig": "Kurt hat ihm selbst nur 23 % Chance gegeben. Value lohnt sich nur im Schnitt, nicht bei jedem Tipp."
+    }
+   ]
+  },
+  {
+   "typ": "stand",
+   "sprecher": [
+    "Zwischenstand: Bert überholt Kurt."
+   ]
+  },
+  {
+   "typ": "frage",
+   "zeilen": [
+    "Bert fehlen noch",
+    "10,68 $ bis zur Null.",
+    "Schafft er das morgen?"
+   ],
+   "sprecher": [
+    {
+     "sag": "Bert fehlen noch zehn Dollar bis zur Null. Schafft er das morgen?",
+     "zeig": "Bert fehlen noch 10 Dollar bis zur Null. Schafft er das morgen?"
+    }
+   ]
+  }
+ ]
+}
