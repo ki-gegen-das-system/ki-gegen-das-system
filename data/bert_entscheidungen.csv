@@ -3,3 +3,4 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-19 16:35,TSLA,VERKAUF,Position vom Vortag übrig – wird geschlossen,379.71
 2026-11-23 15:31,AAPL,KAUF,"7 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 57",348.08
 2026-11-23 15:36,AAPL,FEHLER,Schlusskurs-Order hat nicht geklappt,
+2026-11-23 21:34,AAPL,VERKAUF,Börsenschluss naht – Daytrading heißt: alles raus,350.80
