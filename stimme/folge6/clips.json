@@ -204,91 +204,6 @@
   {
    "szene": "s2",
    "datei": "05.wav",
-   "dauer": 5.7,
-   "text": "Bei den anderen Aktien lag Blau schon vor dem Start oben. Zu spät für Bert.",
-   "hash": "9620051673c9448315db3fb0466b4be7d719bbe5",
-   "pruefung": 1.0,
-   "woerter": [
-    [
-     "Bei",
-     0.0,
-     0.14
-    ],
-    [
-     "den",
-     0.14,
-     0.3
-    ],
-    [
-     "anderen",
-     0.3,
-     0.72
-    ],
-    [
-     "Aktien",
-     0.72,
-     1.4
-    ],
-    [
-     "lag",
-     1.4,
-     1.84
-    ],
-    [
-     "Blau",
-     1.84,
-     2.38
-    ],
-    [
-     "schon",
-     2.38,
-     2.66
-    ],
-    [
-     "vor",
-     2.66,
-     3.0
-    ],
-    [
-     "dem",
-     3.0,
-     3.18
-    ],
-    [
-     "Start",
-     3.18,
-     3.46
-    ],
-    [
-     "oben,",
-     3.46,
-     3.88
-    ],
-    [
-     "zu",
-     4.44,
-     4.66
-    ],
-    [
-     "spät",
-     4.66,
-     5.08
-    ],
-    [
-     "für",
-     5.08,
-     5.32
-    ],
-    [
-     "Bert.",
-     5.32,
-     5.5
-    ]
-   ]
-  },
-  {
-   "szene": "s2",
-   "datei": "06.wav",
    "dauer": 5.24,
    "text": "Blau bleibt den ganzen Tag oben. Bert hält. Kurz vor Schluss verkauft er.",
    "hash": "4ec00eb40a0d1cb63312dc4e041cfafdcd991c0f",
@@ -363,7 +278,7 @@
   },
   {
    "szene": "s3",
-   "datei": "07.wav",
+   "datei": "06.wav",
    "dauer": 5.462,
    "text": "Im Logbuch steht aber auch ein Fehler. Die Sicherung zum Börsenschluss wurde abgelehnt.",
    "hash": "23080dadd1a1c3d0133012b2ebed56b0f7b04efc",
@@ -443,7 +358,7 @@
   },
   {
    "szene": "s3",
-   "datei": "08.wav",
+   "datei": "07.wav",
    "dauer": 4.419,
    "text": "Der Kauf war noch nicht ganz fertig. Bert hat dann selbst verkauft.",
    "hash": "8ad260172227725d5429b63e2aa3ef072ee3ebe0",
@@ -513,7 +428,7 @@
   },
   {
    "szene": "s4",
-   "datei": "09.wav",
+   "datei": "08.wav",
    "dauer": 5.34,
    "text": "Heute plus zwanzig Dollar. Seit dem Start nur noch minus null Komma eins Prozent.",
    "hash": "cd62ee392f5c7e9068a36f6607846da53b55e0a3",
@@ -578,7 +493,7 @@
   },
   {
    "szene": "s5",
-   "datei": "10.wav",
+   "datei": "09.wav",
    "dauer": 4.88,
    "text": "Und Update Nummer vier? Bert war pünktlich wach. Nichts ging verloren.",
    "hash": "3f82595b3e63ead012f2ea4bfe5d12d02c3d144f",
@@ -643,7 +558,7 @@
   },
   {
    "szene": "s5",
-   "datei": "11.wav",
+   "datei": "10.wav",
    "dauer": 6.076,
    "text": "Aber einmal hat GitHub ihn achtzehn Minuten zu spät geweckt. Verpasst hat er dabei nichts.",
    "hash": "1d23982f56a66a7cae62768bc403f03e7de6dad4",
@@ -728,7 +643,7 @@
   },
   {
    "szene": "s6",
-   "datei": "12.wav",
+   "datei": "11.wav",
    "dauer": 5.96,
    "text": "Kurts Tipp: Manchester United verliert null zu vier in Liverpool. Minus hundert Euro.",
    "hash": "7cc0e0aaddeac363324fc7fb7d6c62b2fe703549",
@@ -803,7 +718,7 @@
   },
   {
    "szene": "s6",
-   "datei": "13.wav",
+   "datei": "12.wav",
    "dauer": 5.639,
    "text": "Kurt gab ihnen nur dreiundzwanzig Prozent Chance. Value zählt erst im Schnitt.",
    "hash": "81f0e001312904215f8abadd215a008b5918cffb",
@@ -873,7 +788,7 @@
   },
   {
    "szene": "s7",
-   "datei": "14.wav",
+   "datei": "13.wav",
    "dauer": 2.451,
    "text": "Zwischenstand: Bert überholt Kurt.",
    "hash": "b494903d0e323a71c85c54f9bf782b63bc92c8a3",
@@ -903,7 +818,7 @@
   },
   {
    "szene": "s8",
-   "datei": "15.wav",
+   "datei": "14.wav",
    "dauer": 3.96,
    "text": "Bert fehlen noch zehn Dollar bis zur Null. Schafft er das morgen?",
    "hash": "e98a83c1a609f8139d3cd00e6c0de31d06e3199c",
