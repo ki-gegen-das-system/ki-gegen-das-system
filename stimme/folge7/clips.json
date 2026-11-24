@@ -1,0 +1,925 @@
+{
+ "stimme": "chatterbox",
+ "clips": [
+  {
+   "szene": "s1",
+   "datei": "01.wav",
+   "dauer": 3.46,
+   "text": "Minus hundertneunzehn Dollar. Berts schlechtester Tag.",
+   "hash": "4733c80ce14031eae9f4904b1e2d89f1618bdc4c",
+   "pruefung": 0.91,
+   "woerter": [
+    [
+     "minus",
+     0.0,
+     0.32
+    ],
+    [
+     "119",
+     0.32,
+     1.34
+    ],
+    [
+     "Dollar,",
+     1.34,
+     1.78
+    ],
+    [
+     "wärts",
+     2.12,
+     2.46
+    ],
+    [
+     "Schlechtes",
+     2.46,
+     2.9
+    ],
+    [
+     "der",
+     2.9,
+     3.04
+    ],
+    [
+     "Tag.",
+     3.04,
+     3.24
+    ]
+   ]
+  },
+  {
+   "szene": "s1",
+   "datei": "02.wav",
+   "dauer": 2.858,
+   "text": "Neun Trades. Acht davon im Minus.",
+   "hash": "b04f168e4501b035398790b66ef6b08f206ff09e",
+   "pruefung": 0.92,
+   "woerter": [
+    [
+     "9",
+     0.0,
+     0.26
+    ],
+    [
+     "Gradis,",
+     0.26,
+     0.96
+    ],
+    [
+     "8",
+     1.28,
+     1.5
+    ],
+    [
+     "davon",
+     1.5,
+     1.94
+    ],
+    [
+     "im",
+     1.94,
+     2.3
+    ],
+    [
+     "Minus.",
+     2.3,
+     2.76
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "03.wav",
+   "dauer": 5.197,
+   "text": "Kurz erklärt: Blau ist der Schnitt der letzten zwei Stunden, Gelb der letzten fünf.",
+   "hash": "51e69554203f4b379c6ba453a12aa629fa683cfa",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Kurz",
+     0.0,
+     0.28
+    ],
+    [
+     "erklärt,",
+     0.28,
+     0.88
+    ],
+    [
+     "blau",
+     1.12,
+     1.48
+    ],
+    [
+     "ist",
+     1.48,
+     1.6
+    ],
+    [
+     "der",
+     1.6,
+     1.8
+    ],
+    [
+     "Schnitt",
+     1.8,
+     2.12
+    ],
+    [
+     "der",
+     2.12,
+     2.38
+    ],
+    [
+     "letzten",
+     2.38,
+     2.64
+    ],
+    [
+     "zwei",
+     2.64,
+     3.02
+    ],
+    [
+     "Stunden,",
+     3.02,
+     3.48
+    ],
+    [
+     "gelb",
+     3.92,
+     4.24
+    ],
+    [
+     "der",
+     4.24,
+     4.4
+    ],
+    [
+     "letzten",
+     4.4,
+     4.66
+    ],
+    [
+     "fünf.",
+     4.66,
+     4.98
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "04.wav",
+   "dauer": 3.978,
+   "text": "Blau kreuzt nach oben: Kauf. Nach unten: Verkauf.",
+   "hash": "df5804f92fbb0315d20239207e99b06ca00ccc5a",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Blau",
+     0.0,
+     0.38
+    ],
+    [
+     "kreuzt",
+     0.38,
+     1.02
+    ],
+    [
+     "nach",
+     1.02,
+     1.14
+    ],
+    [
+     "oben,",
+     1.14,
+     1.52
+    ],
+    [
+     "kauf,",
+     1.86,
+     2.24
+    ],
+    [
+     "nach",
+     2.66,
+     2.76
+    ],
+    [
+     "unten",
+     2.76,
+     3.14
+    ],
+    [
+     "verkauf",
+     3.14,
+     3.86
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "05.wav",
+   "dauer": 5.515,
+   "text": "Bei Meta kreuzen sie sich heute ständig. Dreimal kauft Bert, dreimal verkauft er.",
+   "hash": "0048aa01681cb8d39e5818df35af80103cd18f35",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Bei",
+     0.0,
+     0.12
+    ],
+    [
+     "Meta",
+     0.12,
+     0.68
+    ],
+    [
+     "kreuzen",
+     0.68,
+     1.3
+    ],
+    [
+     "sie",
+     1.3,
+     1.48
+    ],
+    [
+     "sich",
+     1.48,
+     1.7
+    ],
+    [
+     "heute",
+     1.7,
+     1.92
+    ],
+    [
+     "ständig,",
+     1.92,
+     2.48
+    ],
+    [
+     "dreimal",
+     2.74,
+     3.26
+    ],
+    [
+     "kauft",
+     3.26,
+     3.62
+    ],
+    [
+     "Bert,",
+     3.62,
+     3.88
+    ],
+    [
+     "dreimal",
+     4.2,
+     4.66
+    ],
+    [
+     "verkauft",
+     4.66,
+     5.16
+    ],
+    [
+     "er.",
+     5.16,
+     5.38
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "06.wav",
+   "dauer": 5.06,
+   "text": "Einmal liegen nur fünf Minuten dazwischen. Zusammen minus vierundvierzig Dollar.",
+   "hash": "e4f1c6d2933f8a381ceaf6e4557551ac9729dcc2",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Einmal",
+     0.0,
+     0.5
+    ],
+    [
+     "liegen",
+     0.5,
+     0.92
+    ],
+    [
+     "nur",
+     0.92,
+     1.22
+    ],
+    [
+     "5",
+     1.22,
+     1.56
+    ],
+    [
+     "Minuten",
+     1.56,
+     1.96
+    ],
+    [
+     "dazwischen,",
+     1.96,
+     2.64
+    ],
+    [
+     "zusammen",
+     2.86,
+     3.22
+    ],
+    [
+     "minus",
+     3.22,
+     3.74
+    ],
+    [
+     "4",
+     3.74,
+     4.12
+    ],
+    [
+     "und",
+     4.12,
+     4.26
+    ],
+    [
+     "40",
+     4.26,
+     4.56
+    ],
+    [
+     "Dollar.",
+     4.56,
+     4.86
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "07.wav",
+   "dauer": 6.36,
+   "text": "Größter Verlust: Tesla. Der Kurs fällt unter die Notbremse von minus eins Komma fünf Prozent.",
+   "hash": "fa0bb74e081954616cce43d0ba7ca89945fd896b",
+   "pruefung": 0.92,
+   "woerter": [
+    [
+     "Höchst",
+     0.0,
+     0.4
+    ],
+    [
+     "der",
+     0.4,
+     0.5
+    ],
+    [
+     "Verlust",
+     0.5,
+     0.96
+    ],
+    [
+     "Tesla,",
+     0.96,
+     1.54
+    ],
+    [
+     "der",
+     2.02,
+     2.14
+    ],
+    [
+     "Kurs",
+     2.14,
+     2.56
+    ],
+    [
+     "fällt",
+     2.56,
+     2.9
+    ],
+    [
+     "unter",
+     2.9,
+     3.26
+    ],
+    [
+     "die",
+     3.26,
+     3.42
+    ],
+    [
+     "Notbremse",
+     3.42,
+     4.06
+    ],
+    [
+     "von",
+     4.06,
+     4.3
+    ],
+    [
+     "minus",
+     4.3,
+     4.58
+    ],
+    [
+     "1",
+     4.58,
+     5.04
+    ],
+    [
+     ",5%.",
+     5.04,
+     6.14
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "08.wav",
+   "dauer": 6.682,
+   "text": "Bert schaut nur alle fünf Minuten. Verkauft wird bei minus eins Komma sieben. Minus vierzig Dollar.",
+   "hash": "e5bf3702537773feab69bbeb426457f82793f553",
+   "pruefung": 0.97,
+   "woerter": [
+    [
+     "Bert",
+     0.0,
+     0.26
+    ],
+    [
+     "schaut",
+     0.26,
+     0.62
+    ],
+    [
+     "nur",
+     0.62,
+     0.92
+    ],
+    [
+     "alle",
+     0.92,
+     1.22
+    ],
+    [
+     "5",
+     1.22,
+     1.5
+    ],
+    [
+     "Minuten.",
+     1.5,
+     2.0
+    ],
+    [
+     "Verkauft",
+     2.6,
+     3.22
+    ],
+    [
+     "wird",
+     3.22,
+     3.5
+    ],
+    [
+     "bei",
+     3.5,
+     3.68
+    ],
+    [
+     "minus",
+     3.68,
+     3.92
+    ],
+    [
+     "1",
+     3.92,
+     4.38
+    ],
+    [
+     ",7,",
+     4.38,
+     5.06
+    ],
+    [
+     "minus",
+     5.42,
+     5.66
+    ],
+    [
+     "40",
+     5.66,
+     6.18
+    ],
+    [
+     "Dollar.",
+     6.18,
+     6.5
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "09.wav",
+   "dauer": 2.911,
+   "text": "Nur Apple bringt ein Plus: knapp ein Dollar.",
+   "hash": "67e722f51e85e546575092da29f9b1c720f50e70",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Nur",
+     0.0,
+     0.22
+    ],
+    [
+     "Apple",
+     0.22,
+     0.58
+    ],
+    [
+     "bringt",
+     0.58,
+     1.04
+    ],
+    [
+     "ein",
+     1.04,
+     1.36
+    ],
+    [
+     "Plus",
+     1.36,
+     1.62
+    ],
+    [
+     "knapp",
+     1.62,
+     2.04
+    ],
+    [
+     "ein",
+     2.04,
+     2.46
+    ],
+    [
+     "Dollar.",
+     2.46,
+     2.68
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "10.wav",
+   "dauer": 5.495,
+   "text": "Der Markt ging heute kaum hoch oder runter. Dann gibt es viele Fehlsignale.",
+   "hash": "539790510a39a86775f790e2bc46459f08a80769",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Der",
+     0.0,
+     0.12
+    ],
+    [
+     "Markt",
+     0.12,
+     0.58
+    ],
+    [
+     "ging",
+     0.58,
+     0.9
+    ],
+    [
+     "heute",
+     0.9,
+     1.24
+    ],
+    [
+     "kaum",
+     1.24,
+     1.66
+    ],
+    [
+     "hoch",
+     1.66,
+     2.16
+    ],
+    [
+     "oder",
+     2.16,
+     2.56
+    ],
+    [
+     "runter,",
+     2.56,
+     3.0
+    ],
+    [
+     "dann",
+     3.54,
+     3.76
+    ],
+    [
+     "gibt",
+     3.76,
+     4.02
+    ],
+    [
+     "es",
+     4.02,
+     4.22
+    ],
+    [
+     "viele",
+     4.22,
+     4.52
+    ],
+    [
+     "Fehlsignale.",
+     4.52,
+     5.38
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "11.wav",
+   "dauer": 3.42,
+   "text": "Seit dem Start: minus eins Komma drei Prozent.",
+   "hash": "6c4aeb267f8064b79b5bd433a43e042fc7edf8f5",
+   "pruefung": 0.93,
+   "woerter": [
+    [
+     "seit",
+     0.0,
+     0.3
+    ],
+    [
+     "dem",
+     0.3,
+     0.54
+    ],
+    [
+     "Start",
+     0.54,
+     0.92
+    ],
+    [
+     "minus",
+     0.92,
+     1.54
+    ],
+    [
+     "1",
+     1.54,
+     2.1
+    ],
+    [
+     ",3%.",
+     2.1,
+     3.2
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "12.wav",
+   "dauer": 4.229,
+   "text": "Technisch lief alles: keine Lücke, jede Sicherung hat geklappt.",
+   "hash": "08e993d6bad83ac591e802c9de68e866f0db7792",
+   "pruefung": 0.98,
+   "woerter": [
+    [
+     "Pechnisch",
+     0.0,
+     0.5
+    ],
+    [
+     "lief",
+     0.5,
+     0.78
+    ],
+    [
+     "alles,",
+     0.78,
+     1.08
+    ],
+    [
+     "keine",
+     1.4,
+     1.68
+    ],
+    [
+     "Lücke,",
+     1.68,
+     2.06
+    ],
+    [
+     "jede",
+     2.52,
+     2.76
+    ],
+    [
+     "Sicherung",
+     2.76,
+     3.34
+    ],
+    [
+     "hat",
+     3.34,
+     3.58
+    ],
+    [
+     "geklappt.",
+     3.58,
+     4.12
+    ]
+   ]
+  },
+  {
+   "szene": "s7",
+   "datei": "13.wav",
+   "dauer": 4.747,
+   "text": "Kurt findet bis Freitag kein Spiel in seinen fünf Ligen. Also kein Tipp.",
+   "hash": "15423f0229a77dec9ce5f840287dbde1f1aa8018",
+   "pruefung": 0.97,
+   "woerter": [
+    [
+     "Purt",
+     0.0,
+     0.3
+    ],
+    [
+     "findet",
+     0.3,
+     0.64
+    ],
+    [
+     "bis",
+     0.64,
+     0.88
+    ],
+    [
+     "Freitag",
+     0.88,
+     1.62
+    ],
+    [
+     "kein",
+     1.62,
+     1.92
+    ],
+    [
+     "Spiel",
+     1.92,
+     2.32
+    ],
+    [
+     "in",
+     2.32,
+     2.62
+    ],
+    [
+     "seinen",
+     2.62,
+     2.8
+    ],
+    [
+     "fünf",
+     2.8,
+     3.1
+    ],
+    [
+     "liegen,",
+     3.1,
+     3.56
+    ],
+    [
+     "also",
+     3.96,
+     4.16
+    ],
+    [
+     "kein",
+     4.16,
+     4.44
+    ],
+    [
+     "Tipp.",
+     4.44,
+     4.66
+    ]
+   ]
+  },
+  {
+   "szene": "s8",
+   "datei": "14.wav",
+   "dauer": 2.505,
+   "text": "Zwischenstand: Kurt ist wieder vorne.",
+   "hash": "695650bd20cece8681ee61f34c105b28238c1984",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Zwischenstand",
+     0.0,
+     0.64
+    ],
+    [
+     "Kurt",
+     0.64,
+     1.22
+    ],
+    [
+     "ist",
+     1.22,
+     1.6
+    ],
+    [
+     "wieder",
+     1.6,
+     1.9
+    ],
+    [
+     "vorne.",
+     1.9,
+     2.26
+    ]
+   ]
+  },
+  {
+   "szene": "s9",
+   "datei": "15.wav",
+   "dauer": 4.18,
+   "text": "Nur Pech an einem ruhigen Tag? Oder sind Berts Regeln das Problem?",
+   "hash": "92744fb801f6f6c0d5670ef5e3906c3a1aae6dc6",
+   "pruefung": 0.9,
+   "woerter": [
+    [
+     "nur",
+     0.0,
+     0.22
+    ],
+    [
+     "Pech",
+     0.22,
+     0.68
+    ],
+    [
+     "an",
+     0.68,
+     0.92
+    ],
+    [
+     "einem",
+     0.92,
+     1.16
+    ],
+    [
+     "ruhigen",
+     1.16,
+     1.62
+    ],
+    [
+     "Tag",
+     1.62,
+     1.98
+    ],
+    [
+     "oder",
+     1.98,
+     2.42
+    ],
+    [
+     "sind",
+     2.42,
+     2.66
+    ],
+    [
+     "Bärzgeging",
+     2.66,
+     3.4
+    ],
+    [
+     "das",
+     3.4,
+     3.58
+    ],
+    [
+     "Problem?",
+     3.58,
+     3.96
+    ]
+   ]
+  }
+ ]
+}
