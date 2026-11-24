@@ -35,3 +35,5 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-24 20:26,META,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",593.83
 2026-11-24 20:31,MSFT,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),494.15
 2026-11-24 20:56,SPY,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),716.06
+2026-11-24 21:31,AAPL,VERKAUF,Börsenschluss naht – Daytrading heißt: alles raus,352.14
+2026-11-24 21:31,TSLA,VERKAUF,Börsenschluss naht – Daytrading heißt: alles raus,383.26
