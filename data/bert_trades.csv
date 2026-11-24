@@ -14,3 +14,8 @@ zeit,symbol,aktion,stueck,preis_usd,gewinn_usd,gewinn_prozent
 2026-11-24 17:32,MSFT,Kauf,5,496.16,,
 2026-11-24 17:37,MSFT,Verkauf,5,495.79,-1.83,-0.07
 2026-11-24 17:47,MSFT,Kauf,5,497.71,,
+2026-11-24 19:00,SPY,Kauf,3,719.49,,
+2026-11-24 19:05,META,Kauf,4,594.83,,
+2026-11-24 19:20,META,Verkauf,2,591.73,-6.20,-0.52
+2026-11-24 19:20,TSLA,Kauf,6,384.15,,
+2026-11-24 19:20,META,Verkauf,2,591.57,-6.52,-0.55

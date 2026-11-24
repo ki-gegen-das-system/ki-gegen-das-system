@@ -18,3 +18,15 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-24 17:37,MSFT,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),496.11
 2026-11-24 17:47,MSFT,KAUF,"5 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 57",497.36
 2026-11-24 17:52,MSFT,SICHERUNG,Verkaufsorder zum Börsenschluss für 5 Stück gesetzt,
+2026-11-24 19:00,SPY,KAUF,"3 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 54",719.35
+2026-11-24 19:05,SPY,SICHERUNG,Verkaufsorder zum Börsenschluss für 3 Stück gesetzt,
+2026-11-24 19:05,META,KAUF,"4 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 54",595.12
+2026-11-24 19:05,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",384.26
+2026-11-24 19:10,META,SICHERUNG,Verkaufsorder zum Börsenschluss für 4 Stück gesetzt,
+2026-11-24 19:10,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",384.40
+2026-11-24 19:15,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",384.34
+2026-11-24 19:20,META,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),591.77
+2026-11-24 19:20,TSLA,KAUF,"6 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 55",384.28
+2026-11-24 19:25,TSLA,SICHERUNG,Verkaufsorder zum Börsenschluss für 6 Stück gesetzt,
+2026-11-24 19:25,META,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",592.76
+2026-11-24 19:30,META,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",592.57
