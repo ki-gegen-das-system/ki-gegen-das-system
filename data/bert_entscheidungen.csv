@@ -4,3 +4,12 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-23 15:31,AAPL,KAUF,"7 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 57",348.08
 2026-11-23 15:36,AAPL,FEHLER,Schlusskurs-Order hat nicht geklappt,
 2026-11-23 21:34,AAPL,VERKAUF,Börsenschluss naht – Daytrading heißt: alles raus,350.80
+2026-11-24 15:36,TSLA,KAUF,"6 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 59",388.26
+2026-11-24 15:41,TSLA,SICHERUNG,Verkaufsorder zum Börsenschluss für 6 Stück gesetzt,
+2026-11-24 15:46,AAPL,KAUF,"7 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 63",352.16
+2026-11-24 15:51,AAPL,SICHERUNG,Verkaufsorder zum Börsenschluss für 7 Stück gesetzt,
+2026-11-24 15:51,META,KAUF,"4 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 56",597.77
+2026-11-24 15:56,META,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),596.88
+2026-11-24 16:01,META,KAUF,"4 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 57",598.87
+2026-11-24 16:06,META,SICHERUNG,Verkaufsorder zum Börsenschluss für 4 Stück gesetzt,
+2026-11-24 16:11,TSLA,VERKAUF,Stop-Loss bei -1.8 %,382.46
