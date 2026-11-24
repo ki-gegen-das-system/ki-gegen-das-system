@@ -23,17 +23,22 @@
   (3) Sicheres Speichern: immer vom neuesten Stand starten, 5 Versuche, Logbücher werden zusammengeführt statt abzubrechen.
   Getestet: nachgestellter Konflikt vom 20.11. löst sich jetzt, Testlauf auf GitHub grün. Erster echter Einsatz: Mo 23.11.
 
+- **Update #5** (24.11. abends, Bert, mit Mikas OK): Grund = abgelehnte Schlusskurs-Sicherung in Folge 6 (23.11.).
+  (1) Ist Berts Kauf noch nicht ganz ausgeführt, wartet er mit der Sicherung bis zum nächsten Check (sonst lehnt Alpaca sie als „Wash Trade“ ab).
+  (2) Klappt die Sicherung trotzdem nicht, versucht er es bei jedem Check erneut (vorher: den ganzen Tag keine Sicherung mehr). „FEHLER“ steht dann nur einmal pro Tag im Logbuch.
+  Getestet: 23.11. mit nachgestelltem Alpaca durchgespielt (Kauf in zwei Teilen → Sicherung erst beim nächsten Check; 2× abgelehnt → 3. Versuch klappt). Erster echter Einsatz: Mi 25.11.
 - **Wochenanalyse 21.11.** (mit Mika): bei beiden Bots **nichts geändert**. Bert: erst 1 echter Trade, Update #4 läuft erst ab 23.11. – erst eine Woche ohne Pannen abwarten. Kurt: Update #3 erst seit 20.11. – nach einer Woche Daten bewerten.
 
 ## Für die nächsten Folgen merken
 - Ab Folge 4: kein „FOLGEN →"-Button und kein „Folgen!" im Sprechertext mehr.
 - Woche 2: Value-Szene (Münzwurf) noch nicht gezeigt – beim ersten neuen Kurt-Tipp der Woche einbauen.
 - Folge 7 (Di 24.11.): Hat Bert die 10,68 $ bis zur Null geschafft? Wieder prüfen: Lücken in `bert_kontostand.csv`, ob die Schlusskurs-Sicherung wieder abgelehnt wird.
+- **Update #5** in der nächsten Folge nach dem 24.11. (Daten 25.11.) mit Szene `update` zeigen (Grund: abgelehnte Sicherung aus Folge 6). Vorher prüfen: Steht nach jedem Kauf eine „SICHERUNG“ im Logbuch? Kein „FEHLER“ oder nur einer mit späterer SICHERUNG?
 - Nächster Wochenrückblick (Sa 28.11.): `python3 nachrechnung.py 2026-11-23 2026-11-27` und mit Berts echten Trades vergleichen. Ist Bert dank Update #4 durchgehend wach, sollten echte und nachgerechnete Käufe fast gleich sein – guter Beweis, ob das Update wirkt.
 - Kurt: bisher kam Value **nur** bei Außenseitern (15 von 15). Erster Tipp (Außenseiter Man United, 4,70) verloren 0:4. Beobachten, ob das so bleibt – dann ist sein Value wahrscheinlich oft eine Täuschung (bei Außenseitern ist die faire Chance am schwersten zu schätzen). In der nächsten Wochenanalyse prüfen.
 
 ## Offene Punkte (Stand 23.11.)
-- **NEU 23.11. – Schlusskurs-Sicherung abgelehnt**: Alpaca lehnt die Market-on-Close-Order ab („potential wash trade detected … opposite side market/stop order exists“), wenn Berts Kauf-Order noch nicht ganz ausgeführt ist (15:31 Kauf, Teilausführungen 15:34 + 15:36, Sicherung 15:36). Danach versucht Bert es den ganzen Tag nicht mehr (`moc_fehler_tag`). Heute kein Schaden (Bert war wach, 21:34 selbst verkauft). Möglicher Fix (nur mit Mikas OK!): Sicherung erst setzen, wenn keine offene Kauf-Order mehr da ist, und beim nächsten Lauf erneut versuchen.
+- ~~**23.11. – Schlusskurs-Sicherung abgelehnt**~~ (Kauf war noch nicht ganz ausgeführt → Alpaca: „potential wash trade“, danach den ganzen Tag keine Sicherung) → mit **Update #5** behoben (ab 25.11. prüfen). Am 24.11. (noch alter Code) keine Ablehnung: 9 Käufe, 7 Sicherungen gesetzt, die 2 anderen Käufe waren beim nächsten Check schon wieder verkauft.
 - Update #4 am 23.11. geprüft: Start pünktlich 15:31, nichts verloren (doppelte Zeilen 19:08/21:19 durch überlappende Läufe, harmlos). Aber 1 Lücke 17:45–18:03 (Lauf endete 17:45, nächster GitHub-Start erst 18:03). Beobachten – wenn das öfter passiert, evtl. Läufe noch länger wach lassen (nur mit Mikas OK).
 - ~~Bert verpasst die erste Börsenstunde~~ und ~~Speicher-Konflikt (Log 21:32–22:00 am 20.11. verloren)~~ → mit Update #4 behoben (am 23.11. geprüft, siehe oben).
   Die verlorenen Zeilen vom 20.11. wurden nicht nachgetragen (nichts passiert: 9.968,79 $, 0 Positionen – steht im Actions-Log), damit Video und Daten zusammenpassen.

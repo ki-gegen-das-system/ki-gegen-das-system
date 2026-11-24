@@ -288,18 +288,28 @@ def sell(symbol, now, reason, price):
 
 def ensure_close_order(symbol, qty, now, open_orders, state):
     """Sicherheitsnetz: Verkaufsorder zum Schlusskurs (Market-on-Close).
-    So wird die Aktie auf jeden Fall zum Börsenschluss verkauft – auch wenn Bert zu spät aufwacht."""
-    if any(o["symbol"] == symbol and o["side"] == "sell" for o in open_orders):
+    So wird die Aktie auf jeden Fall zum Börsenschluss verkauft – auch wenn Bert zu spät aufwacht.
+    Update #5 (24.11.): Ist Berts Kauf noch nicht ganz ausgeführt, wartet er mit der Sicherung bis zum
+    nächsten Check (sonst lehnt Alpaca sie ab – so passiert am 23.11.). Klappt sie trotzdem nicht,
+    versucht er es beim nächsten Check erneut, statt den ganzen Tag ohne Sicherung zu bleiben."""
+    mine = [o for o in open_orders if o["symbol"] == symbol]
+    if any(o["side"] == "sell" for o in mine):
+        return  # Sicherung steht schon
+    if any(o["side"] == "buy" for o in mine):
+        print(f"{symbol}: Kauf noch nicht ganz ausgeführt – Sicherung kommt beim nächsten Check.")
         return
-    if state.get("moc_fehler_tag") == us_day(now):
-        return  # heute schon fehlgeschlagen -> nicht bei jedem Lauf erneut versuchen
+    heute = us_day(now)
+    fehler = {s: d for s, d in state.get("moc_fehler", {}).items() if d == heute}
+    state["moc_fehler"] = fehler
     try:
         call("POST", API, "/v2/orders", body={"symbol": symbol, "qty": str(int(qty)), "side": "sell",
                                                "type": "market", "time_in_force": "cls"})
         log(now, symbol, "SICHERUNG", f"Verkaufsorder zum Börsenschluss für {int(qty)} Stück gesetzt")
+        fehler.pop(symbol, None)
     except urllib.error.HTTPError:
-        state["moc_fehler_tag"] = us_day(now)
-        log(now, symbol, "FEHLER", "Schlusskurs-Order hat nicht geklappt")
+        if symbol not in fehler:  # nur einmal pro Tag ins Logbuch, aber bei jedem Check neu versuchen
+            log(now, symbol, "FEHLER", "Sicherung abgelehnt – neuer Versuch in 5 Min.")
+        fehler[symbol] = heute
 
 
 def buy(symbol, qty, now, reason, price):
@@ -329,6 +339,7 @@ def main():
     os.makedirs(DATA_DIR, exist_ok=True)
     now = datetime.now(timezone.utc)
     state = load_state()
+    state.pop("moc_fehler_tag", None)  # alte Sperre (bis Update #5) – gibt es nicht mehr
     account = call("GET", API, "/v2/account")
     if "baseline_equity" not in state:
         state["baseline_equity"] = float(account["equity"])
