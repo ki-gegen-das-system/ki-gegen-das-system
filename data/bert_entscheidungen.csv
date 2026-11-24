@@ -13,3 +13,6 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-24 16:01,META,KAUF,"4 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 57",598.87
 2026-11-24 16:06,META,SICHERUNG,Verkaufsorder zum Börsenschluss für 4 Stück gesetzt,
 2026-11-24 16:11,TSLA,VERKAUF,Stop-Loss bei -1.8 %,382.46
+2026-11-24 16:47,META,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),591.91
+2026-11-24 17:32,MSFT,KAUF,"5 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 55",496.26
+2026-11-24 17:37,MSFT,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),496.11
