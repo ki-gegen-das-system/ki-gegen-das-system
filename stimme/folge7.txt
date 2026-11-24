@@ -1,0 +1,16 @@
+# folge7 – automatisch aus video/folgen/folge7.json erzeugt
+s1|Minus hundertneunzehn Dollar. Berts schlechtester Tag.
+s1|Neun Trades. Acht davon im Minus.
+s2|Kurz erklärt: Blau ist der Schnitt der letzten zwei Stunden, Gelb der letzten fünf.
+s2|Blau kreuzt nach oben: Kauf. Nach unten: Verkauf.
+s2|Bei Meta kreuzen sie sich heute ständig. Dreimal kauft Bert, dreimal verkauft er.
+s3|Einmal liegen nur fünf Minuten dazwischen. Zusammen minus vierundvierzig Dollar.
+s4|Größter Verlust: Tesla. Der Kurs fällt unter die Notbremse von minus eins Komma fünf Prozent.
+s4|Bert schaut nur alle fünf Minuten. Verkauft wird bei minus eins Komma sieben. Minus vierzig Dollar.
+s5|Nur Apple bringt ein Plus: knapp ein Dollar.
+s5|Der Markt ging heute kaum hoch oder runter. Dann gibt es viele Fehlsignale.
+s6|Seit dem Start: minus eins Komma drei Prozent.
+s6|Technisch lief alles: keine Lücke, jede Sicherung hat geklappt.
+s7|Kurt findet bis Freitag kein Spiel in seinen fünf Ligen. Also kein Tipp.
+s8|Zwischenstand: Kurt ist wieder vorne.
+s9|Nur Pech an einem ruhigen Tag? Oder sind Berts Regeln das Problem?

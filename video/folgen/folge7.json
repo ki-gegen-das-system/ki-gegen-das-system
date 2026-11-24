@@ -1,0 +1,124 @@
+{
+ "folge": 7,
+ "titel": "TAG 5 · 24.11.",
+ "datum": "2026-11-24",
+ "szenen": [
+  {
+   "typ": "hook",
+   "gross": "−118,88 $",
+   "farbe": "rot",
+   "symbol": "META",
+   "zeilen": [
+    "Berts schlechtester Tag.",
+    "9 Trades – 8 im Minus."
+   ],
+   "sprecher": [
+    {
+     "sag": "Minus hundertneunzehn Dollar. Berts schlechtester Tag.",
+     "zeig": "−119 Dollar. Berts schlechtester Tag."
+    },
+    {
+     "sag": "Neun Trades. Acht davon im Minus.",
+     "zeig": "9 Trades. 8 davon im Minus."
+    }
+   ]
+  },
+  {
+   "typ": "chart",
+   "symbol": "META",
+   "sprecher": [
+    "Kurz erklärt: Blau ist der Schnitt der letzten zwei Stunden, Gelb der letzten fünf.",
+    "Blau kreuzt nach oben: Kauf. Nach unten: Verkauf.",
+    "Bei Meta kreuzen sie sich heute ständig. Dreimal kauft Bert, dreimal verkauft er."
+   ]
+  },
+  {
+   "typ": "trades",
+   "titel": "Berts Logbuch: Meta",
+   "symbol": "META",
+   "aktionen": [
+    "KAUF",
+    "VERKAUF"
+   ],
+   "ergebnis": "summe",
+   "sprecher": [
+    {
+     "sag": "Einmal liegen nur fünf Minuten dazwischen. Zusammen minus vierundvierzig Dollar.",
+     "zeig": "Einmal liegen nur 5 Minuten dazwischen. Zusammen −44 Dollar."
+    }
+   ]
+  },
+  {
+   "typ": "chart",
+   "symbol": "TSLA",
+   "sprecher": [
+    {
+     "sag": "Größter Verlust: Tesla. Der Kurs fällt unter die Notbremse von minus eins Komma fünf Prozent.",
+     "zeig": "Größter Verlust: Tesla. Der Kurs fällt unter die Notbremse von −1,5 %."
+    },
+    {
+     "sag": "Bert schaut nur alle fünf Minuten. Verkauft wird bei minus eins Komma sieben. Minus vierzig Dollar.",
+     "zeig": "Bert schaut nur alle 5 Minuten. Verkauft wird bei −1,7 %. −40 Dollar."
+    }
+   ]
+  },
+  {
+   "typ": "bilanz",
+   "sprecher": [
+    {
+     "sag": "Nur Apple bringt ein Plus: knapp ein Dollar.",
+     "zeig": "Nur Apple bringt ein Plus: knapp 1 Dollar."
+    },
+    "Der Markt ging heute kaum hoch oder runter. Dann gibt es viele Fehlsignale."
+   ]
+  },
+  {
+   "typ": "konto",
+   "sprecher": [
+    {
+     "sag": "Seit dem Start: minus eins Komma drei Prozent.",
+     "zeig": "Seit dem Start: −1,3 %."
+    },
+    "Technisch lief alles: keine Lücke, jede Sicherung hat geklappt."
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Kicker-Kurt heute",
+   "titel_farbe": "gruen",
+   "zeilen": [
+    "0 neue Spiele geprüft",
+    "Bis Freitag kein Spiel",
+    "in seinen 5 Ligen",
+    {
+     "text": "→ kein Tipp, kein Risiko",
+     "farbe": "gruen"
+    }
+   ],
+   "sprecher": [
+    {
+     "sag": "Kurt findet bis Freitag kein Spiel in seinen fünf Ligen. Also kein Tipp.",
+     "zeig": "Kurt findet bis Freitag kein Spiel in seinen 5 Ligen. Also kein Tipp."
+    }
+   ]
+  },
+  {
+   "typ": "stand",
+   "sprecher": [
+    "Zwischenstand: Kurt ist wieder vorne."
+   ]
+  },
+  {
+   "typ": "frage",
+   "zeilen": [
+    "Nur Pech an einem",
+    "ruhigen Tag?",
+    "Oder sind Berts Regeln",
+    "das Problem?"
+   ],
+   "sprecher": [
+    "Nur Pech an einem ruhigen Tag? Oder sind Berts Regeln das Problem?"
+   ]
+  }
+ ]
+}
