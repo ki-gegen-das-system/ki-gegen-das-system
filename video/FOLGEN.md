@@ -46,10 +46,11 @@
   pro Trade, 1 Trade pro Aktie und Tag, max. 3 Positionen, Tageslimit −150 $, neue Trades 16:05–20:30 Uhr,
   21:45 Uhr alles schließen. Logbuch: KAUF/SHORT, SCHUTZ (Stop/Ziel), VERKAUF/EINDECKEN (mit Grund Stop-Loss/Gewinnziel),
   TAGESLIMIT. Jede (fast) erfüllte Checkliste steht in `data/bert_checkliste.csv`.
-  Trockenlauf mit echten Kursen vom 25.11. (Stand 20:15 Uhr): Bert 2.0 hätte bis dahin nur 1× gehandelt
-  (16:15 Uhr Short Apple, 8 Stück ~347,43 $, Stop 348,57 $, Ziel 345,15 $). Das ist NICHT passiert (Bert 2.0 läuft erst
-  ab 27.11.), im Video höchstens als „so hätte er entschieden“ erwähnen. Ergebnis des ganzen Tages: siehe
-  `data/trockenlauf/` (falls vorhanden), sonst keine Aussage dazu machen.
+  **Probelauf** (`trockenlauf.py`, gleicher Simulator wie der Backtest) mit echten Kursen vom 25.11., Stand 20:25 Uhr:
+  Bert 2.0 hätte nur 1× gehandelt – Short Apple 16:20–17:25 Uhr, 8 Stück, 347,30 → 348,51 $, Stop-Loss, −9,69 $
+  (1× Checkliste 5/5, 43× nur 4/5). Das ist NICHT passiert (Bert 2.0 handelt erst ab 27.11.) – im Video nur als
+  „Probelauf: so hätte er entschieden“. Endgültig: `data/trockenlauf/2026-11-25.json` (erst verwenden, wenn
+  `"vollstaendig": true`; sonst Workflow „Probelauf Bert 2.0“ per Hand starten, siehe Anleitung).
 - **Wochenanalyse 21.11.** (mit Mika): bei beiden Bots **nichts geändert**. Bert: erst 1 echter Trade, Update #4 läuft erst ab 23.11. – erst eine Woche ohne Pannen abwarten. Kurt: Update #3 erst seit 20.11. – nach einer Woche Daten bewerten.
 
 ## Für die nächsten Folgen merken
@@ -57,9 +58,11 @@
   kurz zeigen (Szene `text` oder `update` mit Nummer 7), Short einfach erklären („Bert darf jetzt auch auf fallende
   Kurse setzen – fällt die Aktie, verdient er“). Frage: „Schafft Bert 2.0 den S&P 500?“ KEINE Gewinnversprechen,
   KEINE Backtest-Zahlen. Kurt: **Update #6** (Europapokal) mit 43 geprüften Spielen, 0 Tipps.
-- **Folge 9 (Do 26.11.):** US-Börse zu (Thanksgiving) → keine Bert-Trades. Erklärfolge Bert 2.0 mit echtem Chart
-  vom Mittwoch (`chart` mit `"bert2": true` zeigt 30-Min-Kasten + Tagesdurchschnitt) und `checkliste` am Beispiel
-  aus `data/trockenlauf/2026-11-25.json` (klar sagen: Probelauf, kein echter Trade). Kurt: EL/ECL-Spiele vom 26.11.
+- **Folge 9 (Do 26.11.):** US-Börse zu (Thanksgiving) → keine Bert-Trades. Erklärfolge Bert 2.0: echter Apple-Chart
+  vom Mittwoch mit `"datum": "2026-11-25", "bert2": true, "pfeile": "trockenlauf"` (30-Min-Kasten, Tagesdurchschnitt,
+  Pfeile aus dem Probelauf), dann `checkliste` mit `"quelle": "trockenlauf", "symbol": "AAPL", "datum": "2026-11-25"`
+  und gern eine knappe (`"welche": "knapp"`). Ehrlich: „Am Mittwoch hätte Bert 2.0 einmal zugeschlagen – und
+  verloren.“ Klar sagen: Probelauf, kein echter Trade. Kurt: EL/ECL-Spiele vom 26.11.
 - **Folge 10 (Fr 27.11.):** erster echter Tag Bert 2.0, kurzer Handelstag bis 19:00 Uhr (Alles-schließen um 18:45).
   `checkliste` für jeden Trade, Pfeile SHORT/EINDECKEN. Kurt: Wochenend-Tipps.
 - Ab Folge 4: kein „FOLGEN →"-Button und kein „Folgen!" im Sprechertext mehr.
