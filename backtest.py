@@ -19,9 +19,9 @@ from zoneinfo import ZoneInfo
 import bert
 
 NY = ZoneInfo("America/New_York")
-OUT = os.path.join(bert.DATA_DIR, "backtest")
-START = os.environ.get("BT_START", "2026-05-26")
-END = os.environ.get("BT_END", "2026-11-24")
+START = os.environ.get("BT_START") or "2026-05-26"
+END = os.environ.get("BT_END") or "2026-11-24"
+OUT = os.path.join(bert.DATA_DIR, "backtest", f"{START}_bis_{END}")
 BASE = list(bert.SYMBOLS)                       # die 8 bisherigen
 EXTRA = ["AMD", "GOOGL", "NFLX", "AVGO", "PLTR", "COIN", "MU", "BA", "JPM", "XOM", "UBER", "DIS"]
 CAPITAL = 10_000.0

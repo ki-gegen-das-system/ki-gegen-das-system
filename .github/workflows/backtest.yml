@@ -1,7 +1,16 @@
 name: Backtest
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "Startdatum (JJJJ-MM-TT)"
+        required: false
+        default: ""
+      ende:
+        description: "Enddatum (JJJJ-MM-TT)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -20,6 +29,8 @@ jobs:
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          BT_START: ${{ github.event.inputs.start }}
+          BT_END: ${{ github.event.inputs.ende }}
         run: python3 -u backtest.py
       - name: Ergebnis speichern
         run: |
