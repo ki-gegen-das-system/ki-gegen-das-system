@@ -52,511 +52,261 @@
    ]
   },
   {
-   "szene": "s1",
+   "szene": "s2",
    "datei": "02.wav",
-   "dauer": 3.6,
-   "text": "Und es ist Berts letzter Tag mit den alten Regeln.",
-   "hash": "15f2ace39191438d7e583ee67373e43dcf8a86cb",
-   "pruefung": 0.99,
-   "woerter": [
-    [
-     "und",
-     0.0,
-     0.2
-    ],
-    [
-     "es",
-     0.2,
-     0.48
-    ],
-    [
-     "ist",
-     0.48,
-     0.8
-    ],
-    [
-     "Berts",
-     0.8,
-     1.34
-    ],
-    [
-     "letzter",
-     1.34,
-     1.7
-    ],
-    [
-     "Tag",
-     1.7,
-     2.06
-    ],
-    [
-     "mit",
-     2.06,
-     2.36
-    ],
-    [
-     "den",
-     2.36,
-     2.52
-    ],
-    [
-     "alten",
-     2.52,
-     2.8
-    ],
-    [
-     "Regen.",
-     2.8,
-     3.38
-    ]
-   ]
-  },
-  {
-   "szene": "s2",
-   "datei": "03.wav",
-   "dauer": 4.71,
-   "text": "Der Markt startet tief im Minus. Ab etwa achtzehn Uhr klettert er.",
-   "hash": "9134bd79bfc7a3d250ff23ccf9866ffc3d9a662a",
+   "dauer": 6.758,
+   "text": "Bei Meta kreuzt Blau um achtzehn Uhr zwanzig nach oben. Bert kauft und hält bis kurz vor Schluss.",
+   "hash": "df779be3f9593c2fda74ce75071b843c182fed18",
    "pruefung": 1.0,
-   "woerter": [
-    [
-     "Der",
-     0.0,
-     0.12
-    ],
-    [
-     "Markt",
-     0.12,
-     0.56
-    ],
-    [
-     "startet",
-     0.56,
-     1.28
-    ],
-    [
-     "tief",
-     1.28,
-     1.52
-    ],
-    [
-     "im",
-     1.52,
-     1.86
-    ],
-    [
-     "Minus,",
-     1.86,
-     2.36
-    ],
-    [
-     "ab",
-     2.54,
-     2.68
-    ],
-    [
-     "etwa",
-     2.68,
-     2.98
-    ],
-    [
-     "18",
-     2.98,
-     3.5
-    ],
-    [
-     "Uhr",
-     3.5,
-     3.82
-    ],
-    [
-     "klettert",
-     3.82,
-     4.44
-    ],
-    [
-     "er.",
-     4.44,
-     4.56
-    ]
-   ]
-  },
-  {
-   "szene": "s2",
-   "datei": "04.wav",
-   "dauer": 5.355,
-   "text": "Bei Meta kreuzt Blau um achtzehn Uhr zwanzig nach oben. Bert kauft.",
-   "hash": "8eca06b35525c1155ea73996e15afb42fad51a86",
-   "pruefung": 0.97,
    "woerter": [
     [
      "Bei",
      0.0,
-     0.14
+     0.12
     ],
     [
-     "Meter",
-     0.14,
-     0.48
+     "Meta",
+     0.12,
+     0.72
     ],
     [
      "kreuzt",
-     0.48,
-     1.34
+     0.72,
+     1.26
     ],
     [
      "Blau",
-     1.34,
-     1.82
+     1.26,
+     1.78
     ],
     [
      "um",
-     1.82,
-     1.94
+     1.78,
+     1.9
     ],
     [
      "18",
-     1.94,
-     2.4
+     1.9,
+     2.38
     ],
     [
      "Uhr",
-     2.4,
-     2.74
+     2.38,
+     2.7
     ],
     [
      "20",
-     2.74,
-     3.26
+     2.7,
+     3.2
     ],
     [
      "nach",
-     3.26,
-     3.58
+     3.2,
+     3.5
     ],
     [
-     "oben.",
-     3.58,
-     3.9
+     "oben,",
+     3.5,
+     3.78
     ],
     [
      "Bert",
-     4.42,
-     4.74
-    ],
-    [
-     "kauft",
-     4.74,
-     5.22
-    ]
-   ]
-  },
-  {
-   "szene": "s2",
-   "datei": "05.wav",
-   "dauer": 4.608,
-   "text": "Verkauft wird kurz vor Börsenschluss. Plus zweiundzwanzig Dollar.",
-   "hash": "465f14770caf1bd10e0dbe1e4da2ee8341496bff",
-   "pruefung": 0.98,
-   "woerter": [
-    [
-     "Der",
-     0.0,
-     0.16
-    ],
-    [
-     "Kauft",
-     0.16,
-     0.62
-    ],
-    [
-     "wird",
-     0.62,
-     0.84
-    ],
-    [
-     "kurz",
-     0.84,
-     1.28
-    ],
-    [
-     "vor",
-     1.28,
-     1.64
-    ],
-    [
-     "Börsenschluss",
-     1.64,
-     2.38
-    ],
-    [
-     "plus",
-     2.38,
-     3.16
-    ],
-    [
-     "22",
-     3.16,
-     3.96
-    ],
-    [
-     "Dollar.",
-     3.96,
-     4.4
-    ]
-   ]
-  },
-  {
-   "szene": "s3",
-   "datei": "06.wav",
-   "dauer": 6.43,
-   "text": "Dazu Apple, Microsoft und der S&P fünfhundert. Kleine Gewinne, aber alle im Plus.",
-   "hash": "0f37977af214af7dbed46c5812830a122d4dbc3b",
-   "pruefung": 1.0,
-   "woerter": [
-    [
-     "Dazu",
-     0.0,
-     0.42
-    ],
-    [
-     "Apple,",
-     0.42,
-     0.92
-    ],
-    [
-     "Microsoft",
-     1.3,
-     1.88
-    ],
-    [
-     "und",
-     1.88,
-     2.38
-    ],
-    [
-     "der",
-     2.38,
-     2.58
-    ],
-    [
-     "S",
-     2.58,
-     2.84
-    ],
-    [
-     "&P",
-     2.84,
-     3.24
-    ],
-    [
-     "500.",
-     3.24,
-     3.66
-    ],
-    [
-     "Kleine",
-     4.14,
-     4.54
-    ],
-    [
-     "Gewinne,",
-     4.54,
-     4.92
-    ],
-    [
-     "aber",
-     5.34,
-     5.54
-    ],
-    [
-     "alle",
-     5.54,
-     5.84
-    ],
-    [
-     "im",
-     5.84,
-     6.02
-    ],
-    [
-     "Plus.",
-     6.02,
-     6.26
-    ]
-   ]
-  },
-  {
-   "szene": "s3",
-   "datei": "07.wav",
-   "dauer": 5.46,
-   "text": "Vier weitere Signale lässt er aus. Mehr als vier Aktien gleichzeitig darf er nicht.",
-   "hash": "d369befa033ed1b6f4809b0f17ed8455480bf30c",
-   "pruefung": 1.0,
-   "woerter": [
-    [
-     "Vier",
-     0.0,
-     0.26
-    ],
-    [
-     "weitere",
-     0.26,
-     0.62
-    ],
-    [
-     "Signale",
-     0.62,
-     1.24
-    ],
-    [
-     "lässt",
-     1.24,
-     1.54
-    ],
-    [
-     "er",
-     1.54,
-     1.72
-    ],
-    [
-     "aus,",
-     1.72,
-     2.06
-    ],
-    [
-     "mehr",
-     2.62,
-     2.8
-    ],
-    [
-     "als",
-     2.8,
-     3.04
-    ],
-    [
-     "vier",
-     3.04,
-     3.32
-    ],
-    [
-     "Aktien",
-     3.32,
-     3.86
-    ],
-    [
-     "gleichzeitig",
-     3.86,
+     4.34,
      4.5
     ],
     [
-     "darf",
+     "kauft",
      4.5,
-     5.0
+     5.02
     ],
     [
-     "er",
-     5.0,
-     5.2
+     "und",
+     5.02,
+     5.32
     ],
     [
-     "nicht.",
-     5.2,
-     5.36
+     "hält",
+     5.32,
+     5.5
+    ],
+    [
+     "bis",
+     5.5,
+     5.76
+    ],
+    [
+     "kurz",
+     5.76,
+     6.1
+    ],
+    [
+     "vor",
+     6.1,
+     6.36
+    ],
+    [
+     "Schluss.",
+     6.36,
+     6.58
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "03.wav",
+   "dauer": 7.177,
+   "text": "Plus zweiundzwanzig bei Meta. Dazu Apple, Microsoft und der S&P fünfhundert, alle im Plus.",
+   "hash": "188f4799a47d609410bb2b9ec7451fbaa21643e9",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "plus",
+     0.0,
+     0.2
+    ],
+    [
+     "22",
+     0.2,
+     1.06
+    ],
+    [
+     "bm,",
+     1.06,
+     1.82
+    ],
+    [
+     "dazu",
+     2.18,
+     2.46
+    ],
+    [
+     "Apple,",
+     2.46,
+     2.9
+    ],
+    [
+     "Microsoft",
+     3.26,
+     3.9
+    ],
+    [
+     "und",
+     3.9,
+     4.32
+    ],
+    [
+     "der",
+     4.32,
+     4.62
+    ],
+    [
+     "S",
+     4.62,
+     4.82
+    ],
+    [
+     "&P",
+     4.82,
+     5.16
+    ],
+    [
+     "500",
+     5.16,
+     5.8
+    ],
+    [
+     "alle",
+     5.8,
+     6.5
+    ],
+    [
+     "im",
+     6.5,
+     6.7
+    ],
+    [
+     "Plus.",
+     6.7,
+     6.94
     ]
    ]
   },
   {
    "szene": "s4",
-   "datei": "08.wav",
-   "dauer": 7.06,
-   "text": "Ehrlich: Um halb neun lag Bert bei plus achtundachtzig Dollar. Bis zum Schluss bleiben sechsunddreißig.",
-   "hash": "70f7ee7eb1ecd49e12451b8fe61050337c3862ec",
-   "pruefung": 0.98,
+   "datei": "04.wav",
+   "dauer": 5.98,
+   "text": "Ehrlich: Um halb neun waren es plus achtundachtzig Dollar. Am Ende sechsunddreißig.",
+   "hash": "711f280466f149c7a5ad71a21ed65ce52e5e3339",
+   "pruefung": 0.99,
    "woerter": [
     [
-     "ehrlich,",
+     "Ehrlich,",
      0.0,
      0.38
     ],
     [
      "um",
-     0.74,
-     0.98
+     0.72,
+     0.9
     ],
     [
      "halb",
-     0.98,
-     1.44
+     0.9,
+     1.38
     ],
     [
      "neun",
-     1.44,
-     1.88
+     1.38,
+     1.9
     ],
     [
-     "lag",
-     1.88,
-     2.16
+     "waren",
+     1.9,
+     2.36
     ],
     [
-     "Wert",
-     2.16,
-     2.5
-    ],
-    [
-     "bei",
-     2.5,
-     2.86
+     "es",
+     2.36,
+     2.6
     ],
     [
      "plus",
-     2.86,
-     3.12
+     2.6,
+     2.86
     ],
     [
      "88",
-     3.12,
-     3.88
+     2.86,
+     3.62
     ],
     [
      "Dollar,",
-     3.88,
-     4.46
+     3.62,
+     4.16
     ],
     [
-     "bis",
+     "am",
+     4.74,
+     4.92
+    ],
+    [
+     "Ende",
      4.92,
-     5.2
-    ],
-    [
-     "zum",
-     5.2,
-     5.52
-    ],
-    [
-     "Schluss",
-     5.52,
-     5.86
-    ],
-    [
-     "bleiben",
-     5.86,
-     6.26
+     5.24
     ],
     [
      "36.",
-     6.26,
-     6.84
+     5.24,
+     5.76
     ]
    ]
   },
   {
    "szene": "s4",
-   "datei": "09.wav",
-   "dauer": 5.131,
-   "text": "Update fünf hat geklappt: Nach jedem Kauf saß die Sicherung, kein Fehler.",
-   "hash": "ab353f467f525d128fabca294107e2820cf96d48",
+   "datei": "05.wav",
+   "dauer": 3.309,
+   "text": "Update fünf hat geklappt: Jede Sicherung saß.",
+   "hash": "e4ecef86e205a974946036c9f3110fc2876be8b4",
    "pruefung": 1.0,
    "woerter": [
     [
@@ -567,696 +317,491 @@
     [
      "5",
      0.42,
-     0.8
+     0.9
     ],
     [
      "hat",
-     0.8,
-     1.18
+     0.9,
+     1.3
     ],
     [
      "geklappt,",
-     1.18,
-     1.78
+     1.3,
+     1.88
     ],
     [
-     "nach",
-     2.08,
-     2.28
+     "jede",
+     2.16,
+     2.32
     ],
     [
-     "jedem",
-     2.28,
-     2.54
+     "Sicherung",
+     2.32,
+     2.86
     ],
     [
-     "Kauf",
-     2.54,
-     3.02
-    ],
-    [
-     "saß",
-     3.02,
-     3.56
-    ],
-    [
-     "die",
-     3.56,
-     3.68
-    ],
-    [
-     "Sicherung,",
-     3.68,
-     4.18
-    ],
-    [
-     "kein",
-     4.4,
-     4.56
-    ],
-    [
-     "Fehler.",
-     4.56,
-     4.88
+     "saß.",
+     2.86,
+     3.22
     ]
    ]
   },
   {
    "szene": "s5",
-   "datei": "10.wav",
-   "dauer": 4.782,
-   "text": "Gestern die Frage: Pech oder Regeln? Ehrliche Antwort: die Regeln.",
-   "hash": "6ac88609cd2551fb9ef5083a8219c99c12d14113",
+   "datei": "06.wav",
+   "dauer": 6.317,
+   "text": "Pech oder Regeln? Ehrlich: die Regeln. An ruhigen Tagen handelt Bert hin und her.",
+   "hash": "6e9a4738ef8f7dbb637af631858ca42ccd8879dc",
    "pruefung": 0.98,
    "woerter": [
     [
-     "gestern",
+     "Hech",
      0.0,
-     0.42
-    ],
-    [
-     "die",
-     0.42,
-     0.56
-    ],
-    [
-     "Frage",
-     0.56,
-     0.86
-    ],
-    [
-     "Pech",
-     0.86,
-     1.68
+     0.38
     ],
     [
      "oder",
-     1.68,
-     2.0
-    ],
-    [
-     "Regen?",
-     2.0,
-     2.52
-    ],
-    [
-     "Ehrliche",
-     2.98,
-     3.42
-    ],
-    [
-     "Antwort",
-     3.42,
-     3.9
-    ],
-    [
-     "die",
-     3.9,
-     4.26
-    ],
-    [
-     "Regen.",
-     4.26,
-     4.64
-    ]
-   ]
-  },
-  {
-   "szene": "s5",
-   "datei": "11.wav",
-   "dauer": 6.02,
-   "text": "An ruhigen Tagen handelt Bert hin und her. Darum kommt Bert zwei Punkt null.",
-   "hash": "40dbd08ee677579688fe6851a5cc9ab045642b05",
-   "pruefung": 0.96,
-   "woerter": [
-    [
-     "An",
-     0.0,
-     0.18
-    ],
-    [
-     "ruhigen",
-     0.18,
+     0.38,
      0.64
     ],
     [
-     "Tagen",
+     "Regeln?",
      0.64,
-     1.08
+     1.18
     ],
     [
-     "handelt",
-     1.08,
-     1.82
-    ],
-    [
-     "Bert",
-     1.82,
-     2.02
-    ],
-    [
-     "hin",
-     2.02,
-     2.4
-    ],
-    [
-     "und",
-     2.4,
-     2.72
-    ],
-    [
-     "her.",
-     2.72,
-     3.02
-    ],
-    [
-     "Darum",
-     3.48,
-     4.02
-    ],
-    [
-     "kommt",
-     4.02,
-     4.32
-    ],
-    [
-     "Bert",
-     4.32,
-     4.58
-    ],
-    [
-     "2",
-     4.58,
-     5.02
-    ],
-    [
-     ".0.",
-     5.02,
-     5.8
-    ]
-   ]
-  },
-  {
-   "szene": "s5",
-   "datei": "12.wav",
-   "dauer": 5.68,
-   "text": "Er kauft nur, wenn alle fünf Punkte passen. Höchstens ein Trade pro Aktie am Tag.",
-   "hash": "e50f68199200364c60518ee43e026de74b8bc29d",
-   "pruefung": 1.0,
-   "woerter": [
-    [
-     "Er",
-     0.0,
-     0.14
-    ],
-    [
-     "kauft",
-     0.14,
-     0.56
-    ],
-    [
-     "nur,",
-     0.56,
-     0.86
-    ],
-    [
-     "wenn",
-     1.22,
-     1.46
-    ],
-    [
-     "alle",
-     1.46,
-     1.86
-    ],
-    [
-     "fünf",
-     1.86,
+     "Ehrlich",
+     1.78,
      2.12
     ],
     [
-     "Punkte",
+     "die",
      2.12,
-     2.56
+     2.46
     ],
     [
-     "passen,",
-     2.56,
-     3.24
+     "Regeln.",
+     2.46,
+     2.94
     ],
     [
-     "höchstens",
+     "An",
      3.38,
-     3.86
+     3.58
     ],
     [
-     "ein",
-     3.86,
-     4.02
+     "ruhigen",
+     3.58,
+     4.0
     ],
     [
-     "Trade",
-     4.02,
-     4.44
+     "Tagen",
+     4.0,
+     4.38
     ],
     [
-     "pro",
-     4.44,
-     4.62
+     "handelt",
+     4.38,
+     5.0
     ],
     [
-     "Aktie",
-     4.62,
-     5.06
+     "Bert",
+     5.0,
+     5.26
     ],
     [
-     "am",
-     5.06,
-     5.2
+     "hin",
+     5.26,
+     5.66
     ],
     [
-     "Tag.",
-     5.2,
-     5.46
+     "und",
+     5.66,
+     5.92
+    ],
+    [
+     "her.",
+     5.92,
+     6.2
     ]
    ]
   },
   {
    "szene": "s5",
-   "datei": "13.wav",
-   "dauer": 7.019,
-   "text": "Neu: Er darf auch auf fallende Kurse setzen. Fällt die Aktie, verdient er. Steigt sie, verliert er.",
-   "hash": "ada5bb4369f865b6b36b388b12030b3bac20f256",
+   "datei": "07.wav",
+   "dauer": 5.171,
+   "text": "Ab Freitag kauft Bert zwei Punkt null nur, wenn alle fünf Punkte passen.",
+   "hash": "cec74df88b7cb4b8f14ec4b302edc9922eec9a18",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "Ab",
+     0.0,
+     0.16
+    ],
+    [
+     "Freitag",
+     0.16,
+     0.92
+    ],
+    [
+     "kauft",
+     0.92,
+     1.3
+    ],
+    [
+     "Bert",
+     1.3,
+     1.58
+    ],
+    [
+     "2",
+     1.58,
+     2.08
+    ],
+    [
+     ".0",
+     2.08,
+     2.68
+    ],
+    [
+     "nur,",
+     2.68,
+     2.98
+    ],
+    [
+     "wenn",
+     3.36,
+     3.56
+    ],
+    [
+     "alle",
+     3.56,
+     3.9
+    ],
+    [
+     "fünf",
+     3.9,
+     4.18
+    ],
+    [
+     "Punkte",
+     4.18,
+     4.58
+    ],
+    [
+     "passen.",
+     4.58,
+     5.06
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "08.wav",
+   "dauer": 5.534,
+   "text": "Neu: Er darf auch auf fallende Kurse setzen. Fällt die Aktie, verdient er.",
+   "hash": "a27da317a0fd4b94d2249cc3c89f2e4f2f6df286",
    "pruefung": 1.0,
    "woerter": [
     [
      "neu,",
      0.0,
-     0.34
+     0.32
     ],
     [
      "er",
-     0.66,
-     0.76
+     0.82,
+     0.9
     ],
     [
      "darf",
-     0.76,
-     1.04
+     0.9,
+     1.18
     ],
     [
      "auch",
-     1.04,
-     1.42
+     1.18,
+     1.56
     ],
     [
      "auf",
-     1.42,
-     1.7
+     1.56,
+     1.86
     ],
     [
      "fallende",
-     1.7,
-     2.14
+     1.86,
+     2.32
     ],
     [
      "Kurse",
-     2.14,
-     2.56
+     2.32,
+     2.72
     ],
     [
-     "setzen.",
-     2.56,
-     2.78
+     "setzen,",
+     2.72,
+     2.96
     ],
     [
-     "Fällt",
-     3.36,
-     3.78
+     "fällt",
+     3.46,
+     3.72
     ],
     [
      "die",
-     3.78,
-     4.0
+     3.72,
+     4.04
     ],
     [
      "Aktie",
-     4.0,
+     4.04,
      4.52
     ],
     [
      "verdient",
      4.52,
-     5.12
-    ],
-    [
-     "er,",
-     5.12,
-     5.3
-    ],
-    [
-     "steigt",
-     5.6,
-     5.94
-    ],
-    [
-     "sie,",
-     5.94,
-     6.12
-    ],
-    [
-     "verliert",
-     6.42,
-     6.78
+     5.2
     ],
     [
      "er.",
-     6.78,
-     6.9
+     5.2,
+     5.4
     ]
    ]
   },
   {
    "szene": "s6",
-   "datei": "14.wav",
-   "dauer": 6.836,
-   "text": "Kurt prüft jetzt auch Champions League, Europa League und Conference League. Heute zweiundsechzig Spiele.",
-   "hash": "b095636d689b6d8d269985abab5018c36e2a0ece",
-   "pruefung": 0.97,
+   "datei": "09.wav",
+   "dauer": 4.516,
+   "text": "Neu bei Kurt: der Europapokal. Heute zweiundsechzig Spiele.",
+   "hash": "72fdd9d7e0fecab8a55bd73e1f1d50833910b186",
+   "pruefung": 1.0,
    "woerter": [
     [
-     "Kurt",
+     "Neu",
      0.0,
      0.32
     ],
     [
-     "prüft",
+     "bei",
      0.32,
-     0.82
+     0.48
     ],
     [
-     "jetzt",
-     0.82,
-     1.02
+     "Kurt,",
+     0.48,
+     0.8
     ],
     [
-     "auch",
-     1.02,
-     1.42
-    ],
-    [
-     "Champions",
-     1.42,
-     1.84
-    ],
-    [
-     "League,",
-     1.84,
-     2.42
+     "der",
+     1.18,
+     1.28
     ],
     [
      "Europa",
-     2.66,
-     2.92
+     1.28,
+     1.68
     ],
     [
-     "League",
-     2.92,
-     3.36
-    ],
-    [
-     "und",
-     3.36,
-     3.88
-    ],
-    [
-     "Konferenz",
-     3.88,
-     4.58
-    ],
-    [
-     "League,",
-     4.58,
-     4.92
+     "Pokal,",
+     1.68,
+     2.36
     ],
     [
      "heute",
-     5.12,
-     5.46
+     2.7,
+     3.02
     ],
     [
      "62",
-     5.46,
-     6.1
+     3.02,
+     3.78
     ],
     [
      "Spiele.",
-     6.1,
-     6.72
+     3.78,
+     4.38
     ]
    ]
   },
   {
    "szene": "s6",
-   "datei": "15.wav",
-   "dauer": 5.78,
-   "text": "Ein Tipp: Rayo Vallecano bei Betis. Kurt schätzt die Chance auf achtzehn Prozent.",
-   "hash": "ce62b5a3a0b0058e4a040780cc833da6d27d3d4d",
-   "pruefung": 0.95,
+   "datei": "10.wav",
+   "dauer": 4.64,
+   "text": "Ein Tipp: Rayo Vallecano, Quote sechs, Chance achtzehn Prozent.",
+   "hash": "6cb040dd318cb1dd56e18bca191a64c186fe8edd",
+   "pruefung": 0.96,
    "woerter": [
     [
      "Ein",
      0.0,
-     0.2
+     0.18
     ],
     [
-     "Tipp,",
-     0.2,
+     "Tipp",
+     0.18,
      0.44
     ],
     [
-     "Raiowallekano",
-     0.88,
-     1.86
+     "Ayo",
+     0.44,
+     1.2
     ],
     [
-     "bei",
-     1.86,
-     2.08
-    ],
-    [
-     "Betis.",
-     2.08,
-     2.58
-    ],
-    [
-     "Kurt",
-     3.16,
-     3.46
-    ],
-    [
-     "schätzt",
-     3.46,
-     3.98
-    ],
-    [
-     "die",
-     3.98,
-     4.16
-    ],
-    [
-     "Chance",
-     4.16,
-     4.46
-    ],
-    [
-     "auf",
-     4.46,
-     4.82
-    ],
-    [
-     "18%.",
-     4.82,
-     5.56
-    ]
-   ]
-  },
-  {
-   "szene": "s6",
-   "datei": "16.wav",
-   "dauer": 6.099,
-   "text": "Bei Quote sechs gibt es im Schnitt hundertneun Euro pro hundert Euro. Aber nur im Schnitt.",
-   "hash": "23016ee1bd65fb63f3698d2b5698c405b34e9119",
-   "pruefung": 0.96,
-   "woerter": [
-    [
-     "Bei",
-     0.0,
-     0.14
+     "Valicano,",
+     1.2,
+     1.88
     ],
     [
      "Quote",
-     0.14,
-     0.64
+     2.14,
+     2.48
     ],
     [
-     "6",
-     0.64,
-     0.92
+     "6,",
+     2.48,
+     2.74
     ],
     [
-     "gibt",
-     0.92,
-     1.3
+     "Chance",
+     3.12,
+     3.44
     ],
     [
-     "es",
-     1.3,
-     1.56
-    ],
-    [
-     "im",
-     1.56,
-     1.76
-    ],
-    [
-     "Schnitt",
-     1.76,
-     2.08
-    ],
-    [
-     "109",
-     2.08,
-     2.94
-    ],
-    [
-     "Euro",
-     2.94,
-     3.38
-    ],
-    [
-     "pro",
-     3.38,
-     3.66
-    ],
-    [
-     "100",
-     3.66,
-     4.1
-    ],
-    [
-     "Euro,",
-     4.1,
-     4.58
-    ],
-    [
-     "aber",
-     5.06,
-     5.22
-    ],
-    [
-     "nur",
-     5.22,
-     5.48
-    ],
-    [
-     "im",
-     5.48,
-     5.7
-    ],
-    [
-     "Schnitt.",
-     5.7,
-     5.98
+     "18%.",
+     3.44,
+     4.42
     ]
    ]
   },
   {
    "szene": "s6",
-   "datei": "17.wav",
-   "dauer": 2.412,
-   "text": "Und wieder ist es ein Außenseiter.",
-   "hash": "ff2cc5206b12acfc9a6b9dcf20e36c2471a80684",
-   "pruefung": 0.85,
+   "datei": "11.wav",
+   "dauer": 6.8,
+   "text": "Das bringt im Schnitt hundertneun Euro pro hundert. Aber nur im Schnitt. Und wieder ein Außenseiter.",
+   "hash": "0446aa1a5e627d26ec1d0b0ee2ea26094e802a9d",
+   "pruefung": 0.97,
    "woerter": [
     [
-     "Obwohl",
+     "Das",
      0.0,
-     0.16
+     0.22
+    ],
+    [
+     "bringt",
+     0.22,
+     0.54
+    ],
+    [
+     "im",
+     0.54,
+     0.86
+    ],
+    [
+     "Schnitt",
+     0.86,
+     1.18
+    ],
+    [
+     "109",
+     1.18,
+     2.06
+    ],
+    [
+     "Euro",
+     2.06,
+     2.5
+    ],
+    [
+     "pro",
+     2.5,
+     2.76
+    ],
+    [
+     "100,",
+     2.76,
+     3.18
+    ],
+    [
+     "aber",
+     3.62,
+     3.8
+    ],
+    [
+     "nur",
+     3.8,
+     4.06
+    ],
+    [
+     "im",
+     4.06,
+     4.34
+    ],
+    [
+     "Schnitt",
+     4.34,
+     4.66
+    ],
+    [
+     "und",
+     4.66,
+     5.14
     ],
     [
      "wieder",
-     0.16,
-     0.56
-    ],
-    [
-     "ist",
-     0.56,
-     1.0
-    ],
-    [
-     "es",
-     1.0,
-     1.26
+     5.14,
+     5.52
     ],
     [
      "ein",
-     1.26,
-     1.48
+     5.52,
+     5.86
     ],
     [
      "Außenseiter.",
-     1.48,
-     2.24
+     5.86,
+     6.58
     ]
    ]
   },
   {
    "szene": "s7",
-   "datei": "18.wav",
-   "dauer": 2.8,
-   "text": "Zwischenstand: Bert ist wieder knapp vorne.",
-   "hash": "2f88904e7ec34cd5eba6fab33c7f122f6a8324e2",
-   "pruefung": 0.97,
+   "datei": "12.wav",
+   "dauer": 2.057,
+   "text": "Zwischenstand: Bert knapp vorne.",
+   "hash": "59a88802e978e1b0685858d61a8013701c27fae7",
+   "pruefung": 0.96,
    "woerter": [
     [
-     "Zwischenstand",
+     "Zwischenstand,",
      0.0,
      0.64
     ],
     [
-     "wert",
-     0.64,
-     1.1
-    ],
-    [
-     "ist",
-     1.1,
-     1.48
-    ],
-    [
-     "wieder",
-     1.48,
-     1.74
+     "Wert",
+     0.92,
+     1.12
     ],
     [
      "knapp",
-     1.74,
-     2.06
+     1.12,
+     1.42
     ],
     [
      "vorne.",
-     2.06,
-     2.58
+     1.42,
+     1.8
     ]
    ]
   },
   {
    "szene": "s8",
-   "datei": "19.wav",
-   "dauer": 7.62,
-   "text": "Morgen ist die US-Börse zu. Am Freitag startet Bert zwei Punkt null. Schafft er den S&P fünfhundert?",
-   "hash": "4cd4cde1db7643883fe9d792d7dc7d5ab73ebf25",
+   "datei": "13.wav",
+   "dauer": 6.62,
+   "text": "Morgen ist die Börse zu. Freitag startet Bert zwei Punkt null. Schafft er den S&P fünfhundert?",
+   "hash": "9519c703655c548920ff790a98e76bbd6284c93b",
    "pruefung": 0.97,
    "woerter": [
     [
@@ -1267,87 +812,77 @@
     [
      "ist",
      0.48,
-     0.8
+     0.78
     ],
     [
      "die",
-     0.8,
+     0.78,
      1.08
     ],
     [
-     "US",
+     "Börse",
      1.08,
-     1.26
-    ],
-    [
-     "-Börse",
-     1.26,
-     1.68
+     1.48
     ],
     [
      "zu.",
-     1.68,
-     1.96
-    ],
-    [
-     "Am",
-     2.64,
-     2.8
+     1.48,
+     1.76
     ],
     [
      "Freitag",
-     2.8,
-     3.46
+     2.36,
+     3.0
     ],
     [
      "startet",
-     3.46,
-     3.98
+     3.0,
+     3.42
     ],
     [
      "Bert",
-     3.98,
-     4.18
+     3.42,
+     3.58
     ],
     [
      "2",
-     4.18,
-     4.56
+     3.58,
+     4.08
     ],
     [
      ".0.",
-     4.56,
-     5.28
+     4.08,
+     4.76
     ],
     [
      "Schafft",
-     5.7,
-     6.04
+     5.1,
+     5.32
     ],
     [
      "er",
-     6.04,
-     6.26
+     5.32,
+     5.5
     ],
     [
      "den",
-     6.26,
-     6.4
+     5.5,
+     5.62
     ],
     [
      "S",
-     6.4,
-     6.62
+     5.62,
+     5.78
     ],
     [
      "&P",
-     6.62,
-     6.98
+     5.78,
+     6.02
     ],
     [
      "500?",
-     6.98,
-     7.4
+     6.02,
+     6.4
     ]
    ]
   }
