@@ -1,0 +1,16 @@
+name: "Forschung: temporäre Datenzweige löschen"
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  loeschen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - run: |
+          for b in $(git ls-remote --heads origin 'forschung-daten-*' | awk '{print $2}' | sed 's#refs/heads/##'); do
+            echo "lösche $b"; git push -q origin --delete "$b"
+          done
