@@ -5,7 +5,8 @@ Tippt NUR mit Spielgeld. Es wird nirgendwo echt gewettet.
 
 Strategie Version 2 ("Value-Tipps", seit Update #3 am 20.11.2026):
 - Kurt holt sich die Quoten vieler Anbieter für die Spiele der nächsten 3 Tage
-  in 5 Ligen (Bundesliga, Premier League, La Liga, Serie A, Ligue 1).
+  in 5 Ligen (Bundesliga, Premier League, La Liga, Serie A, Ligue 1) und seit 25.11. auch
+  Champions League, Europa League und Conference League (Spiele unter der Woche).
 - Aus allen Quoten zusammen berechnet er die "faire" Chance jedes Ausgangs
   (Heimsieg, Unentschieden, Auswärtssieg).
 - "Value" = wie viel besser eine Quote ist als fair.
@@ -45,10 +46,13 @@ CREDIT_RESERVE = 30              # so viele API-Abfragen immer übrig lassen
 # Reihenfolge = Wichtigkeit (wenn Abfragen knapp werden, fallen die hinteren weg)
 LEAGUES = {
     "soccer_germany_bundesliga": "Bundesliga",
+    "soccer_uefa_champs_league": "Champions League",
     "soccer_epl": "Premier League",
     "soccer_spain_la_liga": "La Liga",
     "soccer_italy_serie_a": "Serie A",
     "soccer_france_ligue_one": "Ligue 1",
+    "soccer_uefa_europa_league": "Europa League",
+    "soccer_uefa_europa_conference_league": "Conference League",
 }
 EXCLUDE_BOOKS = ("betfair", "matchbook", "smarkets", "_ex")  # Wettbörsen ausschließen
 
