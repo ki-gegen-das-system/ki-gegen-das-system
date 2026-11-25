@@ -36,7 +36,7 @@ Bei Alpaca gibt es Aktien vor- und nachbörslich (ab 10 Uhr / bis 2 Uhr), aber d
 Volumens und die Kurse bewegen sich kaum (4–6 statt 9–12 bp pro 5 Min.). Krypto läuft 24/7, aber 0,25 %
 Gebühr pro Trade macht jede getestete Krypto-Strategie kaputt.
 
-## Entscheidung für Mika (offen)
+## Entscheidung für Mika – gefallen am 25.11.: Variante A als ZWEITER Bot „Momentum-Max“, Bert 2.0 bleibt
 - **A – Action:** Bert 3.0 = Rauschzone auf Berts 8 Werten. ~8 Trades/Tag, fast jeden Tag was los, gut im
   Video zu zeigen (Rauschband im Chart). Aber: im Endtest leicht im Minus (≈ −7 % pro Jahr). Ehrlich als
   Live-Test erzählen: „Funktioniert die Studie noch?“

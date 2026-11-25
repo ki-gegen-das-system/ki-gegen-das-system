@@ -71,7 +71,9 @@
      Szene `text` (gibt keinen eigenen Szenen-Typ). Keine bp/Sharpe, keine Gewinnversprechen.
      **Update 25.11. 23:50 – Endtest ist gemacht** (`forschung/ERGEBNIS.md`): Rauschzone auf SPY+QQQ 2024–2026 knapp im Plus
      (+1.616 $ auf 10.000 $, 2025/26 ≈ 0; SPY halten: +51 %), auf Berts 8 Werten im Minus (−2.085 $). Ergebnis: keine Strategie
-     schafft viele Trades UND Gewinn. Mikas Entscheidung zu Bert 3.0 ist offen – im Video nichts als beschlossen darstellen.
+     schafft viele Trades UND Gewinn. **Entschieden:** neuer zweiter Trading-Bot „Momentum-Max“ (Rauschzone, Berts 8 Werte),
+     Bert 2.0 bleibt. Darf als Teaser angekündigt werden („Bald bekommt Bert Konkurrenz“), Start erst nach Einrichtung
+     (geplant Mo 30.11.) – kein fester Termin versprechen, keine Gewinnaussagen.
   3. Kurt kurz: Europa-/Conference-League-Spiele vom 26.11. ohne Tipp; Rayo-Tipp läuft erst Sa 28.11. 14:00.
   Cliffhanger z. B.: „Freitag ist Bert 2.0 live. Kann er echt, was er im Test nicht konnte?“ – keine Prognose.
 - **Folge 9 (Do 26.11.):** US-Börse zu (Thanksgiving) → keine Bert-Trades. Erklärfolge Bert 2.0: echter Apple-Chart
@@ -91,9 +93,12 @@
 ## Strategie-Forschung Bert 3.0 (25.11.)
 Ergebnis in `forschung/ERGEBNIS.md`: ~150 Varianten, 2018–2023 entwickelt, 2024–2026 einmal getestet. Keine
 Strategie schafft viele Trades UND Gewinn. Nur Rauschzonen-Momentum auf SPY+QQQ blieb im Endtest knapp im Plus
-(~2 Trades/Tag); auf Berts 8 Werten (~8 Trades/Tag) im Endtest leicht im Minus. **Mikas Entscheidung offen**
-(A Action / B beste Chance / C Bert 2.0 lassen) – in der Wochenanalyse am Sa 28.11. nachfragen, nicht ohne OK
-umbauen. Content-Idee: eigene Folge „150 Strategien getestet – das kam raus“ (ehrlich, nur echte Zahlen aus
+(~2 Trades/Tag); auf Berts 8 Werten (~8 Trades/Tag) im Endtest leicht im Minus.
+**Entscheidung Mika (25.11. 23:52): zweiter Trading-Bot „Momentum-Max“** (Actionbot) mit Rauschzonen-Momentum auf
+Berts 8 Werten, eigenes Alpaca-Demokonto (Mika legt es an, neue Keys als eigene GitHub-Secrets). **Bert 2.0 bleibt**
+(Duell „Vorsicht gegen Vollgas“: gleiche 8 Aktien, gleiche 10.000 $, andere Regeln). Bauen: Do 26.11. mit Mika,
+Start geplant Mo 30.11. Videos: täglich der Bot mit der meisten Action im Fokus, die anderen im Zwischenstand.
+Ehrlich bleiben: laut Endtest eher leicht im Minus – Experiment, keine Gewinnversprechen. Content-Idee: eigene Folge „150 Strategien getestet – das kam raus“ (ehrlich, nur echte Zahlen aus
 `forschung/LOG.md`).
 
 ## Offene Punkte (Stand 25.11.)
