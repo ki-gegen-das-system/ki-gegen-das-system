@@ -44,6 +44,15 @@ CLOSE_ALL_MIN = 30               # 30 Min vor Schluss alles verkaufen
 MOC_CUTOFF_MIN = 12              # Schlusskurs-Orders gehen nur bis 15:50 Uhr New York
 CHECK_EVERY_MIN = 5              # im Dauerlauf alle 5 Minuten prüfen
 
+# ---- Bert 2.0 (Update #7, Mikas Entscheidung vom 25.11.): Checkliste statt Linien-Kreuzung, auch Short.
+# Regeln in strategie.py (dieselben wie im Backtest). Gilt ab diesem US-Handelstag:
+STRATEGIE_AB = "2026-11-26"
+SHORTS = True                    # Bert 2.0 darf auch auf fallende Kurse setzen
+CLOSE_ALL_MIN_V2 = 15            # 15 Min. vor Schluss (21:45 Uhr) alles schließen
+CHECK_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "bert_checkliste.csv")
+CHECK_HEADER = ["zeit", "symbol", "seite", "markt", "ausbruch", "volumen", "trend", "rsi", "erfuellt",
+                "entscheidung", "details"]
+
 API = "https://paper-api.alpaca.markets"
 DATA_API = "https://data.alpaca.markets"
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
@@ -240,26 +249,46 @@ def log_fills(state, now):
         _, side, sym = g["key"]
         qty, price = g["qty"], g["cost"] / g["qty"]
         t = parse_ts(g["t"])
-        lot = lots.get(sym, {"qty": 0.0, "avg": 0.0})
-        if side == "buy":
-            total = lot["qty"] + qty
-            lot["avg"] = (lot["qty"] * lot["avg"] + qty * price) / total
-            lot["qty"] = total
-            lots[sym] = lot
-            append_csv(TRADES_FILE, TRADES_HEADER, [local(t), sym, "Kauf", f"{qty:g}", f"{price:.2f}", "", ""])
-        else:
-            avg = lot["avg"] or price
-            pnl = (price - avg) * qty
-            pct = (price / avg - 1) * 100 if avg else 0.0
-            lot["qty"] = lot["qty"] - qty
-            if lot["qty"] <= 1e-9:
-                lots.pop(sym, None)
-                state.get("opened", {}).pop(sym, None)
-            else:
-                lots[sym] = lot
-            append_csv(TRADES_FILE, TRADES_HEADER,
-                       [local(t), sym, "Verkauf", f"{qty:g}", f"{price:.2f}", f"{pnl:.2f}", f"{pct:.2f}"])
+        book_fill(state, lots, sym, side, qty, price, t)
     state["seen_fill_ids"] = seen_list[-300:]
+
+
+def book_fill(state, lots, sym, side, qty, price, t):
+    """Bucht eine Ausführung. Positionen mit Vorzeichen: + = gekauft (long), − = leerverkauft (short).
+    Kauf/Short eröffnen, Verkauf/Eindecken schließen (mit Gewinn/Verlust)."""
+    lot = lots.get(sym, {"qty": 0.0, "avg": 0.0})
+    sgn = 1 if side == "buy" else -1
+    rest = qty
+    if lot["qty"] and (lot["qty"] > 0) != (sgn > 0):          # schließt (einen Teil) der Position
+        closed = min(rest, abs(lot["qty"]))
+        direction = 1 if lot["qty"] > 0 else -1
+        avg = lot["avg"] or price
+        pnl = (price - avg) * closed * direction
+        pct = (price / avg - 1) * 100 * direction if avg else 0.0
+        aktion = "Verkauf" if direction > 0 else "Eindecken"
+        append_csv(TRADES_FILE, TRADES_HEADER,
+                   [local(t), sym, aktion, f"{closed:g}", f"{price:.2f}", f"{pnl:.2f}", f"{pct:.2f}"])
+        lot["qty"] += sgn * closed
+        rest -= closed
+        info = state.get("v2_info", {}).get(sym)
+        if info and not info.get("manuell"):   # von Alpaca geschlossen: Stop-Loss oder Gewinnziel
+            grund = "Stop-Loss" if abs(price - info["stop"]) <= abs(price - info["ziel"]) else "Gewinnziel"
+            log(t, sym, "EINDECKEN" if direction < 0 else "VERKAUF",
+                f"{grund} bei {price:.2f} ({pnl:+.2f} $)", price)
+        if abs(lot["qty"]) <= 1e-9:
+            lots.pop(sym, None)
+            state.get("opened", {}).pop(sym, None)
+            state.get("v2_info", {}).pop(sym, None)
+            lot = {"qty": 0.0, "avg": 0.0}
+        else:
+            lots[sym] = lot
+    if rest > 1e-9:                                            # eröffnet / vergrößert eine Position
+        total = abs(lot["qty"]) + rest
+        lot["avg"] = (abs(lot["qty"]) * lot["avg"] + rest * price) / total
+        lot["qty"] = lot["qty"] + sgn * rest
+        lots[sym] = lot
+        append_csv(TRADES_FILE, TRADES_HEADER,
+                   [local(t), sym, "Kauf" if sgn > 0 else "Short", f"{rest:g}", f"{price:.2f}", "", ""])
 
 
 # ---------------------------------------------------------------- Aktionen
@@ -334,6 +363,173 @@ def write_equity(state, account, positions, now, market_open):
     return equity
 
 
+# ---------------------------------------------------------------- Bert 2.0
+def get_bars5(symbols, now, days=21):
+    """5-Min-Kerzen (IEX) der letzten Wochen, nur Börsenzeit, nur fertige Kerzen, mit allen Checklisten-Werten."""
+    import strategie
+    raw, token = {s: [] for s in symbols}, None
+    for _ in range(40):
+        p = {"symbols": ",".join(symbols), "timeframe": "5Min", "start": iso_z(now - timedelta(days=days)),
+             "feed": "iex", "limit": 10000, "adjustment": "raw", "sort": "asc"}
+        if token:
+            p["page_token"] = token
+        r = call("GET", DATA_API, "/v2/stocks/bars", p) or {}
+        for s_, lst in (r.get("bars") or {}).items():
+            raw.setdefault(s_, []).extend(lst)
+        token = r.get("next_page_token")
+        if not token:
+            break
+    out = {}
+    for s_, lst in raw.items():
+        bars = strategie.to_session(sorted(lst, key=lambda b: b["t"]), parse_ts)
+        bars = [b for b in bars if b["t"] + timedelta(minutes=5) <= now]   # nur fertige Kerzen
+        out[s_] = strategie.enrich(bars)
+    return out
+
+
+def log_check(now, sym, side, pts, decision):
+    vals = {k: ("ja" if ok else "nein") for k, ok, _ in pts if k != "seite"}
+    append_csv(CHECK_FILE, CHECK_HEADER, [
+        local(now), sym, side, vals.get("markt", ""), vals.get("ausbruch", ""), vals.get("volumen", ""),
+        vals.get("trend", ""), vals.get("rsi", ""), sum(1 for k, ok, _ in pts if k != "seite" and ok),
+        decision, " | ".join(txt for k, _, txt in pts if k != "seite")])
+
+
+def place_v2(sym, side, b, pts, now, state, today):
+    import strategie
+    entry = b["c"]
+    stop, target, risk, qty = strategie.plan(side, entry, b)
+    long = side == "long"
+    if qty < 1:
+        log(now, sym, "AUSGELASSEN", "Checkliste erfüllt, aber Aktie zu teuer für 50 $ Risiko", entry)
+        return False
+    body = {"symbol": sym, "qty": str(qty), "side": "buy" if long else "sell", "type": "market",
+            "time_in_force": "gtc", "order_class": "bracket",
+            "take_profit": {"limit_price": f"{target:.2f}"}, "stop_loss": {"stop_price": f"{stop:.2f}"}}
+    ok = False
+    for tif in ("gtc", "day"):
+        body["time_in_force"] = tif
+        try:
+            call("POST", API, "/v2/orders", body=body)
+            ok = True
+            break
+        except urllib.error.HTTPError:
+            continue
+    heute = state.setdefault("v2_heute", {}).setdefault(today, [])
+    heute.append(sym)  # pro Aktie nur ein Versuch am Tag
+    if not ok:
+        log(now, sym, "FEHLER", f"{'Kauf' if long else 'Short'} von Alpaca abgelehnt", entry)
+        return False
+    vol = next((txt for k, _, txt in pts if k == "volumen"), "")
+    rsi = next((txt for k, _, txt in pts if k == "rsi"), "")
+    log(now, sym, "KAUF" if long else "SHORT",
+        f"{qty} Stück – Checkliste 5/5: {'Ausbruch nach oben' if long else 'Ausbruch nach unten'}, "
+        f"{vol.replace('Volumen ', 'Vol. ')}, {rsi}", entry)
+    log(now, sym, "SCHUTZ", f"Stop {stop:.2f} · Ziel {target:.2f} · Risiko {qty * risk:.0f} $", entry)
+    state.setdefault("v2_info", {})[sym] = {"seite": side, "stop": round(stop, 2), "ziel": round(target, 2),
+                                           "tag": today, "risiko": round(qty * risk, 2)}
+    state.setdefault("opened", {})[sym] = today
+    return True
+
+
+def main_v2(state, account, positions, equity, now, minutes_left):
+    """Ein Durchgang von Bert 2.0 (Checkliste). Gibt True zurück (Börse offen)."""
+    import strategie
+    V2 = strategie.V2
+    today = us_day(now)
+    ny = now.astimezone(strategie.NY)
+    hm = ny.strftime("%H:%M")
+    opened = state.setdefault("opened", {})
+    info = state.setdefault("v2_info", {})
+    heute_all = state.setdefault("v2_heute", {})
+    for k in list(heute_all):
+        if k != today:
+            heute_all.pop(k)
+    done = set(heute_all.setdefault(today, []))
+    if state.get("tag") != today:
+        state["tag"], state["tag_start"] = today, equity
+        state.pop("tageslimit_gemeldet", None)
+    day_pnl = equity - state["tag_start"]
+    print(f"Bert 2.0 | {hm} New York | heute {day_pnl:+.2f} $ | heute schon gehandelt: {sorted(done) or '-'}")
+
+    # 1) Positionen vom Vortag schließen (Daytrading)
+    for sym, p in list(positions.items()):
+        if opened.get(sym) and opened[sym] != today:
+            info.setdefault(sym, {})["manuell"] = True
+            cancel_open_orders(sym)
+            time.sleep(2)
+            try:
+                call("DELETE", API, f"/v2/positions/{urllib.parse.quote(sym)}")
+                log(now, sym, "EINDECKEN" if float(p["qty"]) < 0 else "VERKAUF",
+                    "Position vom Vortag übrig – wird geschlossen", float(p["current_price"]))
+            except urllib.error.HTTPError:
+                log(now, sym, "FEHLER", "Position vom Vortag ließ sich nicht schließen", float(p["current_price"]))
+            positions.pop(sym)
+
+    # 2) 21:45 Uhr: alles schließen
+    if minutes_left <= CLOSE_ALL_MIN_V2:
+        if positions:
+            for sym in positions:
+                info.setdefault(sym, {})["manuell"] = True
+            cancel_open_orders()
+            call("DELETE", API, "/v2/positions", {"cancel_orders": "true"})
+            for sym, p in positions.items():
+                log(now, sym, "EINDECKEN" if float(p["qty"]) < 0 else "VERKAUF",
+                    "21:45 Uhr – Daytrading heißt: alles schließen", float(p["current_price"]))
+        else:
+            cancel_open_orders()
+        return True
+
+    # 3) Neue Trades nur zwischen 16:00 und 20:30 Uhr (10:00–14:30 New York, Kerzenzeit prüft strategie.signal)
+    if hm < "10:00" or hm > "14:45":
+        print("Außerhalb der Einstiegszeit – Bert beobachtet nur.")
+        return True
+    if day_pnl <= V2["day_loss_limit"]:
+        if not state.get("tageslimit_gemeldet"):
+            log(now, "-", "TAGESLIMIT", f"Heute {day_pnl:.2f} $ – keine neuen Trades mehr")
+            state["tageslimit_gemeldet"] = True
+        return True
+    open_orders = call("GET", API, "/v2/orders", {"status": "open", "limit": 500}) or []
+    busy = set(positions) | {o["symbol"] for o in open_orders}
+    slots = V2["max_positions"] - len(busy)
+    data = get_bars5(SYMBOLS, now)
+    spy_bars = data.get("SPY") or []
+    spy_by_time = {(b["d"], b["hm"]): b for b in spy_bars}
+    shorts_ok = SHORTS and account.get("shorting_enabled", True) is not False
+    letzte = state.setdefault("v2_letzte", {})
+    kandidaten = []
+    for sym in SYMBOLS:
+        bars = data.get(sym) or []
+        if not bars or bars[-1]["d"] != ny.date().isoformat():
+            continue
+        b = bars[-1]
+        stamp = b["d"] + " " + b["hm"]
+        if letzte.get(sym) == stamp:
+            continue  # diese Kerze schon geprüft
+        letzte[sym] = stamp
+        side, pts = strategie.signal(b, spy_by_time.get((b["d"], b["hm"])), shorts_ok)
+        n_ok = sum(1 for k, ok, _ in pts if k != "seite" and ok)
+        if side:
+            if sym in done:
+                log_check(now, sym, side, pts, "erfüllt – heute schon gehandelt")
+            elif sym in busy:
+                log_check(now, sym, side, pts, "erfüllt – Position/Order offen")
+            else:
+                kandidaten.append((sym, side, b, pts))
+        elif n_ok >= 3:
+            seite = next((txt for k, _, txt in pts if k == "seite"), "")
+            log_check(now, sym, seite, pts, f"{n_ok}/5 – kein Trade")
+    for sym, side, b, pts in kandidaten:
+        if slots <= 0:
+            log_check(now, sym, side, pts, "erfüllt – schon 3 Positionen")
+            log(now, sym, "AUSGELASSEN", "Checkliste erfüllt, aber schon 3 Positionen offen", b["c"])
+            continue
+        log_check(now, sym, side, pts, "KAUF" if side == "long" else "SHORT")
+        if place_v2(sym, side, b, pts, now, state, today):
+            slots -= 1
+    return True
+
+
 # ---------------------------------------------------------------- Hauptprogramm
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -365,6 +561,11 @@ def main():
 
     minutes_left = (parse_ts(clock["next_close"]) - parse_ts(clock["timestamp"])).total_seconds() / 60
     print(f"Noch {minutes_left:.0f} Minuten bis Börsenschluss.")
+
+    if us_day(now) >= STRATEGIE_AB:   # Bert 2.0 (Checkliste)
+        result = main_v2(state, account, positions, equity, now, minutes_left)
+        save_state(state)
+        return result
 
     # 1) Kurz vor Schluss: alles verkaufen (Daytrading = nichts über Nacht halten)
     if minutes_left <= CLOSE_ALL_MIN:

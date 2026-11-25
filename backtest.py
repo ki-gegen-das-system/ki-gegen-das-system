@@ -27,22 +27,9 @@ EXTRA = ["AMD", "GOOGL", "NFLX", "AVGO", "PLTR", "COIN", "MU", "BA", "JPM", "XOM
 CAPITAL = 10_000.0
 SLIP = 0.0002                                   # 0,02 % Kursabweichung pro Kauf/Verkauf
 
-# ---------------------------------------------------------------- Bert 2.0 (fest gewählt, nicht optimiert)
-V2 = dict(
-    or_bars=6,            # Eröffnungsspanne = erste 30 Minuten (6 × 5 Min.)
-    vol_factor=1.5,       # Ausbruch mit mind. 1,5× so viel Volumen wie sonst um diese Uhrzeit (Ø 10 Tage)
-    max_chase_atr=0.5,    # nicht hinterherlaufen: höchstens 0,5 ATR über dem Ausbruchsniveau
-    rsi_max=70, rsi_min=30,
-    ema_fast=27, ema_slow=63,   # auf 5-Min-Kerzen ≈ Berts Linien (EMA 9/21 auf 15 Min.)
-    atr_stop=1.0,         # Stop höchstens 1 ATR entfernt (oder am Rand der Eröffnungsspanne)
-    reward=2.0,           # Gewinnziel = 2× Risiko
-    risk_usd=50.0,        # max. 50 $ Risiko pro Trade
-    max_pos_usd=3000.0,
-    max_positions=3,
-    day_loss_limit=-150.0,
-    last_entry="14:30",   # New York = 20:30 Uhr deutsche Zeit
-    flat_time="15:45",    # New York = 21:45 Uhr deutsche Zeit
-)
+# ---------------------------------------------------------------- Bert 2.0: Regeln aus strategie.py (dieselben wie live)
+import strategie
+from strategie import V2, ema_series, rsi_series, enrich
 
 
 # ---------------------------------------------------------------- Daten
@@ -64,79 +51,7 @@ def fetch(symbols, start, end):
 
 
 def to_session(lst):
-    """Nur reguläre Börsenzeit (9:30–16:00 New York). Liefert Liste von Kerzen-Dicts mit Datum/Uhrzeit (NY)."""
-    out = []
-    for b in lst:
-        t = bert.parse_ts(b["t"]).astimezone(NY)
-        m = t.hour * 60 + t.minute
-        if 9 * 60 + 30 <= m < 16 * 60 and t.weekday() < 5:
-            out.append({"d": t.date().isoformat(), "hm": t.strftime("%H:%M"), "o": float(b["o"]), "h": float(b["h"]),
-                        "l": float(b["l"]), "c": float(b["c"]), "v": float(b.get("v", 0))})
-    return out
-
-
-# ---------------------------------------------------------------- Indikatoren
-def ema_series(vals, n):
-    k, e, out = 2 / (n + 1), None, []
-    for v in vals:
-        e = v if e is None else v * k + e * (1 - k)
-        out.append(e)
-    return out
-
-
-def rsi_series(vals, n=14):
-    out, ag, al = [50.0] * len(vals), None, None
-    for i in range(1, len(vals)):
-        d = vals[i] - vals[i - 1]
-        g, l = max(d, 0), max(-d, 0)
-        if ag is None:
-            if i == n:
-                diffs = [vals[j] - vals[j - 1] for j in range(1, n + 1)]
-                ag = sum(max(x, 0) for x in diffs) / n
-                al = sum(max(-x, 0) for x in diffs) / n
-            else:
-                continue
-        else:
-            ag = (ag * (n - 1) + g) / n
-            al = (al * (n - 1) + l) / n
-        out[i] = 100.0 if al == 0 else 100 - 100 / (1 + ag / al)
-    return out
-
-
-def atr_series(bars, n=14):
-    out, a = [], None
-    for i, b in enumerate(bars):
-        pc = bars[i - 1]["c"] if i else b["c"]
-        tr = max(b["h"] - b["l"], abs(b["h"] - pc), abs(b["l"] - pc))
-        a = tr if a is None else (a * (n - 1) + tr) / n
-        out.append(a)
-    return out
-
-
-def enrich(bars):
-    closes = [b["c"] for b in bars]
-    ef, es = ema_series(closes, V2["ema_fast"]), ema_series(closes, V2["ema_slow"])
-    rs, at = rsi_series(closes), atr_series(bars)
-    cum_pv = cum_v = 0.0
-    day = None
-    hist, today = {}, {}   # Volumen je Uhrzeit an den Vortagen (für "relatives Volumen")
-    for i, b in enumerate(bars):
-        if b["d"] != day:
-            for hm, v in today.items():
-                hist.setdefault(hm, []).append(v)
-                hist[hm] = hist[hm][-10:]
-            day, cum_pv, cum_v, today = b["d"], 0.0, 0.0, {}
-        past = hist.get(b["hm"], [])
-        b["rvol"] = b["v"] / (sum(past) / len(past)) if len(past) >= 5 and sum(past) > 0 else None
-        today[b["hm"]] = b["v"]
-        tp = (b["h"] + b["l"] + b["c"]) / 3
-        cum_pv += tp * b["v"]
-        cum_v += b["v"]
-        b["vwap"] = cum_pv / cum_v if cum_v else b["c"]
-        b["ef"], b["es"], b["rsi"], b["atr"] = ef[i], es[i], rs[i], at[i]
-        prev = bars[max(0, i - 20):i]
-        b["avgv"] = sum(x["v"] for x in prev) / len(prev) if prev else b["v"]
-    return bars
+    return strategie.to_session(lst, bert.parse_ts)
 
 
 def by_day(bars):
@@ -185,24 +100,8 @@ def sim_v1(data, symbols):
 
 # ---------------------------------------------------------------- Bert 2.0
 def v2_signal(s, i, b, ctx, shorts):
-    bars = ctx["data"][s]
-    day_idx = ctx["days"][s][b["d"]]
-    pos = day_idx.index(i)
-    if pos < V2["or_bars"] or b["hm"] > V2["last_entry"]:
-        return None
-    orb = [bars[j] for j in day_idx[:V2["or_bars"]]]
-    hi, lo = max(x["h"] for x in orb), min(x["l"] for x in orb)
-    spy = ctx["spy"].get((b["d"], b["hm"]))
-    if not spy:
-        return None
-    vol_ok = b["rvol"] is not None and b["rvol"] >= V2["vol_factor"]
-    if (spy["c"] > spy["vwap"] and b["c"] > hi and b["c"] - hi <= V2["max_chase_atr"] * b["atr"] and vol_ok
-            and b["c"] > b["vwap"] and b["ef"] > b["es"] and b["rsi"] < V2["rsi_max"]):
-        return ("long", hi, lo)
-    if (shorts and spy["c"] < spy["vwap"] and b["c"] < lo and lo - b["c"] <= V2["max_chase_atr"] * b["atr"]
-            and vol_ok and b["c"] < b["vwap"] and b["ef"] < b["es"] and b["rsi"] > V2["rsi_min"]):
-        return ("short", hi, lo)
-    return None
+    side, _ = strategie.signal(b, ctx["spy"].get((b["d"], b["hm"])), shorts)
+    return side
 
 
 def sim_v2(data, symbols, shorts):
@@ -287,22 +186,14 @@ def run_days(data, symbols, signal, mode, v1_exit=None):
                         continue
                     open_pos[s] = {"side": "long", "entry": entry, "qty": qty, "t": nxt["hm"]}
                 else:
-                    side, hi, lo = sig
+                    side = sig
                     sgn = 1 if side == "long" else -1
                     entry = nxt["o"] * (1 + SLIP * sgn)
-                    if side == "long":
-                        stop = max(lo, entry - V2["atr_stop"] * b["atr"])
-                        risk = max(entry - stop, 0.002 * entry)
-                        stop = entry - risk
-                    else:
-                        stop = min(hi, entry + V2["atr_stop"] * b["atr"])
-                        risk = max(stop - entry, 0.002 * entry)
-                        stop = entry + risk
-                    qty = math.floor(min(V2["risk_usd"] / risk, V2["max_pos_usd"] / entry))
+                    stop, target, risk, qty = strategie.plan(side, entry, b)
                     if qty < 1:
                         continue
                     open_pos[s] = {"side": side, "entry": entry, "qty": qty, "t": nxt["hm"], "stop": stop,
-                                   "target": entry + sgn * V2["reward"] * risk}
+                                   "target": target}
                     done_today.add(s)
         # Sicherheitsnetz: was jetzt noch offen ist, zum letzten Kurs schließen
         for s, p in list(open_pos.items()):
