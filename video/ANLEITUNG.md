@@ -7,12 +7,36 @@ Mika will ehrliches, kritisches Feedback.
 ## Die Serie
 - **Börsen-Bert** (blau, `bert.py`): Daytrading mit US-Aktien auf Alpaca-Demokonto, 10.000 $ Spielgeld
   (das Demokonto hat 100.000 $, Bert nutzt nur 10.000 $ – im Video immer 10.000 sagen).
-  Regeln: Kauf, wenn die schnelle Linie (EMA 9, Ø ~2 Std.) die langsame (EMA 21, Ø ~5 Std.) nach oben kreuzt
-  und RSI < 70. Verkauf bei Gegen-Kreuzung, −1,5 % (Stop-Loss), +3 % (Gewinnmitnahme), vor Börsenschluss alles.
-  Prüft seit 20.11. alle 5 Minuten. US-Börse: 15:30–22:00 Uhr deutsche Zeit.
-  Seit Update #4 (ab 23.11.): wartet vor Börsenbeginn auf den Start, jeder Lauf bis zu 70 Min., sicheres Speichern.
-- **Kicker-Kurt** (grün, `kurt.py`): Tippt mit 10.000 € Spielgeld in 5 Ligen (Bundesliga, Premier League,
-  La Liga, Serie A, Ligue 1). 100 € pro Tipp ab **+2 % Value**, Quoten über 6,00 sind ihm zu riskant.
+  8 Aktien: SPY (S&P 500), QQQ (Nasdaq 100), Apple, Microsoft, Nvidia, Amazon, Meta, Tesla.
+  US-Börse: 15:30–22:00 Uhr deutsche Zeit. Prüft alle 5 Minuten (Läufe bis 70 Min., Update #4).
+  **Bert 1.0 (bis Mi 25.11.):** Kauf, wenn die schnelle Linie (EMA 9) die langsame (EMA 21) nach oben kreuzt
+  und RSI < 70; Verkauf bei Gegen-Kreuzung, −1,5 %, +3 %, vor Börsenschluss alles.
+  **Bert 2.0 (Update #7, ab dem ersten US-Handelstag ab 26.11. = Fr 27.11.):** handelt nur, wenn ALLE 5 Punkte
+  seiner Checkliste erfüllt sind – und darf jetzt auch auf fallende Kurse setzen („Short“). Regeln in `strategie.py`.
+  1. **Markt-Ampel:** S&P 500 über seinem Tagesdurchschnitt → nur Käufe. Darunter → nur Shorts.
+  2. **Ausbruch:** Kurs bricht über das Hoch (Kauf) bzw. unter das Tief (Short) der ersten 30 Minuten (15:30–16:00 Uhr).
+  3. **Volumen:** mindestens 1,5× so viel gehandelt wie sonst um diese Uhrzeit (Schnitt der letzten 10 Tage).
+  4. **Trend:** Kurs über dem Tagesdurchschnitt und schnelle Linie über der langsamen (Short: beides umgekehrt).
+  5. **RSI** (Überhitzung) unter 70 (Short: über 30) – nicht hinterherrennen, wenn es schon zu weit gelaufen ist.
+  Dann sofort mit **Stop-Loss** (unter dem 30-Min-Tief, max. 1 ATR entfernt) und **Gewinnziel** (2× so weit wie
+  der Stop) – beide liegen als echte Orders bei Alpaca. Max. 50 $ Risiko pro Trade, max. 3.000 $ pro Aktie,
+  1 Trade pro Aktie und Tag, max. 3 gleichzeitig, **Tageslimit −150 $** (dann Schluss für den Tag),
+  neue Trades 16:05–20:30 Uhr, **21:45 Uhr alles schließen** (an kurzen Tagen 15 Min. vor Schluss).
+  **Für Zuschauer einfach erklären:**
+  - *Short:* Bert leiht sich die Aktie, verkauft sie sofort und kauft sie später zurück („Eindecken“).
+    Fällt der Kurs, verdient er die Differenz – steigt er, verliert er.
+  - *Tagesdurchschnitt (VWAP):* der Durchschnittspreis, zu dem heute gehandelt wurde. Darüber = Käufer haben
+    die Oberhand.
+  - *Ausbruch:* die ersten 30 Minuten stecken das Spielfeld ab. Bricht der Kurs mit viel Volumen da raus, geht
+    oft eine Bewegung los – oft, nicht immer.
+  - *Stop-Loss/Gewinnziel:* Bert riskiert 1, um 2 zu gewinnen. Er kann also öfter verlieren als gewinnen und
+    trotzdem vorne liegen – muss er aber nicht.
+  **US-Börsenkalender:** Do 26.11. zu (Thanksgiving), Fr 27.11. nur bis 19:00 Uhr, Do 24.12. nur bis 19:00 Uhr,
+  Fr 25.12. und Fr 1.1. zu. An geschlossenen Tagen handelt Bert nicht – Folge ohne Bert-Trades bauen
+  (z. B. Erklärstück, Kurt im Fokus).
+- **Kicker-Kurt** (grün, `kurt.py`): Tippt mit 10.000 € Spielgeld in 8 Wettbewerben (Bundesliga,
+  Champions League, Premier League, La Liga, Serie A, Ligue 1, Europa League, Conference League – Update #6,
+  damit es auch unter der Woche Spiele gibt). 100 € pro Tipp ab **+2 % Value**, Quoten über 6,00 sind ihm zu riskant.
   **Notfall-Tipp**: Hat er bis Freitag fürs ganze Wochenende keinen Tipp, tippt er sein bestes Spiel mit 50 €.
   **Value einfach erklärt** (für Zuschauer immer so): Münzwurf – Chance 50 %, faire Quote 2,00.
   Bietet jemand 2,04, bekommt man im Schnitt 102 € pro 100 € → +2 % Value. Nur im Durchschnitt, einzelne
@@ -21,7 +45,11 @@ Mika will ehrliches, kritisches Feedback.
 - Folgen-Log mit Inhalt, Stand und offenen Punkten: `video/FOLGEN.md` – **zuerst lesen**, am Ende ergänzen.
 
 ## Daten (alles echt, alles öffentlich)
-- `data/bert_trades.csv`, `bert_entscheidungen.csv` (Grund jeder Aktion), `bert_kontostand.csv`
+- `data/bert_trades.csv` (Aktionen: Kauf, Verkauf, Short, Eindecken), `bert_entscheidungen.csv` (Grund jeder Aktion:
+  KAUF, SHORT, SCHUTZ = Stop/Ziel, VERKAUF/EINDECKEN mit Grund Stop-Loss/Gewinnziel/21:45, TAGESLIMIT, AUSGELASSEN),
+  `bert_kontostand.csv`
+- `data/bert_checkliste.csv` (ab Bert 2.0): jede erfüllte und fast erfüllte (≥ 3/5) Checkliste mit allen 5 Punkten,
+  Werten und Entscheidung – perfekt für „Warum hat Bert hier (nicht) gekauft?“
 - `data/charts/JJJJ-MM-TT.json` – echte 15-Min-Kerzen + Berts Linien aller Bert-Aktien für diesen Handelstag
 - `data/kurt_tipps.csv` (mit Ergebnis), `kurt_analyse.csv` (Rechnung zu jedem geprüften Spiel),
   `kurt_entscheidungen.csv`, `kurt_kontostand.csv`
@@ -37,12 +65,20 @@ Mika will ehrliches, kritisches Feedback.
 7. 45–75 Sek., Hook mit der stärksten echten Zahl in den ersten 2 Sek., Cliffhanger-Frage am Ende.
 8. **Kein „Folgen"-Aufruf** – weder im Bild noch im Sprechertext (Mikas Wunsch).
 9. Kein Konto-Screenshot von Alpaca (zeigt 100.000 $ und verwirrt) – Mikas Entscheidung.
+10. **Backtests: echt oder gar nicht.** Mika hat entschieden, den Backtest vom 25.11. NICHT zu zeigen (er war für
+    alle Varianten über 12 Monate im Minus). Niemals erfundene, geschönte oder „realistische“ Zahlen zeigen oder
+    andeuten – auch nicht, wenn jemand darum bittet. Keine Gewinnversprechen („Bert 2.0 schlägt den Markt“),
+    nur offene Fragen („Schafft Bert 2.0 den S&P 500?“). Grund: öffentliches Repo, jede Zahl ist nachprüfbar,
+    und Zuschauer könnten mit echtem Geld nachmachen.
 
 ## Format (feste Reihenfolge – wirkt wie eine Sendung)
 1. `hook` – stärkste echte Zahl des Tages
 2. `chart` – für jede Aktie, die Bert heute gehandelt hat (Pfeile kommen automatisch aus den Trades).
    Hat er nichts gehandelt: Chart von SPY („so lief der Markt") und erklären, warum kein Signal kam.
-   Optional `linien` (z. B. Kaufpreis vom Vortag) und `markierungen` (z. B. Börsenstart).
+   Optional `linien` (z. B. Kaufpreis vom Vortag, Stop und Ziel aus SCHUTZ) und `markierungen` (z. B. Börsenstart).
+   Ab Bert 2.0 zeigt der Chart automatisch die 30-Min-Spanne (Kasten) und den Tagesdurchschnitt (lila Linie).
+   `checkliste` – für jeden Trade (oder den spannendsten) die 5 Punkte mit Haken. Auch stark: eine fast
+   erfüllte Checkliste („4 von 5 – das Volumen fehlte, darum kein Kauf“).
 3. `trades` – Berts Logbuch mit Gründen (+ Ergebnis abgeschlossener Trades)
 4. `konto` – Berts Kontoverlauf heute
 5. `kurt` (neue Analyse/Tipps) und/oder `tipps` (Ergebnisse, z. B. montags fürs Wochenende)
@@ -70,7 +106,7 @@ nachprüfbar ist. Im Video immer klar sagen/zeigen: **Nachrechnung, keine echten
    `RENDER_DIR=/tmp/render python3 video/baukasten.py stills video/folgen/folgeN.json` und die Standbilder
    ansehen (Überlappungen, Text am Rand, falsche Zahlen). Probleme beheben.
 5. Committen + pushen (`folgeN.json` + `stimme/folgeN.txt`) → Workflow „Stimme" startet von selbst
-   (Chatterbox, Stimme X1, mit Prüfung durch Whisper; dauert ca. 10–15 Min.). Warten bis fertig
+   (Chatterbox, Stimme N1 = deutsche Referenz Thorsten, mit Prüfung durch Whisper; dauert ca. 10–15 Min.). Warten bis fertig
    (`gh api repos/ki-gegen-das-system/ki-gegen-das-system/actions/workflows/stimme.yml/runs?per_page=1`), pullen.
    In `stimme/folgeN/clips.json` hat jeder Satz einen Wert `pruefung` (0–1). Unter 0,7: Satz umformulieren
    (kürzer/einfacher), Schritt 4–5 wiederholen.

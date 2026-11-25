@@ -37,7 +37,8 @@
   S&P 500 halten ca. +8 %). **Auf Mikas Wunsch zeigen wir den Backtest NICHT im Video.** Niemals erfundene oder
   „geschönte" Zahlen zeigen (auch nicht „realistische") – nur echte Daten oder gar nichts. Mika hatte danach gefragt,
   Claude hat abgelehnt (Glaubwürdigkeit, öffentliches Repo, Zuschauer würden es mit echtem Geld nachmachen).
-- **Update #7** (Entscheidung Mika 25.11., aktiv ab **Do 26.11.**): **Bert 2.0** – Checkliste statt Linien-Kreuzung,
+- **Update #7** (Entscheidung Mika 25.11., aktiv ab dem ersten US-Handelstag ab 26.11. – das ist **Fr 27.11.**,
+  denn Do 26.11. ist Thanksgiving und die US-Börse hat zu; Fr 27.11. schließt sie schon um 19:00 Uhr): **Bert 2.0** – Checkliste statt Linien-Kreuzung,
   **Kauf UND Short** (auf fallende Kurse setzen), weiter 8 Aktien. Regeln in `strategie.py`:
   Markt-Ampel (S&P 500 über/unter Tagesdurchschnitt = VWAP), Ausbruch über das Hoch/unter das Tief der ersten
   30 Min. (15:30–16:00 Uhr), Volumen ≥ 1,5× normal für die Uhrzeit, Trend (Kurs über VWAP + Blau über Gelb),
@@ -45,21 +46,25 @@
   pro Trade, 1 Trade pro Aktie und Tag, max. 3 Positionen, Tageslimit −150 $, neue Trades 16:05–20:30 Uhr,
   21:45 Uhr alles schließen. Logbuch: KAUF/SHORT, SCHUTZ (Stop/Ziel), VERKAUF/EINDECKEN (mit Grund Stop-Loss/Gewinnziel),
   TAGESLIMIT. Jede (fast) erfüllte Checkliste steht in `data/bert_checkliste.csv`.
-  Trockenlauf mit echten Kursen vom 25.11.: Bert 2.0 hätte nur 1× gehandelt (10:15 NY = 16:15 Uhr Short Apple,
-  8 Stück ~347,43 $, Stop 348,57 $) – am Ende stieg der Markt kräftig, der Stop hätte gegriffen (ca. −9 $).
-  Das ist NICHT passiert (Bert 2.0 läuft erst ab 26.11.), im Video höchstens als „so hätte er heute entschieden" erwähnen.
+  Trockenlauf mit echten Kursen vom 25.11. (Stand 20:15 Uhr): Bert 2.0 hätte bis dahin nur 1× gehandelt
+  (16:15 Uhr Short Apple, 8 Stück ~347,43 $, Stop 348,57 $, Ziel 345,15 $). Das ist NICHT passiert (Bert 2.0 läuft erst
+  ab 27.11.), im Video höchstens als „so hätte er entschieden“ erwähnen. Ergebnis des ganzen Tages: siehe
+  `data/trockenlauf/` (falls vorhanden), sonst keine Aussage dazu machen.
 - **Wochenanalyse 21.11.** (mit Mika): bei beiden Bots **nichts geändert**. Bert: erst 1 echter Trade, Update #4 läuft erst ab 23.11. – erst eine Woche ohne Pannen abwarten. Kurt: Update #3 erst seit 20.11. – nach einer Woche Daten bewerten.
 
 ## Für die nächsten Folgen merken
-- **Folge 8 (Mi 25.11., heute):** Teaser „Morgen startet Bert 2.0": die 5 Punkte der Checkliste kurz zeigen
-  (Szene `text` oder `update` mit Nummer 7), Short einfach erklären („Bert darf jetzt auch auf fallende Kurse setzen –
-  fällt die Aktie, verdient er"). Frage: „Schafft Bert 2.0 es, den S&P 500 zu schlagen?" KEINE Gewinnversprechen,
+- **Folge 8 (Mi 25.11.):** letzter Tag Bert 1.0. Teaser „Ab Freitag: Bert 2.0“ – die 5 Punkte der Checkliste
+  kurz zeigen (Szene `text` oder `update` mit Nummer 7), Short einfach erklären („Bert darf jetzt auch auf fallende
+  Kurse setzen – fällt die Aktie, verdient er“). Frage: „Schafft Bert 2.0 den S&P 500?“ KEINE Gewinnversprechen,
   KEINE Backtest-Zahlen. Kurt: **Update #6** (Europapokal) mit 43 geprüften Spielen, 0 Tipps.
-- **Folge 9 (Do 26.11.):** erster Tag Bert 2.0 → Szene `checkliste` (5 Punkte mit Haken) für jeden Trade, Chart zeigt
-  Eröffnungsspanne (Box) und Tagesdurchschnitt (VWAP-Linie), Pfeile für SHORT/EINDECKEN. Kurt: EL/ECL-Spiele vom 26.11.
+- **Folge 9 (Do 26.11.):** US-Börse zu (Thanksgiving) → keine Bert-Trades. Erklärfolge Bert 2.0 mit echtem Chart
+  vom Mittwoch (`chart` mit `"bert2": true` zeigt 30-Min-Kasten + Tagesdurchschnitt) und `checkliste` am Beispiel
+  aus `data/trockenlauf/2026-11-25.json` (klar sagen: Probelauf, kein echter Trade). Kurt: EL/ECL-Spiele vom 26.11.
+- **Folge 10 (Fr 27.11.):** erster echter Tag Bert 2.0, kurzer Handelstag bis 19:00 Uhr (Alles-schließen um 18:45).
+  `checkliste` für jeden Trade, Pfeile SHORT/EINDECKEN. Kurt: Wochenend-Tipps.
 - Ab Folge 4: kein „FOLGEN →"-Button und kein „Folgen!" im Sprechertext mehr.
 - Woche 2: Value-Szene (Münzwurf) noch nicht gezeigt – beim ersten neuen Kurt-Tipp der Woche einbauen.
-- Folge 8 (Mi 25.11.): Cliffhanger aus Folge 7 beantworten (Pech oder Regeln?). Ehrlich bleiben: Bert „lernt“ nicht – an Seitwärts-Tagen wird er wieder hin und her handeln. Ob man das ändert (z. B. Mindestabstand zwischen Kauf und Verkauf), ist eine Regeländerung → nur mit Mikas OK, frühestens in der Wochenanalyse am Sa 28.11. vorschlagen.
+- Folge 8 (Mi 25.11.): Cliffhanger aus Folge 7 beantworten (Pech oder Regeln?) → ehrliche Antwort: Regeln. Bert 1.0 „lernt“ nicht und handelt an Seitwärts-Tagen hin und her. Darum hat Mika am 25.11. Bert 2.0 beschlossen (Update #7, max. 1 Trade pro Aktie und Tag).
 - Wochenrückblick 28.11.: Zahl der „Hin-und-her“-Trades (Kauf und Verkauf innerhalb von ≤ 15 Min.) zählen – am 24.11.: Meta 15:51–15:56 (−6,10 $), Microsoft 17:32–17:37 (−1,83 $), Meta 19:05–19:20 (−12,72 $).
 - **Update #5** in der nächsten Folge nach dem 24.11. (Daten 25.11.) mit Szene `update` zeigen (Grund: abgelehnte Sicherung aus Folge 6). Vorher prüfen: Steht nach jedem Kauf eine „SICHERUNG“ im Logbuch? Kein „FEHLER“ oder nur einer mit späterer SICHERUNG?
 - Nächster Wochenrückblick (Sa 28.11.): `python3 nachrechnung.py 2026-11-23 2026-11-27` und mit Berts echten Trades vergleichen. Ist Bert dank Update #4 durchgehend wach, sollten echte und nachgerechnete Käufe fast gleich sein – guter Beweis, ob das Update wirkt.
@@ -68,7 +73,7 @@
 ## Offene Punkte (Stand 24.11.)
 - ~~**23.11. – Schlusskurs-Sicherung abgelehnt**~~ (Kauf war noch nicht ganz ausgeführt → Alpaca: „potential wash trade“, danach den ganzen Tag keine Sicherung) → mit **Update #5** behoben (ab 25.11. prüfen). Am 24.11. (noch alter Code) keine Ablehnung: 9 Käufe, 7 Sicherungen gesetzt, die 2 anderen Käufe waren beim nächsten Check schon wieder verkauft.
 - **24.11.**: Konto-Szene zeigt „heute −118,95 $“, Hook/Bilanz −118,88 $ (Summe der Trades). Differenz 0,07 $ = Konto über Nacht 23.→24.11. ohne Trade (wie am 19.→20.11., Ursache unklar). Im Video nicht erklärt.
-- **24.11.**: Tesla-Stop-Loss bei −1,70 % statt −1,5 % (Bert prüft nur alle 5 Min.). Kein Fehler im Code, aber die Notbremse ist dadurch nicht exakt. Möglicher Fix (nur mit Mikas OK!): echte Stop-Order bei Alpaca direkt nach dem Kauf.
+- **24.11.**: Tesla-Stop-Loss bei −1,70 % statt −1,5 % (Bert prüft nur alle 5 Min.). Kein Fehler im Code, aber die Notbremse ist dadurch nicht exakt. → Mit Bert 2.0 (Update #7) gelöst: Stop-Loss und Gewinnziel liegen ab 27.11. als echte Orders bei Alpaca.
 - Update #4 am 23.11. geprüft: Start pünktlich 15:31, nichts verloren (doppelte Zeilen 19:08/21:19 durch überlappende Läufe, harmlos). Aber 1 Lücke 17:45–18:03 (Lauf endete 17:45, nächster GitHub-Start erst 18:03). Beobachten – wenn das öfter passiert, evtl. Läufe noch länger wach lassen (nur mit Mikas OK).
 - ~~Bert verpasst die erste Börsenstunde~~ und ~~Speicher-Konflikt (Log 21:32–22:00 am 20.11. verloren)~~ → mit Update #4 behoben (am 23.11. geprüft, siehe oben).
   Die verlorenen Zeilen vom 20.11. wurden nicht nachgetragen (nichts passiert: 9.968,79 $, 0 Positionen – steht im Actions-Log), damit Video und Daten zusammenpassen.
