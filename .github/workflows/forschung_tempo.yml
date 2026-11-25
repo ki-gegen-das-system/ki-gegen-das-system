@@ -1,0 +1,14 @@
+name: "Forschung: Tempo-Test"
+on:
+  workflow_dispatch: {}
+jobs:
+  tempo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install numpy
+      - env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python3 -u forschung/tempo.py
