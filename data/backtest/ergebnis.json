@@ -1,0 +1,208 @@
+{
+ "zeitraum": [
+  "2026-05-26",
+  "2026-11-24"
+ ],
+ "spy_kursveraenderung_prozent": -4.16,
+ "einstellungen_bert_2_0": {
+  "or_bars": 6,
+  "vol_factor": 1.5,
+  "max_chase_atr": 0.5,
+  "rsi_max": 70,
+  "rsi_min": 30,
+  "ema_fast": 27,
+  "ema_slow": 63,
+  "atr_stop": 1.0,
+  "reward": 2.0,
+  "risk_usd": 50.0,
+  "max_pos_usd": 3000.0,
+  "max_positions": 3,
+  "day_loss_limit": -150.0,
+  "last_entry": "14:30",
+  "flat_time": "15:45"
+ },
+ "kursabweichung_pro_seite": 0.0002,
+ "varianten": {
+  "bert_1_0": {
+   "gewinn_usd": -122.84,
+   "rendite_prozent": -1.23,
+   "trades": 342,
+   "trefferquote_prozent": 40.4,
+   "schnitt_gewinner": 18.07,
+   "schnitt_verlierer": -12.83,
+   "profitfaktor": 0.95,
+   "max_rueckgang_usd": -334.11,
+   "tage": 128,
+   "tage_im_plus": 50,
+   "tage_im_minus": 62,
+   "bester_tag": {
+    "tag": "2026-07-09",
+    "gewinn": 176.79
+   },
+   "schlechtester_tag": {
+    "tag": "2026-06-09",
+    "gewinn": -139.69
+   },
+   "monate": {
+    "2026-05": 14.04,
+    "2026-06": -189.99,
+    "2026-07": 134.22,
+    "2026-08": 205.43,
+    "2026-09": -114.59,
+    "2026-10": 105.3,
+    "2026-11": -277.25
+   },
+   "ausstiegsgruende": {
+    "Gegen-Kreuzung": 142,
+    "Börsenschluss": 183,
+    "Stop-Loss": 12,
+    "Gewinnziel": 5
+   },
+   "name": "Bert 1.0 (bisher): Linien-Kreuzung, 8 Aktien"
+  },
+  "bert_2_0_long_8": {
+   "gewinn_usd": -49.64,
+   "rendite_prozent": -0.5,
+   "trades": 77,
+   "trefferquote_prozent": 33.8,
+   "schnitt_gewinner": 14.96,
+   "schnitt_verlierer": -8.6,
+   "profitfaktor": 0.89,
+   "max_rueckgang_usd": -106.52,
+   "tage": 128,
+   "tage_im_plus": 18,
+   "tage_im_minus": 30,
+   "bester_tag": {
+    "tag": "2026-07-30",
+    "gewinn": 30.1
+   },
+   "schlechtester_tag": {
+    "tag": "2026-11-23",
+    "gewinn": -33.34
+   },
+   "monate": {
+    "2026-05": 0.0,
+    "2026-06": -80.75,
+    "2026-07": 7.3,
+    "2026-08": 71.52,
+    "2026-09": -29.36,
+    "2026-10": 20.3,
+    "2026-11": -38.64
+   },
+   "ausstiegsgruende": {
+    "Stop-Loss": 50,
+    "Gewinnziel": 21,
+    "Börsenschluss": 6
+   },
+   "name": "Bert 2.0: Checkliste, nur Kauf, 8 Aktien"
+  },
+  "bert_2_0_short_8": {
+   "gewinn_usd": 83.76,
+   "rendite_prozent": 0.84,
+   "trades": 149,
+   "trefferquote_prozent": 36.9,
+   "schnitt_gewinner": 16.13,
+   "schnitt_verlierer": -8.55,
+   "profitfaktor": 1.1,
+   "max_rueckgang_usd": -99.73,
+   "tage": 128,
+   "tage_im_plus": 34,
+   "tage_im_minus": 46,
+   "bester_tag": {
+    "tag": "2026-07-23",
+    "gewinn": 49.34
+   },
+   "schlechtester_tag": {
+    "tag": "2026-11-23",
+    "gewinn": -33.34
+   },
+   "monate": {
+    "2026-05": 0.0,
+    "2026-06": -70.05,
+    "2026-07": 60.84,
+    "2026-08": 21.51,
+    "2026-09": -74.13,
+    "2026-10": 77.8,
+    "2026-11": 67.8
+   },
+   "ausstiegsgruende": {
+    "Stop-Loss": 92,
+    "Gewinnziel": 47,
+    "Börsenschluss": 10
+   },
+   "name": "Bert 2.0: Checkliste, Kauf + Short, 8 Aktien"
+  },
+  "bert_2_0_long_20": {
+   "gewinn_usd": -238.41,
+   "rendite_prozent": -2.38,
+   "trades": 172,
+   "trefferquote_prozent": 30.8,
+   "schnitt_gewinner": 16.87,
+   "schnitt_verlierer": -9.52,
+   "profitfaktor": 0.79,
+   "max_rueckgang_usd": -302.27,
+   "tage": 128,
+   "tage_im_plus": 26,
+   "tage_im_minus": 51,
+   "bester_tag": {
+    "tag": "2026-07-30",
+    "gewinn": 45.63
+   },
+   "schlechtester_tag": {
+    "tag": "2026-06-08",
+    "gewinn": -55.88
+   },
+   "monate": {
+    "2026-05": 0.0,
+    "2026-06": -145.11,
+    "2026-07": -1.83,
+    "2026-08": 7.77,
+    "2026-09": -63.5,
+    "2026-10": -58.88,
+    "2026-11": 23.1
+   },
+   "ausstiegsgruende": {
+    "Gewinnziel": 46,
+    "Stop-Loss": 117,
+    "Börsenschluss": 9
+   },
+   "name": "Bert 2.0: Checkliste, nur Kauf, 20 Aktien"
+  },
+  "bert_2_0_short_20": {
+   "gewinn_usd": -191.22,
+   "rendite_prozent": -1.91,
+   "trades": 341,
+   "trefferquote_prozent": 34.6,
+   "schnitt_gewinner": 17.89,
+   "schnitt_verlierer": -10.32,
+   "profitfaktor": 0.92,
+   "max_rueckgang_usd": -519.01,
+   "tage": 128,
+   "tage_im_plus": 42,
+   "tage_im_minus": 67,
+   "bester_tag": {
+    "tag": "2026-11-20",
+    "gewinn": 138.09
+   },
+   "schlechtester_tag": {
+    "tag": "2026-06-18",
+    "gewinn": -53.23
+   },
+   "monate": {
+    "2026-05": 0.0,
+    "2026-06": -227.93,
+    "2026-07": -64.81,
+    "2026-08": 14.64,
+    "2026-09": -191.04,
+    "2026-10": 107.44,
+    "2026-11": 170.44
+   },
+   "ausstiegsgruende": {
+    "Gewinnziel": 105,
+    "Stop-Loss": 220,
+    "Börsenschluss": 16
+   },
+   "name": "Bert 2.0: Checkliste, Kauf + Short, 20 Aktien"
+  }
+ }
+}
