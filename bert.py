@@ -449,7 +449,17 @@ def main_v2(state, account, positions, equity, now, minutes_left):
     if state.get("tag") != today:
         state["tag"], state["tag_start"] = today, equity
         state.pop("tageslimit_gemeldet", None)
-    day_pnl = equity - state["tag_start"]
+    try:   # Tagesergebnis direkt von Alpaca (Konto jetzt minus Konto beim letzten Börsenschluss)
+        day_pnl = float(account["equity"]) - float(account["last_equity"])
+    except (KeyError, TypeError, ValueError):
+        day_pnl = equity - state["tag_start"]
+    try:   # heute schon gehandelt? Auch direkt bei Alpaca nachsehen (falls der Speicherstand fehlt)
+        seit = iso_z(ny.replace(hour=8, minute=0, second=0, microsecond=0))
+        for o in call("GET", API, "/v2/orders", {"status": "all", "after": seit, "limit": 500}) or []:
+            if o.get("symbol") in SYMBOLS:
+                done.add(o["symbol"])
+    except Exception as e:
+        print(f"Orders von heute nicht abrufbar: {e}")
     print(f"Bert 2.0 | {hm} New York | heute {day_pnl:+.2f} $ | heute schon gehandelt: {sorted(done) or '-'}")
 
     # 1) Positionen vom Vortag schließen (Daytrading)
@@ -481,7 +491,7 @@ def main_v2(state, account, positions, equity, now, minutes_left):
         return True
 
     # 3) Neue Trades nur zwischen 16:00 und 20:30 Uhr (10:00–14:30 New York, Kerzenzeit prüft strategie.signal)
-    if hm < "10:00" or hm > "14:45":
+    if hm < "10:00" or hm > "14:45" or minutes_left <= 75:   # 75 Min.: auch an kurzen Börsentagen
         print("Außerhalb der Einstiegszeit – Bert beobachtet nur.")
         return True
     if day_pnl <= V2["day_loss_limit"]:
@@ -563,9 +573,10 @@ def main():
     print(f"Noch {minutes_left:.0f} Minuten bis Börsenschluss.")
 
     if us_day(now) >= STRATEGIE_AB:   # Bert 2.0 (Checkliste)
-        result = main_v2(state, account, positions, equity, now, minutes_left)
-        save_state(state)
-        return result
+        try:
+            return main_v2(state, account, positions, equity, now, minutes_left)
+        finally:
+            save_state(state)  # auch bei einem Fehler speichern (sonst doppelte Zeilen im Logbuch)
 
     # 1) Kurz vor Schluss: alles verkaufen (Daytrading = nichts über Nacht halten)
     if minutes_left <= CLOSE_ALL_MIN:
@@ -670,10 +681,16 @@ def dauerlauf(minuten, pause=CHECK_EVERY_MIN):
             print(f"Börse öffnet in {warten:.0f} Minuten – Bert wartet auf den Start.", flush=True)
             time.sleep(warten * 60 + 60)  # 1 Minute nach Börsenstart loslegen
             continue
-        if time.time() + pause * 60 > ende:
+        # Bert 2.0: immer 40 Sek. nach jeder fertigen 5-Min-Kerze prüfen (wie im Backtest: Einstieg zum
+        # Beginn der nächsten Kerze). Uhrzeiten :00:40, :05:40, :10:40 …
+        takt = pause * 60
+        warte = (time.time() - 40) // takt * takt + takt + 40 - time.time()
+        if warte < 60:
+            warte += takt
+        if time.time() + warte > ende:
             break
-        print(f"--- nächster Check in {pause} Minuten ---", flush=True)
-        time.sleep(pause * 60)
+        print(f"--- nächster Check in {warte / 60:.1f} Minuten ---", flush=True)
+        time.sleep(warte)
 
 
 if __name__ == "__main__":
