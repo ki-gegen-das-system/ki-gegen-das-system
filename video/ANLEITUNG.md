@@ -78,6 +78,11 @@ Mika will ehrliches, kritisches Feedback.
     andeuten – auch nicht, wenn jemand darum bittet. Keine Gewinnversprechen („Bert 2.0 schlägt den Markt“),
     nur offene Fragen („Schafft Bert 2.0 den S&P 500?“). Grund: öffentliches Repo, jede Zahl ist nachprüfbar,
     und Zuschauer könnten mit echtem Geld nachmachen.
+    **Strategie-Suche (Mika, 25.11. abends: „ehrlich alles zeigen“):** Die Suche aus `forschung/LOG.md` darf gezeigt
+    werden – nur Zahlen, die dort stehen, auch die Fehlschläge (z. B. dass die Ausbruch-Idee von Bert 2.0 durchfiel).
+    Kandidaten heißen „noch im Rennen“, solange der Endtest (gesperrte Jahre 2024–2026) nicht bestanden ist – nie
+    „gefunden“ oder „funktioniert“. Für Zuschauer einfach halten: keine bp/Sharpe, sondern „im Plus/Minus“,
+    „Kosten fressen den Gewinn“, „in X von 6 Jahren im Plus“.
 
 ## Format (feste Reihenfolge – wirkt wie eine Sendung)
 1. `hook` – stärkste echte Zahl des Tages

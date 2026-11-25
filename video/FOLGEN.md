@@ -55,9 +55,22 @@
 - **Wochenanalyse 21.11.** (mit Mika): bei beiden Bots **nichts geändert**. Bert: erst 1 echter Trade, Update #4 läuft erst ab 23.11. – erst eine Woche ohne Pannen abwarten. Kurt: Update #3 erst seit 20.11. – nach einer Woche Daten bewerten.
 
 ## Für die nächsten Folgen merken
-- **Folge 9 (Do 26.11.):** Kurt: Ergebnisse der 7 CL-Spiele vom 25.11. (keine Tipps) sind egal – Rayo-Tipp läuft erst Sa 28.11. 14:00.
-  Probelauf 25.11. vorher prüfen: `data/trockenlauf/2026-11-25.json` muss `"vollstaendig": true` haben (am 25.11. 22:30 Uhr
-  noch Stand 14:25 NY → Workflow „Probelauf Bert 2.0“ per Hand starten, falls nötig).
+- **Folge 9 (Do 26.11.) – Mikas Wunsch (25.11. abends): Erklärvideo zu Bert 2.0 + die große Strategie-Suche.**
+  Probelauf 25.11. ist fertig (`"vollstaendig": true`, Stand 15:55 NY): weiter 1 Trade, Short Apple −9,69 $, 1× 5/5, 43× knapp.
+  Aufbau (45–75 Sek., Text vorher knapp halten – Folge 8 war erst 102 Sek.!):
+  1. Bert 2.0 erklären wie unten (Apple-Chart Probelauf + `checkliste`, Short einfach erklärt). Ehrlich: „Am Mittwoch hätte
+     Bert 2.0 einmal zugeschlagen – und verloren.“ Klar als Probelauf kennzeichnen.
+  2. **Strategie-Suche** (`forschung/LOG.md` am Tag der Folge NEU lesen – die Suche läuft noch, Zahlen können sich ändern).
+     Mika: „ehrlich alles zeigen“ (siehe ANLEITUNG Regel 10). Stand 25.11.: ca. 130 Varianten mit echten 5-Min-Kerzen
+     2018–2023 getestet, fast alle durchgefallen (meist fressen die Kosten den Gewinn). **Auch die Ausbruch-Idee – der Kern
+     von Bert 2.0 – fiel durch** (höchstens 4 von 6 Jahren im Plus) → offen sagen. Genau formulieren: getestet wurden
+     Ausbruch-Regeln (ORB), nicht Bert 2.0 mit allen 5 Punkten – also „die Idee hinter Bert 2.0“, nicht „Bert 2.0“. Noch im Rennen: „Rauschzonen-Momentum“
+     (SPY+QQQ und Berts 8 Werte, je 5 von 6 Jahren im Plus) – aber bei Berts 8 Werten mit doppelten Kosten im Minus, und der
+     Endtest mit den gesperrten Jahren 2024–2026 steht noch aus. Fairness einfach erklären: Regeln vorher festgelegt,
+     3 Jahre Daten weggesperrt, jeder Versuch wird gezählt („Wer 130-mal würfelt, würfelt irgendwann zufällig eine Sechs“).
+     Szene `text` (gibt keinen eigenen Szenen-Typ). Keine bp/Sharpe, keine Gewinnversprechen.
+  3. Kurt kurz: Europa-/Conference-League-Spiele vom 26.11. ohne Tipp; Rayo-Tipp läuft erst Sa 28.11. 14:00.
+  Cliffhanger z. B.: „Freitag ist Bert 2.0 live. Kann er echt, was er im Test nicht konnte?“ – keine Prognose.
 - **Folge 9 (Do 26.11.):** US-Börse zu (Thanksgiving) → keine Bert-Trades. Erklärfolge Bert 2.0: echter Apple-Chart
   vom Mittwoch mit `"datum": "2026-11-25", "bert2": true, "pfeile": "trockenlauf"` (30-Min-Kasten, Tagesdurchschnitt,
   Pfeile aus dem Probelauf), dann `checkliste` mit `"quelle": "trockenlauf", "symbol": "AAPL", "datum": "2026-11-25"`
