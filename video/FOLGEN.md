@@ -28,6 +28,17 @@
   (1) Ist Berts Kauf noch nicht ganz ausgeführt, wartet er mit der Sicherung bis zum nächsten Check (sonst lehnt Alpaca sie als „Wash Trade“ ab).
   (2) Klappt die Sicherung trotzdem nicht, versucht er es bei jedem Check erneut (vorher: den ganzen Tag keine Sicherung mehr). „FEHLER“ steht dann nur einmal pro Tag im Logbuch.
   Getestet: 23.11. mit nachgestelltem Alpaca durchgespielt (Kauf in zwei Teilen → Sicherung erst beim nächsten Check; 2× abgelehnt → 3. Versuch klappt). Erster echter Einsatz: Mi 25.11.
+- **Update #6** (25.11. abends, Kurt, Mikas Wunsch „Content unter der Woche"): Champions League, Europa League und
+  Conference League dazu (8 Wettbewerbe). Erster Lauf 25.11. ~20 Uhr: 43 Europapokal-Spiele geprüft (7× CL heute 21:00,
+  18× EL + 18× ECL am Do 26.11.), **kein Tipp** (bester Value +1,7 %). Neuer Tipp am Wochenende: Rayo Vallecano bei
+  Real Betis (La Liga), Quote 6,00, Value +9,1 % – wieder ein Außenseiter. API-Abfragen: 458 von 500 übrig.
+- **Backtest 25.11.** (`backtest.py`, Ergebnisse in `data/backtest/<Zeitraum>/`): Bert 1.0 gegen 4 Varianten von
+  „Bert 2.0" (Checkliste: Markt-Ampel SPY über VWAP, Ausbruch über das 30-Min-Hoch, relatives Volumen ≥ 1,5,
+  Kurs über VWAP + Blau über Gelb, RSI < 70; Stop als echte Order, Ziel 2× Risiko, 50 $ Risiko/Trade,
+  1 Trade/Aktie/Tag, Tageslimit −150 $). 12 Monate echte 5-Min-Kerzen, Einstellungen vorher festgelegt.
+  Ergebnis: **alle Varianten im Minus**. Bert 1.0: −378,78 $ (max. Rückgang bis −847 $). Bert 2.0 nur Kauf, 8 Aktien:
+  −85,63 $ (max. Rückgang ~−107 $). Kauf+Short 8: Hälfte 1 +83,76 $, Hälfte 2 −167,27 $ (= Zufall). 20 Aktien: schlechter.
+  SPY einfach halten: ca. +8 %. **Mikas Entscheidung steht noch aus – im Video nicht als beschlossen darstellen.**
 - **Wochenanalyse 21.11.** (mit Mika): bei beiden Bots **nichts geändert**. Bert: erst 1 echter Trade, Update #4 läuft erst ab 23.11. – erst eine Woche ohne Pannen abwarten. Kurt: Update #3 erst seit 20.11. – nach einer Woche Daten bewerten.
 
 ## Für die nächsten Folgen merken
