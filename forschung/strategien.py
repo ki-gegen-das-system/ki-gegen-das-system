@@ -34,8 +34,18 @@ def vwap(r):
 
 
 # ------------------------------------------------------------------ S1: Rauschzonen-Momentum
+def zone(r, lookback=14):
+    """Obere/untere Rauschgrenze je Tag und Kerze."""
+    c, do, pc = r.c, r.do, r.pc
+    move = np.abs(c / do[:, None] - 1)
+    sig = np.full_like(move, np.nan)
+    for d in range(lookback, len(r.tage)):
+        sig[d] = np.nanmean(move[d - lookback:d], axis=0)
+    return np.fmax(do, pc)[:, None] * (1 + sig), np.fmin(do, pc)[:, None] * (1 - sig)
+
+
 def rauschzone(r, takt=6, lookback=14, vwap_stop=True, lev_ziel=0.02, lev_max=4.0, start=5, n_assets=1,
-               nur_kauf=False, ende_slot=None):
+               nur_kauf=False, ende_slot=None, markt=None):
     """Zarattini/Aziz/Barbon (2024) „Beat the Market“: Ausbruch aus der üblichen Schwankungszone seit
     Eröffnung; Stop = Rauschgrenze bzw. VWAP; Entscheidung alle `takt` Kerzen; Ausstieg zum Schluss."""
     o, c, do, pc, dc = r.o, r.c, r.do, r.pc, r.dc
@@ -48,6 +58,9 @@ def rauschzone(r, takt=6, lookback=14, vwap_stop=True, lev_ziel=0.02, lev_max=4.
     dn = np.fmin(do, pc)[:, None] * (1 - sig)
     vw = vwap(r)
     lev = np.minimum(lev_max, lev_ziel / vol_tag(r)) / n_assets
+    if markt is not None:   # Markt-Filter: nur in Richtung eines SPY-Ausbruchs
+        mu, md = zone(markt, lookback)
+        mi = {t: i for i, t in enumerate(markt.tage)}
     kb = getattr(r, "kosten", None) or kosten_bp(r.sym)
     ns = c.shape[1]
     ende_slot = ende_slot or ns - 2
@@ -63,9 +76,14 @@ def rauschzone(r, takt=6, lookback=14, vwap_stop=True, lev_ziel=0.02, lev_max=4.
             elif pos == -1 and p > (min(dn[d, k], vw[d, k]) if vwap_stop else dn[d, k]):
                 rows.append((r.tage[d], r.sym, -1, ein, o[d, k + 1], lev[d], kb, t0, k + 1)); pos = 0
             if pos == 0 and k < ende_slot:
-                if p > up[d, k]:
+                ok_l = ok_s = True
+                if markt is not None:
+                    j = mi.get(r.tage[d])
+                    ok_l = j is not None and markt.c[j, k] > mu[j, k]
+                    ok_s = j is not None and markt.c[j, k] < md[j, k]
+                if p > up[d, k] and ok_l:
                     pos, ein, t0 = 1, o[d, k + 1], k + 1
-                elif p < dn[d, k] and not nur_kauf:
+                elif p < dn[d, k] and not nur_kauf and ok_s:
                     pos, ein, t0 = -1, o[d, k + 1], k + 1
         if pos:
             rows.append((r.tage[d], r.sym, pos, ein, dc[d], lev[d], kb, t0, ns))

@@ -75,12 +75,25 @@ class Raster:
         return np.r_[np.nan, self.dc[:-1]]
 
 
+_KAL = []
+
+
+def kalender():
+    """US-Handelstage (aus SPY)."""
+    if not _KAL:
+        try:
+            _KAL.append(Raster("SPY").tage.astype(str))
+        except Exception:
+            _KAL.append(None)
+    return _KAL[0]
+
+
 def jahr(tage):
     return np.array([t[:4] for t in tage])
 
 
 ENTWICKLUNG = ("2018-01-01", "2023-12-31")
-ENDTEST = ("2024-01-01", "2026-12-31")   # gesperrt bis zum Schluss!
+ENDTEST = ("2024-01-01", "2026-11-24")   # gesperrt bis zum Schluss!
 
 
 def auswerten(tr, name="", kap=10_000.0, zeigen=True, zeitraum=ENTWICKLUNG, kosten_faktor=1.0):
@@ -89,6 +102,7 @@ def auswerten(tr, name="", kap=10_000.0, zeigen=True, zeitraum=ENTWICKLUNG, kost
     if len(tr) == 0:
         return None
     t = tr.copy()
+    t["tag"] = t.tag.astype(str)
     t = t[(t.tag >= zeitraum[0]) & (t.tag <= zeitraum[1])]
     if len(t) == 0:
         return None
@@ -99,7 +113,9 @@ def auswerten(tr, name="", kap=10_000.0, zeigen=True, zeitraum=ENTWICKLUNG, kost
     t["pnl"] = netto * t.gewicht * kap
     tage_alle = t.tag.unique()
     tg = t.groupby("tag").pnl.sum()
-    n_tage = len(pd.bdate_range(t.tag.min(), t.tag.max()))  # Börsentage grob
+    kal = kalender()
+    n_tage = int(((kal >= max(zeitraum[0], t.tag.min())) & (kal <= min(zeitraum[1], t.tag.max()))).sum()) \
+        if kal is not None else len(pd.bdate_range(str(t.tag.min()), str(t.tag.max())))
     jahre = t.groupby(t.tag.str[:4]).pnl.sum()
     eq = tg.cumsum()
     dd = (eq - eq.cummax()).min()
