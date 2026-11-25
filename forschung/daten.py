@@ -31,6 +31,8 @@ NY = ZoneInfo("America/New_York")
 START = os.environ.get("START", "2018-01-01")
 END = os.environ.get("ENDE", "") or (datetime.now(timezone.utc) - timedelta(minutes=20)).strftime("%Y-%m-%d")
 MAX_PER_MIN = int(os.environ.get("MAX_PER_MIN", "170"))   # Alpaca erlaubt 200/Min.
+# Kostenloses Datenabo: SIP-Daten erst 15 Min. alt -> nie neuer als jetzt minus 16 Min. abfragen
+GRENZE = datetime.now(timezone.utc) - timedelta(minutes=16)
 
 KERN = ["SPY", "QQQ", "IWM", "DIA", "XLK", "XLF", "XLE", "XLV", "XLY", "XLI", "SMH", "TLT", "GLD",
         "AAPL", "MSFT", "NVDA", "AMZN", "META", "TSLA", "GOOGL", "AMD", "NFLX", "AVGO", "PLTR", "COIN", "MU",
@@ -81,6 +83,10 @@ def ny_dt(d, hh, mm):
 def bars(symbols, timeframe, start, end, feed="sip", crypto=False):
     """Alle Kerzen (mit Seiten) -> {symbol: Liste von Dicts}."""
     out, token = {}, None
+    if not crypto:
+        if start > iso(GRENZE):
+            return out
+        end = min(end, iso(GRENZE))
     while True:
         p = {"symbols": ",".join(symbols), "timeframe": timeframe, "start": start, "end": end,
              "limit": 10000, "sort": "asc"}
