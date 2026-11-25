@@ -29,3 +29,8 @@ zeit,symbol,aktion,stueck,preis_usd,gewinn_usd,gewinn_prozent
 2026-11-25 18:50,AAPL,Kauf,7,353.31,,
 2026-11-25 19:06,SPY,Kauf,3,712.33,,
 2026-11-25 19:16,MSFT,Kauf,5,488.59,,
+2026-11-25 21:30,AAPL,Verkauf,7,353.94,4.44,0.18
+2026-11-25 21:30,MSFT,Verkauf,5,489.21,3.12,0.13
+2026-11-25 21:30,SPY,Verkauf,1,714.51,2.18,0.31
+2026-11-25 21:30,META,Verkauf,4,602.81,21.84,0.91
+2026-11-25 21:30,SPY,Verkauf,2,714.53,4.40,0.31
