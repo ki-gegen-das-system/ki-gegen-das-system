@@ -38,6 +38,9 @@ jobs:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd kompakt
+          # GitHub erlaubt höchstens 100 MB pro Datei -> große Dateien in 90-MB-Teile schneiden
+          find . -type f -size +90M | while read f; do split -b 90m -d "$f" "$f.teil-"; rm "$f"; done
+          ls -la
           git init -q
           git checkout -q -b "forschung-daten-$TEIL"
           git add -A
