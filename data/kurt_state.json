@@ -48,41 +48,68 @@
     "98fae24771271c96d5dd364e535405d2",
     "aa77e2a08a1a003b0bbb62a5f8e8ae42",
     "afae1c9d986e4ab2200dc9bd44b6b6c4",
-    "99776445d5a5f4ed008f9a6d6a1495b7"
+    "99776445d5a5f4ed008f9a6d6a1495b7",
+    "698f4a7967ead89e10205a68ceb4bda4",
+    "40d95e660c301c2d8a5a7a6317017b65",
+    "80c92a163a81b69fef76530221e2edd0",
+    "e9a663f13e7503c0ac20a54804338b60",
+    "02ff879cf54f6d1fec2664efee0431db"
   ],
   "kandidaten": {
-    "aa77e2a08a1a003b0bbb62a5f8e8ae42": {
+    "698f4a7967ead89e10205a68ceb4bda4": {
+      "liga": "Bundesliga",
+      "liga_key": "soccer_germany_bundesliga",
+      "heim": "Werder Bremen",
+      "gast": "Borussia Monchengladbach",
+      "anstoss": "2026-11-27T19:30:00Z",
+      "tipp": "Borussia Monchengladbach",
+      "quote": 4.4,
+      "fair": 0.2274187815642225,
+      "value": 1.000642638882579
+    },
+    "40d95e660c301c2d8a5a7a6317017b65": {
       "liga": "Premier League",
       "liga_key": "soccer_epl",
-      "heim": "Brentford",
-      "gast": "Everton",
-      "anstoss": "2026-11-23T20:00:00Z",
+      "heim": "Nottingham Forest",
+      "gast": "Chelsea",
+      "anstoss": "2026-11-27T20:00:00Z",
       "tipp": "Draw",
-      "quote": 3.7,
-      "fair": 0.26963635306843803,
-      "value": 0.9976545063532207
+      "quote": 3.64,
+      "fair": 0.27611033409653113,
+      "value": 1.0050416161113733
     },
-    "afae1c9d986e4ab2200dc9bd44b6b6c4": {
+    "80c92a163a81b69fef76530221e2edd0": {
       "liga": "La Liga",
       "liga_key": "soccer_spain_la_liga",
       "heim": "Levante",
-      "gast": "Elche CF",
-      "anstoss": "2026-11-23T20:00:00Z",
-      "tipp": "Elche CF",
-      "quote": 3.35,
-      "fair": 0.2962684194280946,
-      "value": 0.992499205084117
+      "gast": "Real Racing Club de Santander",
+      "anstoss": "2026-11-27T20:00:00Z",
+      "tipp": "Draw",
+      "quote": 4.0,
+      "fair": 0.24725168630426805,
+      "value": 0.9890067452170722
     },
-    "99776445d5a5f4ed008f9a6d6a1495b7": {
+    "e9a663f13e7503c0ac20a54804338b60": {
       "liga": "Serie A",
       "liga_key": "soccer_italy_serie_a",
-      "heim": "Monza",
-      "gast": "Fiorentina",
-      "anstoss": "2026-11-23T19:45:00Z",
-      "tipp": "Monza",
-      "quote": 3.81,
-      "fair": 0.2592957997503424,
-      "value": 0.9879169970488045
+      "heim": "Venezia",
+      "gast": "Bologna",
+      "anstoss": "2026-11-27T19:45:00Z",
+      "tipp": "Venezia",
+      "quote": 3.6,
+      "fair": 0.2784301517694965,
+      "value": 1.0023485463701873
+    },
+    "02ff879cf54f6d1fec2664efee0431db": {
+      "liga": "Ligue 1",
+      "liga_key": "soccer_france_ligue_one",
+      "heim": "Brest",
+      "gast": "Paris FC",
+      "anstoss": "2026-11-27T19:45:00Z",
+      "tipp": "Brest",
+      "quote": 3.44,
+      "fair": 0.29558015257595976,
+      "value": 1.0167957248613015
     }
   },
   "notfall_wochenenden": [
