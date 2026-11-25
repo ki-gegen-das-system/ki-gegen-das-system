@@ -1,0 +1,25 @@
+{
+ "datum": "2026-11-25",
+ "vollstaendig": false,
+ "stand_kerze_ny": "14:25",
+ "hinweis": "PROBELAUF – keine echten Trades. So hätte Bert 2.0 nach seinen Regeln (strategie.py) mit den echten Kursen gehandelt. Simulator wie im Backtest (backtest.py), 0,02 % Kursabweichung je Kauf/Verkauf.",
+ "trades": [
+  {
+   "tag": "2026-11-25",
+   "symbol": "AAPL",
+   "seite": "short",
+   "ein": "10:20",
+   "aus": "11:25",
+   "einstieg": 347.3,
+   "ausstieg": 348.51,
+   "stueck": 8,
+   "gewinn": -9.69,
+   "grund": "Stop-Loss",
+   "ein_berlin": "2026-11-25 16:20",
+   "aus_berlin": "2026-11-25 17:25"
+  }
+ ],
+ "summe_usd": -9.69,
+ "checklisten_erfuellt": 1,
+ "checklisten_knapp": 43
+}
