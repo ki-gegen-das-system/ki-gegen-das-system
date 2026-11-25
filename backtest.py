@@ -1,0 +1,404 @@
+#!/usr/bin/env python3
+"""
+Backtest: Bert 1.0 (Linien-Kreuzung) gegen Bert 2.0 (Checkliste mit Ausbruch) – auf ECHTEN 5-Minuten-Kerzen.
+
+Wichtig: Alle Einstellungen sind VORHER festgelegt (Standardwerte), nichts wird auf diese Daten optimiert.
+Sonst sähe der Test besser aus, als die Strategie in Zukunft wirklich ist.
+
+Läuft auf GitHub Actions (.github/workflows/backtest.yml), lädt Kurse von Alpaca (IEX, kostenlos).
+Ergebnis: data/backtest/ergebnis.json, ergebnis.md, tage_<variante>.csv
+"""
+import csv
+import json
+import math
+import os
+import sys
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
+
+import bert
+
+NY = ZoneInfo("America/New_York")
+OUT = os.path.join(bert.DATA_DIR, "backtest")
+START = os.environ.get("BT_START", "2026-05-26")
+END = os.environ.get("BT_END", "2026-11-24")
+BASE = list(bert.SYMBOLS)                       # die 8 bisherigen
+EXTRA = ["AMD", "GOOGL", "NFLX", "AVGO", "PLTR", "COIN", "MU", "BA", "JPM", "XOM", "UBER", "DIS"]
+CAPITAL = 10_000.0
+SLIP = 0.0002                                   # 0,02 % Kursabweichung pro Kauf/Verkauf
+
+# ---------------------------------------------------------------- Bert 2.0 (fest gewählt, nicht optimiert)
+V2 = dict(
+    or_bars=6,            # Eröffnungsspanne = erste 30 Minuten (6 × 5 Min.)
+    vol_factor=1.5,       # Ausbruch mit mind. 1,5× so viel Volumen wie sonst um diese Uhrzeit (Ø 10 Tage)
+    max_chase_atr=0.5,    # nicht hinterherlaufen: höchstens 0,5 ATR über dem Ausbruchsniveau
+    rsi_max=70, rsi_min=30,
+    ema_fast=27, ema_slow=63,   # auf 5-Min-Kerzen ≈ Berts Linien (EMA 9/21 auf 15 Min.)
+    atr_stop=1.0,         # Stop höchstens 1 ATR entfernt (oder am Rand der Eröffnungsspanne)
+    reward=2.0,           # Gewinnziel = 2× Risiko
+    risk_usd=50.0,        # max. 50 $ Risiko pro Trade
+    max_pos_usd=3000.0,
+    max_positions=3,
+    day_loss_limit=-150.0,
+    last_entry="14:30",   # New York = 20:30 Uhr deutsche Zeit
+    flat_time="15:45",    # New York = 21:45 Uhr deutsche Zeit
+)
+
+
+# ---------------------------------------------------------------- Daten
+def fetch(symbols, start, end):
+    bars = {s: [] for s in symbols}
+    token = None
+    while True:
+        p = {"symbols": ",".join(symbols), "timeframe": "5Min", "start": start, "end": end, "feed": "iex",
+             "limit": 10000, "adjustment": "split", "sort": "asc"}
+        if token:
+            p["page_token"] = token
+        r = bert.call("GET", bert.DATA_API, "/v2/stocks/bars", p) or {}
+        for s, lst in (r.get("bars") or {}).items():
+            bars.setdefault(s, []).extend(lst)
+        token = r.get("next_page_token")
+        if not token:
+            break
+    return bars
+
+
+def to_session(lst):
+    """Nur reguläre Börsenzeit (9:30–16:00 New York). Liefert Liste von Kerzen-Dicts mit Datum/Uhrzeit (NY)."""
+    out = []
+    for b in lst:
+        t = bert.parse_ts(b["t"]).astimezone(NY)
+        m = t.hour * 60 + t.minute
+        if 9 * 60 + 30 <= m < 16 * 60 and t.weekday() < 5:
+            out.append({"d": t.date().isoformat(), "hm": t.strftime("%H:%M"), "o": float(b["o"]), "h": float(b["h"]),
+                        "l": float(b["l"]), "c": float(b["c"]), "v": float(b.get("v", 0))})
+    return out
+
+
+# ---------------------------------------------------------------- Indikatoren
+def ema_series(vals, n):
+    k, e, out = 2 / (n + 1), None, []
+    for v in vals:
+        e = v if e is None else v * k + e * (1 - k)
+        out.append(e)
+    return out
+
+
+def rsi_series(vals, n=14):
+    out, ag, al = [50.0] * len(vals), None, None
+    for i in range(1, len(vals)):
+        d = vals[i] - vals[i - 1]
+        g, l = max(d, 0), max(-d, 0)
+        if ag is None:
+            if i == n:
+                diffs = [vals[j] - vals[j - 1] for j in range(1, n + 1)]
+                ag = sum(max(x, 0) for x in diffs) / n
+                al = sum(max(-x, 0) for x in diffs) / n
+            else:
+                continue
+        else:
+            ag = (ag * (n - 1) + g) / n
+            al = (al * (n - 1) + l) / n
+        out[i] = 100.0 if al == 0 else 100 - 100 / (1 + ag / al)
+    return out
+
+
+def atr_series(bars, n=14):
+    out, a = [], None
+    for i, b in enumerate(bars):
+        pc = bars[i - 1]["c"] if i else b["c"]
+        tr = max(b["h"] - b["l"], abs(b["h"] - pc), abs(b["l"] - pc))
+        a = tr if a is None else (a * (n - 1) + tr) / n
+        out.append(a)
+    return out
+
+
+def enrich(bars):
+    closes = [b["c"] for b in bars]
+    ef, es = ema_series(closes, V2["ema_fast"]), ema_series(closes, V2["ema_slow"])
+    rs, at = rsi_series(closes), atr_series(bars)
+    cum_pv = cum_v = 0.0
+    day = None
+    hist, today = {}, {}   # Volumen je Uhrzeit an den Vortagen (für "relatives Volumen")
+    for i, b in enumerate(bars):
+        if b["d"] != day:
+            for hm, v in today.items():
+                hist.setdefault(hm, []).append(v)
+                hist[hm] = hist[hm][-10:]
+            day, cum_pv, cum_v, today = b["d"], 0.0, 0.0, {}
+        past = hist.get(b["hm"], [])
+        b["rvol"] = b["v"] / (sum(past) / len(past)) if len(past) >= 5 and sum(past) > 0 else None
+        today[b["hm"]] = b["v"]
+        tp = (b["h"] + b["l"] + b["c"]) / 3
+        cum_pv += tp * b["v"]
+        cum_v += b["v"]
+        b["vwap"] = cum_pv / cum_v if cum_v else b["c"]
+        b["ef"], b["es"], b["rsi"], b["atr"] = ef[i], es[i], rs[i], at[i]
+        prev = bars[max(0, i - 20):i]
+        b["avgv"] = sum(x["v"] for x in prev) / len(prev) if prev else b["v"]
+    return bars
+
+
+def by_day(bars):
+    days = {}
+    for i, b in enumerate(bars):
+        days.setdefault(b["d"], []).append(i)
+    return days
+
+
+# ---------------------------------------------------------------- Bert 1.0 (wie bisher)
+def agg15(bars):
+    """5-Min-Kerzen -> 15-Min-Kerzen; merkt sich den Index der letzten 5-Min-Kerze jeder 15-Min-Kerze."""
+    res, key = [], None
+    for i, b in enumerate(bars):
+        h, m = map(int, b["hm"].split(":"))
+        k = (b["d"], h, m // 15)
+        if k != key:
+            res.append({"end_i": i, "c": b["c"]})
+            key = k
+        else:
+            res[-1]["end_i"], res[-1]["c"] = i, b["c"]
+    return res
+
+
+def sim_v1(data, symbols):
+    """Bert 1.0: Kreuzung EMA9/21 (15 Min.) + RSI<70, Stop −1,5 %, Ziel +3 %, Gegen-Kreuzung, 21:30 alles raus."""
+    sig = {}
+    for s in symbols:
+        bars = data[s]
+        b15 = agg15(bars)
+        closes = [x["c"] for x in b15]
+        e9, e21, r = ema_series(closes, 9), ema_series(closes, 21), rsi_series(closes)
+        buy, sell = set(), set()
+        for k in range(2, len(b15)):
+            if b15[k]["end_i"] >= len(bars):
+                continue
+            up = any(e9[j - 1] <= e21[j - 1] and e9[j] > e21[j] for j in (k, k - 1))
+            if e9[k] > e21[k] and up and r[k] < 70:
+                buy.add(b15[k]["end_i"])
+            if e9[k] < e21[k]:
+                sell.add(b15[k]["end_i"])
+        sig[s] = (buy, sell)
+    return run_days(data, symbols, lambda s, i, b, ctx: "buy" if i in sig[s][0] else None,
+                    v1_exit=sig, mode="v1")
+
+
+# ---------------------------------------------------------------- Bert 2.0
+def v2_signal(s, i, b, ctx, shorts):
+    bars = ctx["data"][s]
+    day_idx = ctx["days"][s][b["d"]]
+    pos = day_idx.index(i)
+    if pos < V2["or_bars"] or b["hm"] > V2["last_entry"]:
+        return None
+    orb = [bars[j] for j in day_idx[:V2["or_bars"]]]
+    hi, lo = max(x["h"] for x in orb), min(x["l"] for x in orb)
+    spy = ctx["spy"].get((b["d"], b["hm"]))
+    if not spy:
+        return None
+    vol_ok = b["rvol"] is not None and b["rvol"] >= V2["vol_factor"]
+    if (spy["c"] > spy["vwap"] and b["c"] > hi and b["c"] - hi <= V2["max_chase_atr"] * b["atr"] and vol_ok
+            and b["c"] > b["vwap"] and b["ef"] > b["es"] and b["rsi"] < V2["rsi_max"]):
+        return ("long", hi, lo)
+    if (shorts and spy["c"] < spy["vwap"] and b["c"] < lo and lo - b["c"] <= V2["max_chase_atr"] * b["atr"]
+            and vol_ok and b["c"] < b["vwap"] and b["ef"] < b["es"] and b["rsi"] > V2["rsi_min"]):
+        return ("short", hi, lo)
+    return None
+
+
+def sim_v2(data, symbols, shorts):
+    return run_days(data, symbols, lambda s, i, b, ctx: v2_signal(s, i, b, ctx, shorts), mode="v2")
+
+
+# ---------------------------------------------------------------- gemeinsamer Tages-Simulator
+def run_days(data, symbols, signal, mode, v1_exit=None):
+    days_sym = {s: by_day(data[s]) for s in symbols}
+    spy_map = {(b["d"], b["hm"]): b for b in data["SPY"]}
+    ctx = {"data": data, "days": days_sym, "spy": spy_map}
+    all_days = sorted({d for s in symbols for d in days_sym[s]})
+    trades, daily = [], []
+    for d in all_days:
+        # Zeitachse des Tages: alle 5-Min-Zeitpunkte
+        times = sorted({data[s][i]["hm"] for s in symbols if d in days_sym[s] for i in days_sym[s][d]})
+        idx_at = {s: {data[s][i]["hm"]: i for i in days_sym[s].get(d, [])} for s in symbols}
+        open_pos, done_today, realized = {}, set(), 0.0
+        for hm in times:
+            # 1) offene Positionen prüfen (an dieser Kerze)
+            for s in list(open_pos):
+                i = idx_at[s].get(hm)
+                if i is None:
+                    continue
+                b, p = data[s][i], open_pos[s]
+                exit_px, why = None, None
+                if mode == "v2":
+                    if hm >= V2["flat_time"]:
+                        exit_px, why = b["o"], "Börsenschluss"
+                    elif p["side"] == "long":
+                        if b["l"] <= p["stop"]:
+                            exit_px, why = min(p["stop"], b["o"]), "Stop-Loss"
+                        elif b["h"] >= p["target"]:
+                            exit_px, why = max(p["target"], b["o"]), "Gewinnziel"
+                    else:
+                        if b["h"] >= p["stop"]:
+                            exit_px, why = max(p["stop"], b["o"]), "Stop-Loss"
+                        elif b["l"] <= p["target"]:
+                            exit_px, why = min(p["target"], b["o"]), "Gewinnziel"
+                else:  # v1: Prüfung am Kerzenende wie bei Bert (alle 5 Min.)
+                    ch = b["c"] / p["entry"] - 1
+                    if hm >= "15:30":
+                        exit_px, why = b["c"], "Börsenschluss"
+                    elif ch <= -0.015:
+                        exit_px, why = b["c"], "Stop-Loss"
+                    elif ch >= 0.03:
+                        exit_px, why = b["c"], "Gewinnziel"
+                    elif i in v1_exit[s][1]:
+                        exit_px, why = b["c"], "Gegen-Kreuzung"
+                if exit_px is not None:
+                    sgn = 1 if p["side"] == "long" else -1
+                    exit_px *= (1 - SLIP * sgn)
+                    pnl = (exit_px - p["entry"]) * p["qty"] * sgn
+                    realized += pnl
+                    trades.append({"tag": d, "symbol": s, "seite": p["side"], "ein": p["t"], "aus": hm,
+                                   "einstieg": round(p["entry"], 2), "ausstieg": round(exit_px, 2),
+                                   "stueck": p["qty"], "gewinn": round(pnl, 2), "grund": why})
+                    del open_pos[s]
+            # 2) neue Signale (Einstieg zum Eröffnungskurs der NÄCHSTEN Kerze)
+            limit_pos = V2["max_positions"] if mode == "v2" else 4
+            if mode == "v2" and realized <= V2["day_loss_limit"]:
+                continue
+            if mode == "v1" and hm > "14:30":
+                continue
+            for s in symbols:
+                if s in open_pos or len(open_pos) >= limit_pos:
+                    continue
+                if mode == "v2" and s in done_today:
+                    continue
+                i = idx_at[s].get(hm)
+                if i is None or i + 1 >= len(data[s]) or data[s][i + 1]["d"] != d:
+                    continue
+                b = data[s][i]
+                sig = signal(s, i, b, ctx)
+                if not sig:
+                    continue
+                nxt = data[s][i + 1]
+                if mode == "v1":
+                    entry = nxt["o"] * (1 + SLIP)
+                    qty = math.floor(2500 / entry)
+                    if qty < 1:
+                        continue
+                    open_pos[s] = {"side": "long", "entry": entry, "qty": qty, "t": nxt["hm"]}
+                else:
+                    side, hi, lo = sig
+                    sgn = 1 if side == "long" else -1
+                    entry = nxt["o"] * (1 + SLIP * sgn)
+                    if side == "long":
+                        stop = max(lo, entry - V2["atr_stop"] * b["atr"])
+                        risk = max(entry - stop, 0.002 * entry)
+                        stop = entry - risk
+                    else:
+                        stop = min(hi, entry + V2["atr_stop"] * b["atr"])
+                        risk = max(stop - entry, 0.002 * entry)
+                        stop = entry + risk
+                    qty = math.floor(min(V2["risk_usd"] / risk, V2["max_pos_usd"] / entry))
+                    if qty < 1:
+                        continue
+                    open_pos[s] = {"side": side, "entry": entry, "qty": qty, "t": nxt["hm"], "stop": stop,
+                                   "target": entry + sgn * V2["reward"] * risk}
+                    done_today.add(s)
+        # Sicherheitsnetz: was jetzt noch offen ist, zum letzten Kurs schließen
+        for s, p in list(open_pos.items()):
+            last = data[s][days_sym[s][d][-1]]
+            sgn = 1 if p["side"] == "long" else -1
+            px = last["c"] * (1 - SLIP * sgn)
+            pnl = (px - p["entry"]) * p["qty"] * sgn
+            realized += pnl
+            trades.append({"tag": d, "symbol": s, "seite": p["side"], "ein": p["t"], "aus": last["hm"],
+                           "einstieg": round(p["entry"], 2), "ausstieg": round(px, 2), "stueck": p["qty"],
+                           "gewinn": round(pnl, 2), "grund": "Tagesende"})
+        daily.append({"tag": d, "gewinn": round(realized, 2)})
+    return trades, daily
+
+
+# ---------------------------------------------------------------- Auswertung
+def stats(trades, daily):
+    eq, peak, mdd = CAPITAL, CAPITAL, 0.0
+    for x in daily:
+        eq += x["gewinn"]
+        peak = max(peak, eq)
+        mdd = min(mdd, eq - peak)
+    wins = [t["gewinn"] for t in trades if t["gewinn"] > 0]
+    losses = [t["gewinn"] for t in trades if t["gewinn"] <= 0]
+    total = sum(t["gewinn"] for t in trades)
+    months = {}
+    for x in daily:
+        months[x["tag"][:7]] = round(months.get(x["tag"][:7], 0) + x["gewinn"], 2)
+    reasons = {}
+    for t in trades:
+        reasons[t["grund"]] = reasons.get(t["grund"], 0) + 1
+    return {
+        "gewinn_usd": round(total, 2), "rendite_prozent": round(total / CAPITAL * 100, 2),
+        "trades": len(trades), "trefferquote_prozent": round(len(wins) / len(trades) * 100, 1) if trades else 0,
+        "schnitt_gewinner": round(sum(wins) / len(wins), 2) if wins else 0,
+        "schnitt_verlierer": round(sum(losses) / len(losses), 2) if losses else 0,
+        "profitfaktor": round(sum(wins) / -sum(losses), 2) if losses and sum(losses) < 0 else None,
+        "max_rueckgang_usd": round(mdd, 2), "tage": len(daily),
+        "tage_im_plus": sum(1 for x in daily if x["gewinn"] > 0),
+        "tage_im_minus": sum(1 for x in daily if x["gewinn"] < 0),
+        "bester_tag": max(daily, key=lambda x: x["gewinn"]) if daily else None,
+        "schlechtester_tag": min(daily, key=lambda x: x["gewinn"]) if daily else None,
+        "monate": months, "ausstiegsgruende": reasons,
+    }
+
+
+def main():
+    os.makedirs(OUT, exist_ok=True)
+    symbols_all = sorted(set(BASE + EXTRA + ["SPY"]))
+    print(f"Lade 5-Min-Kerzen {START} bis {END} für {len(symbols_all)} Werte …", flush=True)
+    raw = fetch(symbols_all, START + "T00:00:00Z", (datetime.fromisoformat(END) + timedelta(days=1)).strftime("%Y-%m-%dT00:00:00Z"))
+    data = {s: enrich(to_session(raw.get(s, []))) for s in symbols_all}
+    print({s: len(v) for s, v in data.items()}, flush=True)
+    spy = data["SPY"]
+    spy_ret = (spy[-1]["c"] / spy[0]["o"] - 1) * 100 if spy else 0
+    variants = {
+        "bert_1_0": ("Bert 1.0 (bisher): Linien-Kreuzung, 8 Aktien", lambda: sim_v1(data, BASE)),
+        "bert_2_0_long_8": ("Bert 2.0: Checkliste, nur Kauf, 8 Aktien", lambda: sim_v2(data, BASE, False)),
+        "bert_2_0_short_8": ("Bert 2.0: Checkliste, Kauf + Short, 8 Aktien", lambda: sim_v2(data, BASE, True)),
+        "bert_2_0_long_20": ("Bert 2.0: Checkliste, nur Kauf, 20 Aktien", lambda: sim_v2(data, BASE + EXTRA, False)),
+        "bert_2_0_short_20": ("Bert 2.0: Checkliste, Kauf + Short, 20 Aktien", lambda: sim_v2(data, BASE + EXTRA, True)),
+    }
+    result = {"zeitraum": [START, END], "spy_kursveraenderung_prozent": round(spy_ret, 2),
+              "einstellungen_bert_2_0": V2, "kursabweichung_pro_seite": SLIP, "varianten": {}}
+    for key, (label, fn) in variants.items():
+        trades, daily = fn()
+        st = stats(trades, daily)
+        st["name"] = label
+        result["varianten"][key] = st
+        with open(os.path.join(OUT, f"tage_{key}.csv"), "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(["tag", "gewinn_usd", "kontostand_usd"])
+            eq = CAPITAL
+            for x in daily:
+                eq += x["gewinn"]
+                w.writerow([x["tag"], x["gewinn"], round(eq, 2)])
+        with open(os.path.join(OUT, f"trades_{key}.csv"), "w", newline="", encoding="utf-8") as f:
+            if trades:
+                w = csv.DictWriter(f, fieldnames=list(trades[0].keys()))
+                w.writeheader()
+                w.writerows(trades)
+        print(f"{label}: {st['gewinn_usd']:+.2f} $ ({st['rendite_prozent']:+.2f} %), {st['trades']} Trades, "
+              f"Treffer {st['trefferquote_prozent']} %, PF {st['profitfaktor']}, max. Rückgang {st['max_rueckgang_usd']} $",
+              flush=True)
+    with open(os.path.join(OUT, "ergebnis.json"), "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=1)
+    lines = [f"# Backtest {START} bis {END}", "", f"SPY im Zeitraum: {spy_ret:+.2f} %", "",
+             "| Variante | Gewinn | Trades | Trefferquote | Profitfaktor | max. Rückgang | Tage +/− |",
+             "|---|---|---|---|---|---|---|"]
+    for k, st in result["varianten"].items():
+        lines.append(f"| {st['name']} | {st['gewinn_usd']:+.2f} $ ({st['rendite_prozent']:+.2f} %) | {st['trades']} | "
+                     f"{st['trefferquote_prozent']} % | {st['profitfaktor']} | {st['max_rueckgang_usd']} $ | "
+                     f"{st['tage_im_plus']}/{st['tage_im_minus']} |")
+    open(os.path.join(OUT, "ergebnis.md"), "w", encoding="utf-8").write("\n".join(lines) + "\n")
+    print("\n".join(lines))
+
+
+if __name__ == "__main__":
+    main()
