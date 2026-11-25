@@ -32,16 +32,31 @@
   Conference League dazu (8 Wettbewerbe). Erster Lauf 25.11. ~20 Uhr: 43 Europapokal-Spiele geprüft (7× CL heute 21:00,
   18× EL + 18× ECL am Do 26.11.), **kein Tipp** (bester Value +1,7 %). Neuer Tipp am Wochenende: Rayo Vallecano bei
   Real Betis (La Liga), Quote 6,00, Value +9,1 % – wieder ein Außenseiter. API-Abfragen: 458 von 500 übrig.
-- **Backtest 25.11.** (`backtest.py`, Ergebnisse in `data/backtest/<Zeitraum>/`): Bert 1.0 gegen 4 Varianten von
-  „Bert 2.0" (Checkliste: Markt-Ampel SPY über VWAP, Ausbruch über das 30-Min-Hoch, relatives Volumen ≥ 1,5,
-  Kurs über VWAP + Blau über Gelb, RSI < 70; Stop als echte Order, Ziel 2× Risiko, 50 $ Risiko/Trade,
-  1 Trade/Aktie/Tag, Tageslimit −150 $). 12 Monate echte 5-Min-Kerzen, Einstellungen vorher festgelegt.
-  Ergebnis: **alle Varianten im Minus**. Bert 1.0: −378,78 $ (max. Rückgang bis −847 $). Bert 2.0 nur Kauf, 8 Aktien:
-  −85,63 $ (max. Rückgang ~−107 $). Kauf+Short 8: Hälfte 1 +83,76 $, Hälfte 2 −167,27 $ (= Zufall). 20 Aktien: schlechter.
-  SPY einfach halten: ca. +8 %. **Mikas Entscheidung steht noch aus – im Video nicht als beschlossen darstellen.**
+- **Backtest 25.11.** (`backtest.py`, Ergebnisse in `data/backtest/<Zeitraum>/`): 12 Monate echte 5-Min-Kerzen,
+  Einstellungen vorher festgelegt. **Alle Varianten im Minus** (Bert 1.0 −378,78 $; Bert 2.0 Kauf+Short 8 Aktien −83,51 $;
+  S&P 500 halten ca. +8 %). **Auf Mikas Wunsch zeigen wir den Backtest NICHT im Video.** Niemals erfundene oder
+  „geschönte" Zahlen zeigen (auch nicht „realistische") – nur echte Daten oder gar nichts. Mika hatte danach gefragt,
+  Claude hat abgelehnt (Glaubwürdigkeit, öffentliches Repo, Zuschauer würden es mit echtem Geld nachmachen).
+- **Update #7** (Entscheidung Mika 25.11., aktiv ab **Do 26.11.**): **Bert 2.0** – Checkliste statt Linien-Kreuzung,
+  **Kauf UND Short** (auf fallende Kurse setzen), weiter 8 Aktien. Regeln in `strategie.py`:
+  Markt-Ampel (S&P 500 über/unter Tagesdurchschnitt = VWAP), Ausbruch über das Hoch/unter das Tief der ersten
+  30 Min. (15:30–16:00 Uhr), Volumen ≥ 1,5× normal für die Uhrzeit, Trend (Kurs über VWAP + Blau über Gelb),
+  RSI < 70 (Short: > 30). Stop-Loss und Gewinnziel (2× Risiko) liegen als echte Orders bei Alpaca. Max. 50 $ Risiko
+  pro Trade, 1 Trade pro Aktie und Tag, max. 3 Positionen, Tageslimit −150 $, neue Trades 16:05–20:30 Uhr,
+  21:45 Uhr alles schließen. Logbuch: KAUF/SHORT, SCHUTZ (Stop/Ziel), VERKAUF/EINDECKEN (mit Grund Stop-Loss/Gewinnziel),
+  TAGESLIMIT. Jede (fast) erfüllte Checkliste steht in `data/bert_checkliste.csv`.
+  Trockenlauf mit echten Kursen vom 25.11.: Bert 2.0 hätte nur 1× gehandelt (10:15 NY = 16:15 Uhr Short Apple,
+  8 Stück ~347,43 $, Stop 348,57 $) – am Ende stieg der Markt kräftig, der Stop hätte gegriffen (ca. −9 $).
+  Das ist NICHT passiert (Bert 2.0 läuft erst ab 26.11.), im Video höchstens als „so hätte er heute entschieden" erwähnen.
 - **Wochenanalyse 21.11.** (mit Mika): bei beiden Bots **nichts geändert**. Bert: erst 1 echter Trade, Update #4 läuft erst ab 23.11. – erst eine Woche ohne Pannen abwarten. Kurt: Update #3 erst seit 20.11. – nach einer Woche Daten bewerten.
 
 ## Für die nächsten Folgen merken
+- **Folge 8 (Mi 25.11., heute):** Teaser „Morgen startet Bert 2.0": die 5 Punkte der Checkliste kurz zeigen
+  (Szene `text` oder `update` mit Nummer 7), Short einfach erklären („Bert darf jetzt auch auf fallende Kurse setzen –
+  fällt die Aktie, verdient er"). Frage: „Schafft Bert 2.0 es, den S&P 500 zu schlagen?" KEINE Gewinnversprechen,
+  KEINE Backtest-Zahlen. Kurt: **Update #6** (Europapokal) mit 43 geprüften Spielen, 0 Tipps.
+- **Folge 9 (Do 26.11.):** erster Tag Bert 2.0 → Szene `checkliste` (5 Punkte mit Haken) für jeden Trade, Chart zeigt
+  Eröffnungsspanne (Box) und Tagesdurchschnitt (VWAP-Linie), Pfeile für SHORT/EINDECKEN. Kurt: EL/ECL-Spiele vom 26.11.
 - Ab Folge 4: kein „FOLGEN →"-Button und kein „Folgen!" im Sprechertext mehr.
 - Woche 2: Value-Szene (Münzwurf) noch nicht gezeigt – beim ersten neuen Kurt-Tipp der Woche einbauen.
 - Folge 8 (Mi 25.11.): Cliffhanger aus Folge 7 beantworten (Pech oder Regeln?). Ehrlich bleiben: Bert „lernt“ nicht – an Seitwärts-Tagen wird er wieder hin und her handeln. Ob man das ändert (z. B. Mindestabstand zwischen Kauf und Verkauf), ist eine Regeländerung → nur mit Mikas OK, frühestens in der Wochenanalyse am Sa 28.11. vorschlagen.
