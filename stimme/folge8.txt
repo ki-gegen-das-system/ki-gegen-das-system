@@ -1,0 +1,20 @@
+# folge8 – automatisch aus video/folgen/folge8.json erzeugt
+s1|Plus sechsunddreißig Dollar. Vier Trades, alle im Plus.
+s1|Und es ist Berts letzter Tag mit den alten Regeln.
+s2|Der Markt startet tief im Minus. Ab etwa achtzehn Uhr klettert er.
+s2|Bei Meta kreuzt Blau um achtzehn Uhr zwanzig nach oben. Bert kauft.
+s2|Verkauft wird kurz vor Börsenschluss. Plus zweiundzwanzig Dollar.
+s3|Dazu Apple, Microsoft und der S&P fünfhundert. Kleine Gewinne, aber alle im Plus.
+s3|Vier weitere Signale lässt er aus. Mehr als vier Aktien gleichzeitig darf er nicht.
+s4|Ehrlich: Um halb neun lag Bert bei plus achtundachtzig Dollar. Bis zum Schluss bleiben sechsunddreißig.
+s4|Update fünf hat geklappt: Nach jedem Kauf saß die Sicherung, kein Fehler.
+s5|Gestern die Frage: Pech oder Regeln? Ehrliche Antwort: die Regeln.
+s5|An ruhigen Tagen handelt Bert hin und her. Darum kommt Bert zwei Punkt null.
+s5|Er kauft nur, wenn alle fünf Punkte passen. Höchstens ein Trade pro Aktie am Tag.
+s5|Neu: Er darf auch auf fallende Kurse setzen. Fällt die Aktie, verdient er. Steigt sie, verliert er.
+s6|Kurt prüft jetzt auch Champions League, Europa League und Conference League. Heute zweiundsechzig Spiele.
+s6|Ein Tipp: Rayo Vallecano bei Betis. Kurt schätzt die Chance auf achtzehn Prozent.
+s6|Bei Quote sechs gibt es im Schnitt hundertneun Euro pro hundert Euro. Aber nur im Schnitt.
+s6|Und wieder ist es ein Außenseiter.
+s7|Zwischenstand: Bert ist wieder knapp vorne.
+s8|Morgen ist die US-Börse zu. Am Freitag startet Bert zwei Punkt null. Schafft er den S&P fünfhundert?
