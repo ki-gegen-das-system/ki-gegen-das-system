@@ -1,0 +1,39 @@
+name: "Forschung: Daten laden"
+
+# Lädt historische Kursdaten für die Strategie-Forschung (keine Orders). Ergebnis als Artefakt.
+on:
+  workflow_dispatch:
+    inputs:
+      teil:
+        description: "kern oder scanner"
+        required: true
+        default: "kern"
+      start:
+        description: "Start JJJJ-MM-TT"
+        required: false
+        default: "2018-01-01"
+
+concurrency:
+  group: forschung-daten
+  cancel-in-progress: false
+
+jobs:
+  laden:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install numpy
+      - name: Daten laden
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          TEIL: ${{ inputs.teil }}
+          START: ${{ inputs.start }}
+        run: python3 -u forschung/daten.py "$TEIL"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: forschung-${{ inputs.teil }}
+          path: forschung_daten/
+          retention-days: 30
+          compression-level: 0
