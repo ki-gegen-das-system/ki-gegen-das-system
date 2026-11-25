@@ -69,6 +69,9 @@
      Endtest mit den gesperrten Jahren 2024–2026 steht noch aus. Fairness einfach erklären: Regeln vorher festgelegt,
      3 Jahre Daten weggesperrt, jeder Versuch wird gezählt („Wer 130-mal würfelt, würfelt irgendwann zufällig eine Sechs“).
      Szene `text` (gibt keinen eigenen Szenen-Typ). Keine bp/Sharpe, keine Gewinnversprechen.
+     **Update 25.11. 23:50 – Endtest ist gemacht** (`forschung/ERGEBNIS.md`): Rauschzone auf SPY+QQQ 2024–2026 knapp im Plus
+     (+1.616 $ auf 10.000 $, 2025/26 ≈ 0; SPY halten: +51 %), auf Berts 8 Werten im Minus (−2.085 $). Ergebnis: keine Strategie
+     schafft viele Trades UND Gewinn. Mikas Entscheidung zu Bert 3.0 ist offen – im Video nichts als beschlossen darstellen.
   3. Kurt kurz: Europa-/Conference-League-Spiele vom 26.11. ohne Tipp; Rayo-Tipp läuft erst Sa 28.11. 14:00.
   Cliffhanger z. B.: „Freitag ist Bert 2.0 live. Kann er echt, was er im Test nicht konnte?“ – keine Prognose.
 - **Folge 9 (Do 26.11.):** US-Börse zu (Thanksgiving) → keine Bert-Trades. Erklärfolge Bert 2.0: echter Apple-Chart
