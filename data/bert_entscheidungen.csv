@@ -43,3 +43,29 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-25 18:55,AAPL,SICHERUNG,Verkaufsorder zum Börsenschluss für 7 Stück gesetzt,
 2026-11-25 19:05,SPY,KAUF,"3 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 57",711.18
 2026-11-25 19:11,SPY,SICHERUNG,Verkaufsorder zum Börsenschluss für 3 Stück gesetzt,
+2026-11-25 19:16,MSFT,KAUF,"5 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 54",488.28
+2026-11-25 19:21,MSFT,SICHERUNG,Verkaufsorder zum Börsenschluss für 5 Stück gesetzt,
+2026-11-25 19:31,QQQ,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",628.33
+2026-11-25 19:31,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",376.98
+2026-11-25 19:36,QQQ,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",629.15
+2026-11-25 19:36,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",377.16
+2026-11-25 19:41,QQQ,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",629.16
+2026-11-25 19:41,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",377.71
+2026-11-25 19:46,QQQ,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",631.42
+2026-11-25 19:46,NVDA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",148.06
+2026-11-25 19:46,AMZN,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",245.64
+2026-11-25 19:46,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",379.22
+2026-11-25 19:51,QQQ,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",632.77
+2026-11-25 19:51,NVDA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",148.19
+2026-11-25 19:51,AMZN,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",245.77
+2026-11-25 19:51,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",379.84
+2026-11-25 19:56,QQQ,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",631.49
+2026-11-25 19:56,NVDA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",148.00
+2026-11-25 19:56,AMZN,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",245.52
+2026-11-25 19:56,TSLA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",378.88
+2026-11-25 20:01,NVDA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",147.88
+2026-11-25 20:01,AMZN,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",245.33
+2026-11-25 20:06,NVDA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",148.47
+2026-11-25 20:06,AMZN,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",246.34
+2026-11-25 20:11,NVDA,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",148.32
+2026-11-25 20:11,AMZN,AUSGELASSEN,"Kaufsignal, aber schon 4 Aktien im Depot",246.35
