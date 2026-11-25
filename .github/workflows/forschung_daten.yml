@@ -14,7 +14,7 @@ on:
         default: "2018-01-01"
 
 concurrency:
-  group: forschung-daten
+  group: forschung-daten-${{ inputs.teil }}   # Kern und Scanner dürfen parallel laufen
   cancel-in-progress: false
 
 jobs:
@@ -30,6 +30,7 @@ jobs:
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           TEIL: ${{ inputs.teil }}
           START: ${{ inputs.start }}
+          MAX_PER_MIN: ${{ inputs.teil == 'scanner' && '120' || '170' }}
         run: python3 -u forschung/daten.py "$TEIL"
       - uses: actions/upload-artifact@v4
         with:
