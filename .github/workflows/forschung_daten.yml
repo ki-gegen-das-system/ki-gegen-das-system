@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       teil:
-        description: "kern oder scanner"
+        description: "kern, scanner oder iexcheck"
         required: true
         default: "kern"
       start:

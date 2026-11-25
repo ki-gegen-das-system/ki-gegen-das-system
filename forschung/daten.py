@@ -239,5 +239,61 @@ def scanner():
           f"Aufrufe {stats['calls']}", flush=True)
 
 
+def iexcheck(tage=120):
+    """Live-Frage: Alpaca gibt kostenlos nur IEX-Daten in Echtzeit. Wählt der Scanner mit IEX-Volumen dieselben
+    „Stocks in Play“ wie mit SIP (alle Börsen)? Vergleich für die letzten `tage` Handelstage."""
+    os.makedirs(OUT, exist_ok=True)
+    assets = call(API, "/v2/assets", {"status": "active", "asset_class": "us_equity"}) or []
+    syms = sorted({a["symbol"] for a in assets if a.get("exchange") in ("NYSE", "NASDAQ", "ARCA", "AMEX", "BATS")
+                   and a.get("tradable") and re.fullmatch(r"[A-Z]{1,5}", a["symbol"])})
+    end_d = date.fromisoformat(END)
+    d_start = iso(ny_dt(end_d - timedelta(days=int(tage * 1.6) + 40), 0, 0))
+    daily = {}
+    for i in range(0, len(syms), 500):
+        for s, lst in bars(syms[i:i + 500], "1Day", d_start, iso(ny_dt(end_d, 23, 59))).items():
+            if len(lst) >= 20:
+                a = to_arrays(lst)
+                daily[s] = dict(d=a["t"] // 86400, h=a["h"], l=a["l"], c=a["c"], v=a["v"])
+    cal = [int(d) for d in sorted(set(daily["SPY"]["d"].tolist()))][-(tage + 15):]
+    hist = {"sip": {}, "iex": {}}
+    res = []
+    for n_day, d in enumerate(cal):
+        day = date(1970, 1, 1) + timedelta(days=d)
+        cs = []
+        for s, a in daily.items():
+            j = np.searchsorted(a["d"], d)
+            if j < 15 or j >= len(a["d"]) or a["d"][j] != d:
+                continue
+            c, h, l, v = a["c"][j - 15:j], a["h"][j - 15:j], a["l"][j - 15:j], a["v"][j - 15:j]
+            tr = np.maximum(h[1:] - l[1:], np.maximum(np.abs(h[1:] - c[:-1]), np.abs(l[1:] - c[:-1])))
+            if c[-1] > 5 and v[1:].mean() > 1e6 and tr.mean() > 0.5:
+                cs.append(s)
+        t930 = iso(ny_dt(day, 9, 30))
+        top = {}
+        for feed in ("sip", "iex"):
+            ob = {}
+            for i in range(0, len(cs), 400):
+                ob.update(bars(cs[i:i + 400], "5Min", t930, iso(ny_dt(day, 9, 30) + timedelta(seconds=299)), feed=feed))
+            sc = []
+            for s in cs:
+                lst = [b for b in ob.get(s, []) if b["t"][:19] == t930[:19]]
+                v0 = float(lst[0]["v"]) if lst else 0.0
+                h_ = hist[feed].setdefault(s, deque(maxlen=14))
+                rv = v0 / (sum(h_) / len(h_)) if len(h_) >= 5 and sum(h_) > 0 else None
+                h_.append(v0)
+                if rv is not None and lst:
+                    sc.append((rv, s, lst[0]["o"], lst[0]["h"], lst[0]["l"], lst[0]["c"]))
+            top[feed] = sorted(sc, reverse=True)[:20]
+        if n_day >= 15:
+            a_, b_ = {x[1] for x in top["sip"]}, {x[1] for x in top["iex"]}
+            res.append(dict(tag=day.isoformat(), kandidaten=len(cs), gleich=len(a_ & b_),
+                            sip=[x[1] for x in top["sip"]], iex=[x[1] for x in top["iex"]],
+                            sip_kerze=[x[1:] for x in top["sip"]], iex_kerze=[x[1:] for x in top["iex"]]))
+            print(f"{day}: {len(cs)} Kandidaten, Top 20 gleich: {len(a_ & b_)}", flush=True)
+    with open(os.path.join(OUT, "iexcheck.json"), "w") as f:
+        json.dump(res, f)
+    print("Ø gleiche Aktien in den Top 20:", np.mean([r["gleich"] for r in res]))
+
+
 if __name__ == "__main__":
-    {"kern": kern, "scanner": scanner}[sys.argv[1]]()
+    {"kern": kern, "scanner": scanner, "iexcheck": iexcheck}[sys.argv[1]]()
