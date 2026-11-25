@@ -38,3 +38,35 @@ SPY+QQQ Sharpe 0,70–1,07, Berts 8: 0,48–1,18 – alle Nachbarn im Plus → k
 Vor-/nachbörslich (SPY/QQQ 2025–26): vorbörslich nur 2–4 % des Volumens, 5-Min-Schwankung 4–6 bp statt 9–12 bp
 → „den ganzen Tag handeln“ bringt bei Aktien kaum etwas.
 Bisher geprüfte Varianten: ca. 130.
+### 25.11. spät – Runde 3: Scanner „Stocks in Play“ (alle US-Aktien, 2,45 Mio. Kandidaten-Tage, 2018–2023)
+| Strategie | Trades/Tag | netto/Trade | Sharpe | Urteil |
+|---|---|---|---|---|
+| ORB Stocks in Play (Zarattini/Barbon/Aziz 2024), Top 20, Stop 0,1 ATR, vorsichtige Kerzen-Annahme | 16 | −22 bp | −8 | ✗ |
+| … gleiche Regel, günstigste Annahme (Stop in der Einstiegskerze zählt nicht) | 16 | +1,3 bp | 0,30 | ✗ (2 von 6 Jahren Minus) |
+| … günstigste Annahme UND ohne Kosten | 16 | +12,9 bp | 3,28 | so sieht es in der Studie aus |
+| ORB Stocks in Play, Top 5/10/20, Stop 0,05–1,0 ATR | 4–16 | −30 … +1,7 bp | ≤ 0 | ✗ |
+| Trend auf Stocks in Play ab 10:00 mit VWAP-Stop | 10 | −9 bp | −1,2 | ✗ |
+**Erkenntnis:** Die Scanner-Strategie lebt von winzigen Stops und fast null Kosten. Mit realistischen Kosten
+(1 Cent/Aktie + 2 bp je Seite – bei 10–50-$-Aktien am Morgen eher noch zu wenig) bleibt nichts übrig.
+Live-Problem zusätzlich: Mit den Gratis-Echtzeitdaten (IEX) wären im Schnitt nur 7,8 der Top 20 dieselben
+Aktien wie mit allen Börsen (SIP) – geprüft für die letzten 120 Handelstage.
+Bisher geprüfte Varianten: ca. 150.
+
+### Festgelegte Kandidaten für den Endtest 2024–2026 (vor dem Endtest notiert)
+- K1: Rauschzonen-Momentum SPY + QQQ, Parameter wie in der Studie (Rückblick 14 Tage, Prüfung alle 30 Min. ab
+  10:00 New York, Stop = Rauschgrenze/VWAP, 2 % Ziel-Tagesschwankung, max. 4x Hebel, Schluss zum Börsenende).
+- K2: dieselbe Regel auf Berts 8 Werten (SPY, QQQ, Apple, Microsoft, Nvidia, Amazon, Meta, Tesla).
+
+### ENDTEST 2024-01-01 bis 2026-11-24 (einmalig, nichts danach angepasst)
+| Kandidat | Trades/Tag | netto/Trade | Sharpe | 2024 | 2025 | 2026 | Summe auf 10.000 $ | Kosten x2 |
+|---|---|---|---|---|---|---|---|---|
+| K1 Rauschzone SPY+QQQ | 1,9 | +1,4 bp | 0,31 | +1.875 $ | −47 $ | −212 $ | **+1.616 $** | −1.798 $ |
+| K2 Rauschzone Berts 8 | 8,0 | −2,6 bp | −0,81 | −363 $ | −1.306 $ | −416 $ | **−2.085 $** | −5.928 $ |
+| Vergleich: SPY kaufen und halten | – | – | – | +23,3 % | +16,4 % | +5,4 % | +51,2 % | – |
+Entwicklung 2018–2023 zum Vergleich: K1 +9.667 $ (Sharpe 1,00), K2 +5.311 $ (Sharpe 0,98).
+
+**Ergebnis:** K2 (viele Trades) fällt im Endtest durch. K1 bleibt knapp im Plus (Kriterium 4 erfüllt), aber
+deutlich schwächer als 2018–2023, 2025/2026 ungefähr null, mit doppelten Kosten im Minus. Die Studie wurde im
+Mai 2024 veröffentlicht – typisch: Bekannte Effekte werden danach schwächer (McLean & Pontiff 2016).
+**Keine getestete Strategie schafft viele Trades UND Gewinn.** Je mehr Trades, desto mehr fressen die Kosten.
+Insgesamt geprüfte Varianten: ca. 150 (+ 2 Endtests).

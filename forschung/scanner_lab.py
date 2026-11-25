@@ -10,13 +10,12 @@ from labor import DATEN, auswerten
 
 Z = np.load(os.path.join(DATEN, "scanner.npz"))
 SYMS = Z["syms"]
-OPEN = pd.DataFrame(Z["open"], columns=["d", "sid", "pc", "atr", "avgvol", "o", "h", "l", "c", "v", "rvol", "n"])
-OPEN = OPEN.dropna(subset=["o"])
-OPEN[["d", "sid"]] = OPEN[["d", "sid"]].astype(int)
-TAGE = pd.DataFrame(np.load(os.path.join(DATEN, "scanner_tage.npz"))["daily"],
-                    columns=["d", "sid", "do", "dh", "dl", "dc", "dv"])
-TAGE[["d", "sid"]] = TAGE[["d", "sid"]].astype(int)
-SCHLUSS = {(d, s): c for d, s, c in zip(TAGE.d, TAGE.sid, TAGE.dc)}
+OPEN = pd.DataFrame(Z["open"].astype(np.float64), columns=["pc", "atr", "avgvol", "o", "h", "l", "c", "v", "rvol"])
+OPEN["d"], OPEN["sid"] = Z["open_ds"][:, 0].astype(int), Z["open_ds"][:, 1].astype(int)
+_T = np.load(os.path.join(DATEN, "scanner_tage.npz"))
+TAGE = pd.DataFrame(_T["ohlcv"].astype(np.float64), columns=["do", "dh", "dl", "dc", "dv"])
+TAGE["d"], TAGE["sid"] = _T["ds"][:, 0].astype(int), _T["ds"][:, 1].astype(int)
+SCHLUSS = dict(zip(zip(TAGE.d, TAGE.sid), TAGE.dc))
 
 
 def _bars(meta, arr):
@@ -46,7 +45,8 @@ def tag_str(d):
 
 
 def orb_inplay(top=20, stop_atr=0.10, ziel_r=None, rvol_min=1.0, preis_min=5.0, seiten=(1, -1),
-               kosten_cent=1.0, kosten_bp=2.0, hebel_max=4.0, risiko=0.01, ende_min=None):
+               kosten_cent=1.0, kosten_bp=2.0, hebel_max=4.0, risiko=0.01, ende_min=None, pessimistisch=True,
+               start_min=575):
     sel = OPEN[(OPEN.rvol >= rvol_min) & (OPEN.pc >= preis_min)]
     sel = sel.sort_values(["d", "rvol"], ascending=[True, False]).groupby("d").head(top)
     rows = []
@@ -64,14 +64,21 @@ def orb_inplay(top=20, stop_atr=0.10, ziel_r=None, rvol_min=1.0, preis_min=5.0, 
             mn, o, h, l, c = bars[i]
             if ende_min and mn >= ende_min:
                 break
+            if mn < start_min:
+                continue
             if ein is None:
                 if (richtung > 0 and h >= trig) or (richtung < 0 and l <= trig):
                     ein = max(trig, o) if richtung > 0 else min(trig, o)
                     stop = ein - richtung * stopw
                     ziel = ein + richtung * ziel_r * stopw if ziel_r else None
                     t_ein = mn
-                    # gleiche Kerze: Reihenfolge unbekannt -> vorsichtig: Stop zuerst
-                    if (richtung > 0 and l <= stop) or (richtung < 0 and h >= stop):
+                    # gleiche Kerze: Reihenfolge unbekannt -> vorsichtig: Stop zuerst (optimistisch: nur wenn
+                    # die Kerze jenseits des Stops schließt)
+                    if pessimistisch:
+                        hit = (richtung > 0 and l <= stop) or (richtung < 0 and h >= stop)
+                    else:
+                        hit = (richtung > 0 and c <= stop) or (richtung < 0 and c >= stop)
+                    if hit:
                         rows.append((x.d, x.sid, richtung, ein, stop, t_ein, mn, x.pc, x.atr, x.rvol)); ein = "fertig"
                         break
                 continue
@@ -99,7 +106,15 @@ def orb_inplay(top=20, stop_atr=0.10, ziel_r=None, rvol_min=1.0, preis_min=5.0, 
 
 if __name__ == "__main__":
     import sys
-    print("\n--- S2 ORB auf Stocks in Play (Entwicklung 2018–2023) ---")
-    for top in (20, 10, 5):
-        for st in (0.05, 0.10, 0.20, 0.50):
-            auswerten(orb_inplay(top=top, stop_atr=st), f"InPlay top{top} stop{st}ATR")
+    teil = sys.argv[1] if len(sys.argv) > 1 else "basis"
+    if teil == "basis":
+        print("\n--- S2 ORB auf Stocks in Play (Entwicklung 2018–2023) ---")
+        for top in (20, 10, 5):
+            for st in (0.05, 0.10, 0.20, 0.50):
+                auswerten(orb_inplay(top=top, stop_atr=st), f"InPlay top{top} stop{st}ATR")
+    if teil == "optimistisch":
+        for st in (0.10, 0.20, 0.50, 1.0):
+            auswerten(orb_inplay(top=20, stop_atr=st, pessimistisch=False), f"InPlay top20 stop{st} OPTIMISTISCH")
+        auswerten(orb_inplay(top=20, stop_atr=1.0), "InPlay top20 stop1.0 vorsichtig")
+        auswerten(orb_inplay(top=20, stop_atr=0.10, pessimistisch=False, kosten_cent=0, kosten_bp=0),
+                  "InPlay top20 stop0.1 OPTIMISTISCH ohne Kosten")

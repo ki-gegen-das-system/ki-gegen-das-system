@@ -85,6 +85,14 @@
 - Nächster Wochenrückblick (Sa 28.11.): `python3 nachrechnung.py 2026-11-23 2026-11-27` und mit Berts echten Trades vergleichen. Ist Bert dank Update #4 durchgehend wach, sollten echte und nachgerechnete Käufe fast gleich sein – guter Beweis, ob das Update wirkt.
 - Kurt: bisher kam Value **nur** bei Außenseitern (15 von 15). Erster Tipp (Außenseiter Man United, 4,70) verloren 0:4. Beobachten, ob das so bleibt – dann ist sein Value wahrscheinlich oft eine Täuschung (bei Außenseitern ist die faire Chance am schwersten zu schätzen). In der nächsten Wochenanalyse prüfen.
 
+## Strategie-Forschung Bert 3.0 (25.11.)
+Ergebnis in `forschung/ERGEBNIS.md`: ~150 Varianten, 2018–2023 entwickelt, 2024–2026 einmal getestet. Keine
+Strategie schafft viele Trades UND Gewinn. Nur Rauschzonen-Momentum auf SPY+QQQ blieb im Endtest knapp im Plus
+(~2 Trades/Tag); auf Berts 8 Werten (~8 Trades/Tag) im Endtest leicht im Minus. **Mikas Entscheidung offen**
+(A Action / B beste Chance / C Bert 2.0 lassen) – in der Wochenanalyse am Sa 28.11. nachfragen, nicht ohne OK
+umbauen. Content-Idee: eigene Folge „150 Strategien getestet – das kam raus“ (ehrlich, nur echte Zahlen aus
+`forschung/LOG.md`).
+
 ## Offene Punkte (Stand 25.11.)
 - **25.11.**: Lücke im Kontostand 17:42–18:05 (23 Min., wie am 23.11. zwischen zwei GitHub-Starts). Nichts verpasst: erste Kreuzung des Tages erst 18:15 (Meta, gekauft 18:20). Zweite Lücke dieser Art in 3 Tagen → beobachten; Bert 2.0 handelt ab 16:05, eine Lücke kann dann einen Ausbruch verpassen (Änderung nur mit Mikas OK).
 - **25.11.**: Konto über Nacht 24.→25.11. −0,45 $ ohne Trade (9.870,37 → 9.869,92). Darum zeigt die Konto-Szene „heute +35,53 $“, Trades ergeben +35,98 $. Ursache unklar (3. Mal, evtl. Gebühren/Zinsen bei Alpaca).
