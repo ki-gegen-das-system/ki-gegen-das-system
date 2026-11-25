@@ -51,6 +51,14 @@ Mika will ehrliches, kritisches Feedback.
 - `data/bert_checkliste.csv` (ab Bert 2.0): jede erfüllte und fast erfüllte (≥ 3/5) Checkliste mit allen 5 Punkten,
   Werten und Entscheidung – perfekt für „Warum hat Bert hier (nicht) gekauft?“
 - `data/charts/JJJJ-MM-TT.json` – echte 15-Min-Kerzen + Berts Linien aller Bert-Aktien für diesen Handelstag
+  (seit 25.11. auch `vwap` = Tagesdurchschnitt und `spanne` = erste 30 Min. für Bert 2.0)
+- `data/trockenlauf/<Tag>_trades.csv`, `<Tag>_checkliste.csv`, `<Tag>.json` – **Probelauf**: was Bert 2.0 nach
+  seinen Regeln mit den echten Kursen getan HÄTTE (keine echten Trades). Läuft automatisch nach Börsenschluss
+  (Workflow „Probelauf Bert 2.0“, ca. 22:25 Uhr); per Hand: `gh api -X POST
+  repos/ki-gegen-das-system/ki-gegen-das-system/actions/workflows/trockenlauf.yml/dispatches -f ref=main
+  -f 'inputs[datum]=JJJJ-MM-TT'`. Im Video IMMER als „Probelauf“ kennzeichnen (Szenen machen das mit
+  `"pfeile": "trockenlauf"` bzw. `"quelle": "trockenlauf"` automatisch). Ab 27.11. die Gegenprobe: weichen echte
+  Trades und Probelauf ab, im Folgen-Log notieren und den Grund suchen (Verzögerung, Kursabweichung, Fehler).
 - `data/kurt_tipps.csv` (mit Ergebnis), `kurt_analyse.csv` (Rechnung zu jedem geprüften Spiel),
   `kurt_entscheidungen.csv`, `kurt_kontostand.csv`
 - Zeiten sind deutsche Zeit.
@@ -79,7 +87,8 @@ Mika will ehrliches, kritisches Feedback.
    Ab Bert 2.0 zeigt der Chart automatisch die 30-Min-Spanne (Kasten) und den Tagesdurchschnitt (lila Linie).
    `checkliste` – für jeden Trade (oder den spannendsten) die 5 Punkte mit Haken. Auch stark: eine fast
    erfüllte Checkliste („4 von 5 – das Volumen fehlte, darum kein Kauf“).
-3. `trades` – Berts Logbuch mit Gründen (+ Ergebnis abgeschlossener Trades)
+3. `trades` – Berts Logbuch mit Gründen (+ Ergebnis abgeschlossener Trades). Bei vielen Zeilen lässt die Szene
+   SCHUTZ-Zeilen (Stop/Ziel) selbst weg; gezielt filtern mit `"aktionen": ["KAUF", "SHORT", "VERKAUF", "EINDECKEN"]`.
 4. `konto` – Berts Kontoverlauf heute
 5. `kurt` (neue Analyse/Tipps) und/oder `tipps` (Ergebnisse, z. B. montags fürs Wochenende)
 6. `value` – nur wenn sinnvoll (neue Zuschauer, erster Tipp der Woche)

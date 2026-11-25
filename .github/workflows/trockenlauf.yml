@@ -1,16 +1,48 @@
-name: Trockenlauf Bert 2.0
+name: Probelauf Bert 2.0
 
+# Rechnet nach Börsenschluss mit den echten Kursen nach, was Bert 2.0 nach seinen Regeln getan hätte
+# (keine Orders). Ab 27.11. die Gegenprobe zu Berts echten Trades. Ergebnis: data/trockenlauf/
 on:
-  workflow_dispatch: {}
+  schedule:
+    - cron: "25 21 * * 1-5"   # 22:25 Uhr (Winter) bzw. 23:25 Uhr (Sommer) deutsche Zeit, nach US-Börsenschluss
+  workflow_dispatch:
+    inputs:
+      datum:
+        description: "Handelstag JJJJ-MM-TT (leer = letzter Handelstag)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probelauf
+  cancel-in-progress: false
 
 jobs:
-  test:
+  probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Bert 2.0 mit echten Kursen von heute (ohne Orders)
+        with:
+          ref: main
+      - name: Probelauf (ohne Orders)
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python3 -u trockenlauf.py
+          DATUM: ${{ inputs.datum }}
+        run: python3 -u trockenlauf.py "$DATUM"
+      - name: Speichern
+        run: |
+          git config user.name "boersen-bert"
+          git config user.email "boersen-bert@users.noreply.github.com"
+          git add data/trockenlauf
+          if git diff --cached --quiet; then echo "Nichts Neues."; exit 0; fi
+          git commit -m "Probelauf Bert 2.0: $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 10))
+          done
+          exit 1
