@@ -1,7 +1,7 @@
 {
  "datum": "2026-11-25",
- "vollstaendig": false,
- "stand_kerze_ny": "14:25",
+ "vollstaendig": true,
+ "stand_kerze_ny": "15:55",
  "hinweis": "PROBELAUF – keine echten Trades. So hätte Bert 2.0 nach seinen Regeln (strategie.py) mit den echten Kursen gehandelt. Simulator wie im Backtest (backtest.py), 0,02 % Kursabweichung je Kauf/Verkauf.",
  "trades": [
   {
