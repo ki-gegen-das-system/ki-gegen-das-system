@@ -37,3 +37,9 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-24 20:56,SPY,VERKAUF,Trend zeigt nach unten (EMA9 unter EMA21),716.06
 2026-11-24 21:31,AAPL,VERKAUF,Börsenschluss naht – Daytrading heißt: alles raus,352.14
 2026-11-24 21:31,TSLA,VERKAUF,Börsenschluss naht – Daytrading heißt: alles raus,383.26
+2026-11-25 18:20,META,KAUF,"4 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 63",597.51
+2026-11-25 18:25,META,SICHERUNG,Verkaufsorder zum Börsenschluss für 4 Stück gesetzt,
+2026-11-25 18:50,AAPL,KAUF,"7 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 60",352.99
+2026-11-25 18:55,AAPL,SICHERUNG,Verkaufsorder zum Börsenschluss für 7 Stück gesetzt,
+2026-11-25 19:05,SPY,KAUF,"3 Stück – Trend dreht nach oben (EMA9 über EMA21), RSI 57",711.18
+2026-11-25 19:11,SPY,SICHERUNG,Verkaufsorder zum Börsenschluss für 3 Stück gesetzt,

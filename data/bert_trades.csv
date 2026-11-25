@@ -25,3 +25,6 @@ zeit,symbol,aktion,stueck,preis_usd,gewinn_usd,gewinn_prozent
 2026-11-24 21:31,AAPL,Verkauf,1,352.12,0.15,0.04
 2026-11-24 21:31,TSLA,Verkauf,5,383.18,-4.85,-0.25
 2026-11-24 21:31,AAPL,Verkauf,6,352.11,0.80,0.04
+2026-11-25 18:20,META,Kauf,4,597.35,,
+2026-11-25 18:50,AAPL,Kauf,7,353.31,,
+2026-11-25 19:06,SPY,Kauf,3,712.33,,
