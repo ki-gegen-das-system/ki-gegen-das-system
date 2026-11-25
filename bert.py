@@ -274,7 +274,7 @@ def book_fill(state, lots, sym, side, qty, price, t):
         if info and not info.get("manuell"):   # von Alpaca geschlossen: Stop-Loss oder Gewinnziel
             grund = "Stop-Loss" if abs(price - info["stop"]) <= abs(price - info["ziel"]) else "Gewinnziel"
             log(t, sym, "EINDECKEN" if direction < 0 else "VERKAUF",
-                f"{grund} bei {price:.2f} ({pnl:+.2f} $)", price)
+                f"{grund} bei {price:.2f} ({pnl:+.2f} $)".replace(".", ","), price)
         if abs(lot["qty"]) <= 1e-9:
             lots.pop(sym, None)
             state.get("opened", {}).pop(sym, None)
@@ -401,7 +401,7 @@ def place_v2(sym, side, b, pts, now, state, today):
     stop, target, risk, qty = strategie.plan(side, entry, b)
     long = side == "long"
     if qty < 1:
-        log(now, sym, "AUSGELASSEN", "Checkliste erfüllt, aber Aktie zu teuer für 50 $ Risiko", entry)
+        log(now, sym, "AUSGELASSEN", "Checkliste erfüllt, aber Stop zu weit weg für 50 $ Risiko", entry)
         return False
     body = {"symbol": sym, "qty": str(qty), "side": "buy" if long else "sell", "type": "market",
             "time_in_force": "gtc", "order_class": "bracket",
@@ -420,12 +420,10 @@ def place_v2(sym, side, b, pts, now, state, today):
     if not ok:
         log(now, sym, "FEHLER", f"{'Kauf' if long else 'Short'} von Alpaca abgelehnt", entry)
         return False
-    vol = next((txt for k, _, txt in pts if k == "volumen"), "")
-    rsi = next((txt for k, _, txt in pts if k == "rsi"), "")
     log(now, sym, "KAUF" if long else "SHORT",
-        f"{qty} Stück – Checkliste 5/5: {'Ausbruch nach oben' if long else 'Ausbruch nach unten'}, "
-        f"{vol.replace('Volumen ', 'Vol. ')}, {rsi}", entry)
-    log(now, sym, "SCHUTZ", f"Stop {stop:.2f} · Ziel {target:.2f} · Risiko {qty * risk:.0f} $", entry)
+        f"Checkliste 5/5 · {qty} Stück · Ausbruch {'nach oben' if long else 'nach unten'}", entry)
+    log(now, sym, "SCHUTZ", f"Stop {strategie.de(stop)} · Ziel {strategie.de(target)} · "
+                            f"Risiko {qty * risk:.0f} $", entry)
     state.setdefault("v2_info", {})[sym] = {"seite": side, "stop": round(stop, 2), "ziel": round(target, 2),
                                            "tag": today, "risiko": round(qty * risk, 2)}
     state.setdefault("opened", {})[sym] = today
@@ -485,7 +483,7 @@ def main_v2(state, account, positions, equity, now, minutes_left):
             call("DELETE", API, "/v2/positions", {"cancel_orders": "true"})
             for sym, p in positions.items():
                 log(now, sym, "EINDECKEN" if float(p["qty"]) < 0 else "VERKAUF",
-                    "21:45 Uhr – Daytrading heißt: alles schließen", float(p["current_price"]))
+                    "Börsenschluss naht – alles schließen (Daytrading)", float(p["current_price"]))
         else:
             cancel_open_orders()
         return True
@@ -496,7 +494,7 @@ def main_v2(state, account, positions, equity, now, minutes_left):
         return True
     if day_pnl <= V2["day_loss_limit"]:
         if not state.get("tageslimit_gemeldet"):
-            log(now, "-", "TAGESLIMIT", f"Heute {day_pnl:.2f} $ – keine neuen Trades mehr")
+            log(now, "-", "TAGESLIMIT", f"Heute {day_pnl:.2f} $ – keine neuen Trades mehr".replace(".", ","))
             state["tageslimit_gemeldet"] = True
         return True
     open_orders = call("GET", API, "/v2/orders", {"status": "open", "limit": 500}) or []

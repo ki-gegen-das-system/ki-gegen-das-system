@@ -25,7 +25,16 @@ Szenen-Typen (Feld "typ"):
   text    – freie Textfolie:            "titel", "zeilen": [..], optional "titel_farbe";
             eine Zeile darf auch {"text": "..", "farbe": "rot|gruen|blau|gelb|orange|grau"} sein
   woche   – Chart über mehrere Tage:    "symbol", "von", "bis" (JJJJ-MM-TT), z. B. Wochenrückblick
-  bilanz  – alle abgeschlossenen Trades des Tages mit Ergebnis: optional "datum", "titel"
+  bilanz  – alle abgeschlossenen Trades des Tages mit Ergebnis: optional "datum", "titel",
+            "quelle": "trockenlauf" (Probelauf aus data/trockenlauf/ statt echter Trades)
+  checkliste – Berts 5-Punkte-Check (Bert 2.0) aus data/bert_checkliste.csv: "symbol", optional "datum",
+            "zeit" (HH:MM, deutsche Zeit), "welche": "trade" (Standard: der Trade) oder "knapp" (beste NICHT
+            erfüllte Checkliste, z. B. 4/5), "titel", "quelle": "trockenlauf" (mit Hinweis PROBELAUF);
+            oder von Hand (nur echte Werte!): "punkte": [{"text": "Ausbruch", "ok": true, "detail": ".."}],
+            "unterzeile", "ergebnis"
+  (chart ab Bert 2.0: zeigt automatisch die Spanne der ersten 30 Min. (Kasten) und den Tagesdurchschnitt
+   (lila); "bert2": true/false erzwingt das. "pfeile": false = keine Trade-Pfeile, "trockenlauf" = Pfeile aus
+   dem Probelauf (data/trockenlauf/, Hinweis PROBELAUF). Pfeile: KAUF/EINDECKEN grün unten, VERKAUF/SHORT rot oben)
   (trades: optional auch "symbol", "aktionen": ["KAUF", "VERKAUF"], "ergebnis": "summe")
   nachrechnung – „Was wäre, wenn …?":   "von", "bis", optional "titel"
             (liest data/nachrechnung/bert_<von>_bis_<bis>.csv aus nachrechnung.py – KEINE echten Trades)
@@ -63,6 +72,10 @@ GREEN = (46, 229, 157)
 RED = (255, 77, 94)
 YELLOW = (255, 210, 63)
 ORANGE = (255, 159, 67)
+PURPLE = (190, 125, 255)    # Tagesdurchschnitt (VWAP), Bert 2.0
+V2_START = "2026-11-26"     # ab diesem US-Handelstag handelt Bert 2.0 (erster echter Tag: 27.11.)
+OPENING = {"Kauf", "Short"}         # eröffnet eine Position
+BUYS = {"Kauf", "Eindecken"}        # Kauf-Richtung (grüner Pfeil von unten)
 
 TOP = 390          # Inhalt beginnt hier
 BOTTOM = 1215      # ... und endet hier (darunter Untertitel, ganz unten TikTok-Beschreibung)
@@ -217,6 +230,24 @@ def trades_on(day, symbol=None):
     return out
 
 
+def trade_rows(day, symbol=None, quelle=None):
+    """Trades des Tages: echt (bert_trades.csv) oder aus dem Probelauf (data/trockenlauf/<Tag>_trades.csv)."""
+    if quelle == "trockenlauf":
+        rows = read_csv(os.path.join("trockenlauf", f"{day}_trades.csv"))
+        return [r for r in rows if r["zeit"].startswith(day) and (symbol is None or r["symbol"] == symbol)]
+    return trades_on(day, symbol)
+
+
+def vwap15(k):
+    """Notlösung, falls die Chartdatei noch keinen Tagesdurchschnitt hat: VWAP aus den 15-Min-Kerzen."""
+    out, pv, vv = [], 0.0, 0.0
+    for _, o, h, l, c, v in k:
+        pv += (h + l + c) / 3 * v
+        vv += v
+        out.append(pv / vv if vv else c)
+    return out
+
+
 def equity_rows(day=None):
     rows = read_csv("bert_kontostand.csv")
     return [r for r in rows if day is None or r["zeit"].startswith(day)]
@@ -280,16 +311,29 @@ class Hook(Scene):
 
 
 class Chart(Scene):
+    vwap = spanne = None    # Standard (z. B. für die Wochen-Ansicht): ohne Bert-2.0-Linien
+    probe = v2 = False
+
     def prepare(self, dur):
         super().prepare(dur)
         self.sym = self.s["symbol"]
         day = chart_day(self.day)
         d = day["symbole"][self.sym]
         self.k, self.e9, self.e21 = d["kerzen"], d["ema9"], d["ema21"]
-        self.trades = trades_on(self.day, self.sym)
+        pf = self.s.get("pfeile", True)
+        self.probe = pf == "trockenlauf"
+        self.trades = [] if pf is False else trade_rows(self.day, self.sym, "trockenlauf" if self.probe else None)
+        self.v2 = bool(self.s.get("bert2", self.day >= V2_START))
+        self.vwap, self.spanne = None, None
+        if self.v2:
+            self.vwap = d.get("vwap") or vwap15(self.k)
+            self.spanne = d.get("spanne")
+            if not self.spanne and len(self.k) > 2 and self.k[0][0] == "15:30" and self.k[1][0] == "15:45":
+                self.spanne = [min(x[3] for x in self.k[:2]), max(x[2] for x in self.k[:2])]
+        extra = [v for v in (self.vwap or []) if v is not None] + list(self.spanne or [])
         lows = [x[3] for x in self.k] + [float(t["preis_usd"]) for t in self.trades]
         highs = [x[2] for x in self.k] + [float(t["preis_usd"]) for t in self.trades]
-        lo, hi = min(lows + self.e21 + self.e9), max(highs + self.e21 + self.e9)
+        lo, hi = min(lows + self.e21 + self.e9 + extra), max(highs + self.e21 + self.e9 + extra)
         pad = (hi - lo) * 0.08
         self.lo, self.hi = lo - pad, hi + pad
         self.box = (90, 565, 900, 1095)  # Plotbereich (rechts Preisachse)
@@ -317,9 +361,31 @@ class Chart(Scene):
         T(st, NAMES.get(self.sym, ""), 34, GREY, 90 + font(BLACK, 56).getlength(self.sym) + 20, 470, SEMI, anchor="l")
         T(st, pct(ch), 40, GREEN if ch >= 0 else RED, 990, 465, BLACK, anchor="r")
         T(st, f"{de_date(self.day)} · Schluss {num(last)} $", 28, GREY, 90, 515, SEMI, anchor="l")
-        T(st, "Quelle: Alpaca (IEX)", 24, DIM, 990, 515, SEMI, anchor="r")
-        T(st, "—— schnelle Linie (Ø ~2 Std.)", 26, BLUE, 90, 1170, SEMI, anchor="l")
-        T(st, "—— langsame Linie (Ø ~5 Std.)", 26, YELLOW, 990, 1170, SEMI, anchor="r")
+        if self.probe:
+            T(st, "PROBELAUF · kein echter Trade", 24, ORANGE, 990, 515, SEMI, anchor="r")
+        else:
+            T(st, "Quelle: Alpaca (IEX)", 24, DIM, 990, 515, SEMI, anchor="r")
+        if self.v2:
+            T(st, "—— schnelle Linie", 26, BLUE, 90, 1170, SEMI, anchor="l")
+            T(st, "—— langsame Linie", 26, YELLOW, W / 2 - 10, 1170, SEMI)
+            T(st, "—— Tagesdurchschnitt", 26, PURPLE, 990, 1170, SEMI, anchor="r")
+        else:
+            T(st, "—— schnelle Linie (Ø ~2 Std.)", 26, BLUE, 90, 1170, SEMI, anchor="l")
+            T(st, "—— langsame Linie (Ø ~5 Std.)", 26, YELLOW, 990, 1170, SEMI, anchor="r")
+        if self.spanne:  # Bert 2.0: Spanne der ersten 30 Minuten (= erste zwei 15-Min-Kerzen)
+            lo_s, hi_s = self.spanne
+            step = (x1 - x0) / len(self.k)
+            bx0, bx1 = x0 + 2, x0 + 2 * step
+            ya, yb = self.y(hi_s), self.y(lo_s)
+            lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            dl = ImageDraw.Draw(lay)
+            dl.rectangle((bx0, ya, bx1, yb), fill=ORANGE + (46,), outline=ORANGE + (210,), width=2)
+            for yy in (ya, yb):
+                for xx in range(int(bx1), x1, 20):
+                    dl.line([(xx, yy), (min(xx + 10, x1), yy)], fill=ORANGE + (170,), width=2)
+            st.alpha_composite(lay)
+            ty = ya - 20 if ya - 20 > y0 + 12 else yb + 20
+            T(st, "erste 30 Min.", 22, ORANGE, bx0, ty, SEMI, anchor="l")
         for v, label in self.lines:
             y = self.y(v)
             for xx in range(x0, x1, 22):
@@ -342,9 +408,9 @@ class Chart(Scene):
             xi = self.idx_of(tr["zeit"][11:16])
             x = self.box[0] + (self.box[2] - self.box[0]) * (xi + 0.5) / n
             y = self.y(float(tr["preis_usd"]))
-            buy = tr["aktion"] == "Kauf"
+            buy = tr["aktion"] in BUYS
             ly = y + 8 + 33 + 30 if buy else y - 8 - 33 - 30
-            label = f"{'KAUF' if buy else 'VERKAUF'} {num(float(tr['preis_usd']))} $"
+            label = f"{tr['aktion'].upper()} {num(float(tr['preis_usd']))} $"
             wlab = font(BLACK, 30).getlength(label) + 28
             lx = clamp(x - wlab / 2, self.box[0], self.box[2] - wlab)
             box = (lx, ly - 24, lx + wlab, ly + 24)
@@ -396,6 +462,10 @@ class Chart(Scene):
             top, bot = sorted((self.y(o), self.y(c)))
             d.rectangle((x - cw / 2, top, x + cw / 2, max(bot, top + 2)), fill=col + (int(255 * a),))
         m = max(2, min(n, int(reveal + 0.999)))
+        if self.vwap:
+            pts = [(self.x(i), self.y(v)) for i, v in enumerate(self.vwap[:m]) if v is not None]
+            if len(pts) >= 2:
+                d.line(pts, fill=PURPLE + (255,), width=4, joint="curve")
         for vals, col in ((self.e21, YELLOW), (self.e9, BLUE)):
             pts = [(self.x(i), self.y(v)) for i, v in enumerate(vals[:m])]
             d.line(pts, fill=col + (255,), width=5, joint="curve")
@@ -419,7 +489,7 @@ class Chart(Scene):
             a = ease_out(clamp((reveal - xi - 0.5) / 1.2))
             x = self.box[0] + (self.box[2] - self.box[0]) * (xi + 0.5) / n
             y = self.y(float(tr["preis_usd"]))
-            buy = tr["aktion"] == "Kauf"
+            buy = tr["aktion"] in BUYS
             col = GREEN if buy else RED
             dl = ImageDraw.Draw(img)
             s = 22
@@ -434,7 +504,7 @@ class Chart(Scene):
             ok = getattr(self, "label_ok", None)
             if ok is not None and ti < len(ok) and not ok[ti]:
                 continue
-            label = f"{'KAUF' if buy else 'VERKAUF'} {num(float(tr['preis_usd']))} $"
+            label = f"{tr['aktion'].upper()} {num(float(tr['preis_usd']))} $"
             size = 30
             wlab = font(BLACK, size).getlength(label) + 28
             lx = clamp(x - wlab / 2, self.box[0], self.box[2] - wlab)
@@ -450,7 +520,13 @@ class Trades(Scene):
             rows = [r for r in rows if r["symbol"] == self.s["symbol"]]
         if self.s.get("aktionen"):  # optional: z. B. ["KAUF", "VERKAUF"]
             rows = [r for r in rows if r["aktion"] in self.s["aktionen"]]
-        self.rows = rows[-6:]
+        # Platz für die Ergebnis-Zeilen unten lassen (sonst überlappen sie das Logbuch)
+        sells = [x for x in trades_on(self.day, self.s.get("symbol"))
+                 if x["aktion"] in ("Verkauf", "Eindecken") and x.get("gewinn_usd")]
+        max_rows = 4 if sells and self.s.get("ergebnis") != "summe" else 6
+        if len(rows) > max_rows:  # zu voll: Stop/Ziel-Zeilen (SCHUTZ) zuerst weglassen
+            rows = [r for r in rows if r["aktion"] != "SCHUTZ"] or rows
+        self.rows = rows[-max_rows:]
 
     def draw(self, img, f, t):
         appear(img, self.s.get("titel", "Berts Entscheidungen"), 64, WHITE, 450, f, 0.0)
@@ -470,7 +546,8 @@ class Trades(Scene):
             if a <= 0:
                 continue
             akt = r["aktion"]
-            col = GREEN if akt == "KAUF" else RED if akt == "VERKAUF" else YELLOW if akt == "SICHERUNG" else GREY
+            col = {"KAUF": GREEN, "EINDECKEN": GREEN, "VERKAUF": RED, "SHORT": RED, "SICHERUNG": YELLOW,
+                   "SCHUTZ": YELLOW, "TAGESLIMIT": ORANGE}.get(akt, GREY)
             line = f"{r['zeit'][11:16]}  {r['symbol']:<5} {akt}"
             if r.get("preis_usd"):
                 line += f"  {num(float(r['preis_usd']))} $"
@@ -481,8 +558,9 @@ class Trades(Scene):
               y + (50 if big else 42), MONO_REG, a, anchor="l")
             y += 130 if big else 88 if summe else 98
         # Ergebnis abgeschlossener Trades
-        ys = 1010
-        sells = [x for x in trades_on(self.day, self.s.get("symbol")) if x["aktion"] == "Verkauf" and x.get("gewinn_usd")]
+        ys = 1050
+        sells = [x for x in trades_on(self.day, self.s.get("symbol"))
+                 if x["aktion"] in ("Verkauf", "Eindecken") and x.get("gewinn_usd")]
         if self.s.get("ergebnis") == "summe" and sells:  # optional: Summe statt der letzten zwei Verkäufe
             a = ease_out(prog(f, 0.45, 0.1))
             g = sum(float(x["gewinn_usd"]) for x in sells)
@@ -734,34 +812,40 @@ class Bilanz(Scene):
     def prepare(self, dur):
         super().prepare(dur)
         offen, self.rows = {}, []
-        for r in trades_on(self.day):
+        self.probe = self.s.get("quelle") == "trockenlauf"
+        for r in trade_rows(self.day, None, self.s.get("quelle")):
             sym, n = r["symbol"], int(float(r["stueck"]))
-            o = offen.setdefault(sym, {"start": r["zeit"][11:16], "stueck": 0, "gewinn": 0.0})
-            if r["aktion"] == "Kauf":
+            o = offen.setdefault(sym, {"start": r["zeit"][11:16], "stueck": 0, "gewinn": 0.0, "short": False})
+            if r["aktion"] in OPENING:
                 if o["stueck"] == 0:
-                    o.update(start=r["zeit"][11:16], gewinn=0.0)
+                    o.update(start=r["zeit"][11:16], gewinn=0.0, short=r["aktion"] == "Short")
                 o["stueck"] += n
             else:
                 o["stueck"] -= n
                 o["gewinn"] += float(r["gewinn_usd"] or 0)
                 if o["stueck"] <= 0:
-                    self.rows.append((o["start"], r["zeit"][11:16], sym, o["gewinn"]))
-                    o.update(stueck=0, gewinn=0.0)
+                    self.rows.append((o["start"], r["zeit"][11:16], sym, o["gewinn"], o["short"]))
+                    o.update(stueck=0, gewinn=0.0, short=False)
         self.rows.sort()
 
     def draw(self, img, f, t):
         titel = self.s.get("titel", f"Alle {len(self.rows)} Trades heute")
         appear(img, titel, fit(titel, BLACK, 64, 940), WHITE, 450, f, 0.0)
         panel(img, (60, 520, 1020, 1200), fill=(6, 8, 15))
-        T(img, "data/bert_trades.csv", 24, DIM, 990, 555, MONO_REG, anchor="r")
+        if self.probe:
+            T(img, "PROBELAUF · data/trockenlauf/", 24, ORANGE, 990, 555, MONO_REG, anchor="r")
+        else:
+            T(img, "data/bert_trades.csv", 24, DIM, 990, 555, MONO_REG, anchor="r")
         n = max(1, len(self.rows))
         step = min(62, 470 / n)
         y = 615
-        for i, (von, bis, sym, g) in enumerate(self.rows):
+        for i, (von, bis, sym, g, short) in enumerate(self.rows):
             a = ease_out(prog(f, 0.06 + i * 0.05, 0.06))
             if a > 0:
                 col = GREEN if g > 0 else RED if g < 0 else GREY
                 T(img, f"{von}–{bis}  {NAMES.get(sym, sym).split(' (')[0]:<9}", 36, WHITE, 100, y, MONO, a, anchor="l")
+                if short:
+                    T(img, "SHORT", 24, RED, 590, y, MONO, a, anchor="l")
                 T(img, signed(g, 2, " $"), 40, col, 985, y, MONO, a, anchor="r")
             y += step
         a = ease_out(prog(f, 0.06 + n * 0.05 + 0.05, 0.08))
@@ -771,6 +855,88 @@ class Bilanz(Scene):
             ImageDraw.Draw(img).line([(100, y - 22), (985, y - 22)], fill=LINE + (255,), width=2)
             T(img, f"{plus}× Plus · {len(self.rows) - plus}× Minus", 36, GREY, 100, y + 30, BOLD, a, anchor="l")
             T(img, signed(tot, 2, " $"), 52, GREEN if tot >= 0 else RED, 985, y + 30, BLACK, a, anchor="r")
+
+
+CHECK_LABELS = [("markt", "Markt-Ampel"), ("ausbruch", "Ausbruch"), ("volumen", "Volumen"), ("trend", "Trend"),
+                ("rsi", "Nicht überhitzt (RSI)")]
+
+
+class Checkliste(Scene):
+    """Berts 5-Punkte-Check (Bert 2.0) aus data/bert_checkliste.csv – oder von Hand mit echten Werten."""
+
+    def prepare(self, dur):
+        super().prepare(dur)
+        self.probe = self.s.get("quelle") == "trockenlauf"
+        self.titel = self.s.get("titel", "Berts Checkliste")
+        if self.s.get("punkte"):
+            self.points = [(p.get("text", ""), bool(p.get("ok")), p.get("detail", "")) for p in self.s["punkte"]]
+            self.kopf = self.s.get("unterzeile", "")
+            self.ergebnis = self.s.get("ergebnis", "")
+            self.erg_col = GREEN if all(ok for _, ok, _ in self.points) else YELLOW
+            return
+        name = os.path.join("trockenlauf", f"{self.day}_checkliste.csv") if self.probe else "bert_checkliste.csv"
+        rows = [r for r in read_csv(name) if r["zeit"].startswith(self.day)]
+        if self.s.get("symbol"):
+            rows = [r for r in rows if r["symbol"] == self.s["symbol"]]
+        if self.s.get("zeit"):
+            rows = [r for r in rows if r["zeit"][11:16] == self.s["zeit"]]
+        if self.s.get("welche") == "knapp":
+            cand = [r for r in rows if "kein Trade" in r["entscheidung"]]
+            cand.sort(key=lambda r: -int(r["erfuellt"] or 0))
+        else:
+            cand = [r for r in rows if r["entscheidung"] in ("KAUF", "SHORT")] or rows
+        if not cand:
+            raise SystemExit(f"Keine passende Checkliste in data/{name} für {self.day} {self.s.get('symbol', '')}")
+        row = cand[0]
+        details = row["details"].split(" | ")
+        self.points = [(label, row[key] == "ja", details[i] if i < len(details) else "")
+                       for i, (key, label) in enumerate(CHECK_LABELS)]
+        sym = row["symbol"]
+        seite = "Kauf" if row["seite"] == "long" else "Short"
+        self.kopf = f"{NAMES.get(sym, sym).split(' (')[0]} · {row['zeit'][11:16]} Uhr · Check für {seite}"
+        n_ok = int(row["erfuellt"] or 0)
+        if row["entscheidung"] in ("KAUF", "SHORT"):
+            self.ergebnis = f"5 von 5 → {'Bert kauft' if row['entscheidung'] == 'KAUF' else 'Bert shortet'}"
+            if self.probe:
+                self.ergebnis = f"5 von 5 → hätte {'gekauft' if row['entscheidung'] == 'KAUF' else 'geshortet'}"
+            self.erg_col = GREEN
+        elif row["entscheidung"].startswith("erfüllt"):
+            self.ergebnis = "5 von 5 – " + row["entscheidung"].split("– ", 1)[-1]
+            self.erg_col = GREY
+        else:
+            self.ergebnis = f"{n_ok} von 5 → kein Trade"
+            self.erg_col = YELLOW
+
+    def draw(self, img, f, t):
+        appear(img, self.titel, fit(self.titel, BLACK, 64, 940), WHITE, 450, f, 0.0)
+        if self.kopf:
+            appear(img, self.kopf, fit(self.kopf, SEMI, 34, 940), GREY, 515, f, 0.03, SEMI)
+        if self.probe:
+            appear(img, "PROBELAUF · kein echter Trade", 26, ORANGE, 557, f, 0.05, SEMI)
+        panel(img, (60, 590, 1020, 1205), fill=(6, 8, 15))
+        lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(lay)
+        y = 650
+        for i, (label, ok, detail) in enumerate(self.points):
+            a = ease_out(prog(f, 0.08 + i * 0.1, 0.08))
+            if a > 0:
+                x, yc, r = 132, y + 20, 30 * (0.7 + 0.3 * ease_back(clamp(a)))
+                col = (GREEN if ok else RED) + (int(255 * a),)
+                d.ellipse((x - r, yc - r, x + r, yc + r), fill=col)
+                w = WHITE + (int(255 * a),)
+                if ok:
+                    d.line([(x - 14, yc + 1), (x - 4, yc + 12), (x + 15, yc - 11)], fill=w, width=7, joint="curve")
+                else:
+                    d.line([(x - 11, yc - 11), (x + 11, yc + 11)], fill=w, width=7)
+                    d.line([(x - 11, yc + 11), (x + 11, yc - 11)], fill=w, width=7)
+                T(img, label, fit(label, BOLD, 44, 790), WHITE, 195, y, BOLD, a, anchor="l")
+                if detail:
+                    T(img, detail, fit(detail, SEMI, 30, 790), GREEN if ok else RED, 195, y + 44, SEMI, a, anchor="l")
+            y += 104
+        img.alpha_composite(lay)
+        a = ease_out(prog(f, 0.12 + len(self.points) * 0.1, 0.08))
+        if a > 0 and self.ergebnis:
+            T(img, self.ergebnis, fit(self.ergebnis, BLACK, 50, 900), self.erg_col, W / 2, 1160, BLACK, a)
 
 
 class Woche(Chart):
@@ -873,7 +1039,7 @@ class Nachrechnung(Scene):
 TYPES = {"hook": Hook, "chart": Chart, "trades": Trades, "konto": Konto, "kurt": Kurt, "tipps": Tipps,
          "value": Value,
          "update": Update, "stand": Stand, "frage": Frage, "text": Text, "woche": Woche,
-         "nachrechnung": Nachrechnung, "bilanz": Bilanz}
+         "nachrechnung": Nachrechnung, "bilanz": Bilanz, "checkliste": Checkliste}
 
 
 # ------------------------------------------------------------------ Untertitel
