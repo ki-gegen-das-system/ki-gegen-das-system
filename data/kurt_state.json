@@ -110,7 +110,13 @@
     "3c6175802b9110c0abdb30f491965093",
     "9f2cd85ad777bea9550b987dc409b280",
     "1abbe02767589722b5de92e94e96429d",
-    "491426b0dae5aecf2b92525815131cb2"
+    "491426b0dae5aecf2b92525815131cb2",
+    "c99772cba1418e72f2eded26e4afeb59",
+    "f128c19fa7af43e30dbe3c373e7bc27e",
+    "f96c1137c9d3f7e2e691275a2988fa1d",
+    "aaa86a483888836242da663a46957894",
+    "12002f6f804a122db48271ff05be03c0",
+    "e9a1243fbfbc6f58d0e0522eb07ea9a1"
   ],
   "kandidaten": {
     "698f4a7967ead89e10205a68ceb4bda4": {
@@ -783,6 +789,72 @@
       "quote": 4.15,
       "fair": 0.2382245938154187,
       "value": 0.9886320643339876
+    },
+    "c99772cba1418e72f2eded26e4afeb59": {
+      "liga": "La Liga",
+      "liga_key": "soccer_spain_la_liga",
+      "heim": "Real Madrid",
+      "gast": "Alavés",
+      "anstoss": "2026-11-28T20:00:00Z",
+      "tipp": "Real Madrid",
+      "quote": 1.15,
+      "fair": 0.8393374678219262,
+      "value": 0.965238087995215
+    },
+    "f128c19fa7af43e30dbe3c373e7bc27e": {
+      "liga": "Serie A",
+      "liga_key": "soccer_italy_serie_a",
+      "heim": "Inter Milan",
+      "gast": "Genoa",
+      "anstoss": "2026-11-28T19:45:00Z",
+      "tipp": "Draw",
+      "quote": 5.82,
+      "fair": 0.17396817269444664,
+      "value": 1.0124947650816796
+    },
+    "f96c1137c9d3f7e2e691275a2988fa1d": {
+      "liga": "Ligue 1",
+      "liga_key": "soccer_france_ligue_one",
+      "heim": "Le Havre",
+      "gast": "Strasbourg",
+      "anstoss": "2026-11-28T19:45:00Z",
+      "tipp": "Draw",
+      "quote": 3.8,
+      "fair": 0.26489671511893664,
+      "value": 1.006607517451959
+    },
+    "aaa86a483888836242da663a46957894": {
+      "liga": "Ligue 1",
+      "liga_key": "soccer_france_ligue_one",
+      "heim": "Le Mans FC",
+      "gast": "Lille",
+      "anstoss": "2026-11-28T19:45:00Z",
+      "tipp": "Le Mans FC",
+      "quote": 3.95,
+      "fair": 0.25425880624984154,
+      "value": 1.0043222846868742
+    },
+    "12002f6f804a122db48271ff05be03c0": {
+      "liga": "Ligue 1",
+      "liga_key": "soccer_france_ligue_one",
+      "heim": "Paris Saint Germain",
+      "gast": "Lorient",
+      "anstoss": "2026-11-28T19:45:00Z",
+      "tipp": "Paris Saint Germain",
+      "quote": 1.24,
+      "fair": 0.7842311357367264,
+      "value": 0.9724466083135408
+    },
+    "e9a1243fbfbc6f58d0e0522eb07ea9a1": {
+      "liga": "Ligue 1",
+      "liga_key": "soccer_france_ligue_one",
+      "heim": "Nice",
+      "gast": "Troyes",
+      "anstoss": "2026-11-28T19:45:00Z",
+      "tipp": "Troyes",
+      "quote": 5.15,
+      "fair": 0.19662518045004607,
+      "value": 1.0126196793177373
     }
   },
   "notfall_wochenenden": [
