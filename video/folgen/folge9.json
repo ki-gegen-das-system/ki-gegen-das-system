@@ -1,0 +1,139 @@
+{
+ "folge": 9,
+ "titel": "PAUSE · 26.11.",
+ "datum": "2026-11-26",
+ "szenen": [
+  {
+   "typ": "hook",
+   "gross": "~150",
+   "farbe": "gelb",
+   "symbol": "AAPL",
+   "datum": "2026-11-25",
+   "zeilen": [
+    "Strategien getestet.",
+    "Mit echten Kursen."
+   ],
+   "sprecher": [
+    {
+     "sag": "Rund hundertfünfzig Strategien getestet, mit echten Kursen. Das Ergebnis ist unbequem.",
+     "zeig": "Rund 150 Strategien getestet, mit echten Kursen. Das Ergebnis ist unbequem."
+    }
+   ]
+  },
+  {
+   "typ": "chart",
+   "symbol": "AAPL",
+   "datum": "2026-11-25",
+   "bert2": true,
+   "pfeile": "trockenlauf",
+   "sprecher": [
+    {
+     "sag": "Heute ist die US-Börse zu. Ab Freitag handelt Bert zwei Punkt null.",
+     "zeig": "Heute ist die US-Börse zu. Ab Freitag handelt Bert 2.0."
+    },
+    {
+     "sag": "Der Kasten zeigt die ersten dreißig Minuten, die lila Linie den Tagesdurchschnitt.",
+     "zeig": "Der Kasten zeigt die ersten 30 Minuten, die lila Linie den Tagesdurchschnitt."
+    },
+    {
+     "sag": "Probelauf mit Apple vom Mittwoch: Um sechzehn Uhr zwanzig fällt der Kurs unter den Kasten.",
+     "zeig": "Probelauf mit Apple vom Mittwoch: Um 16:20 Uhr fällt der Kurs unter den Kasten."
+    },
+    "Bert hätte geshortet: Aktie leihen, verkaufen, später billiger zurückkaufen."
+   ]
+  },
+  {
+   "typ": "checkliste",
+   "quelle": "trockenlauf",
+   "symbol": "AAPL",
+   "datum": "2026-11-25",
+   "sprecher": [
+    {
+     "sag": "Alle fünf Punkte passten. Aber Apple stieg wieder. Stop-Loss, minus neun Dollar neunundsechzig.",
+     "zeig": "Alle 5 Punkte passten. Aber Apple stieg wieder. Stop-Loss, −9,69 Dollar."
+    },
+    "Nur ein Probelauf, kein echter Trade."
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Die große Strategie-Suche",
+   "zeilen": [
+    "Rund 150 Varianten · echte Kurse",
+    "Regeln vorher festgelegt",
+    "2024–2026 weggesperrt für den Endtest",
+    {"text": "Fast alle durchgefallen: Kosten fressen den Gewinn", "farbe": "rot"},
+    {"text": "Auch die Ausbruch-Idee hinter Bert 2.0", "farbe": "rot"}
+   ],
+   "sprecher": [
+    "Fair getestet: Regeln vorher festgelegt, drei Jahre Daten weggesperrt.",
+    "Fast alles fiel durch. Meist fressen die Kosten den Gewinn.",
+    {
+     "sag": "Auch die Ausbruch-Idee hinter Bert zwei Punkt null.",
+     "zeig": "Auch die Ausbruch-Idee hinter Bert 2.0."
+    }
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Endtest 2024–2026",
+   "zeilen": [
+    "Nur eine blieb knapp im Plus:",
+    "Rauschzone · S&P 500 + Nasdaq 100",
+    {"text": "+1.616 $ auf 10.000 $ in fast 3 Jahren", "farbe": "gruen"},
+    {"text": "S&P 500 einfach halten: +51 %", "farbe": "gelb"},
+    {"text": "Gleiche Regel, Berts 8 Aktien: −2.085 $", "farbe": "rot"}
+   ],
+   "sprecher": [
+    {
+     "sag": "Im Endtest blieb nur eine knapp im Plus: rund sechzehnhundert Dollar in fast drei Jahren.",
+     "zeig": "Im Endtest blieb nur eine knapp im Plus: +1.616 Dollar in fast 3 Jahren."
+    },
+    {
+     "sag": "Den S&P fünfhundert einfach halten brachte einundfünfzig Prozent.",
+     "zeig": "Den S&P 500 einfach halten brachte +51 %."
+    },
+    "Trotzdem testen wir die Idee bald live. Bert bekommt Konkurrenz."
+   ]
+  },
+  {
+   "typ": "text",
+   "titel": "Kurt heute Abend",
+   "titel_farbe": "gruen",
+   "zeilen": [
+    "36 Europapokal-Spiele geprüft",
+    {"text": "15× Value – jedes Mal beim Außenseiter", "farbe": "orange"},
+    "Quoten 6,50 bis 24,00 → zu riskant",
+    {"text": "Kein Tipp", "farbe": "grau"},
+    "Rayo Vallecano läuft am Samstag"
+   ],
+   "sprecher": [
+    {
+     "sag": "Kurt prüft heute Abend sechsunddreißig Europapokal-Spiele. Fünfzehnmal Value, aber immer beim Außenseiter.",
+     "zeig": "Kurt prüft heute Abend 36 Europapokal-Spiele. 15-mal Value, aber immer beim Außenseiter."
+    },
+    "Zu riskant, kein Tipp. Sein Rayo-Tipp läuft am Samstag."
+   ]
+  },
+  {
+   "typ": "stand",
+   "sprecher": [
+    "Zwischenstand: Bert knapp vorne."
+   ]
+  },
+  {
+   "typ": "frage",
+   "zeilen": [
+    "Freitag: Bert 2.0 live.",
+    "Kann er echt, was er",
+    "im Test nicht konnte?"
+   ],
+   "sprecher": [
+    {
+     "sag": "Freitag ist Bert zwei Punkt null live. Kann er echt, was er im Test nicht konnte?",
+     "zeig": "Freitag ist Bert 2.0 live. Kann er echt, was er im Test nicht konnte?"
+    }
+   ]
+  }
+ ]
+}

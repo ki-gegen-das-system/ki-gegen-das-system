@@ -1,0 +1,18 @@
+# folge9 – automatisch aus video/folgen/folge9.json erzeugt
+s1|Rund hundertfünfzig Strategien getestet, mit echten Kursen. Das Ergebnis ist unbequem.
+s2|Heute ist die US-Börse zu. Ab Freitag handelt Bert zwei Punkt null.
+s2|Der Kasten zeigt die ersten dreißig Minuten, die lila Linie den Tagesdurchschnitt.
+s2|Probelauf mit Apple vom Mittwoch: Um sechzehn Uhr zwanzig fällt der Kurs unter den Kasten.
+s2|Bert hätte geshortet: Aktie leihen, verkaufen, später billiger zurückkaufen.
+s3|Alle fünf Punkte passten. Aber Apple stieg wieder. Stop-Loss, minus neun Dollar neunundsechzig.
+s3|Nur ein Probelauf, kein echter Trade.
+s4|Fair getestet: Regeln vorher festgelegt, drei Jahre Daten weggesperrt.
+s4|Fast alles fiel durch. Meist fressen die Kosten den Gewinn.
+s4|Auch die Ausbruch-Idee hinter Bert zwei Punkt null.
+s5|Im Endtest blieb nur eine knapp im Plus: rund sechzehnhundert Dollar in fast drei Jahren.
+s5|Den S&P fünfhundert einfach halten brachte einundfünfzig Prozent.
+s5|Trotzdem testen wir die Idee bald live. Bert bekommt Konkurrenz.
+s6|Kurt prüft heute Abend sechsunddreißig Europapokal-Spiele. Fünfzehnmal Value, aber immer beim Außenseiter.
+s6|Zu riskant, kein Tipp. Sein Rayo-Tipp läuft am Samstag.
+s7|Zwischenstand: Bert knapp vorne.
+s8|Freitag ist Bert zwei Punkt null live. Kann er echt, was er im Test nicht konnte?
