@@ -51,8 +51,7 @@
     {
      "sag": "Alle fünf Punkte passten. Aber Apple stieg wieder. Stop-Loss, minus neun Dollar neunundsechzig.",
      "zeig": "Alle 5 Punkte passten. Aber Apple stieg wieder. Stop-Loss, −9,69 Dollar."
-    },
-    "Nur ein Probelauf, kein echter Trade."
+    }
    ]
   },
   {
@@ -62,11 +61,16 @@
     "Rund 150 Varianten · echte Kurse",
     "Regeln vorher festgelegt",
     "2024–2026 weggesperrt für den Endtest",
-    {"text": "Fast alle durchgefallen: Kosten fressen den Gewinn", "farbe": "rot"},
-    {"text": "Auch die Ausbruch-Idee hinter Bert 2.0", "farbe": "rot"}
+    {
+     "text": "Fast alle durchgefallen: Kosten fressen den Gewinn",
+     "farbe": "rot"
+    },
+    {
+     "text": "Auch die Ausbruch-Idee hinter Bert 2.0",
+     "farbe": "rot"
+    }
    ],
    "sprecher": [
-    "Fair getestet: Regeln vorher festgelegt, drei Jahre Daten weggesperrt.",
     "Fast alles fiel durch. Meist fressen die Kosten den Gewinn.",
     {
      "sag": "Auch die Ausbruch-Idee hinter Bert zwei Punkt null.",
@@ -80,9 +84,18 @@
    "zeilen": [
     "Nur eine blieb knapp im Plus:",
     "Rauschzone · S&P 500 + Nasdaq 100",
-    {"text": "+1.616 $ auf 10.000 $ in fast 3 Jahren", "farbe": "gruen"},
-    {"text": "S&P 500 einfach halten: +51 %", "farbe": "gelb"},
-    {"text": "Gleiche Regel, Berts 8 Aktien: −2.085 $", "farbe": "rot"}
+    {
+     "text": "+1.616 $ auf 10.000 $ in fast 3 Jahren",
+     "farbe": "gruen"
+    },
+    {
+     "text": "S&P 500 einfach halten: +51 %",
+     "farbe": "gelb"
+    },
+    {
+     "text": "Gleiche Regel, Berts 8 Aktien: −2.085 $",
+     "farbe": "rot"
+    }
    ],
    "sprecher": [
     {
@@ -92,8 +105,7 @@
     {
      "sag": "Den S&P fünfhundert einfach halten brachte einundfünfzig Prozent.",
      "zeig": "Den S&P 500 einfach halten brachte +51 %."
-    },
-    "Trotzdem testen wir die Idee bald live. Bert bekommt Konkurrenz."
+    }
    ]
   },
   {
@@ -102,17 +114,22 @@
    "titel_farbe": "gruen",
    "zeilen": [
     "36 Europapokal-Spiele geprüft",
-    {"text": "15× Value – jedes Mal beim Außenseiter", "farbe": "orange"},
+    {
+     "text": "15× Value – jedes Mal beim Außenseiter",
+     "farbe": "orange"
+    },
     "Quoten 6,50 bis 24,00 → zu riskant",
-    {"text": "Kein Tipp", "farbe": "grau"},
+    {
+     "text": "Kein Tipp",
+     "farbe": "grau"
+    },
     "Rayo Vallecano läuft am Samstag"
    ],
    "sprecher": [
     {
      "sag": "Kurt prüft heute Abend sechsunddreißig Europapokal-Spiele. Fünfzehnmal Value, aber immer beim Außenseiter.",
      "zeig": "Kurt prüft heute Abend 36 Europapokal-Spiele. 15-mal Value, aber immer beim Außenseiter."
-    },
-    "Zu riskant, kein Tipp. Sein Rayo-Tipp läuft am Samstag."
+    }
    ]
   },
   {

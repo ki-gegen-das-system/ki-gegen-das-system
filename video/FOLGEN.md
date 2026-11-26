@@ -10,6 +10,7 @@
 | 6 | 23.11. | Hook +20,53 $ (Berts erster Gewinn) vs. Kurts erster Tipp −100 €. Bert 15:31 Kaufsignal Apple (frische Kreuzung, RSI 57), gekauft 6 à 348,13 $ + 1 à 346,30 $ (Order in 2 Teilen). Andere 7 Aktien: Blau lag schon vorbörslich über Gelb → keine frische Kreuzung. Blau den ganzen Tag über Gelb → gehalten, 21:34 Verkauf 7 à 350,80 $ (Börsenschluss-Regel) = +20,53 $ (+0,84 %). Ehrlicher Fehler: Schlusskurs-Sicherung (Update #1) von Alpaca abgelehnt („potential wash trade“, weil der Kauf noch nicht ganz ausgeführt war) – kein Schaden, Bert war wach. 16:40 kurz über 10.000 $ (10.001,42). **Update #4 geprüft**: 15:31 wach („wartet auf den Start“ im Log) ✓, nichts verloren ✓, aber 1 Lücke 17:45–18:03 (18 Min., GitHub-Start zu spät; nichts verpasst). Kurt: Liverpool – Man United 4:0 → Tipp verloren −100 €; Value nur im Schnitt (faire Chance war 23 %). Satz „andere 7 Aktien: Kreuzung schon vorbörslich“ wegen Länge gestrichen. 72,2 Sek. | Bert 9.989,32 $ (−0,11 %) · Kurt 9.900 € (−1,00 %) → Bert führt | Bert fehlen 10,68 $ bis zur Null – schafft er das morgen? |
 | 7 | 24.11. | Hook −118,88 $ = Berts schlechtester Tag: 9 Trades (Kauf→Verkauf), 8 im Minus, nur Apple +0,95 $. Linien kurz für neue Zuschauer erklärt (Blau Ø ~2 Std., Gelb Ø ~5 Std.; Kreuzung hoch = Kauf, runter = Verkauf). Meta-Chart: Linien kreuzen ständig → 3× Kauf, 3× Verkauf (einmal nur 5 Min. dazwischen: 15:51 Kauf, 15:56 Verkauf), zusammen −43,66 $. Tesla: größter Verlust, Kauf 15:36 à 389,40 $, Notbremse −1,5 %, aber Bert prüft nur alle 5 Min. → Verkauf 16:11 bei −1,70 % = −39,74 $. Neue Szene `bilanz` (alle 9 Trades). Grund: Markt seitwärts (SPY +0,5 %) → viele Fehlsignale. Technik: keine Lücke, kein fehlgeschlagener Lauf, alle 7 Sicherungen gesetzt (2 Käufe waren vor der Sicherung schon wieder verkauft). Kurt: bis Freitag kein Spiel in seinen 5 Ligen → kein Tipp. 74,7 Sek. | Bert 9.870,37 $ (−1,30 %) · Kurt 9.900 € (−1,00 %) → Kurt führt | Nur Pech an einem ruhigen Tag – oder sind Berts Regeln das Problem? |
 | 8 | 25.11. | Hook +35,98 $ – letzter Tag Bert 1.0, 4 Trades, alle im Plus. Markt startet tief im Minus (SPY Eröffnung 703 $), klettert ab ca. 18 Uhr (Schluss 716,74 $, Tag −0,3 % ggü. Vortag). Alle 8 Aktien: Blau zum Start unter Gelb, Kreuzungen nach oben erst 18:15–19:45. Meta-Chart: Kauf 18:20 4 à 597,35 $, Verkauf 21:30 à 602,81 $ = +21,84 $. Bilanz: Apple +4,44, S&P 500 +6,58 (Verkauf in 2 Teilen), Microsoft +3,12. 4 weitere Kaufsignale (QQQ, Tesla, Nvidia, Amazon) ausgelassen – max. 4 Aktien gleichzeitig. Konto ehrlich: 20:31 Uhr Tageshoch +88 $, bis Schluss nur +36 $ übrig. **Update #5 geprüft**: nach allen 4 Käufen SICHERUNG im Logbuch, kein FEHLER ✓. Cliffhanger aus Folge 7 beantwortet („die Regeln – an ruhigen Tagen handelt Bert hin und her“) → **Update #7** Teaser „Ab Freitag: Bert 2.0“ (5 Punkte, max. 1 Trade pro Aktie, Short einfach erklärt). Keine Backtest-Zahlen, kein Probelauf. Kurt: **Update #6** (CL/EL/ECL), 62 Spiele in 8 Wettbewerben, 1 Tipp Rayo Vallecano bei Betis (Quote 6,00, faire Chance 18 %, +9,1 %), Value am Beispiel erklärt (im Schnitt 109 € pro 100 €, nur im Schnitt), „wieder ein Außenseiter“. Erste Vertonung 102 Sek. → Text gekürzt, neu vertont. 76,2 Sek. (1 Sek. über Ziel). | Bert 9.905,90 $ (−0,94 %) · Kurt 9.900 € (−1,00 %, 100 € offen) → Bert knapp vorne | Morgen US-Börse zu, Freitag startet Bert 2.0 – schafft er den S&P 500? |
+| 9 | 26.11. (US-Börse zu, Thanksgiving) | Erklärfolge, keine Bert-Trades. Hook „~150 Strategien getestet, Ergebnis unbequem“. Bert 2.0 am echten Apple-Chart vom 25.11. (30-Min-Kasten, lila Tagesdurchschnitt, Pfeile aus dem **Probelauf**): 16:20 Ausbruch nach unten → hätte geshortet (Short einfach erklärt), `checkliste` 5/5, Apple stieg wieder → Stop-Loss −9,69 $, „nur Probelauf, kein echter Trade“. Strategie-Suche (`forschung/LOG.md`/`ERGEBNIS.md`): Regeln vorher fest, 2024–2026 weggesperrt, fast alles durchgefallen (Kosten), auch die Ausbruch-Idee hinter Bert 2.0. Endtest: nur Rauschzone SPY+QQQ knapp im Plus (+1.616 $ in fast 3 Jahren), SPY halten +51 %, gleiche Regel auf Berts 8 Aktien −2.085 $. Teaser „Bert bekommt Konkurrenz“ (kein Termin). Kurt: 36 EL/ECL-Spiele am 26.11. (geprüft 25.11.), 15× Value – alle beim Außenseiter (Quoten 6,50–24,00) → kein Tipp; bester nicht riskanter Value Celta Vigo +1,7 % (unter 2 %). Rayo läuft Sa. Technik heute: alle 7 Börsen-Bert-Läufe + Kurt-Lauf grün. Erste Vertonung ~94 Sek. → 4 Sätze gestrichen (stehen im Bild), Clips aus clips.json entfernt statt neu vertont. 75,9 Sek. | Bert 9.905,69 $ (−0,94 %) · Kurt 9.900 € (−1,00 %, 100 € offen) → Bert knapp vorne | Freitag Bert 2.0 live – kann er echt, was er im Test nicht konnte? |
 
 ## Updates (Übersicht)
 - **Update #1** (18.11.): Bert stellt nach jedem Kauf eine Verkaufsorder zum Börsenschluss.
@@ -55,34 +56,11 @@
 - **Wochenanalyse 21.11.** (mit Mika): bei beiden Bots **nichts geändert**. Bert: erst 1 echter Trade, Update #4 läuft erst ab 23.11. – erst eine Woche ohne Pannen abwarten. Kurt: Update #3 erst seit 20.11. – nach einer Woche Daten bewerten.
 
 ## Für die nächsten Folgen merken
-- **Folge 9 (Do 26.11.) – Mikas Wunsch (25.11. abends): Erklärvideo zu Bert 2.0 + die große Strategie-Suche.**
-  Probelauf 25.11. ist fertig (`"vollstaendig": true`, Stand 15:55 NY): weiter 1 Trade, Short Apple −9,69 $, 1× 5/5, 43× knapp.
-  Aufbau (45–75 Sek., Text vorher knapp halten – Folge 8 war erst 102 Sek.!):
-  1. Bert 2.0 erklären wie unten (Apple-Chart Probelauf + `checkliste`, Short einfach erklärt). Ehrlich: „Am Mittwoch hätte
-     Bert 2.0 einmal zugeschlagen – und verloren.“ Klar als Probelauf kennzeichnen.
-  2. **Strategie-Suche** (`forschung/LOG.md` am Tag der Folge NEU lesen – die Suche läuft noch, Zahlen können sich ändern).
-     Mika: „ehrlich alles zeigen“ (siehe ANLEITUNG Regel 10). Stand 25.11.: ca. 130 Varianten mit echten 5-Min-Kerzen
-     2018–2023 getestet, fast alle durchgefallen (meist fressen die Kosten den Gewinn). **Auch die Ausbruch-Idee – der Kern
-     von Bert 2.0 – fiel durch** (höchstens 4 von 6 Jahren im Plus) → offen sagen. Genau formulieren: getestet wurden
-     Ausbruch-Regeln (ORB), nicht Bert 2.0 mit allen 5 Punkten – also „die Idee hinter Bert 2.0“, nicht „Bert 2.0“. Noch im Rennen: „Rauschzonen-Momentum“
-     (SPY+QQQ und Berts 8 Werte, je 5 von 6 Jahren im Plus) – aber bei Berts 8 Werten mit doppelten Kosten im Minus, und der
-     Endtest mit den gesperrten Jahren 2024–2026 steht noch aus. Fairness einfach erklären: Regeln vorher festgelegt,
-     3 Jahre Daten weggesperrt, jeder Versuch wird gezählt („Wer 130-mal würfelt, würfelt irgendwann zufällig eine Sechs“).
-     Szene `text` (gibt keinen eigenen Szenen-Typ). Keine bp/Sharpe, keine Gewinnversprechen.
-     **Update 25.11. 23:50 – Endtest ist gemacht** (`forschung/ERGEBNIS.md`): Rauschzone auf SPY+QQQ 2024–2026 knapp im Plus
-     (+1.616 $ auf 10.000 $, 2025/26 ≈ 0; SPY halten: +51 %), auf Berts 8 Werten im Minus (−2.085 $). Ergebnis: keine Strategie
-     schafft viele Trades UND Gewinn. **Entschieden:** neuer zweiter Trading-Bot „Momentum-Max“ (Rauschzone, Berts 8 Werte),
-     Bert 2.0 bleibt. Darf als Teaser angekündigt werden („Bald bekommt Bert Konkurrenz“), Start erst nach Einrichtung
-     (geplant Mo 30.11.) – kein fester Termin versprechen, keine Gewinnaussagen.
-  3. Kurt kurz: Europa-/Conference-League-Spiele vom 26.11. ohne Tipp; Rayo-Tipp läuft erst Sa 28.11. 14:00.
-  Cliffhanger z. B.: „Freitag ist Bert 2.0 live. Kann er echt, was er im Test nicht konnte?“ – keine Prognose.
-- **Folge 9 (Do 26.11.):** US-Börse zu (Thanksgiving) → keine Bert-Trades. Erklärfolge Bert 2.0: echter Apple-Chart
-  vom Mittwoch mit `"datum": "2026-11-25", "bert2": true, "pfeile": "trockenlauf"` (30-Min-Kasten, Tagesdurchschnitt,
-  Pfeile aus dem Probelauf), dann `checkliste` mit `"quelle": "trockenlauf", "symbol": "AAPL", "datum": "2026-11-25"`
-  und gern eine knappe (`"welche": "knapp"`). Ehrlich: „Am Mittwoch hätte Bert 2.0 einmal zugeschlagen – und
-  verloren.“ Klar sagen: Probelauf, kein echter Trade. Kurt: EL/ECL-Spiele vom 26.11.
 - **Folge 10 (Fr 27.11.):** erster echter Tag Bert 2.0, kurzer Handelstag bis 19:00 Uhr (Alles-schließen um 18:45).
-  `checkliste` für jeden Trade, Pfeile SHORT/EINDECKEN. Kurt: Wochenend-Tipps.
+  `checkliste` für jeden Trade, Pfeile SHORT/EINDECKEN. Kurt: Wochenend-Tipps. Gegenprobe echte Trades vs. Probelauf
+  (Workflow „Probelauf Bert 2.0“ sollte ca. 19:25 Uhr laufen – kurzer Tag, ggf. per Hand starten).
+- Teaser „Bert bekommt Konkurrenz“ (Momentum-Max) ist in Folge 9 gelaufen – Start erst nennen, wenn der Bot wirklich läuft.
+- Content-Idee „150 Strategien getestet“ ist in Folge 9 in Kurzform gelaufen; eine eigene längere Folge wäre noch möglich.
 - Ab Folge 4: kein „FOLGEN →"-Button und kein „Folgen!" im Sprechertext mehr.
 - Woche 2: Value wurde in Folge 8 nur am Rayo-Beispiel per Sprechertext erklärt (keine Münzwurf-Szene) – im Wochenrückblick 28.11. die `value`-Szene für neue Zuschauer zeigen.
 - Wochenrückblick 28.11.: Zahl der „Hin-und-her“-Trades (Kauf und Verkauf innerhalb von ≤ 15 Min.) zählen – am 24.11.: Meta 15:51–15:56 (−6,10 $), Microsoft 17:32–17:37 (−1,83 $), Meta 19:05–19:20 (−12,72 $). Am 25.11.: keiner (alle 4 bis 21:30 gehalten).
@@ -101,7 +79,11 @@ Start geplant Mo 30.11. Videos: täglich der Bot mit der meisten Action im Fokus
 Ehrlich bleiben: laut Endtest eher leicht im Minus – Experiment, keine Gewinnversprechen. Content-Idee: eigene Folge „150 Strategien getestet – das kam raus“ (ehrlich, nur echte Zahlen aus
 `forschung/LOG.md`).
 
-## Offene Punkte (Stand 25.11.)
+## Offene Punkte (Stand 26.11.)
+- **26.11.**: Konto über Nacht 25.→26.11. erneut −0,21 $ ohne Trade (9.905,90 → 9.905,69), Börse zu. 4. Mal – Ursache weiter unklar (Gebühren/Zinsen bei Alpaca?). Im Video nicht erwähnt.
+- **25.11. 22:31 UTC**: 1 fehlgeschlagener Lauf „Forschung: Daten übertragen“, 2 Min. später erneut erfolgreich. Betrifft nur die Forschung. Am 26.11. kein fehlgeschlagener Lauf.
+- **Momentum-Max**: Stand 26.11. abends noch nichts im Repo (Alpaca-Demokonto + Keys von Mika nötig).
+- **Kurt**: Value bisher 39 von 39 Mal beim Außenseiter (laut `kurt_entscheidungen.csv` bis 26.11.: 37× Quote über 6 = zu riskant, 2 Tipps Man United 4,70 und Rayo 6,00). Am 26.11. allein 15 bei EL/ECL + 3 Wochenendspiele (Alavés 21,00, Genoa 10,00, Lorient 15,00) → in der Wochenanalyse 28.11. ansprechen.
 - **25.11.**: Lücke im Kontostand 17:42–18:05 (23 Min., wie am 23.11. zwischen zwei GitHub-Starts). Nichts verpasst: erste Kreuzung des Tages erst 18:15 (Meta, gekauft 18:20). Zweite Lücke dieser Art in 3 Tagen → beobachten; Bert 2.0 handelt ab 16:05, eine Lücke kann dann einen Ausbruch verpassen (Änderung nur mit Mikas OK).
 - **25.11.**: Konto über Nacht 24.→25.11. −0,45 $ ohne Trade (9.870,37 → 9.869,92). Darum zeigt die Konto-Szene „heute +35,53 $“, Trades ergeben +35,98 $. Ursache unklar (3. Mal, evtl. Gebühren/Zinsen bei Alpaca).
 - **25.11.**: 2 fehlgeschlagene Läufe „Forschung: Daten laden“ (19:50 UTC): Alpaca 403 „subscription does not permit querying recent SIP data“ (Gratis-Abo darf keine aktuellen SIP-Daten). Betrifft nur die Forschung, nicht die Bots. Alle 7 Börsen-Bert-Läufe und beide Kurt-Läufe grün.
