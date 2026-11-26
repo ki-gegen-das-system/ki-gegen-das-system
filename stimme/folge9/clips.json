@@ -1,0 +1,1075 @@
+{
+ "stimme": "chatterbox",
+ "clips": [
+  {
+   "szene": "s1",
+   "datei": "01.wav",
+   "dauer": 5.652,
+   "text": "Rund hundertfünfzig Strategien getestet, mit echten Kursen. Das Ergebnis ist unbequem.",
+   "hash": "b3c526b75d9063a40b4b94f70957957373fd26c1",
+   "pruefung": 0.98,
+   "woerter": [
+    [
+     "Rund",
+     0.0,
+     0.26
+    ],
+    [
+     "150",
+     0.26,
+     0.86
+    ],
+    [
+     "Strategien",
+     0.86,
+     1.9
+    ],
+    [
+     "getestet",
+     1.9,
+     2.48
+    ],
+    [
+     "mit",
+     2.48,
+     2.78
+    ],
+    [
+     "echten",
+     2.78,
+     3.14
+    ],
+    [
+     "Kursen,",
+     3.14,
+     3.68
+    ],
+    [
+     "das",
+     3.9,
+     4.0
+    ],
+    [
+     "Ergebnis",
+     4.0,
+     4.46
+    ],
+    [
+     "ist",
+     4.46,
+     4.86
+    ],
+    [
+     "unbequem.",
+     4.86,
+     5.54
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "02.wav",
+   "dauer": 4.94,
+   "text": "Heute ist die US-Börse zu. Ab Freitag handelt Bert zwei Punkt null.",
+   "hash": "adc94aa5aafc9baea475810732bf7edb466da60d",
+   "pruefung": 0.93,
+   "woerter": [
+    [
+     "Heute",
+     0.0,
+     0.34
+    ],
+    [
+     "ist",
+     0.34,
+     0.58
+    ],
+    [
+     "die",
+     0.58,
+     0.88
+    ],
+    [
+     "Usbörse",
+     0.88,
+     1.48
+    ],
+    [
+     "zu,",
+     1.48,
+     1.76
+    ],
+    [
+     "ab",
+     2.22,
+     2.4
+    ],
+    [
+     "Freitag",
+     2.4,
+     3.06
+    ],
+    [
+     "handelt",
+     3.06,
+     3.42
+    ],
+    [
+     "Wert",
+     3.42,
+     3.64
+    ],
+    [
+     "2",
+     3.64,
+     4.06
+    ],
+    [
+     ".0",
+     4.06,
+     4.78
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "03.wav",
+   "dauer": 5.459,
+   "text": "Der Kasten zeigt die ersten dreißig Minuten, die lila Linie den Tagesdurchschnitt.",
+   "hash": "735452e86d00bf7d6b244153099eb844eb35241e",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "Der",
+     0.0,
+     0.14
+    ],
+    [
+     "Kasten",
+     0.14,
+     0.64
+    ],
+    [
+     "zeigt",
+     0.64,
+     1.14
+    ],
+    [
+     "die",
+     1.14,
+     1.5
+    ],
+    [
+     "ersten",
+     1.5,
+     1.86
+    ],
+    [
+     "30",
+     1.86,
+     2.34
+    ],
+    [
+     "Minuten",
+     2.34,
+     2.94
+    ],
+    [
+     "die",
+     2.94,
+     3.64
+    ],
+    [
+     "lila",
+     3.64,
+     4.04
+    ],
+    [
+     "Linie",
+     4.04,
+     4.44
+    ],
+    [
+     "den",
+     4.44,
+     4.56
+    ],
+    [
+     "Tagesdurchschnitt.",
+     4.56,
+     5.32
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "04.wav",
+   "dauer": 6.225,
+   "text": "Probelauf mit Apple vom Mittwoch: Um sechzehn Uhr zwanzig fällt der Kurs unter den Kasten.",
+   "hash": "ecb8e45e73c0305c214cbbc0a6c652ff6a4dd823",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "obel",
+     0.0,
+     0.34
+    ],
+    [
+     "auf",
+     0.34,
+     0.62
+    ],
+    [
+     "mit",
+     0.62,
+     1.0
+    ],
+    [
+     "Apple",
+     1.0,
+     1.36
+    ],
+    [
+     "vom",
+     1.36,
+     1.6
+    ],
+    [
+     "Mittwoch",
+     1.6,
+     2.5
+    ],
+    [
+     "um",
+     2.5,
+     2.62
+    ],
+    [
+     "16",
+     2.62,
+     3.1
+    ],
+    [
+     "Uhr",
+     3.1,
+     3.4
+    ],
+    [
+     "20",
+     3.4,
+     3.94
+    ],
+    [
+     "fällt",
+     3.94,
+     4.54
+    ],
+    [
+     "der",
+     4.54,
+     4.82
+    ],
+    [
+     "Kurs",
+     4.82,
+     5.18
+    ],
+    [
+     "unter",
+     5.18,
+     5.48
+    ],
+    [
+     "den",
+     5.48,
+     5.64
+    ],
+    [
+     "Kasten.",
+     5.64,
+     6.04
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "05.wav",
+   "dauer": 5.452,
+   "text": "Bert hätte geshortet: Aktie leihen, verkaufen, später billiger zurückkaufen.",
+   "hash": "e52834f4dd8c0ea3bff312baa7e9ce409d201170",
+   "pruefung": 0.94,
+   "woerter": [
+    [
+     "Bert",
+     0.0,
+     0.3
+    ],
+    [
+     "hätte",
+     0.3,
+     0.58
+    ],
+    [
+     "es",
+     0.58,
+     0.84
+    ],
+    [
+     "hortut",
+     0.84,
+     1.34
+    ],
+    [
+     "Aktie",
+     1.34,
+     2.06
+    ],
+    [
+     "-Line",
+     2.06,
+     2.44
+    ],
+    [
+     "verkaufen,",
+     2.44,
+     3.34
+    ],
+    [
+     "späte,",
+     3.56,
+     4.02
+    ],
+    [
+     "billiger",
+     4.2,
+     4.5
+    ],
+    [
+     "zurückkaufen.",
+     4.5,
+     5.3
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "06.wav",
+   "dauer": 6.24,
+   "text": "Alle fünf Punkte passten. Aber Apple stieg wieder. Stop-Loss, minus neun Dollar neunundsechzig.",
+   "hash": "5d56717ae913bcd861a28b3ab789251bb8019716",
+   "pruefung": 0.94,
+   "woerter": [
+    [
+     "alle",
+     0.0,
+     0.26
+    ],
+    [
+     "fünf",
+     0.26,
+     0.52
+    ],
+    [
+     "Punkte",
+     0.52,
+     1.0
+    ],
+    [
+     "passten.",
+     1.0,
+     1.64
+    ],
+    [
+     "Aber",
+     1.98,
+     2.18
+    ],
+    [
+     "Apple",
+     2.18,
+     2.56
+    ],
+    [
+     "stieg",
+     2.56,
+     2.92
+    ],
+    [
+     "wieder.",
+     2.92,
+     3.16
+    ],
+    [
+     "Stopp",
+     3.54,
+     3.78
+    ],
+    [
+     "los!",
+     3.78,
+     3.94
+    ],
+    [
+     "Minus",
+     4.38,
+     4.7
+    ],
+    [
+     "$9",
+     4.7,
+     5.14
+    ],
+    [
+     ".69.",
+     5.14,
+     6.02
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "07.wav",
+   "dauer": 2.82,
+   "text": "Nur ein Probelauf, kein echter Trade.",
+   "hash": "917cc44b5a69b0a15776d304f5c4db1d4ff7bebd",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "Nur",
+     0.0,
+     0.26
+    ],
+    [
+     "ein",
+     0.26,
+     0.54
+    ],
+    [
+     "Probel",
+     0.54,
+     1.0
+    ],
+    [
+     "auf,",
+     1.0,
+     1.24
+    ],
+    [
+     "kein",
+     1.56,
+     1.72
+    ],
+    [
+     "echter",
+     1.72,
+     2.14
+    ],
+    [
+     "Zade,",
+     2.14,
+     2.6
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "08.wav",
+   "dauer": 5.1,
+   "text": "Fair getestet: Regeln vorher festgelegt, drei Jahre Daten weggesperrt.",
+   "hash": "8ad07ba83c184a53061cff626a135c9c4930fcb3",
+   "pruefung": 0.9,
+   "woerter": [
+    [
+     "fair",
+     0.0,
+     0.24
+    ],
+    [
+     "getestet,",
+     0.24,
+     0.9
+    ],
+    [
+     "reading",
+     1.2,
+     1.48
+    ],
+    [
+     "vorher",
+     1.48,
+     1.9
+    ],
+    [
+     "festgelegt,",
+     1.9,
+     2.72
+    ],
+    [
+     "drei",
+     3.2,
+     3.46
+    ],
+    [
+     "Jahre",
+     3.46,
+     3.78
+    ],
+    [
+     "Daten",
+     3.78,
+     4.26
+    ],
+    [
+     "weggeschwert.",
+     4.26,
+     4.88
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "09.wav",
+   "dauer": 4.215,
+   "text": "Fast alles fiel durch. Meist fressen die Kosten den Gewinn.",
+   "hash": "51b71512ec69b291f56ce6e036413578b7018964",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "passt",
+     0.0,
+     0.22
+    ],
+    [
+     "alles",
+     0.22,
+     0.6
+    ],
+    [
+     "viel",
+     0.6,
+     1.02
+    ],
+    [
+     "durch.",
+     1.02,
+     1.32
+    ],
+    [
+     "Meist",
+     1.96,
+     2.42
+    ],
+    [
+     "fressen",
+     2.42,
+     2.88
+    ],
+    [
+     "die",
+     2.88,
+     3.0
+    ],
+    [
+     "Kosten",
+     3.0,
+     3.36
+    ],
+    [
+     "den",
+     3.36,
+     3.72
+    ],
+    [
+     "Gewinn.",
+     3.72,
+     4.08
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "10.wav",
+   "dauer": 3.58,
+   "text": "Auch die Ausbruch-Idee hinter Bert zwei Punkt null.",
+   "hash": "e45ef03d8c10d7e3dfd051a2fdc4e68f6a4ac0ed",
+   "pruefung": 0.94,
+   "woerter": [
+    [
+     "auch",
+     0.0,
+     0.22
+    ],
+    [
+     "die",
+     0.22,
+     0.46
+    ],
+    [
+     "Ausbruchidee",
+     0.46,
+     1.68
+    ],
+    [
+     "hinterbert",
+     1.68,
+     2.18
+    ],
+    [
+     "2",
+     2.18,
+     2.62
+    ],
+    [
+     ".0.",
+     2.62,
+     3.36
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "11.wav",
+   "dauer": 6.085,
+   "text": "Im Endtest blieb nur eine knapp im Plus: rund sechzehnhundert Dollar in fast drei Jahren.",
+   "hash": "079600e7c4628b690e5f5f576463f8b0779bad41",
+   "pruefung": 0.88,
+   "woerter": [
+    [
+     "Im",
+     0.0,
+     0.16
+    ],
+    [
+     "Endhüst",
+     0.16,
+     0.88
+    ],
+    [
+     "blieb",
+     0.88,
+     1.38
+    ],
+    [
+     "nur",
+     1.38,
+     1.58
+    ],
+    [
+     "eine",
+     1.58,
+     1.86
+    ],
+    [
+     "knapp",
+     1.86,
+     2.14
+    ],
+    [
+     "im",
+     2.14,
+     2.44
+    ],
+    [
+     "Plus",
+     2.44,
+     2.74
+    ],
+    [
+     "rund",
+     2.74,
+     3.32
+    ],
+    [
+     "1600",
+     3.32,
+     3.84
+    ],
+    [
+     "Dollar",
+     3.84,
+     4.46
+    ],
+    [
+     "in",
+     4.46,
+     4.82
+    ],
+    [
+     "fast",
+     4.82,
+     5.08
+    ],
+    [
+     "drei",
+     5.08,
+     5.5
+    ],
+    [
+     "Jahren.",
+     5.5,
+     5.9
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "12.wav",
+   "dauer": 5.1,
+   "text": "Den S&P fünfhundert einfach halten brachte einundfünfzig Prozent.",
+   "hash": "4a68064d63c05c2f90f23877d9e95f76de47f594",
+   "pruefung": 0.93,
+   "woerter": [
+    [
+     "Den",
+     0.0,
+     0.22
+    ],
+    [
+     "SOP",
+     0.22,
+     0.96
+    ],
+    [
+     "500",
+     0.96,
+     1.56
+    ],
+    [
+     "Einverhalten",
+     1.56,
+     2.78
+    ],
+    [
+     "brachte",
+     2.78,
+     3.58
+    ],
+    [
+     "51",
+     3.58,
+     4.36
+    ],
+    [
+     "Prozent.",
+     4.36,
+     4.88
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "13.wav",
+   "dauer": 4.94,
+   "text": "Trotzdem testen wir die Idee bald live. Bert bekommt Konkurrenz.",
+   "hash": "0bd09c4cd3c22788b250523db47cd6d388c9d4a1",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Trotzdem",
+     0.0,
+     0.56
+    ],
+    [
+     "testen",
+     0.56,
+     1.3
+    ],
+    [
+     "wir",
+     1.3,
+     1.42
+    ],
+    [
+     "die",
+     1.42,
+     1.6
+    ],
+    [
+     "Idee",
+     1.6,
+     1.9
+    ],
+    [
+     "bald",
+     1.9,
+     2.28
+    ],
+    [
+     "live.",
+     2.28,
+     2.76
+    ],
+    [
+     "Bert",
+     3.14,
+     3.4
+    ],
+    [
+     "bekommt",
+     3.4,
+     3.92
+    ],
+    [
+     "Konkurrenz.",
+     3.92,
+     4.72
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "14.wav",
+   "dauer": 8.129,
+   "text": "Kurt prüft heute Abend sechsunddreißig Europapokal-Spiele. Fünfzehnmal Value, aber immer beim Außenseiter.",
+   "hash": "d19fa35f55c13882e04c1b425e78b6d4e2f7308f",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "Kurt",
+     0.0,
+     0.32
+    ],
+    [
+     "prüft",
+     0.32,
+     0.84
+    ],
+    [
+     "heute",
+     0.84,
+     1.08
+    ],
+    [
+     "Abend",
+     1.08,
+     1.54
+    ],
+    [
+     "36",
+     1.54,
+     2.84
+    ],
+    [
+     "Europapokalspiele",
+     2.84,
+     4.5
+    ],
+    [
+     "15",
+     4.5,
+     5.0
+    ],
+    [
+     "mal",
+     5.0,
+     5.52
+    ],
+    [
+     "Value,",
+     5.52,
+     5.94
+    ],
+    [
+     "aber",
+     6.48,
+     6.64
+    ],
+    [
+     "immer",
+     6.64,
+     6.92
+    ],
+    [
+     "beim",
+     6.92,
+     7.16
+    ],
+    [
+     "Außenseiter.",
+     7.16,
+     7.9
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "15.wav",
+   "dauer": 4.084,
+   "text": "Zu riskant, kein Tipp. Sein Rayo-Tipp läuft am Samstag.",
+   "hash": "a9e19bb5cdf01d2d25195d7dd6f37dfa5db693c6",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "Zu",
+     0.0,
+     0.22
+    ],
+    [
+     "riskant",
+     0.22,
+     0.84
+    ],
+    [
+     "–",
+     0.84,
+     1.06
+    ],
+    [
+     "kein",
+     1.06,
+     1.28
+    ],
+    [
+     "Tipp.",
+     1.28,
+     1.64
+    ],
+    [
+     "Sein",
+     2.02,
+     2.32
+    ],
+    [
+     "Riot",
+     2.32,
+     2.56
+    ],
+    [
+     "-Tipp",
+     2.56,
+     2.96
+    ],
+    [
+     "läuft",
+     2.96,
+     3.24
+    ],
+    [
+     "am",
+     3.24,
+     3.54
+    ],
+    [
+     "Samstag.",
+     3.54,
+     3.94
+    ]
+   ]
+  },
+  {
+   "szene": "s7",
+   "datei": "16.wav",
+   "dauer": 2.057,
+   "text": "Zwischenstand: Bert knapp vorne.",
+   "hash": "59a88802e978e1b0685858d61a8013701c27fae7",
+   "pruefung": 0.96,
+   "woerter": [
+    [
+     "Zwischenstand,",
+     0.0,
+     0.64
+    ],
+    [
+     "Wert",
+     0.92,
+     1.12
+    ],
+    [
+     "knapp",
+     1.12,
+     1.42
+    ],
+    [
+     "vorne.",
+     1.42,
+     1.82
+    ]
+   ]
+  },
+  {
+   "szene": "s8",
+   "datei": "17.wav",
+   "dauer": 5.666,
+   "text": "Freitag ist Bert zwei Punkt null live. Kann er echt, was er im Test nicht konnte?",
+   "hash": "13bb6e892a4c441f1ced889dde014c908d49fd74",
+   "pruefung": 0.94,
+   "woerter": [
+    [
+     "Dreitag",
+     0.0,
+     0.68
+    ],
+    [
+     "ist",
+     0.68,
+     0.84
+    ],
+    [
+     "Bert",
+     0.84,
+     1.12
+    ],
+    [
+     "2",
+     1.12,
+     1.56
+    ],
+    [
+     ".0",
+     1.56,
+     2.28
+    ],
+    [
+     "live.",
+     2.28,
+     2.7
+    ],
+    [
+     "Kann",
+     3.08,
+     3.38
+    ],
+    [
+     "er",
+     3.38,
+     3.58
+    ],
+    [
+     "echt,",
+     3.58,
+     3.86
+    ],
+    [
+     "was",
+     4.1,
+     4.2
+    ],
+    [
+     "er",
+     4.2,
+     4.4
+    ],
+    [
+     "im",
+     4.4,
+     4.52
+    ],
+    [
+     "Test",
+     4.52,
+     4.78
+    ],
+    [
+     "nicht",
+     4.78,
+     5.08
+    ],
+    [
+     "konnte?",
+     5.08,
+     5.4
+    ]
+   ]
+  }
+ ]
+}
