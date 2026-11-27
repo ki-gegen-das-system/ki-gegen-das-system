@@ -1,0 +1,92 @@
+{
+ "folge": 10,
+ "titel": "TAG 7 · 27.11.",
+ "datum": "2026-11-27",
+ "szenen": [
+  {
+   "typ": "hook",
+   "gross": "−14,40 $",
+   "farbe": "rot",
+   "symbol": "META",
+   "zeilen": [
+    "Erster echter Tag Bert 2.0.",
+    "Markt +1,7 % – Bert im Minus."
+   ],
+   "sprecher": [
+    {
+     "sag": "Minus vierzehn Dollar vierzig. Bert zwei Punkt null war heute zum ersten Mal live.",
+     "zeig": "−14,40 Dollar. Bert 2.0 war heute zum ersten Mal live."
+    }
+   ]
+  },
+  {
+   "typ": "chart",
+   "symbol": "META",
+   "sprecher": [
+    {
+     "sag": "Kurzer Börsentag nach Thanksgiving. Um siebzehn Uhr vierzig bricht Meta über den Kasten.",
+     "zeig": "Kurzer Börsentag nach Thanksgiving. Um 17:40 Uhr bricht Meta über den Kasten."
+    },
+    "Bert kauft vier Aktien. Fünfundzwanzig Minuten später fällt Meta auf seinen Stop."
+   ]
+  },
+  {
+   "typ": "checkliste",
+   "symbol": "META",
+   "sprecher": [
+    {
+     "sag": "Alle fünf Punkte passten, das Volumen war doppelt so hoch wie sonst.",
+     "zeig": "Alle 5 Punkte passten, das Volumen war 2× so hoch wie sonst."
+    },
+    "Vorher war Meta schon zu weit gelaufen. Da rennt Bert nicht hinterher."
+   ]
+  },
+  {
+   "typ": "trades",
+   "sprecher": [
+    {
+     "sag": "Geplant waren zehn Dollar Risiko. Es wurden vierzehn vierzig.",
+     "zeig": "Geplant waren 10 Dollar Risiko. Es wurden 14,40."
+    },
+    "Denn gekauft hat er gut einen Dollar teurer als beim Signal."
+   ]
+  },
+  {
+   "typ": "konto",
+   "sprecher": [
+    "Danach kein Trade mehr. Kein Lauf ist ausgefallen, keine Lücke."
+   ]
+  },
+  {
+   "typ": "kurt",
+   "max": 5,
+   "sprecher": [
+    {
+     "sag": "Kurt tippt fünfmal für Sonntag, je hundert Euro. Value zwischen zwei und vier Komma vier Prozent.",
+     "zeig": "Kurt tippt 5-mal für Sonntag, je 100 €. Value zwischen 2 und 4,4 %."
+    },
+    "Aber wieder: jedes Mal der Außenseiter. Morgen spielt Rayo."
+   ]
+  },
+  {
+   "typ": "stand",
+   "sprecher": [
+    "Zwischenstand: Kurt wieder knapp vorne."
+   ]
+  },
+  {
+   "typ": "frage",
+   "zeilen": [
+    "Bert 2.0: 1 Trade, 1 Stop-Loss.",
+    "Kurt: 6 Tipps offen.",
+    "Wer gewinnt Woche 2?"
+   ],
+   "sprecher": [
+    {
+     "sag": "Morgen der Wochenrückblick. Wer gewinnt Woche zwei?",
+     "zeig": "Morgen der Wochenrückblick. Wer gewinnt Woche 2?"
+    }
+   ]
+  }
+ ]
+}

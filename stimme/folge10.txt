@@ -1,0 +1,13 @@
+# folge10 – automatisch aus video/folgen/folge10.json erzeugt
+s1|Minus vierzehn Dollar vierzig. Bert zwei Punkt null war heute zum ersten Mal live.
+s2|Kurzer Börsentag nach Thanksgiving. Um siebzehn Uhr vierzig bricht Meta über den Kasten.
+s2|Bert kauft vier Aktien. Fünfundzwanzig Minuten später fällt Meta auf seinen Stop.
+s3|Alle fünf Punkte passten, das Volumen war doppelt so hoch wie sonst.
+s3|Vorher war Meta schon zu weit gelaufen. Da rennt Bert nicht hinterher.
+s4|Geplant waren zehn Dollar Risiko. Es wurden vierzehn vierzig.
+s4|Denn gekauft hat er gut einen Dollar teurer als beim Signal.
+s5|Danach kein Trade mehr. Kein Lauf ist ausgefallen, keine Lücke.
+s6|Kurt tippt fünfmal für Sonntag, je hundert Euro. Value zwischen zwei und vier Komma vier Prozent.
+s6|Aber wieder: jedes Mal der Außenseiter. Morgen spielt Rayo.
+s7|Zwischenstand: Kurt wieder knapp vorne.
+s8|Morgen der Wochenrückblick. Wer gewinnt Woche zwei?
