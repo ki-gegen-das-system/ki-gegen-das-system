@@ -75,3 +75,4 @@ zeit,symbol,aktion,grund,preis_usd
 2026-11-25 21:30,SPY,VERKAUF,Börsenschluss naht – Daytrading heißt: alles raus,714.44
 2026-11-27 17:40,META,KAUF,Checkliste 5/5 · 4 Stück · Ausbruch nach oben,630.15
 2026-11-27 17:40,META,SCHUTZ,"Stop 627,75 · Ziel 634,96 · Risiko 10 $",630.15
+2026-11-27 18:05,META,VERKAUF,"Stop-Loss bei 627,66 (-14,40 $)",627.66
