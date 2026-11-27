@@ -1,0 +1,750 @@
+{
+ "stimme": "chatterbox",
+ "clips": [
+  {
+   "szene": "s1",
+   "datei": "01.wav",
+   "dauer": 5.245,
+   "text": "Minus vierzehn Dollar vierzig. Bert zwei Punkt null war heute zum ersten Mal live.",
+   "hash": "8b81b72683a826ac06d4c7015b195e53e27f6d14",
+   "pruefung": 0.84,
+   "woerter": [
+    [
+     "Minus",
+     0.0,
+     0.42
+    ],
+    [
+     "14",
+     0.42,
+     0.82
+    ],
+    [
+     ",40",
+     0.82,
+     1.62
+    ],
+    [
+     "$,",
+     1.62,
+     1.64
+    ],
+    [
+     "bei",
+     1.92,
+     2.04
+    ],
+    [
+     "2",
+     2.04,
+     2.42
+    ],
+    [
+     ".0",
+     2.42,
+     3.16
+    ],
+    [
+     "war",
+     3.16,
+     3.64
+    ],
+    [
+     "heute",
+     3.64,
+     3.94
+    ],
+    [
+     "zum",
+     3.94,
+     4.16
+    ],
+    [
+     "ersten",
+     4.16,
+     4.52
+    ],
+    [
+     "Mal",
+     4.52,
+     4.82
+    ],
+    [
+     "live.",
+     4.82,
+     5.12
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "02.wav",
+   "dauer": 5.52,
+   "text": "Kurzer Börsentag nach Thanksgiving. Um siebzehn Uhr vierzig bricht Meta über den Kasten.",
+   "hash": "c48daa86dc594dd51d0016fc983c6dfa73537109",
+   "pruefung": 0.9,
+   "woerter": [
+    [
+     "kurzer",
+     0.0,
+     0.4
+    ],
+    [
+     "Börsentag",
+     0.4,
+     1.14
+    ],
+    [
+     "nach",
+     1.14,
+     1.46
+    ],
+    [
+     "Tankskiwing",
+     1.46,
+     2.18
+    ],
+    [
+     "um",
+     2.18,
+     2.52
+    ],
+    [
+     "17",
+     2.52,
+     2.98
+    ],
+    [
+     "Uhr",
+     2.98,
+     3.26
+    ],
+    [
+     "40",
+     3.26,
+     3.68
+    ],
+    [
+     "Meter",
+     3.68,
+     4.18
+    ],
+    [
+     "über",
+     4.18,
+     4.72
+    ],
+    [
+     "den",
+     4.72,
+     4.9
+    ],
+    [
+     "Kasten.",
+     4.9,
+     5.3
+    ]
+   ]
+  },
+  {
+   "szene": "s2",
+   "datei": "03.wav",
+   "dauer": 5.66,
+   "text": "Bert kauft vier Aktien. Fünfundzwanzig Minuten später fällt Meta auf seinen Stop.",
+   "hash": "fdaa654837c4c84d56bdf30ec1e7515f06dca774",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "Wert",
+     0.0,
+     0.3
+    ],
+    [
+     "kauft",
+     0.3,
+     0.7
+    ],
+    [
+     "4",
+     0.7,
+     1.0
+    ],
+    [
+     "Aktien.",
+     1.0,
+     1.62
+    ],
+    [
+     "25",
+     2.16,
+     2.58
+    ],
+    [
+     "Minuten",
+     2.58,
+     3.46
+    ],
+    [
+     "später",
+     3.46,
+     3.94
+    ],
+    [
+     "fällt",
+     3.94,
+     4.54
+    ],
+    [
+     "Meta",
+     4.54,
+     5.08
+    ],
+    [
+     "auf",
+     5.08,
+     5.22
+    ],
+    [
+     "seinen",
+     5.22,
+     5.44
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "04.wav",
+   "dauer": 4.4,
+   "text": "Alle fünf Punkte passten, das Volumen war doppelt so hoch wie sonst.",
+   "hash": "49934e0fd4a4bd3da94dba47b2c2bfe1d40c3718",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Alle",
+     0.0,
+     0.28
+    ],
+    [
+     "5",
+     0.28,
+     0.62
+    ],
+    [
+     "Punkte",
+     0.62,
+     0.94
+    ],
+    [
+     "passten,",
+     0.94,
+     1.66
+    ],
+    [
+     "das",
+     2.08,
+     2.22
+    ],
+    [
+     "Volumen",
+     2.22,
+     2.7
+    ],
+    [
+     "war",
+     2.7,
+     2.92
+    ],
+    [
+     "doppelt",
+     2.92,
+     3.32
+    ],
+    [
+     "so",
+     3.32,
+     3.48
+    ],
+    [
+     "hoch",
+     3.48,
+     3.78
+    ],
+    [
+     "wie",
+     3.78,
+     3.98
+    ],
+    [
+     "sonst.",
+     3.98,
+     4.18
+    ]
+   ]
+  },
+  {
+   "szene": "s3",
+   "datei": "05.wav",
+   "dauer": 4.739,
+   "text": "Vorher war Meta schon zu weit gelaufen. Da rennt Bert nicht hinterher.",
+   "hash": "a6b4e86b811d6268c135144d1d488104614bba8b",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "Vorher",
+     0.0,
+     0.5
+    ],
+    [
+     "war",
+     0.5,
+     0.9
+    ],
+    [
+     "Meter",
+     0.9,
+     1.24
+    ],
+    [
+     "schon",
+     1.24,
+     1.62
+    ],
+    [
+     "zu",
+     1.62,
+     1.88
+    ],
+    [
+     "weit",
+     1.88,
+     2.1
+    ],
+    [
+     "gelaufen,",
+     2.1,
+     2.6
+    ],
+    [
+     "da",
+     3.04,
+     3.2
+    ],
+    [
+     "rennt",
+     3.2,
+     3.54
+    ],
+    [
+     "werbt",
+     3.54,
+     3.86
+    ],
+    [
+     "nicht",
+     3.86,
+     4.02
+    ],
+    [
+     "hinterher.",
+     4.02,
+     4.58
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "06.wav",
+   "dauer": 4.156,
+   "text": "Geplant waren zehn Dollar Risiko. Es wurden vierzehn vierzig.",
+   "hash": "17e5933761d764cb7b0c4ecc6e5d4007c93cedd1",
+   "pruefung": 0.85,
+   "woerter": [
+    [
+     "Geplant",
+     0.0,
+     0.46
+    ],
+    [
+     "waren",
+     0.46,
+     0.96
+    ],
+    [
+     "zehn",
+     0.96,
+     1.34
+    ],
+    [
+     "Dollar",
+     1.34,
+     1.68
+    ],
+    [
+     "Risiko.",
+     1.68,
+     2.34
+    ],
+    [
+     "Es",
+     2.54,
+     2.72
+    ],
+    [
+     "wurden",
+     2.72,
+     3.0
+    ],
+    [
+     "1440.",
+     3.0,
+     3.92
+    ]
+   ]
+  },
+  {
+   "szene": "s4",
+   "datei": "07.wav",
+   "dauer": 3.62,
+   "text": "Denn gekauft hat er gut einen Dollar teurer als beim Signal.",
+   "hash": "f6a103df2129c351280e6624da7bc5af9dac8b96",
+   "pruefung": 0.97,
+   "woerter": [
+    [
+     "Wenn",
+     0.0,
+     0.12
+    ],
+    [
+     "gekauft",
+     0.12,
+     0.7
+    ],
+    [
+     "hat",
+     0.7,
+     0.96
+    ],
+    [
+     "er",
+     0.96,
+     1.2
+    ],
+    [
+     "gut",
+     1.2,
+     1.4
+    ],
+    [
+     "einen",
+     1.4,
+     1.74
+    ],
+    [
+     "Dollar",
+     1.74,
+     2.08
+    ],
+    [
+     "teuer",
+     2.08,
+     2.52
+    ],
+    [
+     "als",
+     2.52,
+     2.88
+    ],
+    [
+     "beim",
+     2.88,
+     3.14
+    ],
+    [
+     "Signal.",
+     3.14,
+     3.4
+    ]
+   ]
+  },
+  {
+   "szene": "s5",
+   "datei": "08.wav",
+   "dauer": 4.584,
+   "text": "Danach kein Trade mehr. Kein Lauf ist ausgefallen, keine Lücke.",
+   "hash": "c00bfd46597127e43fb2644737663dd32e082e5b",
+   "pruefung": 0.99,
+   "woerter": [
+    [
+     "danach",
+     0.0,
+     0.4
+    ],
+    [
+     "kein",
+     0.4,
+     0.86
+    ],
+    [
+     "Tade",
+     0.86,
+     1.32
+    ],
+    [
+     "mehr.",
+     1.32,
+     1.58
+    ],
+    [
+     "Kein",
+     2.0,
+     2.34
+    ],
+    [
+     "Lauf",
+     2.34,
+     2.66
+    ],
+    [
+     "ist",
+     2.66,
+     2.86
+    ],
+    [
+     "ausgefallen,",
+     2.86,
+     3.5
+    ],
+    [
+     "keine",
+     3.8,
+     4.1
+    ],
+    [
+     "Lücke.",
+     4.1,
+     4.42
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "09.wav",
+   "dauer": 6.38,
+   "text": "Kurt tippt fünfmal für Sonntag, je hundert Euro. Value zwischen zwei und vier Komma vier Prozent.",
+   "hash": "3485b35d62cad215e44e950ef4a49a9372b99c42",
+   "pruefung": 0.94,
+   "woerter": [
+    [
+     "Turt",
+     0.0,
+     0.4
+    ],
+    [
+     "tippt",
+     0.4,
+     0.74
+    ],
+    [
+     "5",
+     0.74,
+     0.9
+    ],
+    [
+     "mal",
+     0.9,
+     1.28
+    ],
+    [
+     "für",
+     1.28,
+     1.52
+    ],
+    [
+     "Sonntag",
+     1.52,
+     2.08
+    ],
+    [
+     "je",
+     2.08,
+     2.4
+    ],
+    [
+     "100",
+     2.4,
+     2.76
+    ],
+    [
+     "Euro.",
+     2.76,
+     3.16
+    ],
+    [
+     "Value",
+     3.54,
+     3.98
+    ],
+    [
+     "zwischen",
+     3.98,
+     4.28
+    ],
+    [
+     "2",
+     4.28,
+     4.66
+    ],
+    [
+     "und",
+     4.66,
+     4.94
+    ],
+    [
+     "4",
+     4.94,
+     5.3
+    ],
+    [
+     ",4%.",
+     5.3,
+     6.16
+    ]
+   ]
+  },
+  {
+   "szene": "s6",
+   "datei": "10.wav",
+   "dauer": 4.28,
+   "text": "Aber wieder: jedes Mal der Außenseiter. Morgen spielt Rayo.",
+   "hash": "44731813f46ed66d896a17a35e571096df9007b8",
+   "pruefung": 0.95,
+   "woerter": [
+    [
+     "Aber",
+     0.0,
+     0.24
+    ],
+    [
+     "wieder",
+     0.24,
+     0.62
+    ],
+    [
+     "jedes",
+     0.62,
+     1.34
+    ],
+    [
+     "Mal",
+     1.34,
+     1.82
+    ],
+    [
+     "der",
+     1.82,
+     2.1
+    ],
+    [
+     "Außenseite.",
+     2.1,
+     2.9
+    ],
+    [
+     "Morgen",
+     3.32,
+     3.68
+    ],
+    [
+     "spielt",
+     3.68,
+     4.06
+    ]
+   ]
+  },
+  {
+   "szene": "s7",
+   "datei": "11.wav",
+   "dauer": 2.331,
+   "text": "Zwischenstand: Kurt wieder knapp vorne.",
+   "hash": "cb5b65bbf08e2efc6b692a2ea0b42c0652d3a3d8",
+   "pruefung": 0.97,
+   "woerter": [
+    [
+     "Zwischenstand",
+     0.0,
+     0.62
+    ],
+    [
+     "kurz",
+     0.62,
+     1.14
+    ],
+    [
+     "wie",
+     1.14,
+     1.42
+    ],
+    [
+     "der",
+     1.42,
+     1.52
+    ],
+    [
+     "Knapp",
+     1.52,
+     1.86
+    ],
+    [
+     "vorne.",
+     1.86,
+     2.08
+    ]
+   ]
+  },
+  {
+   "szene": "s8",
+   "datei": "12.wav",
+   "dauer": 3.44,
+   "text": "Morgen der Wochenrückblick. Wer gewinnt Woche zwei?",
+   "hash": "9f060a1e7fddbe338ab6176e292ac927fb4fb812",
+   "pruefung": 1.0,
+   "woerter": [
+    [
+     "Morgen",
+     0.0,
+     0.44
+    ],
+    [
+     "der",
+     0.44,
+     0.72
+    ],
+    [
+     "Wochenrückblick.",
+     0.72,
+     1.46
+    ],
+    [
+     "Wer",
+     1.92,
+     2.24
+    ],
+    [
+     "gewinnt,",
+     2.24,
+     2.74
+    ],
+    [
+     "Woche",
+     2.8,
+     2.9
+    ],
+    [
+     "2.",
+     2.9,
+     3.22
+    ]
+   ]
+  }
+ ]
+}
