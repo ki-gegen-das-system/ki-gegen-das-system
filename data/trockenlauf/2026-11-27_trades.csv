@@ -1,0 +1,5 @@
+zeit,symbol,aktion,stueck,preis_usd,gewinn_usd,gewinn_prozent
+2026-11-27 17:40,META,Kauf,4,630.54,,
+2026-11-27 18:00,META,Verkauf,4,628.01,-10.12,-0.40
+2026-11-27 18:00,SPY,Kauf,4,726.48,,
+2026-11-27 19:15,SPY,Verkauf,4,728.20,6.92,0.24
